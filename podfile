@@ -1,0 +1,12 @@
+platform :ios, '11.0'
+use_frameworks!
+
+target 'Treasures' do
+   pod 'Alamofire', '~> 5.0.0-rc.3'
+   pod 'WCDB.swift'
+end
+
+target 'TreasuresTests' do
+   pod 'Alamofire', '~> 5.0.0-rc.3'
+   pod 'WCDB.swift'
+end
