@@ -1,5 +1,5 @@
 //
-//  EditController.swift
+//  RootTabController.swift
 //  Treasures
 //
 //  Created by joanfen on 2019/12/4.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditController: UIViewController {
+class RootTabController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,5 +1,5 @@
 //
-//  EditController.swift
+//  TreasureListController.swift
 //  Treasures
 //
 //  Created by joanfen on 2019/12/4.
@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import Foundation
+class TreasureListController: UIViewController {
 
-class EditController: UIViewController {
-
+    var searchBarView: SearchBarView = SearchBarView.loadXib()
+    var filterView: ListFilterView = ListFilterView.loadXib()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.isHidden = true
+        
+        self.view.addSubview(searchBarView)
+        
+        self.view.addSubview(filterView)
+        
     }
 
 
@@ -27,4 +33,7 @@ class EditController: UIViewController {
     }
     */
 
+    @IBAction func addTreasure(_ sender: Any) {
+        self.navigationController?.pushViewController(EditController(), animated: true)
+    }
 }

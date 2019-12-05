@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		484CA16C23994ECF00207662 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484CA16A23994ECF00207662 /* SearchBarView.swift */; };
+		484CA16D23994ECF00207662 /* SearchBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484CA16B23994ECF00207662 /* SearchBarView.xib */; };
+		484CA16F23994F0800207662 /* ListFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484CA16E23994F0800207662 /* ListFilterView.xib */; };
+		484CA17123994F2500207662 /* ListFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484CA17023994F2500207662 /* ListFilterView.swift */; };
+		487455CF23993FD6002AFBF7 /* UISizeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487455CE23993FD6002AFBF7 /* UISizeConstants.swift */; };
+		487455D023993FD6002AFBF7 /* UISizeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487455CE23993FD6002AFBF7 /* UISizeConstants.swift */; };
 		55B22B472397539500B738B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B462397539500B738B7 /* AppDelegate.swift */; };
 		55B22B492397539500B738B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B482397539500B738B7 /* SceneDelegate.swift */; };
-		55B22B4B2397539500B738B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B4A2397539500B738B7 /* ViewController.swift */; };
+		55B22B4B2397539500B738B7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B4A2397539500B738B7 /* LoginController.swift */; };
 		55B22B4E2397539500B738B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B22B4C2397539500B738B7 /* Main.storyboard */; };
 		55B22B502397539800B738B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B22B4F2397539800B738B7 /* Assets.xcassets */; };
 		55B22B532397539800B738B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55B22B512397539800B738B7 /* LaunchScreen.storyboard */; };
@@ -20,8 +26,12 @@
 		55B22B76239755D800B738B7 /* DBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B6C239755D800B738B7 /* DBConstants.swift */; };
 		55B22B77239755D800B738B7 /* TreasuresTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B6D239755D800B738B7 /* TreasuresTable.swift */; };
 		55B22B78239755D800B738B7 /* TreasureEditCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B6F239755D800B738B7 /* TreasureEditCellProtocol.swift */; };
-		55B22B79239755D800B738B7 /* EditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B70239755D800B738B7 /* EditController.swift */; };
 		55B22B7A239755D800B738B7 /* FontConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B72239755D800B738B7 /* FontConstants.swift */; };
+		55B366BF23975B44008F32D6 /* TreasureListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B366BD23975B44008F32D6 /* TreasureListController.swift */; };
+		55B366C723976C64008F32D6 /* EditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B366C523976C64008F32D6 /* EditController.swift */; };
+		55B366C823976C64008F32D6 /* EditController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55B366C623976C64008F32D6 /* EditController.xib */; };
+		55B366CB23976D9F008F32D6 /* RootTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B366C923976D9F008F32D6 /* RootTabController.swift */; };
+		55B366D223977858008F32D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B366D123977858008F32D6 /* ViewController.swift */; };
 		8E043E8D798105F7A57A5E9D /* Pods_TreasuresTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D04279D2E29DAD145417BC /* Pods_TreasuresTests.framework */; };
 		9F57E87D3C11AA9D71E13110 /* Pods_Treasures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15FD8E1B6571064B8BE8E2C /* Pods_Treasures.framework */; };
 /* End PBXBuildFile section */
@@ -41,10 +51,15 @@
 		108FC4269D72CCE6914D92A7 /* Pods-TreasuresTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasuresTests.release.xcconfig"; path = "Target Support Files/Pods-TreasuresTests/Pods-TreasuresTests.release.xcconfig"; sourceTree = "<group>"; };
 		21D04279D2E29DAD145417BC /* Pods_TreasuresTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TreasuresTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4824F4F9ECDF53CC6D022612 /* Pods-Treasures.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Treasures.release.xcconfig"; path = "Target Support Files/Pods-Treasures/Pods-Treasures.release.xcconfig"; sourceTree = "<group>"; };
+		484CA16A23994ECF00207662 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		484CA16B23994ECF00207662 /* SearchBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchBarView.xib; sourceTree = "<group>"; };
+		484CA16E23994F0800207662 /* ListFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListFilterView.xib; sourceTree = "<group>"; };
+		484CA17023994F2500207662 /* ListFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFilterView.swift; sourceTree = "<group>"; };
+		487455CE23993FD6002AFBF7 /* UISizeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISizeConstants.swift; sourceTree = "<group>"; };
 		55B22B432397539500B738B7 /* Treasures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Treasures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B22B462397539500B738B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B22B482397539500B738B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		55B22B4A2397539500B738B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		55B22B4A2397539500B738B7 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		55B22B4D2397539500B738B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55B22B4F2397539800B738B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55B22B522397539800B738B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,8 +73,12 @@
 		55B22B6C239755D800B738B7 /* DBConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBConstants.swift; sourceTree = "<group>"; };
 		55B22B6D239755D800B738B7 /* TreasuresTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasuresTable.swift; sourceTree = "<group>"; };
 		55B22B6F239755D800B738B7 /* TreasureEditCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureEditCellProtocol.swift; sourceTree = "<group>"; };
-		55B22B70239755D800B738B7 /* EditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditController.swift; sourceTree = "<group>"; };
 		55B22B72239755D800B738B7 /* FontConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontConstants.swift; sourceTree = "<group>"; };
+		55B366BD23975B44008F32D6 /* TreasureListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureListController.swift; sourceTree = "<group>"; };
+		55B366C523976C64008F32D6 /* EditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditController.swift; sourceTree = "<group>"; };
+		55B366C623976C64008F32D6 /* EditController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditController.xib; sourceTree = "<group>"; };
+		55B366C923976D9F008F32D6 /* RootTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabController.swift; sourceTree = "<group>"; };
+		55B366D123977858008F32D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8E35E5F703EC30F41A51363D /* Pods-TreasuresTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasuresTests.debug.xcconfig"; path = "Target Support Files/Pods-TreasuresTests/Pods-TreasuresTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B15FD8E1B6571064B8BE8E2C /* Pods_Treasures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Treasures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -93,6 +112,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		484CA16923994EBA00207662 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				484CA16A23994ECF00207662 /* SearchBarView.swift */,
+				484CA16B23994ECF00207662 /* SearchBarView.xib */,
+				484CA17023994F2500207662 /* ListFilterView.swift */,
+				484CA16E23994F0800207662 /* ListFilterView.xib */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		55B22B3A2397539500B738B7 = {
 			isa = PBXGroup;
 			children = (
@@ -116,16 +146,18 @@
 		55B22B452397539500B738B7 /* Treasures */ = {
 			isa = PBXGroup;
 			children = (
-				55B22B68239755D800B738B7 /* DB */,
+				55B366BC23975AF9008F32D6 /* TreasureList */,
 				55B22B6E239755D800B738B7 /* Edit */,
+				55B22B68239755D800B738B7 /* DB */,
 				55B22B71239755D800B738B7 /* Global */,
 				55B22B462397539500B738B7 /* AppDelegate.swift */,
 				55B22B482397539500B738B7 /* SceneDelegate.swift */,
-				55B22B4A2397539500B738B7 /* ViewController.swift */,
+				55B22B4A2397539500B738B7 /* LoginController.swift */,
 				55B22B4C2397539500B738B7 /* Main.storyboard */,
 				55B22B4F2397539800B738B7 /* Assets.xcassets */,
 				55B22B512397539800B738B7 /* LaunchScreen.storyboard */,
 				55B22B542397539800B738B7 /* Info.plist */,
+				55B366C923976D9F008F32D6 /* RootTabController.swift */,
 			);
 			path = Treasures;
 			sourceTree = "<group>";
@@ -155,7 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				55B22B6F239755D800B738B7 /* TreasureEditCellProtocol.swift */,
-				55B22B70239755D800B738B7 /* EditController.swift */,
+				55B366C523976C64008F32D6 /* EditController.swift */,
+				55B366C623976C64008F32D6 /* EditController.xib */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -164,8 +197,19 @@
 			isa = PBXGroup;
 			children = (
 				55B22B72239755D800B738B7 /* FontConstants.swift */,
+				487455CE23993FD6002AFBF7 /* UISizeConstants.swift */,
 			);
 			path = Global;
+			sourceTree = "<group>";
+		};
+		55B366BC23975AF9008F32D6 /* TreasureList */ = {
+			isa = PBXGroup;
+			children = (
+				55B366BD23975B44008F32D6 /* TreasureListController.swift */,
+				55B366D123977858008F32D6 /* ViewController.swift */,
+				484CA16923994EBA00207662 /* views */,
+			);
+			path = TreasureList;
 			sourceTree = "<group>";
 		};
 		C375D2855AEBC795F1100D46 /* Pods */ = {
@@ -265,8 +309,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				55B22B532397539800B738B7 /* LaunchScreen.storyboard in Resources */,
+				484CA16D23994ECF00207662 /* SearchBarView.xib in Resources */,
 				55B22B502397539800B738B7 /* Assets.xcassets in Resources */,
 				55B22B4E2397539500B738B7 /* Main.storyboard in Resources */,
+				484CA16F23994F0800207662 /* ListFilterView.xib in Resources */,
+				55B366C823976C64008F32D6 /* EditController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,14 +412,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55B22B4B2397539500B738B7 /* ViewController.swift in Sources */,
+				55B366D223977858008F32D6 /* ViewController.swift in Sources */,
+				55B22B4B2397539500B738B7 /* LoginController.swift in Sources */,
+				55B366C723976C64008F32D6 /* EditController.swift in Sources */,
 				55B22B472397539500B738B7 /* AppDelegate.swift in Sources */,
+				484CA16C23994ECF00207662 /* SearchBarView.swift in Sources */,
+				55B366CB23976D9F008F32D6 /* RootTabController.swift in Sources */,
+				55B366BF23975B44008F32D6 /* TreasureListController.swift in Sources */,
+				487455CF23993FD6002AFBF7 /* UISizeConstants.swift in Sources */,
 				55B22B76239755D800B738B7 /* DBConstants.swift in Sources */,
 				55B22B74239755D800B738B7 /* SecondCategoryTable.swift in Sources */,
 				55B22B75239755D800B738B7 /* FirstCategoryTable.swift in Sources */,
-				55B22B79239755D800B738B7 /* EditController.swift in Sources */,
 				55B22B77239755D800B738B7 /* TreasuresTable.swift in Sources */,
 				55B22B492397539500B738B7 /* SceneDelegate.swift in Sources */,
+				484CA17123994F2500207662 /* ListFilterView.swift in Sources */,
 				55B22B7A239755D800B738B7 /* FontConstants.swift in Sources */,
 				55B22B73239755D800B738B7 /* DatabaseHandler.swift in Sources */,
 				55B22B78239755D800B738B7 /* TreasureEditCellProtocol.swift in Sources */,
@@ -383,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				487455D023993FD6002AFBF7 /* UISizeConstants.swift in Sources */,
 				55B22B5E2397539800B738B7 /* TreasuresTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
