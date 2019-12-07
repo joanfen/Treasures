@@ -15,3 +15,44 @@ struct UISizeConstants {
     static let screenHeight = UISizeConstants.screenSize.height
 
 }
+
+extension UIView {
+    var origin: CGPoint {
+        get {
+            return self.frame.origin
+        }
+    }
+
+    var size: CGSize {
+          get {
+            return self.frame.size
+          }
+      }
+    
+    var x: CGFloat {
+        get {
+            return self.origin.x
+        }
+    }
+    
+    var y: CGFloat {
+       get {
+           return self.origin.y
+       }
+    }
+
+    var width: CGFloat {
+        get {
+            return self.size.width
+        }
+    }
+    var height: CGFloat {
+        get {
+            return self.size.height
+        }
+    }
+    func setWidth(with width: CGFloat) {
+        let rect = self.frame
+        self.frame = CGRect.init(origin: rect.origin, size: CGSize.init(width: width, height: rect.size.height))
+    }
+}

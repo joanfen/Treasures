@@ -19,7 +19,6 @@ class TreasureListController: UIViewController {
         self.view.addSubview(searchBarView)
         
         self.view.addSubview(filterView)
-        
     }
 
 

@@ -15,7 +15,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bO8-SB-Exp" userLabel="contentView">
-                    <rect key="frame" x="0.0" y="41" width="414" height="90"/>
+                    <rect key="frame" x="0.0" y="40.5" width="414" height="90"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSK-Rs-vqC" userLabel="yearView">
                             <rect key="frame" x="0.0" y="0.0" width="136.5" height="44"/>
@@ -89,6 +89,11 @@
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="priceContentView" destination="kDP-Wi-lTm" id="ALz-mb-Qoq"/>
+                <outlet property="sizeContentView" destination="htE-3l-aNh" id="4aa-E0-9XG"/>
+                <outlet property="yearContentView" destination="cSK-Rs-vqC" id="P4q-QT-uzj"/>
+            </connections>
             <point key="canvasLocation" x="-120.28985507246378" y="107.8125"/>
         </view>
     </objects>
