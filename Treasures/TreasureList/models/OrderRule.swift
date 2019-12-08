@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import WCDBSwift
 enum OrderRule {
     case none
     case asc
@@ -21,6 +21,17 @@ enum OrderRule {
             return OrderRule.none
         case .none: // 从取消排序到升序
             return OrderRule.asc
+        }
+    }
+    
+    func toOrderTerm() -> OrderTerm? {
+        switch self {
+        case .asc:
+            return OrderTerm.ascending
+        case .desc:
+            return OrderTerm.descending
+        case .none:
+            return nil
         }
     }
 }

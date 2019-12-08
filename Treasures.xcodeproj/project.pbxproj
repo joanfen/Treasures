@@ -14,6 +14,20 @@
 		484CA175239B3CA500207662 /* SortYearItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484CA174239B3CA500207662 /* SortYearItem.xib */; };
 		487455CF23993FD6002AFBF7 /* UISizeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487455CE23993FD6002AFBF7 /* UISizeConstants.swift */; };
 		487455D023993FD6002AFBF7 /* UISizeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487455CE23993FD6002AFBF7 /* UISizeConstants.swift */; };
+		48AA8460239CD71500A81C9F /* TreasureListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA845E239CD71500A81C9F /* TreasureListCell.swift */; };
+		48AA8461239CD71500A81C9F /* TreasureListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48AA845F239CD71500A81C9F /* TreasureListCell.xib */; };
+		48AA8463239CDF7100A81C9F /* TreasureSearchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA8462239CDF7100A81C9F /* TreasureSearchHandler.swift */; };
+		48AA8464239CDF7700A81C9F /* TreasureSearchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA8462239CDF7100A81C9F /* TreasureSearchHandler.swift */; };
+		48AA8469239CE0C500A81C9F /* DBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA8468239CE0C500A81C9F /* DBTest.swift */; };
+		48AA846A239CE12000A81C9F /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B69239755D800B738B7 /* DatabaseHandler.swift */; };
+		48AA846B239CE12000A81C9F /* SecondCategoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B6A239755D800B738B7 /* SecondCategoryTable.swift */; };
+		48AA846C239CE12000A81C9F /* FirstCategoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B6B239755D800B738B7 /* FirstCategoryTable.swift */; };
+		48AA846D239CE12000A81C9F /* DBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B6C239755D800B738B7 /* DBConstants.swift */; };
+		48AA846E239CE12000A81C9F /* TreasuresTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B6D239755D800B738B7 /* TreasuresTable.swift */; };
+		48AA8470239CE89C00A81C9F /* TreasureRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA846F239CE89C00A81C9F /* TreasureRepository.swift */; };
+		48AA8471239CE89C00A81C9F /* TreasureRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA846F239CE89C00A81C9F /* TreasureRepository.swift */; };
+		48AA8473239CEB6E00A81C9F /* Queryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA8472239CEB6E00A81C9F /* Queryable.swift */; };
+		48AA8474239CEB6E00A81C9F /* Queryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA8472239CEB6E00A81C9F /* Queryable.swift */; };
 		48DF59D2239B47EB0086B352 /* SortedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59D1239B47EB0086B352 /* SortedItem.swift */; };
 		48DF59D4239B48130086B352 /* SortedItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48DF59D3239B48130086B352 /* SortedItem.xib */; };
 		48DF59D6239BDF9D0086B352 /* SortPriceItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48DF59D5239BDF9D0086B352 /* SortPriceItem.xib */; };
@@ -24,6 +38,8 @@
 		48DF59E1239C90C80086B352 /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59E0239C90C80086B352 /* ImageConstants.swift */; };
 		48DF59E3239C99F30086B352 /* FilterPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59E2239C99F30086B352 /* FilterPreference.swift */; };
 		48DF59E6239CA07F0086B352 /* OrderRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59E5239CA07F0086B352 /* OrderRule.swift */; };
+		48FB48CE239D1654005BF6B6 /* FilterPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59E2239C99F30086B352 /* FilterPreference.swift */; };
+		48FB48CF239D168D005BF6B6 /* OrderRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59E5239CA07F0086B352 /* OrderRule.swift */; };
 		55B22B472397539500B738B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B462397539500B738B7 /* AppDelegate.swift */; };
 		55B22B492397539500B738B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B482397539500B738B7 /* SceneDelegate.swift */; };
 		55B22B4B2397539500B738B7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B4A2397539500B738B7 /* LoginController.swift */; };
@@ -43,6 +59,7 @@
 		55B366C823976C64008F32D6 /* EditController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55B366C623976C64008F32D6 /* EditController.xib */; };
 		55B366CB23976D9F008F32D6 /* RootTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B366C923976D9F008F32D6 /* RootTabController.swift */; };
 		55B366D223977858008F32D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B366D123977858008F32D6 /* ViewController.swift */; };
+		55B366D4239CD2B2008F32D6 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 55B366D3239CD2B1008F32D6 /* podfile */; };
 		8E043E8D798105F7A57A5E9D /* Pods_TreasuresTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D04279D2E29DAD145417BC /* Pods_TreasuresTests.framework */; };
 		9F57E87D3C11AA9D71E13110 /* Pods_Treasures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15FD8E1B6571064B8BE8E2C /* Pods_Treasures.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +85,12 @@
 		484CA17023994F2500207662 /* ListFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFilterView.swift; sourceTree = "<group>"; };
 		484CA174239B3CA500207662 /* SortYearItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortYearItem.xib; sourceTree = "<group>"; };
 		487455CE23993FD6002AFBF7 /* UISizeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISizeConstants.swift; sourceTree = "<group>"; };
+		48AA845E239CD71500A81C9F /* TreasureListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureListCell.swift; sourceTree = "<group>"; };
+		48AA845F239CD71500A81C9F /* TreasureListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreasureListCell.xib; sourceTree = "<group>"; };
+		48AA8462239CDF7100A81C9F /* TreasureSearchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureSearchHandler.swift; sourceTree = "<group>"; };
+		48AA8468239CE0C500A81C9F /* DBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTest.swift; sourceTree = "<group>"; };
+		48AA846F239CE89C00A81C9F /* TreasureRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureRepository.swift; sourceTree = "<group>"; };
+		48AA8472239CEB6E00A81C9F /* Queryable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queryable.swift; sourceTree = "<group>"; };
 		48DF59D1239B47EB0086B352 /* SortedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedItem.swift; sourceTree = "<group>"; };
 		48DF59D3239B48130086B352 /* SortedItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortedItem.xib; sourceTree = "<group>"; };
 		48DF59D5239BDF9D0086B352 /* SortPriceItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortPriceItem.xib; sourceTree = "<group>"; };
@@ -101,6 +124,7 @@
 		55B366C623976C64008F32D6 /* EditController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditController.xib; sourceTree = "<group>"; };
 		55B366C923976D9F008F32D6 /* RootTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabController.swift; sourceTree = "<group>"; };
 		55B366D123977858008F32D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		55B366D3239CD2B1008F32D6 /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8E35E5F703EC30F41A51363D /* Pods-TreasuresTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasuresTests.debug.xcconfig"; path = "Target Support Files/Pods-TreasuresTests/Pods-TreasuresTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B15FD8E1B6571064B8BE8E2C /* Pods_Treasures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Treasures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -149,6 +173,8 @@
 				48DF59DE239C87680086B352 /* CategoryItem.xib */,
 				48DF59D8239BE3060086B352 /* PropertyItem.swift */,
 				48DF59DA239BE4200086B352 /* PropertyItem.xib */,
+				48AA845E239CD71500A81C9F /* TreasureListCell.swift */,
+				48AA845F239CD71500A81C9F /* TreasureListCell.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -158,6 +184,7 @@
 			children = (
 				48DF59E2239C99F30086B352 /* FilterPreference.swift */,
 				48DF59E5239CA07F0086B352 /* OrderRule.swift */,
+				48AA8462239CDF7100A81C9F /* TreasureSearchHandler.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -191,12 +218,13 @@
 				55B22B71239755D800B738B7 /* Global */,
 				55B22B462397539500B738B7 /* AppDelegate.swift */,
 				55B22B482397539500B738B7 /* SceneDelegate.swift */,
+				55B366C923976D9F008F32D6 /* RootTabController.swift */,
 				55B22B4A2397539500B738B7 /* LoginController.swift */,
 				55B22B4C2397539500B738B7 /* Main.storyboard */,
 				55B22B4F2397539800B738B7 /* Assets.xcassets */,
 				55B22B512397539800B738B7 /* LaunchScreen.storyboard */,
+				55B366D3239CD2B1008F32D6 /* podfile */,
 				55B22B542397539800B738B7 /* Info.plist */,
-				55B366C923976D9F008F32D6 /* RootTabController.swift */,
 			);
 			path = Treasures;
 			sourceTree = "<group>";
@@ -206,6 +234,7 @@
 			children = (
 				55B22B5D2397539800B738B7 /* TreasuresTests.swift */,
 				55B22B5F2397539800B738B7 /* Info.plist */,
+				48AA8468239CE0C500A81C9F /* DBTest.swift */,
 			);
 			path = TreasuresTests;
 			sourceTree = "<group>";
@@ -213,11 +242,13 @@
 		55B22B68239755D800B738B7 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				48AA8472239CEB6E00A81C9F /* Queryable.swift */,
 				55B22B69239755D800B738B7 /* DatabaseHandler.swift */,
 				55B22B6A239755D800B738B7 /* SecondCategoryTable.swift */,
 				55B22B6B239755D800B738B7 /* FirstCategoryTable.swift */,
 				55B22B6C239755D800B738B7 /* DBConstants.swift */,
 				55B22B6D239755D800B738B7 /* TreasuresTable.swift */,
+				48AA846F239CE89C00A81C9F /* TreasureRepository.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -351,10 +382,12 @@
 			files = (
 				48DF59DB239BE4200086B352 /* PropertyItem.xib in Resources */,
 				55B22B532397539800B738B7 /* LaunchScreen.storyboard in Resources */,
+				48AA8461239CD71500A81C9F /* TreasureListCell.xib in Resources */,
 				484CA16D23994ECF00207662 /* SearchBarView.xib in Resources */,
 				55B22B502397539800B738B7 /* Assets.xcassets in Resources */,
 				55B22B4E2397539500B738B7 /* Main.storyboard in Resources */,
 				48DF59D6239BDF9D0086B352 /* SortPriceItem.xib in Resources */,
+				55B366D4239CD2B2008F32D6 /* podfile in Resources */,
 				484CA16F23994F0800207662 /* ListFilterView.xib in Resources */,
 				48DF59DF239C87680086B352 /* CategoryItem.xib in Resources */,
 				55B366C823976C64008F32D6 /* EditController.xib in Resources */,
@@ -458,7 +491,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AA8460239CD71500A81C9F /* TreasureListCell.swift in Sources */,
 				48DF59E6239CA07F0086B352 /* OrderRule.swift in Sources */,
+				48AA8473239CEB6E00A81C9F /* Queryable.swift in Sources */,
 				55B366D223977858008F32D6 /* ViewController.swift in Sources */,
 				55B22B4B2397539500B738B7 /* LoginController.swift in Sources */,
 				55B366C723976C64008F32D6 /* EditController.swift in Sources */,
@@ -469,6 +504,7 @@
 				55B366BF23975B44008F32D6 /* TreasureListController.swift in Sources */,
 				487455CF23993FD6002AFBF7 /* UISizeConstants.swift in Sources */,
 				55B22B76239755D800B738B7 /* DBConstants.swift in Sources */,
+				48AA8463239CDF7100A81C9F /* TreasureSearchHandler.swift in Sources */,
 				55B22B74239755D800B738B7 /* SecondCategoryTable.swift in Sources */,
 				48DF59DD239C87420086B352 /* CategoryItem.swift in Sources */,
 				55B22B75239755D800B738B7 /* FirstCategoryTable.swift in Sources */,
@@ -476,6 +512,7 @@
 				55B22B492397539500B738B7 /* SceneDelegate.swift in Sources */,
 				484CA17123994F2500207662 /* ListFilterView.swift in Sources */,
 				48DF59D2239B47EB0086B352 /* SortedItem.swift in Sources */,
+				48AA8470239CE89C00A81C9F /* TreasureRepository.swift in Sources */,
 				55B22B7A239755D800B738B7 /* FontConstants.swift in Sources */,
 				48DF59E3239C99F30086B352 /* FilterPreference.swift in Sources */,
 				55B22B73239755D800B738B7 /* DatabaseHandler.swift in Sources */,
@@ -488,8 +525,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AA8464239CDF7700A81C9F /* TreasureSearchHandler.swift in Sources */,
+				48AA846C239CE12000A81C9F /* FirstCategoryTable.swift in Sources */,
 				487455D023993FD6002AFBF7 /* UISizeConstants.swift in Sources */,
+				48AA846A239CE12000A81C9F /* DatabaseHandler.swift in Sources */,
+				48FB48CF239D168D005BF6B6 /* OrderRule.swift in Sources */,
+				48AA8471239CE89C00A81C9F /* TreasureRepository.swift in Sources */,
+				48AA8469239CE0C500A81C9F /* DBTest.swift in Sources */,
+				48FB48CE239D1654005BF6B6 /* FilterPreference.swift in Sources */,
+				48AA846B239CE12000A81C9F /* SecondCategoryTable.swift in Sources */,
+				48AA846E239CE12000A81C9F /* TreasuresTable.swift in Sources */,
+				48AA8474239CEB6E00A81C9F /* Queryable.swift in Sources */,
 				55B22B5E2397539800B738B7 /* TreasuresTests.swift in Sources */,
+				48AA846D239CE12000A81C9F /* DBConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

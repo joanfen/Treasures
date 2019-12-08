@@ -51,8 +51,22 @@ extension UIView {
             return self.size.height
         }
     }
+    
+    var bottom: CGFloat {
+        get {
+            return self.height + self.y
+        }
+    }
+    
+    func setY(with y: CGFloat) {
+        let rect = self.frame
+        self.frame = CGRect.init(origin: CGPoint.init(x: rect.origin.x, y: y), size: rect.size)
+    }
+    
     func setWidth(with width: CGFloat) {
         let rect = self.frame
         self.frame = CGRect.init(origin: rect.origin, size: CGSize.init(width: width, height: rect.size.height))
     }
+    
+    
 }

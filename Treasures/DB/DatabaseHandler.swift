@@ -29,6 +29,7 @@ class DatabaseHandler {
     private static func path() -> String {
         let documentPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .allDomainsMask, true)
         let path =  (documentPaths.first ?? "") + DBConstants.dbSubPath
+        print("数据库目录：" + path)
         return path
     }
 }

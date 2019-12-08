@@ -119,7 +119,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuH-TP-iO5">
-                                <rect key="frame" x="358" y="740" width="56" height="64"/>
+                                <rect key="frame" x="358" y="734" width="56" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="9jN-Be-U2y"/>
                                     <constraint firstAttribute="height" constant="64" id="cn7-By-ihi"/>
@@ -128,14 +128,17 @@
                                 <state key="normal" image="new"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oai-oy-Kyq" firstAttribute="trailing" secondItem="VuH-TP-iO5" secondAttribute="trailing" id="LYn-cA-zkb"/>
-                            <constraint firstItem="oai-oy-Kyq" firstAttribute="bottom" secondItem="VuH-TP-iO5" secondAttribute="bottom" constant="9" id="neC-So-EHO"/>
+                            <constraint firstItem="oai-oy-Kyq" firstAttribute="bottom" secondItem="VuH-TP-iO5" secondAttribute="bottom" constant="15" id="neC-So-EHO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oai-oy-Kyq"/>
                     </view>
                     <navigationItem key="navigationItem" id="JI2-TA-Fgv"/>
+                    <connections>
+                        <outlet property="addButton" destination="VuH-TP-iO5" id="UHI-8B-Sgn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAf-WI-XM0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

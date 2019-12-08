@@ -8,19 +8,46 @@
 
 import UIKit
 import Foundation
-class TreasureListController: UIViewController {
+class TreasureListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+   
+
+    @IBOutlet weak var addButton: UIButton!
 
     var searchBarView: SearchBarView = SearchBarView.loadXib()
     var filterView: ListFilterView = ListFilterView.loadXib()
+    var tableView: UITableView = UITableView()
+    
+    var searchHandler: TreasureSearchHandler = TreasureSearchHandler()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true
         
+        configNavigation()
+        tableViewSetting()
+        addSubviews()
+        
+    }
+    
+    private func configNavigation() {
+           self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    private func tableViewSetting() {
+        let y = filterView.bottom + 10
+        tableView.frame = CGRect.init(x: 0, y: y, width: self.view.width, height: self.view.bottom - y)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = TreasureListCellConstants.height
+        self.view.addSubview(tableView)
+    }
+    
+   
+    
+    private func addSubviews() {
         self.view.addSubview(searchBarView)
-        
         self.view.addSubview(filterView)
         
-        self.view.backgroundColor? = UIColor.groupTableViewBackground
+        self.view.bringSubviewToFront(self.addButton)
     }
 
 
@@ -37,4 +64,17 @@ class TreasureListController: UIViewController {
     @IBAction func addTreasure(_ sender: Any) {
         self.navigationController?.pushViewController(EditController(), animated: true)
     }
+}
+
+
+extension TreasureListController {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        10
+    }
+       
+   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: TreasureListCellConstants.reuseId) ?? TreasureListCell.loadXib()
+    return cell
+   }
+       
 }

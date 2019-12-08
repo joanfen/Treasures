@@ -1,12 +1,17 @@
 platform :ios, '11.0'
 use_frameworks!
 
+source 'https://github.com/CocoaPods/Specs.git'
+
+
 target 'Treasures' do
    pod 'Alamofire', '~> 5.0.0-rc.3'
+   pod 'SwiftyJSON', '~> 4.0'
    pod 'WCDB.swift'
 end
 
 target 'TreasuresTests' do
    pod 'Alamofire', '~> 5.0.0-rc.3'
+   pod 'SwiftyJSON', '~> 4.0'
    pod 'WCDB.swift'
 end

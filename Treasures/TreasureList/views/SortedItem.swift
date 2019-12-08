@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol SortedItemProtocol {
-    func updateOrderRule( rule: OrderRule)
-
-}
-
 struct SortedItemConstants {
     static let yearNib = "SortYearItem"
     static let centerAlignNib = "SortedItem"
