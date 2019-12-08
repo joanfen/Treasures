@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YearFilterItem" customModule="Treasures" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SortedItem" customModule="Treasures" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="138" height="89"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -27,20 +27,28 @@
                             <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down1" translatesAutoresizingMaskIntoConstraints="NO" id="UkV-tj-H0U">
-                            <rect key="frame" x="49" y="17" width="10" height="10"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="up1" translatesAutoresizingMaskIntoConstraints="NO" id="BMH-yK-9zN">
+                            <rect key="frame" x="50" y="13" width="10" height="10"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="10" id="uQW-gG-dhd"/>
-                                <constraint firstAttribute="height" constant="10" id="xxp-vE-R2n"/>
+                                <constraint firstAttribute="height" constant="10" id="bwV-Za-FLV"/>
+                                <constraint firstAttribute="width" constant="10" id="d1r-ew-DHG"/>
+                            </constraints>
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down1" translatesAutoresizingMaskIntoConstraints="NO" id="8mZ-0q-LJy">
+                            <rect key="frame" x="50" y="20" width="10" height="10"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="10" id="Nc6-jn-koB"/>
+                                <constraint firstAttribute="width" constant="10" id="T4T-ZY-Vco"/>
                             </constraints>
                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                         </imageView>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHS-QM-ggw" userLabel="highlightBar">
-                            <rect key="frame" x="18" y="35" width="22" height="3"/>
+                            <rect key="frame" x="20" y="35" width="24" height="3"/>
                             <color key="backgroundColor" red="0.79607843137254897" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="3" id="Lb4-a0-ytx"/>
-                                <constraint firstAttribute="width" constant="22" id="rCx-rH-OqL"/>
+                                <constraint firstAttribute="width" constant="24" id="rCx-rH-OqL"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRT-cF-pvh">
@@ -49,21 +57,23 @@
                                 <constraint firstAttribute="height" constant="30" id="urU-fd-Ksv"/>
                             </constraints>
                             <connections>
-                                <action selector="selectAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Adm-dz-R79"/>
+                                <action selector="selectedAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Mcb-bO-tNQ"/>
                             </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="UkV-tj-H0U" firstAttribute="leading" secondItem="NrU-MJ-Gy3" secondAttribute="leading" constant="49" id="KKw-Ea-kzc"/>
+                        <constraint firstAttribute="bottom" secondItem="8mZ-0q-LJy" secondAttribute="bottom" constant="15" id="Ffl-Az-iEA"/>
+                        <constraint firstItem="BMH-yK-9zN" firstAttribute="leading" secondItem="VJL-Ix-0u1" secondAttribute="trailing" constant="-14" id="KOm-1s-hjp"/>
+                        <constraint firstItem="8mZ-0q-LJy" firstAttribute="top" secondItem="BMH-yK-9zN" secondAttribute="bottom" constant="-3" id="Q8P-Hd-jCk"/>
+                        <constraint firstItem="8mZ-0q-LJy" firstAttribute="trailing" secondItem="VJL-Ix-0u1" secondAttribute="trailing" constant="-4" id="QYO-IV-dM8"/>
                         <constraint firstItem="VRT-cF-pvh" firstAttribute="width" secondItem="NrU-MJ-Gy3" secondAttribute="width" multiplier="0.647059" id="ZLx-Gh-uvT"/>
                         <constraint firstAttribute="bottom" secondItem="VJL-Ix-0u1" secondAttribute="bottom" constant="12" id="iyF-iM-AuH"/>
                         <constraint firstItem="VJL-Ix-0u1" firstAttribute="leading" secondItem="NrU-MJ-Gy3" secondAttribute="leading" constant="16" id="o4D-kj-TCL"/>
                         <constraint firstItem="VRT-cF-pvh" firstAttribute="centerY" secondItem="NrU-MJ-Gy3" secondAttribute="centerY" id="q4S-8O-t7U"/>
-                        <constraint firstItem="wHS-QM-ggw" firstAttribute="leading" secondItem="NrU-MJ-Gy3" secondAttribute="leading" constant="18" id="tQz-Cc-jlu"/>
+                        <constraint firstItem="wHS-QM-ggw" firstAttribute="leading" secondItem="NrU-MJ-Gy3" secondAttribute="leading" constant="20" id="tQz-Cc-jlu"/>
                         <constraint firstItem="VRT-cF-pvh" firstAttribute="leading" secondItem="NrU-MJ-Gy3" secondAttribute="leading" constant="8" id="tsu-d0-rJv"/>
                         <constraint firstAttribute="bottom" secondItem="wHS-QM-ggw" secondAttribute="bottom" constant="7" id="xL2-zq-OZN"/>
-                        <constraint firstAttribute="bottom" secondItem="UkV-tj-H0U" secondAttribute="bottom" constant="18" id="zLa-tU-vgd"/>
                     </constraints>
                 </view>
             </subviews>
@@ -77,14 +87,16 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="actionBtn" destination="VRT-cF-pvh" id="7X0-lE-k4d"/>
-                <outlet property="arrowView" destination="UkV-tj-H0U" id="5YU-Ls-0hn"/>
-                <outlet property="highlightBar" destination="wHS-QM-ggw" id="R3y-vx-811"/>
+                <outlet property="downImgView" destination="8mZ-0q-LJy" id="Y38-YT-FiA"/>
+                <outlet property="highlightBar" destination="wHS-QM-ggw" id="Kga-xl-aRc"/>
+                <outlet property="titleLabel" destination="VJL-Ix-0u1" id="Kvg-jR-uoa"/>
+                <outlet property="upImgView" destination="BMH-yK-9zN" id="VAS-lL-qFf"/>
             </connections>
             <point key="canvasLocation" x="118.84057971014494" y="-91.40625"/>
         </view>
     </objects>
     <resources>
         <image name="down1" width="8" height="5"/>
+        <image name="up1" width="8" height="5"/>
     </resources>
 </document>

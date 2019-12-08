@@ -8,71 +8,90 @@
 
 import UIKit
 
-enum OrderRule {
-    case none
-    case asc
-    case desc
-    
-    func next() -> OrderRule {
-        switch self {
-        case .asc: // 从升序到降序
-            return OrderRule.desc
-        case .desc: // 从降序到取消排序
-            return OrderRule.none
-        case .none: // 从取消排序到升序
-            return OrderRule.asc
-        }
-    }
+protocol SortedItemProtocol {
+    func updateOrderRule( rule: OrderRule)
+
 }
 
 struct SortedItemConstants {
+    static let yearNib = "SortYearItem"
     static let centerAlignNib = "SortedItem"
-    static let rightAlignNib = "PriceItem"
+    static let rightAlignNib = "SortPriceItem"
 }
 
 class SortedItem: UIView {
 
+    typealias RuleUpdated = (_ rule: OrderRule) -> Void
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var upImgView: UIImageView!
     @IBOutlet weak var downImgView: UIImageView!
     @IBOutlet weak var highlightBar: UIView!
+    private var orderRule: OrderRule = OrderRule.none
     
-    open var orderRule: OrderRule = OrderRule.none
+    open var ruleUpdated: RuleUpdated?
+    
     open var title = "" {
         didSet {
             self.titleLabel.text = title
         }
     }
+    
+    func updateOrderRule(rule: OrderRule) {
+        if (rule != orderRule) {
+            orderRule = rule
+            updateUI()
+            ruleUpdated?(orderRule)
+        }
+        
+    }
+    
    
+    // MARK: - load nib
     class func loadXib() -> SortedItem {
         return Bundle.main.loadNibNamed(SortedItemConstants.centerAlignNib, owner: self, options: nil)!.first as! SortedItem
+    }
+    /**
+     * 年份视图
+     */
+    class func loadYearXib() -> SortedItem {
+        return Bundle.main.loadNibNamed(SortedItemConstants.yearNib, owner: self, options: nil)!.first as! SortedItem
     }
     
     class func loadRightAlignNib() -> SortedItem {
           return Bundle.main.loadNibNamed(SortedItemConstants.rightAlignNib, owner: self, options: nil)!.first as! SortedItem
       }
        
+    // MARK: - override
     override func layoutSubviews() {
         super.layoutSubviews()
         
     }
     
-    func clearOrder() {
-        orderRule = OrderRule.none
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
     
-    @IBAction func selectedAction(_ sender: Any) {
-        orderRule = orderRule.next()
+    // MARK: - protocol
+    
+    
+    // MARK: - action
+    @IBAction private func selectedAction(_ sender: Any) {
+        updateOrderRule(rule: orderRule.next())
+    }
+    
+    // MARK: - UI config
+    private func updateUI() {
         highlightImage()
         showOrHiddenBar()
     }
     
-    func highlightImage() {
+    private func highlightImage() {
         upImgView.image = orderRule == OrderRule.asc ? ImageConstants.upHighlight : ImageConstants.upNormal
         downImgView.image = orderRule == OrderRule.desc ? ImageConstants.downHiglight : ImageConstants.downNormal
     }
     
-    func showOrHiddenBar() {
+    private func showOrHiddenBar() {
         highlightBar.isHidden = orderRule == OrderRule.none
     }
     

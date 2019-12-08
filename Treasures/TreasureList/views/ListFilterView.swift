@@ -29,7 +29,9 @@ class ListFilterView: UIView {
     @IBOutlet weak var unavaliableContentView: UIView!
     @IBOutlet weak var soldContentView: UIView!
     
-    var yearItem: YearFilterItem = YearFilterItem.loadXib()
+    var filterPreference: FilterPreference = FilterPreference()
+    
+    var yearItem: SortedItem = SortedItem.loadYearXib()
     var sizeItem: SortedItem = SortedItem.loadXib()
     var priceItem: SortedItem = SortedItem.loadRightAlignNib()
     var categoryItem: CategoryItem = CategoryItem.loadXib()
@@ -60,13 +62,59 @@ class ListFilterView: UIView {
         layoutItems()
     }
     
-    func configItems() {
+    // MARK: - 设置排序规则
+    private func updateSizeRule(rule: OrderRule) {
+        self.filterPreference.sizeOrderRule = rule
+        if rule != OrderRule.none {
+           self.yearItem.updateOrderRule(rule: OrderRule.none)
+           self.priceItem.updateOrderRule(rule: OrderRule.none)
+        }
+    }
+    
+    private func updateYearRule(rule: OrderRule) {
+        self.filterPreference.yearOrderRule = rule
+        if rule != OrderRule.none {
+          self.sizeItem.updateOrderRule(rule: OrderRule.none)
+          self.priceItem.updateOrderRule(rule: OrderRule.none)
+        }
+    }
+    
+    private func updatePriceRule(rule: OrderRule) {
+        self.filterPreference.priceOrderRule = rule
+        if rule != OrderRule.none {
+           self.yearItem.updateOrderRule(rule: OrderRule.none)
+           self.sizeItem.updateOrderRule(rule: OrderRule.none)
+        }
+    }
+
+    // MARK: UI 控件 配置
+    private func configItems() {
+        configItemApperance()
+        configItemActions()
+    }
+       
+    // MARK: 配置点击代理事件
+    private func configItemActions() {
+        yearItem.ruleUpdated = { (rule: OrderRule) in
+            self.updateYearRule(rule: rule)
+        }
+        
+        sizeItem.ruleUpdated = { (rule: OrderRule) in
+            self.updateSizeRule(rule: rule)
+        }
+
+        priceItem.ruleUpdated = { (rule: OrderRule) in
+            self.updatePriceRule(rule: rule)
+        }
+    }
+
+    private func configItemApperance() {
         avaliableItem.title = ListFilterViewConstants.avaliableStr
         unavaliableItem.title = ListFilterViewConstants.unavaliableStr
         soldItem.title = ListFilterViewConstants.soldStr
     }
     
-    func addSubviews() {
+    private func addSubviews() {
         yearContentView.addSubview(yearItem)
         sizeContentView.addSubview(sizeItem)
         priceContentView.addSubview(priceItem)
@@ -76,7 +124,7 @@ class ListFilterView: UIView {
         soldContentView.addSubview(soldItem)
     }
     
-    func layoutItems() {
+    private func layoutItems() {
         yearItem.frame = yearContentView.bounds
         sizeItem.frame = sizeContentView.bounds
         priceItem.frame = priceContentView.bounds
@@ -85,6 +133,5 @@ class ListFilterView: UIView {
         unavaliableItem.frame = unavaliableContentView.bounds
         soldItem.frame = soldContentView.bounds
     }
-    
 }
 
