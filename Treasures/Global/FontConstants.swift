@@ -18,13 +18,21 @@ struct ColorConstants {
     static let globalMainColor = UIColor.init(red: 203/255.0,
                                               green: 36/255.0,
                                               blue: 36/255.0,
-                                              alpha: 1/0)
+                                              alpha: 1)
     static let titleColor = UIColor.init(red: 50/255.0,
                                          green: 50/255.0,
                                          blue: 50/255.0,
-                                         alpha: 1/0)
+                                         alpha: 1)
     static let descriptionColor = UIColor.init(red: 147/255.0,
                                                green: 147/255.0,
                                                blue: 147/255.0,
-                                               alpha: 1/0)
+                                               alpha: 1)
+    static let highlightBgColor = UIColor.init(red: 203/255.0,
+                                                  green: 36/255.0,
+                                                  blue: 36/255.0,
+                                                  alpha: 0.1)
+    static let normalItemBgColor = UIColor.init(red: 244/255.0,
+                                                green: 244/255.0,
+                                                blue: 244/255.0,
+                                                alpha: 1)
 }

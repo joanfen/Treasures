@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CategoryItem" customModule="Treasures" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="106" height="89"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7lo-gQ-MTr" userLabel="contentView">
+                    <rect key="frame" x="10" y="44" width="86" height="45"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z82-mG-lNO" userLabel="bgView">
+                            <rect key="frame" x="8" y="2" width="70" height="33"/>
+                            <color key="backgroundColor" red="0.95681279900000005" green="0.95689755679999999" blue="0.95674198870000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="Zfb-0u-QHy"/>
+                                <constraint firstAttribute="height" constant="33" id="dLS-bT-4Z3"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可售" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LX2-8Y-LDu">
+                            <rect key="frame" x="8" y="2" width="70" height="33"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="33" id="VCu-yw-lsN"/>
+                                <constraint firstAttribute="width" constant="70" id="gzv-17-loc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uht-E9-MgL">
+                            <rect key="frame" x="3" y="5" width="79" height="37"/>
+                            <connections>
+                                <action selector="selectAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="rmt-Rx-IXW"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Uht-E9-MgL" secondAttribute="bottom" constant="3" id="50x-Fs-zup"/>
+                        <constraint firstAttribute="bottom" secondItem="z82-mG-lNO" secondAttribute="bottom" constant="10" id="5Uj-gL-jP8"/>
+                        <constraint firstItem="z82-mG-lNO" firstAttribute="centerX" secondItem="7lo-gQ-MTr" secondAttribute="centerX" id="JvH-2C-S9z"/>
+                        <constraint firstItem="LX2-8Y-LDu" firstAttribute="centerX" secondItem="7lo-gQ-MTr" secondAttribute="centerX" id="Tub-EW-Y6N"/>
+                        <constraint firstItem="Uht-E9-MgL" firstAttribute="top" secondItem="7lo-gQ-MTr" secondAttribute="top" constant="5" id="fOU-1V-lW0"/>
+                        <constraint firstAttribute="trailing" secondItem="Uht-E9-MgL" secondAttribute="trailing" constant="4" id="nZ6-TO-w4C"/>
+                        <constraint firstItem="Uht-E9-MgL" firstAttribute="leading" secondItem="7lo-gQ-MTr" secondAttribute="leading" constant="3" id="vcf-FD-j7x"/>
+                        <constraint firstAttribute="bottom" secondItem="LX2-8Y-LDu" secondAttribute="bottom" constant="10" id="wN6-f7-Hfm"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7lo-gQ-MTr" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="1kW-fp-wnn"/>
+                <constraint firstItem="7lo-gQ-MTr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="4Nu-vA-cb6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="7lo-gQ-MTr" secondAttribute="trailing" constant="10" id="SYW-8z-ve8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="7lo-gQ-MTr" secondAttribute="bottom" id="cvI-P7-WVu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="bgView" destination="z82-mG-lNO" id="dg2-Z8-QA7"/>
+                <outlet property="titleLabel" destination="LX2-8Y-LDu" id="8Rs-hp-bBE"/>
+            </connections>
+            <point key="canvasLocation" x="-59.420289855072468" y="73.995535714285708"/>
+        </view>
+    </objects>
+</document>

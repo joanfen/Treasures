@@ -19,6 +19,8 @@ class TreasureListController: UIViewController {
         self.view.addSubview(searchBarView)
         
         self.view.addSubview(filterView)
+        
+        self.view.backgroundColor? = UIColor.groupTableViewBackground
     }
 
 
