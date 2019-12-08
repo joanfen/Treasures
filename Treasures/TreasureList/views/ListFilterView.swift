@@ -33,9 +33,9 @@ class ListFilterView: UIView {
     var sizeItem: SortedItem = SortedItem.loadXib()
     var priceItem: SortedItem = SortedItem.loadRightAlignNib()
     var categoryItem: CategoryItem = CategoryItem.loadXib()
-    var avaliableItem: CategoryItem = CategoryItem.loadXib()
-    var unavaliableItem: CategoryItem = CategoryItem.loadXib()
-    var soldItem: CategoryItem = CategoryItem.loadXib()
+    var avaliableItem: PropertyItem = PropertyItem.loadXib()
+    var unavaliableItem: PropertyItem = PropertyItem.loadXib()
+    var soldItem: PropertyItem = PropertyItem.loadXib()
 
     
     class func loadXib() -> ListFilterView {
@@ -61,7 +61,6 @@ class ListFilterView: UIView {
     }
     
     func configItems() {
-        categoryItem.title = ListFilterViewConstants.categoryStr
         avaliableItem.title = ListFilterViewConstants.avaliableStr
         unavaliableItem.title = ListFilterViewConstants.unavaliableStr
         soldItem.title = ListFilterViewConstants.soldStr

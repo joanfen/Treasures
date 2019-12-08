@@ -18,11 +18,11 @@
                     <rect key="frame" x="0.0" y="39" width="414" height="62"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSK-Rs-vqC" userLabel="yearView">
-                            <rect key="frame" x="0.0" y="0.0" width="136.5" height="30"/>
+                            <rect key="frame" x="15" y="0.0" width="122" height="30"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htE-3l-aNh" userLabel="sizeView">
-                            <rect key="frame" x="136.5" y="0.0" width="140.5" height="30"/>
+                            <rect key="frame" x="137" y="0.0" width="140" height="30"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDP-Wi-lTm" userLabel="priceView">
@@ -69,12 +69,12 @@
                         <constraint firstAttribute="bottom" secondItem="tHp-tV-RZe" secondAttribute="bottom" id="drZ-sn-rnZ"/>
                         <constraint firstItem="cSK-Rs-vqC" firstAttribute="height" secondItem="bO8-SB-Exp" secondAttribute="height" multiplier="0.5" constant="-1" id="fUd-lT-ImS"/>
                         <constraint firstAttribute="bottom" secondItem="aZF-oL-iqT" secondAttribute="bottom" id="fk5-eF-LJ1"/>
-                        <constraint firstItem="cSK-Rs-vqC" firstAttribute="leading" secondItem="bO8-SB-Exp" secondAttribute="leading" id="kuz-uG-UmD"/>
+                        <constraint firstItem="cSK-Rs-vqC" firstAttribute="leading" secondItem="bO8-SB-Exp" secondAttribute="leading" constant="15" id="kuz-uG-UmD"/>
                         <constraint firstItem="zpn-CP-fS2" firstAttribute="leading" secondItem="tHp-tV-RZe" secondAttribute="trailing" id="qBw-zK-lda"/>
                         <constraint firstItem="kDP-Wi-lTm" firstAttribute="leading" secondItem="htE-3l-aNh" secondAttribute="trailing" id="qbJ-zc-kpY"/>
                         <constraint firstItem="zpn-CP-fS2" firstAttribute="width" secondItem="bO8-SB-Exp" secondAttribute="width" multiplier="0.25" constant="-8" id="tqf-Zl-mv3"/>
-                        <constraint firstItem="kDP-Wi-lTm" firstAttribute="width" secondItem="cSK-Rs-vqC" secondAttribute="width" id="uz5-ea-h2P"/>
-                        <constraint firstItem="cSK-Rs-vqC" firstAttribute="width" secondItem="bO8-SB-Exp" secondAttribute="width" multiplier="0.33" id="vkj-ui-XBM"/>
+                        <constraint firstItem="kDP-Wi-lTm" firstAttribute="width" secondItem="cSK-Rs-vqC" secondAttribute="width" constant="14.5" id="uz5-ea-h2P"/>
+                        <constraint firstItem="cSK-Rs-vqC" firstAttribute="width" secondItem="bO8-SB-Exp" secondAttribute="width" multiplier="0.33" constant="-14.620000000000005" id="vkj-ui-XBM"/>
                         <constraint firstItem="aZF-oL-iqT" firstAttribute="leading" secondItem="bO8-SB-Exp" secondAttribute="leading" constant="7" id="whg-6G-xZ7"/>
                     </constraints>
                 </view>

@@ -15,9 +15,11 @@ enum OrderRule {
     
     func next() -> OrderRule {
         switch self {
-        case .asc:
+        case .asc: // 从升序到降序
             return OrderRule.desc
-        default:
+        case .desc: // 从降序到取消排序
+            return OrderRule.none
+        case .none: // 从取消排序到升序
             return OrderRule.asc
         }
     }
@@ -33,8 +35,9 @@ class SortedItem: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var upImgView: UIImageView!
     @IBOutlet weak var downImgView: UIImageView!
+    @IBOutlet weak var highlightBar: UIView!
     
-    var orderRule: OrderRule = OrderRule.none
+    open var orderRule: OrderRule = OrderRule.none
     open var title = "" {
         didSet {
             self.titleLabel.text = title
@@ -60,12 +63,17 @@ class SortedItem: UIView {
     
     @IBAction func selectedAction(_ sender: Any) {
         orderRule = orderRule.next()
-        
-        upImgView.image = UIImage.init(named: orderRule == OrderRule.asc ? "up2" : "up1")
-        downImgView.image = UIImage.init(named: orderRule == OrderRule.desc ? "down2" : "down1")
+        highlightImage()
+        showOrHiddenBar()
     }
     
+    func highlightImage() {
+        upImgView.image = orderRule == OrderRule.asc ? ImageConstants.upHighlight : ImageConstants.upNormal
+        downImgView.image = orderRule == OrderRule.desc ? ImageConstants.downHiglight : ImageConstants.downNormal
+    }
     
-    
+    func showOrHiddenBar() {
+        highlightBar.isHidden = orderRule == OrderRule.none
+    }
     
 }

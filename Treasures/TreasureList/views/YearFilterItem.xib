@@ -18,13 +18,13 @@
                     <rect key="frame" x="0.0" y="44" width="138" height="45"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年份" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJL-Ix-0u1">
-                            <rect key="frame" x="13" y="12" width="48" height="21"/>
+                            <rect key="frame" x="16" y="12" width="48" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="48" id="LfK-ai-wMq"/>
                                 <constraint firstAttribute="height" constant="21" id="f0l-sV-fFp"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down1" translatesAutoresizingMaskIntoConstraints="NO" id="UkV-tj-H0U">
@@ -53,12 +53,12 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="UkV-tj-H0U" firstAttribute="leading" secondItem="NrU-MJ-Gy3" secondAttribute="leading" constant="49" id="KKw-Ea-kzc"/>
                         <constraint firstItem="VRT-cF-pvh" firstAttribute="width" secondItem="NrU-MJ-Gy3" secondAttribute="width" multiplier="0.647059" id="ZLx-Gh-uvT"/>
                         <constraint firstAttribute="bottom" secondItem="VJL-Ix-0u1" secondAttribute="bottom" constant="12" id="iyF-iM-AuH"/>
-                        <constraint firstItem="VJL-Ix-0u1" firstAttribute="leading" secondItem="NrU-MJ-Gy3" secondAttribute="leading" constant="13" id="o4D-kj-TCL"/>
+                        <constraint firstItem="VJL-Ix-0u1" firstAttribute="leading" secondItem="NrU-MJ-Gy3" secondAttribute="leading" constant="16" id="o4D-kj-TCL"/>
                         <constraint firstItem="VRT-cF-pvh" firstAttribute="centerY" secondItem="NrU-MJ-Gy3" secondAttribute="centerY" id="q4S-8O-t7U"/>
                         <constraint firstItem="wHS-QM-ggw" firstAttribute="leading" secondItem="NrU-MJ-Gy3" secondAttribute="leading" constant="18" id="tQz-Cc-jlu"/>
                         <constraint firstItem="VRT-cF-pvh" firstAttribute="leading" secondItem="NrU-MJ-Gy3" secondAttribute="leading" constant="8" id="tsu-d0-rJv"/>
@@ -67,7 +67,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="NrU-MJ-Gy3" secondAttribute="top" id="bkV-H8-Hth"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NrU-MJ-Gy3" secondAttribute="trailing" id="e7a-eV-3gh"/>
