@@ -8,6 +8,11 @@
 
 import UIKit
 import Foundation
+
+protocol TreasureListUpdateProtocol {
+    func searchBegin()
+}
+
 class TreasureListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
 
@@ -17,6 +22,7 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
     var filterView: ListFilterView = ListFilterView.loadXib()
     var tableView: UITableView = UITableView()
     
+    var treasureList: [TreasureCellVO] = []
     var searchHandler: TreasureSearchHandler = TreasureSearchHandler()
     
     override func viewDidLoad() {
@@ -45,6 +51,10 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
     
     private func addSubviews() {
         self.view.addSubview(searchBarView)
+        filterView.filterBegin = { (filter: FilterPreference) in
+            self.treasureList = self.searchHandler.search(filter: filter)
+            self.tableView.reloadData()
+        }
         self.view.addSubview(filterView)
         
         self.view.bringSubviewToFront(self.addButton)
@@ -74,6 +84,7 @@ extension TreasureListController {
        
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: TreasureListCellConstants.reuseId) ?? TreasureListCell.loadXib()
+    
     return cell
    }
        

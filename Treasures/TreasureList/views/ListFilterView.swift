@@ -28,6 +28,9 @@ class ListFilterView: UIView {
     @IBOutlet weak var avaliableContentView: UIView!
     @IBOutlet weak var unavaliableContentView: UIView!
     @IBOutlet weak var soldContentView: UIView!
+    typealias FilterBegin = (_ with: FilterPreference) -> Void
+    var filterBegin: FilterBegin?
+    
     
     var filterPreference: FilterPreference = FilterPreference()
     
@@ -69,6 +72,7 @@ class ListFilterView: UIView {
            self.yearItem.updateOrderRule(rule: OrderRule.none)
            self.priceItem.updateOrderRule(rule: OrderRule.none)
         }
+        self.filterBegin?(filterPreference)
     }
     
     private func updateYearRule(rule: OrderRule) {
@@ -85,6 +89,13 @@ class ListFilterView: UIView {
            self.yearItem.updateOrderRule(rule: OrderRule.none)
            self.sizeItem.updateOrderRule(rule: OrderRule.none)
         }
+        testImageWrite()
+    }
+    
+    func testImageWrite() {
+        PathHandler.saveImage(of: 1, img: ImageConstants.downHiglight!, name: "down.png")
+        let image = PathHandler.getImage(of: 1, imgName: "down.png")
+        print(image ?? "no value")
     }
 
     // MARK: UI 控件 配置

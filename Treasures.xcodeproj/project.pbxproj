@@ -40,6 +40,9 @@
 		48DF59E6239CA07F0086B352 /* OrderRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59E5239CA07F0086B352 /* OrderRule.swift */; };
 		48FB48CE239D1654005BF6B6 /* FilterPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59E2239C99F30086B352 /* FilterPreference.swift */; };
 		48FB48CF239D168D005BF6B6 /* OrderRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59E5239CA07F0086B352 /* OrderRule.swift */; };
+		48FB48D1239D2970005BF6B6 /* PathHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB48D0239D2970005BF6B6 /* PathHandler.swift */; };
+		48FB48D2239D2970005BF6B6 /* PathHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB48D0239D2970005BF6B6 /* PathHandler.swift */; };
+		48FB48D3239D2E10005BF6B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B22B4F2397539800B738B7 /* Assets.xcassets */; };
 		55B22B472397539500B738B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B462397539500B738B7 /* AppDelegate.swift */; };
 		55B22B492397539500B738B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B482397539500B738B7 /* SceneDelegate.swift */; };
 		55B22B4B2397539500B738B7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B4A2397539500B738B7 /* LoginController.swift */; };
@@ -101,6 +104,7 @@
 		48DF59E0239C90C80086B352 /* ImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstants.swift; sourceTree = "<group>"; };
 		48DF59E2239C99F30086B352 /* FilterPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPreference.swift; sourceTree = "<group>"; };
 		48DF59E5239CA07F0086B352 /* OrderRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRule.swift; sourceTree = "<group>"; };
+		48FB48D0239D2970005BF6B6 /* PathHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathHandler.swift; sourceTree = "<group>"; };
 		55B22B432397539500B738B7 /* Treasures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Treasures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B22B462397539500B738B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B22B482397539500B738B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -269,6 +273,7 @@
 				55B22B72239755D800B738B7 /* FontConstants.swift */,
 				487455CE23993FD6002AFBF7 /* UISizeConstants.swift */,
 				48DF59E0239C90C80086B352 /* ImageConstants.swift */,
+				48FB48D0239D2970005BF6B6 /* PathHandler.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -400,6 +405,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48FB48D3239D2E10005BF6B6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +504,7 @@
 				55B22B4B2397539500B738B7 /* LoginController.swift in Sources */,
 				55B366C723976C64008F32D6 /* EditController.swift in Sources */,
 				55B22B472397539500B738B7 /* AppDelegate.swift in Sources */,
+				48FB48D1239D2970005BF6B6 /* PathHandler.swift in Sources */,
 				48DF59E1239C90C80086B352 /* ImageConstants.swift in Sources */,
 				484CA16C23994ECF00207662 /* SearchBarView.swift in Sources */,
 				55B366CB23976D9F008F32D6 /* RootTabController.swift in Sources */,
@@ -532,6 +539,7 @@
 				48FB48CF239D168D005BF6B6 /* OrderRule.swift in Sources */,
 				48AA8471239CE89C00A81C9F /* TreasureRepository.swift in Sources */,
 				48AA8469239CE0C500A81C9F /* DBTest.swift in Sources */,
+				48FB48D2239D2970005BF6B6 /* PathHandler.swift in Sources */,
 				48FB48CE239D1654005BF6B6 /* FilterPreference.swift in Sources */,
 				48AA846B239CE12000A81C9F /* SecondCategoryTable.swift in Sources */,
 				48AA846E239CE12000A81C9F /* TreasuresTable.swift in Sources */,
