@@ -9,22 +9,28 @@
 import UIKit
 
 class EditController: UIViewController {
+    let imagesView = AddImagesSubview.loadXib()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.view.addSubview(imagesView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configNavigation()
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLayoutSubviews() {
+        super .viewDidLayoutSubviews()
+        imagesView.frame = CGRect.init(x: 0, y: UISizeConstants.top, width: self.view.width, height: AddImagesSubviewConstants.height)
     }
-    */
+
+    private func configNavigation() {
+        self.navigationController?.navigationBar.isHidden = false
+        self.title = "修改藏品"
+        self.navigationController?.navigationBar.tintColor = ColorConstants.titleColor
+    }
 
 }

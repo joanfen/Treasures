@@ -27,11 +27,13 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configNavigation()
         tableViewSetting()
         addSubviews()
         searchBegin(filter: FilterPreference())
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configNavigation()
     }
     
     private func searchBegin(filter: FilterPreference) {
@@ -40,7 +42,7 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
     }
     
     private func configNavigation() {
-           self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     private func tableViewSetting() {
@@ -89,9 +91,13 @@ extension TreasureListController {
     }
        
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell: TreasureListCell = tableView.dequeueReusableCell(withIdentifier: TreasureListCellConstants.reuseId) as! TreasureListCell
-    cell.config(with: self.treasureList[indexPath.row])
-    return cell
-   }
-       
+        let cell: TreasureListCell = tableView.dequeueReusableCell(withIdentifier: TreasureListCellConstants.reuseId) as! TreasureListCell
+        cell.config(with: self.treasureList[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.navigationController?.pushViewController(EditController(), animated: true)
+    }
 }

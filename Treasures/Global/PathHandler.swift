@@ -30,20 +30,24 @@ class PathHandler {
         let result = FileManager.default.createFile(atPath: imagePath, contents:img.pngData(), attributes: nil)
         print(result)
     }
-    
-    static func treasurePath(with treasureId: Int) -> String {
-        return imageDirectory() + "/" + String.init(treasureId)
+        
+    static func treasurePath(with treasureId: Int?) -> String {
+        let path = imageDirectory() + "/"
+        if let id = treasureId {
+            return path +  String.init(id)
+        }
+        return path
     }
     
     static func deleteFiles(of treasureId: Int) {
         
     }
     
-    static func getFilePath(of treasureId: Int, name: String) -> String {
+    static func getFilePath(of treasureId: Int?, name: String) -> String {
         treasurePath(with: treasureId) + "/" + name
     }
     
-    static func getImage(of treasureId: Int, imgName: String) -> UIImage? {
+    static func getImage(of treasureId: Int?, imgName: String) -> UIImage? {
         let path = getFilePath(of: treasureId, name: imgName)
         return UIImage.init(contentsOfFile: path)
     }

@@ -9,7 +9,7 @@
 import Foundation
 import WCDBSwift
 class TreasuresTable: TableCodable {
-    var identifier: Int = 0
+    var identifier: Int? = nil
     var name: String = ""
     var firstCategoryId: Int = 0
     var secondCategoryId: Int = 0

@@ -38,6 +38,10 @@
 		48DF59E1239C90C80086B352 /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59E0239C90C80086B352 /* ImageConstants.swift */; };
 		48DF59E3239C99F30086B352 /* FilterPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59E2239C99F30086B352 /* FilterPreference.swift */; };
 		48DF59E6239CA07F0086B352 /* OrderRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59E5239CA07F0086B352 /* OrderRule.swift */; };
+		48EF5C7A23A2846900A0E8B1 /* AddImagesSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EF5C7923A2846900A0E8B1 /* AddImagesSubview.swift */; };
+		48EF5C7C23A284D300A0E8B1 /* ChooseCategorySubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EF5C7B23A284D300A0E8B1 /* ChooseCategorySubview.swift */; };
+		48EF5C8023A286B200A0E8B1 /* InputSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EF5C7F23A286B200A0E8B1 /* InputSubview.swift */; };
+		48EF5C8223A2871D00A0E8B1 /* AddImagesSubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48EF5C8123A2871D00A0E8B1 /* AddImagesSubview.xib */; };
 		48FB48CE239D1654005BF6B6 /* FilterPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59E2239C99F30086B352 /* FilterPreference.swift */; };
 		48FB48CF239D168D005BF6B6 /* OrderRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59E5239CA07F0086B352 /* OrderRule.swift */; };
 		48FB48D1239D2970005BF6B6 /* PathHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB48D0239D2970005BF6B6 /* PathHandler.swift */; };
@@ -106,6 +110,10 @@
 		48DF59E0239C90C80086B352 /* ImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstants.swift; sourceTree = "<group>"; };
 		48DF59E2239C99F30086B352 /* FilterPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPreference.swift; sourceTree = "<group>"; };
 		48DF59E5239CA07F0086B352 /* OrderRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRule.swift; sourceTree = "<group>"; };
+		48EF5C7923A2846900A0E8B1 /* AddImagesSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImagesSubview.swift; sourceTree = "<group>"; };
+		48EF5C7B23A284D300A0E8B1 /* ChooseCategorySubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategorySubview.swift; sourceTree = "<group>"; };
+		48EF5C7F23A286B200A0E8B1 /* InputSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSubview.swift; sourceTree = "<group>"; };
+		48EF5C8123A2871D00A0E8B1 /* AddImagesSubview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddImagesSubview.xib; sourceTree = "<group>"; };
 		48FB48D0239D2970005BF6B6 /* PathHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathHandler.swift; sourceTree = "<group>"; };
 		55B22B432397539500B738B7 /* Treasures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Treasures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B22B462397539500B738B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +204,17 @@
 			path = models;
 			sourceTree = "<group>";
 		};
+		48EF5C7823A280A300A0E8B1 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				48EF5C7923A2846900A0E8B1 /* AddImagesSubview.swift */,
+				48EF5C8123A2871D00A0E8B1 /* AddImagesSubview.xib */,
+				48EF5C7B23A284D300A0E8B1 /* ChooseCategorySubview.swift */,
+				48EF5C7F23A286B200A0E8B1 /* InputSubview.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		55B22B3A2397539500B738B7 = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +283,7 @@
 		55B22B6E239755D800B738B7 /* Edit */ = {
 			isa = PBXGroup;
 			children = (
+				48EF5C7823A280A300A0E8B1 /* views */,
 				55B22B6F239755D800B738B7 /* TreasureEditCellProtocol.swift */,
 				55B366C523976C64008F32D6 /* EditController.swift */,
 				55B366C623976C64008F32D6 /* EditController.xib */,
@@ -404,6 +424,7 @@
 				55B22B502397539800B738B7 /* Assets.xcassets in Resources */,
 				55B22B4E2397539500B738B7 /* Main.storyboard in Resources */,
 				48DF59D6239BDF9D0086B352 /* SortPriceItem.xib in Resources */,
+				48EF5C8223A2871D00A0E8B1 /* AddImagesSubview.xib in Resources */,
 				55D9E9A023A2216B00A622AE /* category.json in Resources */,
 				55B366D4239CD2B2008F32D6 /* podfile in Resources */,
 				484CA16F23994F0800207662 /* ListFilterView.xib in Resources */,
@@ -512,6 +533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48AA8460239CD71500A81C9F /* TreasureListCell.swift in Sources */,
+				48EF5C7C23A284D300A0E8B1 /* ChooseCategorySubview.swift in Sources */,
 				48DF59E6239CA07F0086B352 /* OrderRule.swift in Sources */,
 				48AA8473239CEB6E00A81C9F /* Queryable.swift in Sources */,
 				55B366D223977858008F32D6 /* ViewController.swift in Sources */,
@@ -531,8 +553,10 @@
 				55B22B75239755D800B738B7 /* FirstCategoryTable.swift in Sources */,
 				55B22B77239755D800B738B7 /* TreasuresTable.swift in Sources */,
 				55B22B492397539500B738B7 /* SceneDelegate.swift in Sources */,
+				48EF5C7A23A2846900A0E8B1 /* AddImagesSubview.swift in Sources */,
 				484CA17123994F2500207662 /* ListFilterView.swift in Sources */,
 				48DF59D2239B47EB0086B352 /* SortedItem.swift in Sources */,
+				48EF5C8023A286B200A0E8B1 /* InputSubview.swift in Sources */,
 				48AA8470239CE89C00A81C9F /* TreasureRepository.swift in Sources */,
 				55B22B7A239755D800B738B7 /* FontConstants.swift in Sources */,
 				48DF59E3239C99F30086B352 /* FilterPreference.swift in Sources */,
