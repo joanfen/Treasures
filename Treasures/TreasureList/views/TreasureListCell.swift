@@ -12,14 +12,29 @@ struct TreasureListCellConstants {
     static let nibName: String = "TreasureListCell"
     static let reuseId: String = "treasureListCell"
     static let height: CGFloat = 155
+    
+    static func nib() -> UINib? {
+        return UINib(nibName: nibName, bundle: nil)
+    }
 }
 
 class TreasureListCell: UITableViewCell {
 
-    class func loadXib() -> TreasureListCell {
-        return Bundle.main.loadNibNamed(TreasureListCellConstants.nibName, owner: self, options: nil)!.first as! TreasureListCell
-    }
+    @IBOutlet weak var imgView: UIImageView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
 
+    func config(with source: TreasureCellVO) {
+        self.imgView.image = source.image
+        self.imgView.image = UIImage.init(named: "logo")
+        self.titleLabel.text = source.title
+        self.descriptionLabel.text = source.description
+        self.timeLabel.text = source.createdTimeStr
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,4 +47,7 @@ class TreasureListCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func collectAction(_ sender: Any) {
+        
+    }
 }

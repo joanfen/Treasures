@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import SwiftyJSON
 @testable import Treasures
 
 class TreasuresTests: XCTestCase {
@@ -29,6 +30,10 @@ class TreasuresTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testDecodeJson() {
+        PathHandler.getCategoryJson()
     }
 
 }

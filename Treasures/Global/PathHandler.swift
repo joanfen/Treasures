@@ -8,7 +8,10 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 class PathHandler {
+    static var categoryJsonFleName = "category";
+    
     static func documentPath() -> String {
         let documentPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .allDomainsMask, true)
         return documentPaths.first ?? ""
@@ -44,4 +47,20 @@ class PathHandler {
         let path = getFilePath(of: treasureId, name: imgName)
         return UIImage.init(contentsOfFile: path)
     }
+    
+    static func getCategoryJson() {
+        let jsonFilePath: String = Bundle.main.path(forResource: "category", ofType: "json")!
+        
+        do {
+        let jsonData:Data = try Data.init(contentsOf: NSURL(fileURLWithPath: jsonFilePath) as URL)
+        let json = try JSON(data: jsonData)
+          
+            let _: [String: Any] = json.rawValue as! [String : Any]
+            
+        } catch _ {
+            
+        }
+    }
+    
+    
 }

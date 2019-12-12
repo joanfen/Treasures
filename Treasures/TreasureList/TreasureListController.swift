@@ -31,7 +31,12 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
         configNavigation()
         tableViewSetting()
         addSubviews()
-        
+        searchBegin(filter: FilterPreference())
+    }
+    
+    private func searchBegin(filter: FilterPreference) {
+        self.treasureList = self.searchHandler.search(filter: filter)
+        self.tableView.reloadData()
     }
     
     private func configNavigation() {
@@ -40,6 +45,8 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
     
     private func tableViewSetting() {
         let y = filterView.bottom + 10
+        tableView.register(TreasureListCellConstants.nib(), forCellReuseIdentifier: TreasureListCellConstants.reuseId)
+        tableView.tableFooterView = UIView()
         tableView.frame = CGRect.init(x: 0, y: y, width: self.view.width, height: self.view.bottom - y)
         tableView.delegate = self
         tableView.dataSource = self
@@ -52,8 +59,7 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
     private func addSubviews() {
         self.view.addSubview(searchBarView)
         filterView.filterBegin = { (filter: FilterPreference) in
-            self.treasureList = self.searchHandler.search(filter: filter)
-            self.tableView.reloadData()
+            self.searchBegin(filter: filter)
         }
         self.view.addSubview(filterView)
         
@@ -79,12 +85,12 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
 
 extension TreasureListController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        return self.treasureList.count
     }
        
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: TreasureListCellConstants.reuseId) ?? TreasureListCell.loadXib()
-    
+    let cell: TreasureListCell = tableView.dequeueReusableCell(withIdentifier: TreasureListCellConstants.reuseId) as! TreasureListCell
+    cell.config(with: self.treasureList[indexPath.row])
     return cell
    }
        

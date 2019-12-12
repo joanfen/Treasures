@@ -22,7 +22,7 @@ struct Category {
 class FilterPreference: Queryable {
     func toQueryProperties() -> Condition {
        
-        var condition = TreasuresTable.Properties.identifier.isNotNull()
+        var condition = TreasuresTable.Properties.identifier > 0
         
         if let c = category {
             condition = condition + TreasuresTable.Properties.firstCategoryId == c.firstCategory.id

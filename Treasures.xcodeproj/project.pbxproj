@@ -63,6 +63,8 @@
 		55B366CB23976D9F008F32D6 /* RootTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B366C923976D9F008F32D6 /* RootTabController.swift */; };
 		55B366D223977858008F32D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B366D123977858008F32D6 /* ViewController.swift */; };
 		55B366D4239CD2B2008F32D6 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 55B366D3239CD2B1008F32D6 /* podfile */; };
+		55D9E9A023A2216B00A622AE /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = 55D9E99F23A2216B00A622AE /* category.json */; };
+		55D9E9A123A2216B00A622AE /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = 55D9E99F23A2216B00A622AE /* category.json */; };
 		8E043E8D798105F7A57A5E9D /* Pods_TreasuresTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D04279D2E29DAD145417BC /* Pods_TreasuresTests.framework */; };
 		9F57E87D3C11AA9D71E13110 /* Pods_Treasures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15FD8E1B6571064B8BE8E2C /* Pods_Treasures.framework */; };
 /* End PBXBuildFile section */
@@ -129,6 +131,7 @@
 		55B366C923976D9F008F32D6 /* RootTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabController.swift; sourceTree = "<group>"; };
 		55B366D123977858008F32D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		55B366D3239CD2B1008F32D6 /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		55D9E99F23A2216B00A622AE /* category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; };
 		8E35E5F703EC30F41A51363D /* Pods-TreasuresTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasuresTests.debug.xcconfig"; path = "Target Support Files/Pods-TreasuresTests/Pods-TreasuresTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B15FD8E1B6571064B8BE8E2C /* Pods_Treasures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Treasures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -227,6 +230,7 @@
 				55B22B4C2397539500B738B7 /* Main.storyboard */,
 				55B22B4F2397539800B738B7 /* Assets.xcassets */,
 				55B22B512397539800B738B7 /* LaunchScreen.storyboard */,
+				55D9E99E23A220F600A622AE /* resources */,
 				55B366D3239CD2B1008F32D6 /* podfile */,
 				55B22B542397539800B738B7 /* Info.plist */,
 			);
@@ -287,6 +291,14 @@
 				484CA16923994EBA00207662 /* views */,
 			);
 			path = TreasureList;
+			sourceTree = "<group>";
+		};
+		55D9E99E23A220F600A622AE /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				55D9E99F23A2216B00A622AE /* category.json */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 		C375D2855AEBC795F1100D46 /* Pods */ = {
@@ -392,6 +404,7 @@
 				55B22B502397539800B738B7 /* Assets.xcassets in Resources */,
 				55B22B4E2397539500B738B7 /* Main.storyboard in Resources */,
 				48DF59D6239BDF9D0086B352 /* SortPriceItem.xib in Resources */,
+				55D9E9A023A2216B00A622AE /* category.json in Resources */,
 				55B366D4239CD2B2008F32D6 /* podfile in Resources */,
 				484CA16F23994F0800207662 /* ListFilterView.xib in Resources */,
 				48DF59DF239C87680086B352 /* CategoryItem.xib in Resources */,
@@ -406,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48FB48D3239D2E10005BF6B6 /* Assets.xcassets in Resources */,
+				55D9E9A123A2216B00A622AE /* category.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
