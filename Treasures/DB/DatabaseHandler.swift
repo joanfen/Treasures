@@ -77,7 +77,7 @@ class DatabaseHandler {
         treasure.secondCategoryId = 1
         treasure.description = "描述描述描述"
         treasure.urls = ["http://image.baidu.com/search/detail?ct=503316480&z=undefined&tn=baiduimagedetail&ipn=d&word=%E5%9B%BE%E7%89%87&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=undefined&hd=undefined&latest=undefined&copyright=undefined&cs=2394972844,3024358326&os=2815253048,2891632850&simid=3399081282,156411405&pn=11&rn=1&di=157630&ln=1719&fr=&fmq=1575791403526_R&fm=&ic=undefined&s=undefined&se=&sme=&tab=0&width=undefined&height=undefined&face=undefined&is=0,0&istype=0&ist=&jit=&bdtype=0&spn=0&pi=0&gsm=0&objurl=http%3A%2F%2Ffile02.16sucai.com%2Fd%2Ffile%2F2015%2F0128%2F8b0f093a8edea9f7e7458406f19098af.jpg&rpstart=0&rpnum=0&adpicid=0&force=undefined"]
-        treasure.purchasingPriceInCent = 10000000
+        treasure.purchasedPriceInCent = 10000000
         treasure.sellingPriceInCent = 2000000
         treasure.length = 100
         treasure.width = 100

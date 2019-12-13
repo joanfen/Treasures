@@ -16,7 +16,8 @@ class TreasuresTable: TableCodable {
     var description: String = ""
     var urls: Array = [""]
     var year: Int = 0
-    var purchasingPriceInCent: Int64 = 0
+    var purchasedYear: Int = 0
+    var purchasedPriceInCent: Int64 = 0
     var sellingPriceInCent: Int64 =  0
     var available: Bool = false
     var isSold: Bool = false
@@ -43,7 +44,8 @@ class TreasuresTable: TableCodable {
         case description
         case urls
         case year
-        case purchasingPriceInCent
+        case purchasedYear
+        case purchasedPriceInCent
         case sellingPriceInCent
         case available
         case isSold

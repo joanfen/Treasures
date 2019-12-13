@@ -9,15 +9,7 @@
 import Foundation
 import WCDBSwift
 
-struct CategoryInfo {
-    var id: Int
-    var name: String
-}
 
-struct Category {
-    var firstCategory: CategoryInfo
-    var secondCategory: CategoryInfo
-}
 
 class FilterPreference: Queryable {
     var searchText: String? {
