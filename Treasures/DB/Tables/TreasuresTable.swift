@@ -26,6 +26,7 @@ class TreasuresTable: TableCodable {
     var volume: CLong = 0
     var keywords: String = ""
     var note: String = ""
+    var isCollected: Bool = false
     var created: Date = Date()
 
     
@@ -52,6 +53,7 @@ class TreasuresTable: TableCodable {
         case volume
         case keywords
         case note
+        case isCollected
         case created
         
         

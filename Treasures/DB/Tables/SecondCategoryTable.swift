@@ -1,5 +1,5 @@
 //
-//  FirstCategoryTable.swift
+//  SecondCategoryTable.swift
 //  Treasures
 //
 //  Created by joanfen on 2019/11/28.
@@ -8,29 +8,32 @@
 
 import Foundation
 import WCDBSwift
-class FirstCategoryTable: TableCodable {
-    var identifier: Int = 0
-    var name: String = ""
-    var created: Date = Date()
+class SecondCategoryTable: TableCodable {
+    var identifier: Int? = nil
+    var parentCategoryId: Int? = 0
+    var name: String? = ""
+    var created: Date? = Date()
 
     enum CodingKeys: String, CodingTableKey {
         
-        typealias Root = FirstCategoryTable
+        typealias Root = SecondCategoryTable
         
         static let objectRelationalMapping = TableBinding(CodingKeys.self)
         
         case identifier = "id"
+        case parentCategoryId
         case name
         case created
         
-        
-        static var columnConstraintBindings: [FirstCategoryTable.CodingKeys : ColumnConstraintBinding]? {
+        static var columnConstraintBindings: [SecondCategoryTable.CodingKeys : ColumnConstraintBinding]? {
             return [
                 identifier: ColumnConstraintBinding(isPrimary: true, isAutoIncrement: true),
                 created: ColumnConstraintBinding(isNotNull: true, defaultTo: Date())
             ]
         }
-        
-        
+    }
+    init(raw: [String: Any]) {
+        self.parentCategoryId = raw["parentCategoryId"] as? Int
+        self.name = raw["name"] as? String
     }
 }

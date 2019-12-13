@@ -9,8 +9,12 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+
+
+
 class PathHandler {
-    static var categoryJsonFleName = "category";
+    static let firstCategoryName = "firstCategory";
+    static let secondCategoryName = "secondCategory";
     
     static func documentPath() -> String {
         let documentPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .allDomainsMask, true)
@@ -52,19 +56,26 @@ class PathHandler {
         return UIImage.init(contentsOfFile: path)
     }
     
-    static func getCategoryJson() {
-        let jsonFilePath: String = Bundle.main.path(forResource: "category", ofType: "json")!
-        
-        do {
-        let jsonData:Data = try Data.init(contentsOf: NSURL(fileURLWithPath: jsonFilePath) as URL)
-        let json = try JSON(data: jsonData)
-          
-            let _: [String: Any] = json.rawValue as! [String : Any]
-            
-        } catch _ {
-            
-        }
+    static func getFirstCategory() -> [[String: Any]] {
+        getCategoryJson(with: firstCategoryName)
     }
     
-    
+    static func getSecondCategory() -> [[String: Any]] {
+        getCategoryJson(with: secondCategoryName)
+    }
+ 
+    static private func getCategoryJson(with name: String) -> [[String: Any]] {
+        let jsonFilePath: String = Bundle.main.path(forResource: name, ofType: "json")!
+        do {
+            let jsonData:Data = try Data.init(contentsOf: NSURL(fileURLWithPath: jsonFilePath) as URL)
+            let json = try JSON(data: jsonData)
+            let array: [[String: Any]] = json.rawValue as! [[String : Any]]
+            print(array)
+            return array
+        } catch let exception {
+            print("获取 Json 异常: ")
+            print(exception)
+        }
+        return []
+    }
 }

@@ -1,0 +1,229 @@
+[{
+	"parentCategoryId": 1,
+	"name": "金器"
+}, {
+	"parentCategoryId": 1,
+	"name": "银器"
+}, {
+	"parentCategoryId": 1,
+	"name": "铜器"
+}, {
+	"parentCategoryId": 1,
+	"name": "铁器"
+}, {
+	"parentCategoryId": 1,
+	"name": "锡器"
+}, {
+	"parentCategoryId": 1,
+	"name": "其它金属器"
+}, 	
+{
+	"parentCategoryId": 2,
+	"name": "古玉"
+}, {
+	"parentCategoryId": 2,
+	"name": "新玉"
+}, {
+	"parentCategoryId": 3,
+	"name": "水晶器"
+}, {
+	"parentCategoryId": 3,
+	"name": "玻璃器"
+},  {
+	"parentCategoryId": 3,
+	"name": "琉璃器"
+},
+
+{
+	"parentCategoryId": 4,
+	"name": "中国古瓷器"
+}, {
+	"parentCategoryId": 4,
+	"name": "中国现代瓷器"
+}, {
+	"parentCategoryId": 4,
+	"name": "西洋瓷器"
+}, {
+	"parentCategoryId": 4,
+	"name": "其它陶瓷"
+}, {
+	"parentCategoryId": 5,
+	"name": "衣物"
+}, {
+	"parentCategoryId": 5,
+	"name": "手袋包包"
+},{
+	"parentCategoryId": 5,
+	"name": "鞋"
+},{
+	"parentCategoryId": 5,
+	"name": "刺绣、织锦"
+},{
+	"parentCategoryId": 5,
+	"name": "地毯挂毯"
+},{
+	"parentCategoryId": 6,
+	"name": "报纸杂志"
+},{
+	"parentCategoryId": 6,
+	"name": "书籍"
+}, {
+	"parentCategoryId": 6,
+	"name": "文献、手稿"
+}, {
+	"parentCategoryId": 6,
+	"name": "照片"
+}, {
+	"parentCategoryId": 6,
+	"name": "信件、明信片"
+}, {
+	"parentCategoryId": 6,
+	"name": "海报、广告"
+}, {
+	"parentCategoryId": 6,
+	"name": "烟标、酒签、火花等"
+}, {
+	"parentCategoryId": 7,
+	"name": "金属雕塑"
+}, {
+	"parentCategoryId": 7,
+	"name": "石质雕塑"
+}, {
+	"parentCategoryId": 7,
+	"name": "其他雕塑"
+}, {
+	"parentCategoryId": 8,
+	"name": "金银首饰"
+}, {
+	"parentCategoryId": 8,
+	"name": "宝石"
+}, {
+	"parentCategoryId": 8,
+	"name": "配饰"
+}, {
+	"parentCategoryId": 8,
+	"name": "其它首饰"
+}, {
+	"parentCategoryId": 9,
+	"name": "中国古钱币"
+},{
+	"parentCategoryId": 9,
+	"name": "中国金银币"
+}, {
+	"parentCategoryId": 9,
+	"name": "中国纸币"
+},{
+	"parentCategoryId": 9,
+	"name": "其它各国钱币"
+}, {
+	"parentCategoryId": 9,
+	"name": "其它各国纸币"
+},{
+	"parentCategoryId": 9,
+	"name": "有价证券"
+}, {
+	"parentCategoryId": 9,
+	"name": "纪念章"
+}, {
+	"parentCategoryId": 9,
+	"name": "其它货币"
+}, {
+	"parentCategoryId": 10,
+	"name": "中国邮票"
+}, {
+	"parentCategoryId": 10,
+	"name": "世界邮票"
+}, {
+	"parentCategoryId": 11,
+	"name": "书法"
+}, {
+	"parentCategoryId": 11,
+	"name": "中国画"
+}, {
+	"parentCategoryId": 11,
+	"name": "油画"
+}, {
+	"parentCategoryId": 11,
+	"name": "版画"
+}, {
+	"parentCategoryId": 11,
+	"name": "水彩画"
+}, {
+	"parentCategoryId": 11,
+	"name": "素描"
+}, {
+	"parentCategoryId": 11,
+	"name": "其它画"
+}, {
+	"parentCategoryId": 12,
+	"name": "中国兵器"
+}, {
+	"parentCategoryId": 12,
+	"name": "世界兵器"
+}, {
+	"parentCategoryId": 12,
+	"name": "其它军事用品"
+}, {
+	"parentCategoryId": 13,
+	"name": "文房四宝"
+}, {
+	"parentCategoryId": 13,
+	"name": "手串"
+}, {
+	"parentCategoryId": 13,
+	"name": "其它文玩"
+}, {
+	"parentCategoryId": 13,
+	"name": "印章"
+}, {
+	"parentCategoryId": 13,
+	"name": "西洋文具"
+}, {
+	"parentCategoryId": 14,
+	"name": "手办"
+}, {
+	"parentCategoryId": 14,
+	"name": "老玩具"
+}, {
+	"parentCategoryId": 14,
+	"name": "其它玩具"
+}, {
+	"parentCategoryId": 15,
+	"name": "家具"
+}, {
+	"parentCategoryId": 15,
+	"name": "钟表"
+},{
+	"parentCategoryId": 15,
+	"name": "乐器"
+}, {
+	"parentCategoryId": 15,
+	"name": "体育相关"
+},{
+	"parentCategoryId": 15,
+	"name": "动植物标本"
+}, {
+	"parentCategoryId": 15,
+	"name": "矿物陨石标本"
+},{
+	"parentCategoryId": 15,
+	"name": "奇石盆景"
+}, {
+	"parentCategoryId": 15,
+	"name": "工具"
+},{
+	"parentCategoryId": 15,
+	"name": "老爷车"
+}, {
+	"parentCategoryId": 15,
+	"name": "现代科技产品"
+},{
+	"parentCategoryId": 15,
+	"name": "烟酒"
+}, {
+	"parentCategoryId": 15,
+	"name": "旅行纪念品"
+}]
+	
+
+	

@@ -47,6 +47,10 @@
 		48FB48D1239D2970005BF6B6 /* PathHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB48D0239D2970005BF6B6 /* PathHandler.swift */; };
 		48FB48D2239D2970005BF6B6 /* PathHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB48D0239D2970005BF6B6 /* PathHandler.swift */; };
 		48FB48D3239D2E10005BF6B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B22B4F2397539800B738B7 /* Assets.xcassets */; };
+		552CC57A23A35E8600D14F21 /* firstCategory.json in Resources */ = {isa = PBXBuildFile; fileRef = 552CC57923A35E8600D14F21 /* firstCategory.json */; };
+		552CC57C23A35E8E00D14F21 /* secondCategory.json in Resources */ = {isa = PBXBuildFile; fileRef = 552CC57B23A35E8E00D14F21 /* secondCategory.json */; };
+		552CC57E23A37FB400D14F21 /* TreasureSearchDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC57D23A37FB400D14F21 /* TreasureSearchDTO.swift */; };
+		552CC57F23A37FB400D14F21 /* TreasureSearchDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC57D23A37FB400D14F21 /* TreasureSearchDTO.swift */; };
 		55B22B472397539500B738B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B462397539500B738B7 /* AppDelegate.swift */; };
 		55B22B492397539500B738B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B482397539500B738B7 /* SceneDelegate.swift */; };
 		55B22B4B2397539500B738B7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B4A2397539500B738B7 /* LoginController.swift */; };
@@ -67,8 +71,8 @@
 		55B366CB23976D9F008F32D6 /* RootTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B366C923976D9F008F32D6 /* RootTabController.swift */; };
 		55B366D223977858008F32D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B366D123977858008F32D6 /* ViewController.swift */; };
 		55B366D4239CD2B2008F32D6 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 55B366D3239CD2B1008F32D6 /* podfile */; };
-		55D9E9A023A2216B00A622AE /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = 55D9E99F23A2216B00A622AE /* category.json */; };
-		55D9E9A123A2216B00A622AE /* category.json in Resources */ = {isa = PBXBuildFile; fileRef = 55D9E99F23A2216B00A622AE /* category.json */; };
+		55D9E9A323A325EE00A622AE /* FirstCategoryRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9E9A223A325EE00A622AE /* FirstCategoryRepo.swift */; };
+		55D9E9A423A325EE00A622AE /* FirstCategoryRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9E9A223A325EE00A622AE /* FirstCategoryRepo.swift */; };
 		8E043E8D798105F7A57A5E9D /* Pods_TreasuresTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D04279D2E29DAD145417BC /* Pods_TreasuresTests.framework */; };
 		9F57E87D3C11AA9D71E13110 /* Pods_Treasures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15FD8E1B6571064B8BE8E2C /* Pods_Treasures.framework */; };
 /* End PBXBuildFile section */
@@ -115,6 +119,9 @@
 		48EF5C7F23A286B200A0E8B1 /* InputSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSubview.swift; sourceTree = "<group>"; };
 		48EF5C8123A2871D00A0E8B1 /* AddImagesSubview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddImagesSubview.xib; sourceTree = "<group>"; };
 		48FB48D0239D2970005BF6B6 /* PathHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathHandler.swift; sourceTree = "<group>"; };
+		552CC57923A35E8600D14F21 /* firstCategory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = firstCategory.json; sourceTree = "<group>"; };
+		552CC57B23A35E8E00D14F21 /* secondCategory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = secondCategory.json; sourceTree = "<group>"; };
+		552CC57D23A37FB400D14F21 /* TreasureSearchDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureSearchDTO.swift; sourceTree = "<group>"; };
 		55B22B432397539500B738B7 /* Treasures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Treasures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B22B462397539500B738B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B22B482397539500B738B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,7 +146,7 @@
 		55B366C923976D9F008F32D6 /* RootTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabController.swift; sourceTree = "<group>"; };
 		55B366D123977858008F32D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		55B366D3239CD2B1008F32D6 /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		55D9E99F23A2216B00A622AE /* category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = category.json; sourceTree = "<group>"; };
+		55D9E9A223A325EE00A622AE /* FirstCategoryRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCategoryRepo.swift; sourceTree = "<group>"; };
 		8E35E5F703EC30F41A51363D /* Pods-TreasuresTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasuresTests.debug.xcconfig"; path = "Target Support Files/Pods-TreasuresTests/Pods-TreasuresTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B15FD8E1B6571064B8BE8E2C /* Pods_Treasures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Treasures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -200,6 +207,7 @@
 				48DF59E2239C99F30086B352 /* FilterPreference.swift */,
 				48DF59E5239CA07F0086B352 /* OrderRule.swift */,
 				48AA8462239CDF7100A81C9F /* TreasureSearchHandler.swift */,
+				552CC57D23A37FB400D14F21 /* TreasureSearchDTO.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -269,13 +277,12 @@
 		55B22B68239755D800B738B7 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				55D9E9A523A325F400A622AE /* Tables */,
 				48AA8472239CEB6E00A81C9F /* Queryable.swift */,
 				55B22B69239755D800B738B7 /* DatabaseHandler.swift */,
-				55B22B6A239755D800B738B7 /* SecondCategoryTable.swift */,
-				55B22B6B239755D800B738B7 /* FirstCategoryTable.swift */,
 				55B22B6C239755D800B738B7 /* DBConstants.swift */,
-				55B22B6D239755D800B738B7 /* TreasuresTable.swift */,
 				48AA846F239CE89C00A81C9F /* TreasureRepository.swift */,
+				55D9E9A223A325EE00A622AE /* FirstCategoryRepo.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -316,9 +323,20 @@
 		55D9E99E23A220F600A622AE /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				55D9E99F23A2216B00A622AE /* category.json */,
+				552CC57923A35E8600D14F21 /* firstCategory.json */,
+				552CC57B23A35E8E00D14F21 /* secondCategory.json */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		55D9E9A523A325F400A622AE /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				55B22B6A239755D800B738B7 /* SecondCategoryTable.swift */,
+				55B22B6B239755D800B738B7 /* FirstCategoryTable.swift */,
+				55B22B6D239755D800B738B7 /* TreasuresTable.swift */,
+			);
+			path = Tables;
 			sourceTree = "<group>";
 		};
 		C375D2855AEBC795F1100D46 /* Pods */ = {
@@ -422,11 +440,12 @@
 				48AA8461239CD71500A81C9F /* TreasureListCell.xib in Resources */,
 				484CA16D23994ECF00207662 /* SearchBarView.xib in Resources */,
 				55B22B502397539800B738B7 /* Assets.xcassets in Resources */,
+				552CC57C23A35E8E00D14F21 /* secondCategory.json in Resources */,
 				55B22B4E2397539500B738B7 /* Main.storyboard in Resources */,
 				48DF59D6239BDF9D0086B352 /* SortPriceItem.xib in Resources */,
 				48EF5C8223A2871D00A0E8B1 /* AddImagesSubview.xib in Resources */,
-				55D9E9A023A2216B00A622AE /* category.json in Resources */,
 				55B366D4239CD2B2008F32D6 /* podfile in Resources */,
+				552CC57A23A35E8600D14F21 /* firstCategory.json in Resources */,
 				484CA16F23994F0800207662 /* ListFilterView.xib in Resources */,
 				48DF59DF239C87680086B352 /* CategoryItem.xib in Resources */,
 				55B366C823976C64008F32D6 /* EditController.xib in Resources */,
@@ -440,7 +459,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				48FB48D3239D2E10005BF6B6 /* Assets.xcassets in Resources */,
-				55D9E9A123A2216B00A622AE /* category.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +564,8 @@
 				55B366CB23976D9F008F32D6 /* RootTabController.swift in Sources */,
 				55B366BF23975B44008F32D6 /* TreasureListController.swift in Sources */,
 				487455CF23993FD6002AFBF7 /* UISizeConstants.swift in Sources */,
+				55D9E9A323A325EE00A622AE /* FirstCategoryRepo.swift in Sources */,
+				552CC57E23A37FB400D14F21 /* TreasureSearchDTO.swift in Sources */,
 				55B22B76239755D800B738B7 /* DBConstants.swift in Sources */,
 				48AA8463239CDF7100A81C9F /* TreasureSearchHandler.swift in Sources */,
 				55B22B74239755D800B738B7 /* SecondCategoryTable.swift in Sources */,
@@ -574,11 +594,13 @@
 				48AA846C239CE12000A81C9F /* FirstCategoryTable.swift in Sources */,
 				487455D023993FD6002AFBF7 /* UISizeConstants.swift in Sources */,
 				48AA846A239CE12000A81C9F /* DatabaseHandler.swift in Sources */,
+				55D9E9A423A325EE00A622AE /* FirstCategoryRepo.swift in Sources */,
 				48FB48CF239D168D005BF6B6 /* OrderRule.swift in Sources */,
 				48AA8471239CE89C00A81C9F /* TreasureRepository.swift in Sources */,
 				48AA8469239CE0C500A81C9F /* DBTest.swift in Sources */,
 				48FB48D2239D2970005BF6B6 /* PathHandler.swift in Sources */,
 				48FB48CE239D1654005BF6B6 /* FilterPreference.swift in Sources */,
+				552CC57F23A37FB400D14F21 /* TreasureSearchDTO.swift in Sources */,
 				48AA846B239CE12000A81C9F /* SecondCategoryTable.swift in Sources */,
 				48AA846E239CE12000A81C9F /* TreasuresTable.swift in Sources */,
 				48AA8474239CEB6E00A81C9F /* Queryable.swift in Sources */,

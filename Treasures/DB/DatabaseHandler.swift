@@ -30,7 +30,43 @@ class DatabaseHandler {
         let documentPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .allDomainsMask, true)
         let path =  (documentPaths.first ?? "") + DBConstants.dbSubPath
         print("数据库目录：" + path)
+        print("\n")
         return path
+    }
+    
+    static func insertCategoriesData() {
+        prepareFirstCategoryData()
+        prepareSecondCategoryData()
+    }
+    
+    private static func prepareSecondCategoryData() {
+       let categories = PathHandler.getSecondCategory()
+       var objects = [SecondCategoryTable]()
+       for dic in categories {
+           objects.append(SecondCategoryTable.init(raw: dic))
+       }
+       do {
+           try DatabaseHandler.getMainDatabase().insertOrReplace(objects: objects,
+                                                        intoTable: DBConstants.secondCategoryTable)
+       }
+       catch let exception {
+           print(exception)
+       }
+    }
+    
+    private static func prepareFirstCategoryData() {
+        let firstCategories = PathHandler.getFirstCategory()
+        var objects = [FirstCategoryTable]()
+        for dic in firstCategories {
+            objects.append(FirstCategoryTable.init(raw: dic))
+        }
+        do {
+            try DatabaseHandler.getMainDatabase().insertOrReplace(objects: objects,
+                                                         intoTable: DBConstants.firstCategoryTable)
+        }
+        catch let exception {
+            print(exception)
+        }
     }
     
     static func insertData() {

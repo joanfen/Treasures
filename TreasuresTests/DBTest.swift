@@ -76,8 +76,17 @@ class test: XCTestCase {
     func testConditionFind() {
         let filterPreference = FilterPreference()
         filterPreference.searchText = ""
-        let objects: [TreasuresTable] = TreasureRepository().findTreasuresByCondition(condition: filterPreference.toQueryProperties(), orderBy: filterPreference.toOrderBy())
+        let objects: [TreasuresTable] = TreasureRepository().findTreasuresByCondition(condition: filterPreference.toQueryConditions(), orderBy: filterPreference.toOrderBy())
         print(objects)
    
+    }
+    func testMultiFind() {
+        let filterPreference = FilterPreference()
+        filterPreference.searchText = ""
+        TreasureRepository().findTreasures(properties: filterPreference.toProperties(), condition: filterPreference.toQueryConditions(), orderBy: filterPreference.toOrderBy())
+        
+    }
+    func testPrepareData() {
+        DatabaseHandler.insertCategoriesData()
     }
 }

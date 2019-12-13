@@ -33,7 +33,6 @@ class TreasuresTests: XCTestCase {
     }
     
     func testDecodeJson() {
-        PathHandler.getCategoryJson()
     }
 
 }

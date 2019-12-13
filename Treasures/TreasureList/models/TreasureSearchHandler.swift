@@ -17,17 +17,17 @@ class TreasureCellVO {
     var keywords: [String] = []
     var isCollected: Bool = false
     var isAvaliable: Bool = false
-    var secondCategoryName: String = "瓷瓶"
+    var secondCategoryName: String = ""
     var createdTimeStr: String = String()
     
-    init(with treasure: TreasuresTable) {
-        if let url = treasure.urls.first  {
+    init(with treasure: TreasureSearchDTO) {
+        if let url = treasure.imageUrl  {
             self.image = PathHandler.getImage(of: treasure.identifier, imgName: url) ?? UIImage()
         }
         self.title = treasure.name
         self.description = treasure.description
-        self.keywords = treasure.description.components(separatedBy: ",")
-        // TODO: 获取二级类目名称
+        self.keywords = treasure.keywords
+        self.secondCategoryName = treasure.categoryName
         self.createdTimeStr = toDateTimeString(by: treasure.created)
     }
     
@@ -43,7 +43,7 @@ class TreasureSearchHandler {
     var treasureRepo = TreasureRepository()
     
     func search(filter: FilterPreference) -> [TreasureCellVO] {
-        let objects = treasureRepo.findTreasuresByCondition(condition: filter.toQueryProperties(), orderBy: filter.toOrderBy())
+        let objects = treasureRepo.findTreasures(query: filter)
         var list = [TreasureCellVO]()
         objects.forEach { treasureTable in
             list.append(TreasureCellVO.init(with: treasureTable))

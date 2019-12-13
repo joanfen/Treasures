@@ -24,20 +24,23 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
     
     var treasureList: [TreasureCellVO] = []
     var searchHandler: TreasureSearchHandler = TreasureSearchHandler()
+    var filterPreference = FilterPreference()
+    var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        filterView.filterPreference = filterPreference
         tableViewSetting()
         addSubviews()
-        searchBegin(filter: FilterPreference())
+        initialSearch()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configNavigation()
     }
     
-    private func searchBegin(filter: FilterPreference) {
-        self.treasureList = self.searchHandler.search(filter: filter)
+    private func searchBegin() {
+        self.treasureList.append(contentsOf: self.searchHandler.search(filter: filterPreference))
         self.tableView.reloadData()
     }
     
@@ -56,28 +59,36 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
         self.view.addSubview(tableView)
     }
     
+    private func refreshSetting() {
+        refreshControl.attributedTitle = NSAttributedString(string: "下拉刷新...")
+        refreshControl.addTarget(self, action: #selector(loadNextPage), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    @objc private func loadNextPage(sender: Any) {
+        
+        filterPreference.currentPage += 1
+        searchBegin()
+        refreshControl.endRefreshing()
+        
+    }
+    
+    private func initialSearch() {
+        self.treasureList.removeAll()
+        searchBegin()
+    }
    
     
     private func addSubviews() {
         self.view.addSubview(searchBarView)
         filterView.filterBegin = { (filter: FilterPreference) in
-            self.searchBegin(filter: filter)
+            
+            self.initialSearch()
         }
         self.view.addSubview(filterView)
         
         self.view.bringSubviewToFront(self.addButton)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBAction func addTreasure(_ sender: Any) {
         self.navigationController?.pushViewController(EditController(), animated: true)

@@ -1,0 +1,52 @@
+[{
+	"identifier": 1,
+	"name": "金属器"
+}, {
+	"identifier": 2,
+	"name": "玉器"
+}, {
+	"identifier": 3,
+	"name": "玻璃器"
+}, {
+	"identifier": 4,
+	"name": "瓷器"
+}, {
+	"identifier": 5,
+	"name": "纺织品皮具"
+}, {
+	"identifier": 6,
+	"name": "纸质品"
+}, {
+	"identifier": 7,
+	"name": "雕塑品"
+}, {
+	"identifier": 8,
+	"name": "首饰"
+}, {
+	"identifier": 9,
+	"name": "钱币"
+}, {
+	"identifier": 10,
+	"name": "邮票"
+},  {
+	"identifier": 11,
+	"name": "书法绘画"
+},  {
+	"identifier": 12,
+	"name": "军事"
+},  {
+	"identifier": 13,
+	"name": "邮票"
+},  {
+	"identifier": 14,
+	"name": "文具文玩"
+},  {
+	"identifier": 15,
+	"name": "玩具"
+}, {
+	"identifier": 15,
+	"name": "其它"
+}]
+
+
+	

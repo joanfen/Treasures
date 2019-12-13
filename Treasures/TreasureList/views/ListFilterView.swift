@@ -28,21 +28,18 @@ class ListFilterView: UIView {
     @IBOutlet weak var avaliableContentView: UIView!
     @IBOutlet weak var unavaliableContentView: UIView!
     @IBOutlet weak var soldContentView: UIView!
+    private var yearItem: SortedItem = SortedItem.loadYearXib()
+    private var sizeItem: SortedItem = SortedItem.loadXib()
+    private var priceItem: SortedItem = SortedItem.loadRightAlignNib()
+    private var categoryItem: CategoryItem = CategoryItem.loadXib()
+    private var avaliableItem: PropertyItem = PropertyItem.loadXib()
+    private var unavaliableItem: PropertyItem = PropertyItem.loadXib()
+    private var soldItem: PropertyItem = PropertyItem.loadXib()
+    
     typealias FilterBegin = (_ with: FilterPreference) -> Void
-    var filterBegin: FilterBegin?
-    
-    
-    var filterPreference: FilterPreference = FilterPreference()
-    
-    var yearItem: SortedItem = SortedItem.loadYearXib()
-    var sizeItem: SortedItem = SortedItem.loadXib()
-    var priceItem: SortedItem = SortedItem.loadRightAlignNib()
-    var categoryItem: CategoryItem = CategoryItem.loadXib()
-    var avaliableItem: PropertyItem = PropertyItem.loadXib()
-    var unavaliableItem: PropertyItem = PropertyItem.loadXib()
-    var soldItem: PropertyItem = PropertyItem.loadXib()
+    open var filterBegin: FilterBegin?
+    open var filterPreference: FilterPreference = FilterPreference()
 
-    
     class func loadXib() -> ListFilterView {
         return Bundle.main.loadNibNamed("ListFilterView", owner: self, options: nil)!.first as! ListFilterView
     }
