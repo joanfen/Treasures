@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class TreasureSearchDTO {
+class TreasureListSearchDTO {
     var identifier: Int?
     var name: String = ""
     var imageUrl: String?

@@ -11,6 +11,7 @@ import Foundation
 import WCDBSwift
 
 class TreasureCellVO {
+    var id: Int = 0
     var image: UIImage = UIImage()
     var title: String = String()
     var description: String = String()
@@ -20,7 +21,8 @@ class TreasureCellVO {
     var secondCategoryName: String = ""
     var createdTimeStr: String = String()
     
-    init(with treasure: TreasureSearchDTO) {
+    init(with treasure: TreasureListSearchDTO) {
+        self.id = treasure.identifier ?? 0
         if let url = treasure.imageUrl  {
             self.image = PathHandler.getImage(of: treasure.identifier, imgName: url) ?? UIImage()
         }

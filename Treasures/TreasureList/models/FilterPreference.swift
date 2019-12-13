@@ -66,13 +66,8 @@ class FilterPreference: Queryable {
     }
     
     func toProperties() -> [PropertyConvertible] {
-        var list: [PropertyConvertible] = TreasuresTable.Properties.all
-        list.remove(at: 0) // remove identifier 有重复对象，需要 remove掉，在后面指定其是哪个 table 里的字段
-        list.remove(at: 0) // remove name 有重复对象
-        list.removeLast()
-        list.append(TreasuresTable.Properties.created.in(table: DBConstants.treasuresTable))
-        list.append(TreasuresTable.Properties.name.in(table: DBConstants.treasuresTable))
-        list.append(TreasuresTable.Properties.identifier.in(table: DBConstants.treasuresTable))
+        var list: [PropertyConvertible] = DBConstants.treasureProperties
+    
         list.append(SecondCategoryTable.Properties.name.in(table: DBConstants.secondCategoryTable))
         return list;
     }

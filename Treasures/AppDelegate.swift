@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = ColorConstants.globalMainColor
         DatabaseHandler.createTables()
         DatabaseHandler.insertData()
+        if (!UserDefaults.init().bool(forKey: "notLaunched")) {
+            DatabaseHandler.insertCategoriesData()
+            UserDefaults.init().setValue(true, forKey: "notLaunched")
+        }
         return true
     }
 

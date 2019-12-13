@@ -10,11 +10,33 @@ import UIKit
 
 class EditController: UIViewController {
     let imagesView = AddImagesSubview.loadXib()
+    
+    var treasureId: Int?
+    var edit: EditTreasureForm = EditTreasureForm()
 
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    convenience init(withId id: Int) {
+        self.init()
+        self.treasureId = id
+        if let treasureId = self.treasureId {
+            let treasure = TreasureRepository().findTreasureDetailWith(id: treasureId)
+            self.edit = EditTreasureForm.init(with: treasure)
+            
+        }
+    }
+    
+    convenience required init?(coder: NSCoder) {
+        self.init(coder: coder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.addSubview(imagesView)
+        self.edit.saveOrUpdate()
     }
     
     override func viewWillAppear(_ animated: Bool) {

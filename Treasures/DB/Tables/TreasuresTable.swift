@@ -65,7 +65,6 @@ class TreasuresTable: TableCodable {
                 created: ColumnConstraintBinding(isNotNull: true, defaultTo: Date())
             ]
         }
-        
-        
     }
 }
+

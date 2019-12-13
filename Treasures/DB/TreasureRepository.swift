@@ -21,8 +21,11 @@ class TreasureRepository {
         return []
     }
     
-    func findTreasures(query: Queryable) -> [TreasureSearchDTO] {
-        var treasures = [TreasureSearchDTO]()
+    /**
+     * 分页查询藏品数据--首页数据
+     */
+    func findTreasures(query: Queryable) -> [TreasureListSearchDTO] {
+        var treasures = [TreasureListSearchDTO]()
         do {
             let multiSelect = try DatabaseHandler.getMainDatabase().prepareMultiSelect(
                     on: query.toProperties(),
@@ -35,7 +38,7 @@ class TreasureRepository {
                 let treasure = multiObject[DBConstants.treasuresTable] as? TreasuresTable
                 let category = multiObject[DBConstants.secondCategoryTable] as? SecondCategoryTable
                 if let object = treasure {
-                    treasures.append(TreasureSearchDTO.init(with: object, categoryName: category?.name))
+                    treasures.append(TreasureListSearchDTO.init(with: object, categoryName: category?.name))
                 }
             }
             return treasures
@@ -44,6 +47,37 @@ class TreasureRepository {
             print(exception)
         }
         return treasures
+    }
+    
+    func findTreasureDetailWith(id: Int) -> TreasureDetailDTO {
+        let dto = TreasureDetailDTO()
+        do {
+            var properties = DBConstants.treasureProperties
+            properties.append(contentsOf: DBConstants.firstCategoryProperties)
+            properties.append(contentsOf: DBConstants.secondCategoryProperties)
+            
+            let multiSelect = try DatabaseHandler.getMainDatabase().prepareMultiSelect(
+                on: properties,
+                fromTables: [DBConstants.treasuresTable,
+                             DBConstants.firstCategoryTable,
+                             DBConstants.secondCategoryTable])
+                .where(TreasuresTable.Properties.firstCategoryId == FirstCategoryTable.Properties.identifier.in(table: DBConstants.firstCategoryTable)
+                    && TreasuresTable.Properties.secondCategoryId == SecondCategoryTable.Properties.identifier.in(table: DBConstants.secondCategoryTable))
+            while let multiObject = try multiSelect.nextMultiObject() {
+                let treasure = multiObject[DBConstants.treasuresTable] as? TreasuresTable
+                let first = multiObject[DBConstants.firstCategoryTable] as? FirstCategoryTable
+                let second = multiObject[DBConstants.secondCategoryTable] as? SecondCategoryTable
+                dto.treasureTable = treasure ?? TreasuresTable()
+                dto.firstCategoryName = first?.name ?? ""
+                dto.secondCategoryName = second?.name ?? ""
+                return dto
+            }
+            
+            
+        } catch let ex {
+            print(ex)
+        }
+        return dto
     }
     
 }

@@ -19,13 +19,37 @@ class EditTreasureForm {
     var descrpiton: String = ""
     var keywords: [String] = []
     var purchasedYear: Int?
-    var purchasedPrice: Int64?
-    var sellingPrice: Int64?
+    var purchasedPrice: Float?
+    var sellingPrice: Float?
     var available: Bool = false
     var isSold: Bool = false
     var note: String = ""
         
     private var table = TreasuresTable()
+    
+    init() {
+        
+    }
+    
+    init(with treasureDTO: TreasureDetailDTO) {
+        let treasure = treasureDTO.treasureTable
+        self.category = Category.init(firstCategory: CategoryInfo.init(id: treasure.firstCategoryId, name: treasureDTO.firstCategoryName),
+                                      secondCategory: CategoryInfo.init(id: treasure.secondCategoryId, name: treasureDTO.secondCategoryName))
+        
+        self.identifier = treasure.identifier
+        self.name = treasure.name
+        self.table = treasure
+        self.size = Size.init(length: treasure.length, width: treasure.width, height: treasure.height)
+        self.year = treasure.year
+        self.descrpiton = treasure.description
+        self.keywords = treasure.keywords.components(separatedBy: ",")
+        self.purchasedYear = treasure.purchasedYear
+        self.purchasedPrice = Float(treasure.purchasedPriceInCent) / 100.0
+        self.sellingPrice = Float(treasure.sellingPriceInCent) / 100.0
+        self.available = treasure.available
+        self.isSold = treasure.isSold
+        self.note = treasure.note
+    }
     
     public func categoryString() -> String {
         category?.getName() ?? ""
@@ -69,13 +93,13 @@ class EditTreasureForm {
         }
         
         if let pp = purchasedPrice {
-            table.purchasedPriceInCent = pp
+            table.purchasedPriceInCent = Int64(pp) * 100
         } else {
             // TODO: BLOCK
         }
         
         if let sp = sellingPrice {
-            table.sellingPriceInCent = sp
+            table.sellingPriceInCent = Int64(sp) * 100
         } else {
             // TODO:
         }
@@ -85,7 +109,14 @@ class EditTreasureForm {
     
     // 存入数据库
     public func saveOrUpdate() {
-        
+        self.descrpiton = "我更了一下描述你看见了吗"
+        let _ = getTreasureTable()
+        do {
+            try DatabaseHandler.getMainDatabase().insertOrReplace(objects: self.table, intoTable: DBConstants.treasuresTable)
+        } catch let exception {
+            print("藏品数据更新失败: ")
+            print(exception)
+        }
     }
     
     public func saveImages() {

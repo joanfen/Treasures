@@ -49,14 +49,16 @@
 		48FB48D3239D2E10005BF6B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B22B4F2397539800B738B7 /* Assets.xcassets */; };
 		552CC57A23A35E8600D14F21 /* firstCategory.json in Resources */ = {isa = PBXBuildFile; fileRef = 552CC57923A35E8600D14F21 /* firstCategory.json */; };
 		552CC57C23A35E8E00D14F21 /* secondCategory.json in Resources */ = {isa = PBXBuildFile; fileRef = 552CC57B23A35E8E00D14F21 /* secondCategory.json */; };
-		552CC57E23A37FB400D14F21 /* TreasureSearchDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC57D23A37FB400D14F21 /* TreasureSearchDTO.swift */; };
-		552CC57F23A37FB400D14F21 /* TreasureSearchDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC57D23A37FB400D14F21 /* TreasureSearchDTO.swift */; };
+		552CC57E23A37FB400D14F21 /* TreasureListSearchDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC57D23A37FB400D14F21 /* TreasureListSearchDTO.swift */; };
+		552CC57F23A37FB400D14F21 /* TreasureListSearchDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC57D23A37FB400D14F21 /* TreasureListSearchDTO.swift */; };
 		552CC58223A392FB00D14F21 /* EditTreasureForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC58123A392FB00D14F21 /* EditTreasureForm.swift */; };
 		552CC58323A392FB00D14F21 /* EditTreasureForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC58123A392FB00D14F21 /* EditTreasureForm.swift */; };
 		552CC58523A393DF00D14F21 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC58423A393DF00D14F21 /* Category.swift */; };
 		552CC58623A393DF00D14F21 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC58423A393DF00D14F21 /* Category.swift */; };
 		552CC58823A393F600D14F21 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC58723A393F600D14F21 /* Size.swift */; };
 		552CC58923A393F600D14F21 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC58723A393F600D14F21 /* Size.swift */; };
+		552CC58B23A3BD7D00D14F21 /* TreasureDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC58A23A3BD7D00D14F21 /* TreasureDetailDTO.swift */; };
+		552CC58C23A3BD7D00D14F21 /* TreasureDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC58A23A3BD7D00D14F21 /* TreasureDetailDTO.swift */; };
 		55B22B472397539500B738B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B462397539500B738B7 /* AppDelegate.swift */; };
 		55B22B492397539500B738B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B482397539500B738B7 /* SceneDelegate.swift */; };
 		55B22B4B2397539500B738B7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B4A2397539500B738B7 /* LoginController.swift */; };
@@ -127,10 +129,11 @@
 		48FB48D0239D2970005BF6B6 /* PathHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathHandler.swift; sourceTree = "<group>"; };
 		552CC57923A35E8600D14F21 /* firstCategory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = firstCategory.json; sourceTree = "<group>"; };
 		552CC57B23A35E8E00D14F21 /* secondCategory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = secondCategory.json; sourceTree = "<group>"; };
-		552CC57D23A37FB400D14F21 /* TreasureSearchDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureSearchDTO.swift; sourceTree = "<group>"; };
+		552CC57D23A37FB400D14F21 /* TreasureListSearchDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureListSearchDTO.swift; sourceTree = "<group>"; };
 		552CC58123A392FB00D14F21 /* EditTreasureForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTreasureForm.swift; sourceTree = "<group>"; };
 		552CC58423A393DF00D14F21 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		552CC58723A393F600D14F21 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		552CC58A23A3BD7D00D14F21 /* TreasureDetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureDetailDTO.swift; sourceTree = "<group>"; };
 		55B22B432397539500B738B7 /* Treasures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Treasures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B22B462397539500B738B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B22B482397539500B738B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -216,7 +219,7 @@
 				48DF59E2239C99F30086B352 /* FilterPreference.swift */,
 				48DF59E5239CA07F0086B352 /* OrderRule.swift */,
 				48AA8462239CDF7100A81C9F /* TreasureSearchHandler.swift */,
-				552CC57D23A37FB400D14F21 /* TreasureSearchDTO.swift */,
+				552CC57D23A37FB400D14F21 /* TreasureListSearchDTO.swift */,
 				552CC58423A393DF00D14F21 /* Category.swift */,
 				552CC58723A393F600D14F21 /* Size.swift */,
 			);
@@ -238,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				552CC58123A392FB00D14F21 /* EditTreasureForm.swift */,
+				552CC58A23A3BD7D00D14F21 /* TreasureDetailDTO.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -572,6 +576,7 @@
 			files = (
 				48AA8460239CD71500A81C9F /* TreasureListCell.swift in Sources */,
 				48EF5C7C23A284D300A0E8B1 /* ChooseCategorySubview.swift in Sources */,
+				552CC58B23A3BD7D00D14F21 /* TreasureDetailDTO.swift in Sources */,
 				48DF59E6239CA07F0086B352 /* OrderRule.swift in Sources */,
 				48AA8473239CEB6E00A81C9F /* Queryable.swift in Sources */,
 				552CC58823A393F600D14F21 /* Size.swift in Sources */,
@@ -587,7 +592,7 @@
 				55B366BF23975B44008F32D6 /* TreasureListController.swift in Sources */,
 				487455CF23993FD6002AFBF7 /* UISizeConstants.swift in Sources */,
 				55D9E9A323A325EE00A622AE /* FirstCategoryRepo.swift in Sources */,
-				552CC57E23A37FB400D14F21 /* TreasureSearchDTO.swift in Sources */,
+				552CC57E23A37FB400D14F21 /* TreasureListSearchDTO.swift in Sources */,
 				55B22B76239755D800B738B7 /* DBConstants.swift in Sources */,
 				48AA8463239CDF7100A81C9F /* TreasureSearchHandler.swift in Sources */,
 				55B22B74239755D800B738B7 /* SecondCategoryTable.swift in Sources */,
@@ -620,13 +625,14 @@
 				55D9E9A423A325EE00A622AE /* FirstCategoryRepo.swift in Sources */,
 				552CC58623A393DF00D14F21 /* Category.swift in Sources */,
 				48FB48CF239D168D005BF6B6 /* OrderRule.swift in Sources */,
+				552CC58C23A3BD7D00D14F21 /* TreasureDetailDTO.swift in Sources */,
 				48AA8471239CE89C00A81C9F /* TreasureRepository.swift in Sources */,
 				48AA8469239CE0C500A81C9F /* DBTest.swift in Sources */,
 				48FB48D2239D2970005BF6B6 /* PathHandler.swift in Sources */,
 				552CC58923A393F600D14F21 /* Size.swift in Sources */,
 				552CC58323A392FB00D14F21 /* EditTreasureForm.swift in Sources */,
 				48FB48CE239D1654005BF6B6 /* FilterPreference.swift in Sources */,
-				552CC57F23A37FB400D14F21 /* TreasureSearchDTO.swift in Sources */,
+				552CC57F23A37FB400D14F21 /* TreasureListSearchDTO.swift in Sources */,
 				48AA846B239CE12000A81C9F /* SecondCategoryTable.swift in Sources */,
 				48AA846E239CE12000A81C9F /* TreasuresTable.swift in Sources */,
 				48AA8474239CEB6E00A81C9F /* Queryable.swift in Sources */,

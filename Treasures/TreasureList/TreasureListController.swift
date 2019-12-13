@@ -109,6 +109,7 @@ extension TreasureListController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.navigationController?.pushViewController(EditController(), animated: true)
+        
+        self.navigationController?.pushViewController(EditController.init(withId: self.treasureList[indexPath.row].id), animated: true)
     }
 }
