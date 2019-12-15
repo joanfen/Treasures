@@ -10,35 +10,42 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-
-
 class PathHandler {
     static let firstCategoryName = "firstCategory";
     static let secondCategoryName = "secondCategory";
     
-    static func documentPath() -> String {
-        let documentPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .allDomainsMask, true)
-        return documentPaths.first ?? ""
+    static func documentPath() -> URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
-    static func imageDirectory() -> String {
-        return PathHandler.documentPath() + "/images"
+    static func imageDirectory() -> URL {
+        return PathHandler.documentPath().appendingPathComponent("images")
     }
     
-    static func saveImage(of treasureId: Int, img: UIImage, name: String){
-        let imagePath = getFilePath(of: treasureId, name: name)
+    static func saveImage(of treasureId: Int, imgs: [UIImage]) {
+        let imagePath = treasurePath(with: treasureId)
         do {
-        try FileManager.default.createDirectory(atPath: treasurePath(with: treasureId), withIntermediateDirectories: true, attributes: nil)
+            if(FileManager.default.fileExists(atPath: imagePath.path)) {
+                try FileManager.default.createDirectory(atPath: imagePath.path,
+                withIntermediateDirectories: true,
+                attributes: nil)
+            }
+            var index = 0
+            for image in imgs {
+                index += 1
+                let imageName = String(index) + ".jpg"
+                let url = imagePath.appendingPathComponent(imageName)
+                
+                try? image.jpegData(compressionQuality: 1.0)?.write(to: url)
+            }
         } catch {
             
         }
-        let result = FileManager.default.createFile(atPath: imagePath, contents:img.pngData(), attributes: nil)
-        print(result)
     }
         
-    static func treasurePath(with treasureId: Int?) -> String {
-        let path = imageDirectory() + "/"
+    static func treasurePath(with treasureId: Int?) -> URL {
+        let path = imageDirectory()
         if let id = treasureId {
-            return path +  String.init(id)
+            return path.appendingPathComponent(String.init(id))
         }
         return path
     }
@@ -47,13 +54,9 @@ class PathHandler {
         
     }
     
-    static func getFilePath(of treasureId: Int?, name: String) -> String {
-        treasurePath(with: treasureId) + "/" + name
-    }
-    
     static func getImage(of treasureId: Int?, imgName: String) -> UIImage? {
-        let path = getFilePath(of: treasureId, name: imgName)
-        return UIImage.init(contentsOfFile: path)
+        let path = treasurePath(with: treasureId).appendingPathComponent(imgName)
+        return UIImage.init(contentsOfFile: path.path)
     }
     
     static func getFirstCategory() -> [[String: Any]] {

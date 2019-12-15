@@ -112,14 +112,17 @@ class EditTreasureForm {
         self.descrpiton = "我更了一下描述你看见了吗"
         let _ = getTreasureTable()
         do {
-            try DatabaseHandler.getMainDatabase().insertOrReplace(objects: self.table, intoTable: DBConstants.treasuresTable)
+           try DatabaseHandler.getMainDatabase().insertOrReplace(objects: self.table, intoTable: DBConstants.treasuresTable)
+            saveImages(with: table.identifier)
         } catch let exception {
             print("藏品数据更新失败: ")
             print(exception)
         }
     }
     
-    public func saveImages() {
-        
+    public func saveImages(with treasureId: Int?) {
+        if let id = treasureId {
+            PathHandler.saveImage(of: id, imgs: [(ImageConstants.downNormal ?? UIImage())])
+        }
     }
 }

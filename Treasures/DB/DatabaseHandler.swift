@@ -87,10 +87,18 @@ class DatabaseHandler {
         treasure.volume = 200000
         treasure.available = true
         do {
+            
+            let statement = StatementInsert()
+            statement.insert(intoTable: DBConstants.treasuresTable)
+            let state = StatementSelect()
+            state.select(distinct: false, TreasuresTable.Properties.identifier.max())
+            
             try DatabaseHandler.getMainDatabase().insert(objects: treasure, intoTable: DBConstants.treasuresTable)
         }
         catch let exception {
             print(exception)
         }
     }
+    
+    
 }

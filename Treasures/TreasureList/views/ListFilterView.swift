@@ -86,14 +86,8 @@ class ListFilterView: UIView {
            self.yearItem.updateOrderRule(rule: OrderRule.none)
            self.sizeItem.updateOrderRule(rule: OrderRule.none)
         }
-        testImageWrite()
     }
     
-    func testImageWrite() {
-        PathHandler.saveImage(of: 1, img: ImageConstants.downHiglight!, name: "down.png")
-        let image = PathHandler.getImage(of: 1, imgName: "down.png")
-        print(image ?? "no value")
-    }
 
     // MARK: UI 控件 配置
     private func configItems() {

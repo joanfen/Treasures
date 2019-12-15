@@ -34,8 +34,11 @@
                             </constraints>
                             <color key="tintColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <state key="normal" image="plus" catalog="system"/>
+                            <connections>
+                                <action selector="addImage:" destination="iN0-l3-epB" eventType="touchUpInside" id="16L-7d-Mnh"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5q6-Ig-282" customClass="AddImageButton" customModule="Treasures" customModuleProvider="target">
+                        <button opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5q6-Ig-282" customClass="AddImageButton" customModule="Treasures" customModuleProvider="target">
                             <rect key="frame" x="95" y="45" width="60" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="7wR-b0-loD"/>
@@ -43,8 +46,11 @@
                             </constraints>
                             <color key="tintColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <state key="normal" image="plus" catalog="system"/>
+                            <connections>
+                                <action selector="addImage:" destination="iN0-l3-epB" eventType="touchUpInside" id="l7l-6L-iNv"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hb-x0-rhS" customClass="AddImageButton" customModule="Treasures" customModuleProvider="target">
+                        <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hb-x0-rhS" customClass="AddImageButton" customModule="Treasures" customModuleProvider="target">
                             <rect key="frame" x="175" y="45" width="60" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="60" id="Tbx-YO-7V0"/>
@@ -52,6 +58,9 @@
                             </constraints>
                             <color key="tintColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <state key="normal" image="plus" catalog="system"/>
+                            <connections>
+                                <action selector="addImage:" destination="iN0-l3-epB" eventType="touchUpInside" id="vG7-5J-c2l"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
