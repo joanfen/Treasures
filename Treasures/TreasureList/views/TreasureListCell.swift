@@ -30,7 +30,6 @@ class TreasureListCell: UITableViewCell {
 
     func config(with source: TreasureCellVO) {
         self.imgView.image = source.image
-        self.imgView.image = UIImage.init(named: "logo")
         self.titleLabel.text = source.title
         self.descriptionLabel.text = source.description
         self.timeLabel.text = source.createdTimeStr

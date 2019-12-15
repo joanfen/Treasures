@@ -18,28 +18,43 @@ class PathHandler {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
     static func imageDirectory() -> URL {
-        return PathHandler.documentPath().appendingPathComponent("images")
+        let dir = PathHandler.documentPath().appendingPathComponent("images")
+        do {
+            try FileManager.default.createDirectory(atPath: dir.path,
+            withIntermediateDirectories: true,
+            attributes: nil)
+        } catch {
+            
+        }
+        return dir
     }
     
     static func saveImage(of treasureId: Int, imgs: [UIImage]) {
-        let imagePath = treasurePath(with: treasureId)
+        let path = treasurePath(with: treasureId)
+        let imagePath = path.appendingPathComponent("images")
+        let temp = path.appendingPathComponent("temp")
+        
         do {
-            if(FileManager.default.fileExists(atPath: imagePath.path)) {
-                try FileManager.default.createDirectory(atPath: imagePath.path,
-                withIntermediateDirectories: true,
-                attributes: nil)
-            }
+            try FileManager.default.createDirectory(atPath: imagePath.path,
+            withIntermediateDirectories: true,
+            attributes: nil)
+            try FileManager.default.createDirectory(atPath: temp.path,
+            withIntermediateDirectories: true,
+            attributes: nil)
             var index = 0
             for image in imgs {
                 index += 1
                 let imageName = String(index) + ".jpg"
-                let url = imagePath.appendingPathComponent(imageName)
+                let url = temp.appendingPathComponent(imageName)
                 
                 try? image.jpegData(compressionQuality: 1.0)?.write(to: url)
             }
         } catch {
             
         }
+        
+        deleteFiles(of: treasureId)
+        
     }
         
     static func treasurePath(with treasureId: Int?) -> URL {
@@ -50,13 +65,45 @@ class PathHandler {
         return path
     }
     
-    static func deleteFiles(of treasureId: Int) {
-        
+    static func treasureImagesPath(of treasureId: Int) -> URL {
+        let path = treasurePath(with: treasureId)
+        return path.appendingPathComponent("images")
+    }
+    static func treasureTempPath(of treasureId: Int) -> URL {
+        let path = treasurePath(with: treasureId)
+        return path.appendingPathComponent("temp")
     }
     
-    static func getImage(of treasureId: Int?, imgName: String) -> UIImage? {
-        let path = treasurePath(with: treasureId).appendingPathComponent(imgName)
-        return UIImage.init(contentsOfFile: path.path)
+    static func deleteFiles(of treasureId: Int) {
+        let path = treasureImagesPath(of: treasureId)
+        let temp = treasureTempPath(of: treasureId)
+        do {
+            try FileManager.default.removeItem(at: path) // 删除 images 文件夹中的图片
+            try FileManager.default.copyItem(at: temp, to: path) // 拷贝 temp 中的图片到 images 中
+            try FileManager.default.removeItem(at: temp) // 删除 temp 文件夹中的图片
+            
+        } catch _ {
+            
+        }
+    }
+    
+    
+    static func getImages(of treasureId: Int?) -> [UIImage] {
+        if treasureId == nil {
+            return []
+        }
+        
+        let path = treasureImagesPath(of: treasureId!)
+            
+        let names = ["1.jpg", "2.jpg", "3.jpg"]
+        var images = [UIImage]()
+        for name in names {
+            let imageOpt = UIImage(contentsOfFile: path.appendingPathComponent(name).path)
+            if let image = imageOpt {
+                images.append(image)
+            }
+        }
+        return images
     }
     
     static func getFirstCategory() -> [[String: Any]] {

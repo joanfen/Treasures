@@ -32,11 +32,11 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
         filterView.filterPreference = filterPreference
         tableViewSetting()
         addSubviews()
-        initialSearch()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configNavigation()
+        initialSearch()
     }
     
     private func searchBegin() {

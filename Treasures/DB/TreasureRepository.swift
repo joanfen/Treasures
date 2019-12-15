@@ -61,7 +61,8 @@ class TreasureRepository {
                 fromTables: [DBConstants.treasuresTable,
                              DBConstants.firstCategoryTable,
                              DBConstants.secondCategoryTable])
-                .where(TreasuresTable.Properties.firstCategoryId == FirstCategoryTable.Properties.identifier.in(table: DBConstants.firstCategoryTable)
+                .where(TreasuresTable.Properties.identifier.in(table: DBConstants.treasuresTable) == id
+                    && TreasuresTable.Properties.firstCategoryId == FirstCategoryTable.Properties.identifier.in(table: DBConstants.firstCategoryTable)
                     && TreasuresTable.Properties.secondCategoryId == SecondCategoryTable.Properties.identifier.in(table: DBConstants.secondCategoryTable))
             while let multiObject = try multiSelect.nextMultiObject() {
                 let treasure = multiObject[DBConstants.treasuresTable] as? TreasuresTable
@@ -78,6 +79,38 @@ class TreasureRepository {
             print(ex)
         }
         return dto
+    }
+    
+    static public func insertOrReplace(treasure: TreasuresTable) -> Int?  {
+        do {
+            try DatabaseHandler.getMainDatabase().insertOrReplace(objects: treasure, intoTable: DBConstants.treasuresTable)
+        } catch let exception {
+            print("藏品数据更新失败: ")
+            print(exception)
+        }
+        if let id = treasure.identifier {
+            return id
+        } else {
+            return getMaxID()
+        }
+    }
+    
+    static public func getMaxID() -> Int? {
+         do {
+            let statement = StatementSelect()
+            
+            statement.select(TreasuresTable.Properties.identifier.max())
+            statement.from(DBConstants.treasuresTable)
+            let coreStatement = try DatabaseHandler.getMainDatabase().prepare(statement)
+            while try coreStatement.step() {
+                let id = coreStatement.value(atIndex: 0)
+                return Int(id.int32Value)
+            }
+               
+         } catch _ {
+            
+        }
+        return nil
     }
     
 }
