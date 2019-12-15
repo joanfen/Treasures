@@ -44,7 +44,6 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.present(alert, animated: true, completion: nil)
         }
         self.view.addSubview(imagesView)
-        self.edit.saveOrUpdate()
     }
     
     override func viewWillAppear(_ animated: Bool) {

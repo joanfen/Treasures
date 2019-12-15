@@ -121,7 +121,6 @@ class EditTreasureForm {
     
     public func saveImages(with treasureId: Int?) {
         if let id = treasureId {
-            PathHandler.deleteFiles(of: id)
             PathHandler.saveImage(of: id, imgs: self.images)
         }
     }
