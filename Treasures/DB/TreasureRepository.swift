@@ -61,7 +61,8 @@ class TreasureRepository {
                 fromTables: [DBConstants.treasuresTable,
                              DBConstants.firstCategoryTable,
                              DBConstants.secondCategoryTable])
-                .where(TreasuresTable.Properties.firstCategoryId == FirstCategoryTable.Properties.identifier.in(table: DBConstants.firstCategoryTable)
+                .where(TreasuresTable.Properties.identifier.in(table: DBConstants.treasuresTable) == id
+                    && TreasuresTable.Properties.firstCategoryId == FirstCategoryTable.Properties.identifier.in(table: DBConstants.firstCategoryTable)
                     && TreasuresTable.Properties.secondCategoryId == SecondCategoryTable.Properties.identifier.in(table: DBConstants.secondCategoryTable))
             while let multiObject = try multiSelect.nextMultiObject() {
                 let treasure = multiObject[DBConstants.treasuresTable] as? TreasuresTable
