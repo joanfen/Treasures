@@ -49,6 +49,8 @@ class EditTreasureForm {
         self.available = treasure.available
         self.isSold = treasure.isSold
         self.note = treasure.note
+        
+        self.images = PathHandler.getImages(of: self.identifier)
     }
     
     public func categoryString() -> String {
@@ -109,20 +111,18 @@ class EditTreasureForm {
     
     // 存入数据库
     public func saveOrUpdate() {
+        
         self.descrpiton = "我更了一下描述你看见了吗"
         let _ = getTreasureTable()
-        do {
-           try DatabaseHandler.getMainDatabase().insertOrReplace(objects: self.table, intoTable: DBConstants.treasuresTable)
-            saveImages(with: table.identifier)
-        } catch let exception {
-            print("藏品数据更新失败: ")
-            print(exception)
-        }
+        let id = TreasureRepository.insertOrReplace(treasure: self.table)
+        saveImages(with: id)
+    
     }
     
     public func saveImages(with treasureId: Int?) {
         if let id = treasureId {
-            PathHandler.saveImage(of: id, imgs: [(ImageConstants.downNormal ?? UIImage())])
+            PathHandler.deleteFiles(of: id)
+            PathHandler.saveImage(of: id, imgs: self.images)
         }
     }
 }

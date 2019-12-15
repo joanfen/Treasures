@@ -23,9 +23,7 @@ class TreasureCellVO {
     
     init(with treasure: TreasureListSearchDTO) {
         self.id = treasure.identifier ?? 0
-        if let url = treasure.imageUrl  {
-            self.image = PathHandler.getImage(of: treasure.identifier, imgName: url) ?? UIImage()
-        }
+        self.image = PathHandler.getImages(of: treasure.identifier).first ?? UIImage()
         self.title = treasure.name
         self.description = treasure.description
         self.keywords = treasure.keywords

@@ -81,4 +81,36 @@ class TreasureRepository {
         return dto
     }
     
+    static public func insertOrReplace(treasure: TreasuresTable) -> Int?  {
+        do {
+            try DatabaseHandler.getMainDatabase().insertOrReplace(objects: treasure, intoTable: DBConstants.treasuresTable)
+        } catch let exception {
+            print("藏品数据更新失败: ")
+            print(exception)
+        }
+        if let id = treasure.identifier {
+            return id
+        } else {
+            return getMaxID()
+        }
+    }
+    
+    static public func getMaxID() -> Int? {
+         do {
+            let statement = StatementSelect()
+            
+            statement.select(TreasuresTable.Properties.identifier.max())
+            statement.from(DBConstants.treasuresTable)
+            let coreStatement = try DatabaseHandler.getMainDatabase().prepare(statement)
+            while try coreStatement.step() {
+                let id = coreStatement.value(atIndex: 0)
+                return Int(id.int32Value)
+            }
+               
+         } catch _ {
+            
+        }
+        return nil
+    }
+    
 }

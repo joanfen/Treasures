@@ -18,13 +18,21 @@ class PathHandler {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
     static func imageDirectory() -> URL {
-        return PathHandler.documentPath().appendingPathComponent("images")
+        let dir = PathHandler.documentPath().appendingPathComponent("images")
+        do {
+            try FileManager.default.createDirectory(atPath: dir.path,
+            withIntermediateDirectories: true,
+            attributes: nil)
+        } catch {
+            
+        }
+        return dir
     }
     
     static func saveImage(of treasureId: Int, imgs: [UIImage]) {
         let imagePath = treasurePath(with: treasureId)
         do {
-            if(FileManager.default.fileExists(atPath: imagePath.path)) {
+            if(!FileManager.default.fileExists(atPath: imagePath.path)) {
                 try FileManager.default.createDirectory(atPath: imagePath.path,
                 withIntermediateDirectories: true,
                 attributes: nil)
@@ -51,12 +59,40 @@ class PathHandler {
     }
     
     static func deleteFiles(of treasureId: Int) {
-        
+        let path = treasurePath(with: treasureId)
+        do {
+            try FileManager.default.removeItem(at: path)
+//            let names = ["1.jpg", "2.jpg", "3.jpg"]
+//            for name in names {
+//                let filePath = path.appendingPathComponent(name)
+//                if FileManager.default.fileExists(atPath: filePath.absoluteString) {
+//                    
+//                }
+//            }
+            
+            
+            
+        } catch _ {
+            
+        }
     }
     
-    static func getImage(of treasureId: Int?, imgName: String) -> UIImage? {
-        let path = treasurePath(with: treasureId).appendingPathComponent(imgName)
-        return UIImage.init(contentsOfFile: path.path)
+    
+    static func getImages(of treasureId: Int?) -> [UIImage] {
+        if treasureId == nil {
+            return []
+        }
+        let path = treasurePath(with: treasureId)
+            
+        let names = ["1.jpg", "2.jpg", "3.jpg"]
+        var images = [UIImage]()
+        for name in names {
+            let imageOpt = UIImage(contentsOfFile: path.appendingPathComponent(name).path)
+            if let image = imageOpt {
+                images.append(image)
+            }
+        }
+        return images
     }
     
     static func getFirstCategory() -> [[String: Any]] {

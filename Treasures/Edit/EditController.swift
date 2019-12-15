@@ -31,14 +31,17 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.init(coder: coder)
     }
     
+    @IBAction func test(_ sender: Any) {
+    
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagesView.showAlbum = {(tag: Int) -> UIImage in
-            
-            return UIImage()
+        imagesView.images = self.edit.images
+        imagesView.showAlbum = {(tag: Int) in
+            self.showAlbum()
         }
         imagesView.showAlert = {(alert: UIAlertController) in
-            alert.show(self, sender: nil)
+            self.present(alert, animated: true, completion: nil)
         }
         self.view.addSubview(imagesView)
         self.edit.saveOrUpdate()
@@ -62,43 +65,54 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.title = "添加藏品"
         }
         self.navigationController?.navigationBar.tintColor = ColorConstants.titleColor
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "share"), style: UIBarButtonItem.Style.done, target: self, action: #selector(save))
     }
     
-    private func showAlbum() {
-        //判断设置是否支持图片库
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
-            //初始化图片控制器
-            let picker = UIImagePickerController()
-            //设置代理
-            picker.delegate = self
-            //指定图片控制器类型
-            picker.sourceType = UIImagePickerController.SourceType.photoLibrary
-            //设置是否允许编辑
-            picker.allowsEditing = true
-            //弹出控制器，显示界面
-            self.present(picker, animated: true, completion: {
-                () -> Void in
-            })
-        }else{
-            print("读取相册错误")
-        }
+    @objc private func save() {
+        self.edit.images = imagesView.getImages()
+        self.edit.saveOrUpdate()
     }
+    
+   
 
 }
 
 extension EditController {
-   func imagePickerController(_ picker: UIImagePickerController,
+    private func showAlbum() {
+           //判断设置是否支持图片库
+           if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+               //初始化图片控制器
+               let picker = UIImagePickerController()
+               //设置代理
+               picker.delegate = self
+               //指定图片控制器类型
+               picker.sourceType = UIImagePickerController.SourceType.photoLibrary
+               //设置是否允许编辑
+               picker.allowsEditing = true
+               //弹出控制器，显示界面
+               self.present(picker, animated: true, completion: {
+                   () -> Void in
+               })
+           }else{
+               print("读取相册错误")
+           }
+       }
+   
+    func imagePickerController(_ picker: UIImagePickerController,
        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
        //查看info对象
        print(info)
         
        //显示的图片
-       let image = info[.editedImage] as? UIImage
-//       imagesView.addImage(with: image)
+       let imageOpt = info[.editedImage] as? UIImage
+
        //图片控制器退出
        picker.dismiss(animated: true, completion: {
            () -> Void in
-        
+            if let image = imageOpt {
+                self.imagesView.addImage(with: image)
+            }
        })
    }
     
