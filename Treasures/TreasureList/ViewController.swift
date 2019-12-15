@@ -16,9 +16,14 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        configNavigation()
 
         // Do any additional setup after loading the view.
     }
+    
+    private func configNavigation() {
+          self.navigationController?.navigationBar.isHidden = true
+      }
     
 
     /*

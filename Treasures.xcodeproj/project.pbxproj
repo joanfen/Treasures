@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D2E48FB23A6694D00DE59A2 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E48FA23A6694D00DE59A2 /* PersonalViewController.swift */; };
+		3D2E48FF23A66B7500DE59A2 /* PersonalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E48FD23A66B7500DE59A2 /* PersonalCell.swift */; };
+		3D2E490023A66B7500DE59A2 /* PersonalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D2E48FE23A66B7500DE59A2 /* PersonalCell.xib */; };
+		3D2E490323A6770900DE59A2 /* EditPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E490123A6770900DE59A2 /* EditPasswordVC.swift */; };
+		3D2E490423A6770900DE59A2 /* EditPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D2E490223A6770900DE59A2 /* EditPasswordVC.xib */; };
 		484CA16C23994ECF00207662 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484CA16A23994ECF00207662 /* SearchBarView.swift */; };
 		484CA16D23994ECF00207662 /* SearchBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484CA16B23994ECF00207662 /* SearchBarView.xib */; };
 		484CA16F23994F0800207662 /* ListFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484CA16E23994F0800207662 /* ListFilterView.xib */; };
@@ -99,6 +104,11 @@
 		060206CB9AA19A20FD163988 /* Pods-Treasures.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Treasures.debug.xcconfig"; path = "Target Support Files/Pods-Treasures/Pods-Treasures.debug.xcconfig"; sourceTree = "<group>"; };
 		108FC4269D72CCE6914D92A7 /* Pods-TreasuresTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasuresTests.release.xcconfig"; path = "Target Support Files/Pods-TreasuresTests/Pods-TreasuresTests.release.xcconfig"; sourceTree = "<group>"; };
 		21D04279D2E29DAD145417BC /* Pods_TreasuresTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TreasuresTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D2E48FA23A6694D00DE59A2 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
+		3D2E48FD23A66B7500DE59A2 /* PersonalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCell.swift; sourceTree = "<group>"; };
+		3D2E48FE23A66B7500DE59A2 /* PersonalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalCell.xib; sourceTree = "<group>"; };
+		3D2E490123A6770900DE59A2 /* EditPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordVC.swift; sourceTree = "<group>"; };
+		3D2E490223A6770900DE59A2 /* EditPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPasswordVC.xib; sourceTree = "<group>"; };
 		4824F4F9ECDF53CC6D022612 /* Pods-Treasures.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Treasures.release.xcconfig"; path = "Target Support Files/Pods-Treasures/Pods-Treasures.release.xcconfig"; sourceTree = "<group>"; };
 		484CA16A23994ECF00207662 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		484CA16B23994ECF00207662 /* SearchBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchBarView.xib; sourceTree = "<group>"; };
@@ -192,6 +202,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3D2E48F923A6690900DE59A2 /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				3D2E48FC23A66B5B00DE59A2 /* view */,
+				3D2E48FA23A6694D00DE59A2 /* PersonalViewController.swift */,
+				3D2E490123A6770900DE59A2 /* EditPasswordVC.swift */,
+				3D2E490223A6770900DE59A2 /* EditPasswordVC.xib */,
+			);
+			path = Personal;
+			sourceTree = "<group>";
+		};
+		3D2E48FC23A66B5B00DE59A2 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				3D2E48FD23A66B7500DE59A2 /* PersonalCell.swift */,
+				3D2E48FE23A66B7500DE59A2 /* PersonalCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		484CA16923994EBA00207662 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +299,7 @@
 		55B22B452397539500B738B7 /* Treasures */ = {
 			isa = PBXGroup;
 			children = (
+				3D2E48F923A6690900DE59A2 /* Personal */,
 				55B366BC23975AF9008F32D6 /* TreasureList */,
 				55B22B6E239755D800B738B7 /* Edit */,
 				55B22B68239755D800B738B7 /* DB */,
@@ -464,12 +495,14 @@
 				48AA8461239CD71500A81C9F /* TreasureListCell.xib in Resources */,
 				484CA16D23994ECF00207662 /* SearchBarView.xib in Resources */,
 				55B22B502397539800B738B7 /* Assets.xcassets in Resources */,
+				3D2E490423A6770900DE59A2 /* EditPasswordVC.xib in Resources */,
 				552CC57C23A35E8E00D14F21 /* secondCategory.json in Resources */,
 				55B22B4E2397539500B738B7 /* Main.storyboard in Resources */,
 				48DF59D6239BDF9D0086B352 /* SortPriceItem.xib in Resources */,
 				48EF5C8223A2871D00A0E8B1 /* AddImagesSubview.xib in Resources */,
 				55B366D4239CD2B2008F32D6 /* podfile in Resources */,
 				552CC57A23A35E8600D14F21 /* firstCategory.json in Resources */,
+				3D2E490023A66B7500DE59A2 /* PersonalCell.xib in Resources */,
 				484CA16F23994F0800207662 /* ListFilterView.xib in Resources */,
 				48DF59DF239C87680086B352 /* CategoryItem.xib in Resources */,
 				55B366C823976C64008F32D6 /* EditController.xib in Resources */,
@@ -576,10 +609,12 @@
 			files = (
 				48AA8460239CD71500A81C9F /* TreasureListCell.swift in Sources */,
 				48EF5C7C23A284D300A0E8B1 /* ChooseCategorySubview.swift in Sources */,
+				3D2E48FF23A66B7500DE59A2 /* PersonalCell.swift in Sources */,
 				552CC58B23A3BD7D00D14F21 /* TreasureDetailDTO.swift in Sources */,
 				48DF59E6239CA07F0086B352 /* OrderRule.swift in Sources */,
 				48AA8473239CEB6E00A81C9F /* Queryable.swift in Sources */,
 				552CC58823A393F600D14F21 /* Size.swift in Sources */,
+				3D2E48FB23A6694D00DE59A2 /* PersonalViewController.swift in Sources */,
 				55B366D223977858008F32D6 /* ViewController.swift in Sources */,
 				55B22B4B2397539500B738B7 /* LoginController.swift in Sources */,
 				552CC58523A393DF00D14F21 /* Category.swift in Sources */,
@@ -589,6 +624,7 @@
 				48DF59E1239C90C80086B352 /* ImageConstants.swift in Sources */,
 				484CA16C23994ECF00207662 /* SearchBarView.swift in Sources */,
 				55B366CB23976D9F008F32D6 /* RootTabController.swift in Sources */,
+				3D2E490323A6770900DE59A2 /* EditPasswordVC.swift in Sources */,
 				55B366BF23975B44008F32D6 /* TreasureListController.swift in Sources */,
 				487455CF23993FD6002AFBF7 /* UISizeConstants.swift in Sources */,
 				55D9E9A323A325EE00A622AE /* FirstCategoryRepo.swift in Sources */,
