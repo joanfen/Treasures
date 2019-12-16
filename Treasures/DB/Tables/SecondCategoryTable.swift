@@ -38,4 +38,8 @@ class SecondCategoryTable: TableCodable {
         self.parentCategoryId = raw["parentCategoryId"] as? Int
         self.name = raw["name"] as? String
     }
+    
+    init() {
+        
+    }
 }
