@@ -47,6 +47,11 @@
 		48EF5C7C23A284D300A0E8B1 /* ChooseCategorySubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EF5C7B23A284D300A0E8B1 /* ChooseCategorySubview.swift */; };
 		48EF5C8023A286B200A0E8B1 /* InputSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EF5C7F23A286B200A0E8B1 /* InputSubview.swift */; };
 		48EF5C8223A2871D00A0E8B1 /* AddImagesSubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48EF5C8123A2871D00A0E8B1 /* AddImagesSubview.xib */; };
+		48FA4FE123A7BFF1005DA01A /* CategoryRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA4FDF23A7BE53005DA01A /* CategoryRepo.swift */; };
+		48FA4FE223A7BFFC005DA01A /* CategoryRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA4FDF23A7BE53005DA01A /* CategoryRepo.swift */; };
+		48FA4FE423A7D640005DA01A /* CategoryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA4FE323A7D640005DA01A /* CategoryDTO.swift */; };
+		48FA4FE523A7D640005DA01A /* CategoryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA4FE323A7D640005DA01A /* CategoryDTO.swift */; };
+		48FA4FE723A7D912005DA01A /* CategoryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA4FE623A7D912005DA01A /* CategoryPickerView.swift */; };
 		48FB48CE239D1654005BF6B6 /* FilterPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59E2239C99F30086B352 /* FilterPreference.swift */; };
 		48FB48CF239D168D005BF6B6 /* OrderRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59E5239CA07F0086B352 /* OrderRule.swift */; };
 		48FB48D1239D2970005BF6B6 /* PathHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB48D0239D2970005BF6B6 /* PathHandler.swift */; };
@@ -84,8 +89,6 @@
 		55B366CB23976D9F008F32D6 /* RootTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B366C923976D9F008F32D6 /* RootTabController.swift */; };
 		55B366D223977858008F32D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B366D123977858008F32D6 /* ViewController.swift */; };
 		55B366D4239CD2B2008F32D6 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 55B366D3239CD2B1008F32D6 /* podfile */; };
-		55D9E9A323A325EE00A622AE /* FirstCategoryRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9E9A223A325EE00A622AE /* FirstCategoryRepo.swift */; };
-		55D9E9A423A325EE00A622AE /* FirstCategoryRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9E9A223A325EE00A622AE /* FirstCategoryRepo.swift */; };
 		8E043E8D798105F7A57A5E9D /* Pods_TreasuresTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D04279D2E29DAD145417BC /* Pods_TreasuresTests.framework */; };
 		9F57E87D3C11AA9D71E13110 /* Pods_Treasures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15FD8E1B6571064B8BE8E2C /* Pods_Treasures.framework */; };
 /* End PBXBuildFile section */
@@ -136,6 +139,9 @@
 		48EF5C7B23A284D300A0E8B1 /* ChooseCategorySubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategorySubview.swift; sourceTree = "<group>"; };
 		48EF5C7F23A286B200A0E8B1 /* InputSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSubview.swift; sourceTree = "<group>"; };
 		48EF5C8123A2871D00A0E8B1 /* AddImagesSubview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddImagesSubview.xib; sourceTree = "<group>"; };
+		48FA4FDF23A7BE53005DA01A /* CategoryRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRepo.swift; sourceTree = "<group>"; };
+		48FA4FE323A7D640005DA01A /* CategoryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDTO.swift; sourceTree = "<group>"; };
+		48FA4FE623A7D912005DA01A /* CategoryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerView.swift; sourceTree = "<group>"; };
 		48FB48D0239D2970005BF6B6 /* PathHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathHandler.swift; sourceTree = "<group>"; };
 		552CC57923A35E8600D14F21 /* firstCategory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = firstCategory.json; sourceTree = "<group>"; };
 		552CC57B23A35E8E00D14F21 /* secondCategory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = secondCategory.json; sourceTree = "<group>"; };
@@ -168,7 +174,6 @@
 		55B366C923976D9F008F32D6 /* RootTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabController.swift; sourceTree = "<group>"; };
 		55B366D123977858008F32D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		55B366D3239CD2B1008F32D6 /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		55D9E9A223A325EE00A622AE /* FirstCategoryRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCategoryRepo.swift; sourceTree = "<group>"; };
 		8E35E5F703EC30F41A51363D /* Pods-TreasuresTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasuresTests.debug.xcconfig"; path = "Target Support Files/Pods-TreasuresTests/Pods-TreasuresTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B15FD8E1B6571064B8BE8E2C /* Pods_Treasures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Treasures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -263,6 +268,7 @@
 				48EF5C8123A2871D00A0E8B1 /* AddImagesSubview.xib */,
 				48EF5C7B23A284D300A0E8B1 /* ChooseCategorySubview.swift */,
 				48EF5C7F23A286B200A0E8B1 /* InputSubview.swift */,
+				48FA4FE623A7D912005DA01A /* CategoryPickerView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -272,6 +278,7 @@
 			children = (
 				552CC58123A392FB00D14F21 /* EditTreasureForm.swift */,
 				552CC58A23A3BD7D00D14F21 /* TreasureDetailDTO.swift */,
+				48FA4FE323A7D640005DA01A /* CategoryDTO.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -336,7 +343,7 @@
 				55B22B69239755D800B738B7 /* DatabaseHandler.swift */,
 				55B22B6C239755D800B738B7 /* DBConstants.swift */,
 				48AA846F239CE89C00A81C9F /* TreasureRepository.swift */,
-				55D9E9A223A325EE00A622AE /* FirstCategoryRepo.swift */,
+				48FA4FDF23A7BE53005DA01A /* CategoryRepo.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -622,12 +629,12 @@
 				55B22B472397539500B738B7 /* AppDelegate.swift in Sources */,
 				48FB48D1239D2970005BF6B6 /* PathHandler.swift in Sources */,
 				48DF59E1239C90C80086B352 /* ImageConstants.swift in Sources */,
+				48FA4FE123A7BFF1005DA01A /* CategoryRepo.swift in Sources */,
 				484CA16C23994ECF00207662 /* SearchBarView.swift in Sources */,
 				55B366CB23976D9F008F32D6 /* RootTabController.swift in Sources */,
 				3D2E490323A6770900DE59A2 /* EditPasswordVC.swift in Sources */,
 				55B366BF23975B44008F32D6 /* TreasureListController.swift in Sources */,
 				487455CF23993FD6002AFBF7 /* UISizeConstants.swift in Sources */,
-				55D9E9A323A325EE00A622AE /* FirstCategoryRepo.swift in Sources */,
 				552CC57E23A37FB400D14F21 /* TreasureListSearchDTO.swift in Sources */,
 				55B22B76239755D800B738B7 /* DBConstants.swift in Sources */,
 				48AA8463239CDF7100A81C9F /* TreasureSearchHandler.swift in Sources */,
@@ -643,9 +650,11 @@
 				48EF5C8023A286B200A0E8B1 /* InputSubview.swift in Sources */,
 				48AA8470239CE89C00A81C9F /* TreasureRepository.swift in Sources */,
 				55B22B7A239755D800B738B7 /* FontConstants.swift in Sources */,
+				48FA4FE423A7D640005DA01A /* CategoryDTO.swift in Sources */,
 				48DF59E3239C99F30086B352 /* FilterPreference.swift in Sources */,
 				55B22B73239755D800B738B7 /* DatabaseHandler.swift in Sources */,
 				48DF59D9239BE3060086B352 /* PropertyItem.swift in Sources */,
+				48FA4FE723A7D912005DA01A /* CategoryPickerView.swift in Sources */,
 				55B22B78239755D800B738B7 /* TreasureEditCellProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,7 +667,6 @@
 				48AA846C239CE12000A81C9F /* FirstCategoryTable.swift in Sources */,
 				487455D023993FD6002AFBF7 /* UISizeConstants.swift in Sources */,
 				48AA846A239CE12000A81C9F /* DatabaseHandler.swift in Sources */,
-				55D9E9A423A325EE00A622AE /* FirstCategoryRepo.swift in Sources */,
 				552CC58623A393DF00D14F21 /* Category.swift in Sources */,
 				48FB48CF239D168D005BF6B6 /* OrderRule.swift in Sources */,
 				552CC58C23A3BD7D00D14F21 /* TreasureDetailDTO.swift in Sources */,
@@ -668,9 +676,11 @@
 				552CC58923A393F600D14F21 /* Size.swift in Sources */,
 				552CC58323A392FB00D14F21 /* EditTreasureForm.swift in Sources */,
 				48FB48CE239D1654005BF6B6 /* FilterPreference.swift in Sources */,
+				48FA4FE223A7BFFC005DA01A /* CategoryRepo.swift in Sources */,
 				552CC57F23A37FB400D14F21 /* TreasureListSearchDTO.swift in Sources */,
 				48AA846B239CE12000A81C9F /* SecondCategoryTable.swift in Sources */,
 				48AA846E239CE12000A81C9F /* TreasuresTable.swift in Sources */,
+				48FA4FE523A7D640005DA01A /* CategoryDTO.swift in Sources */,
 				48AA8474239CEB6E00A81C9F /* Queryable.swift in Sources */,
 				55B22B5E2397539800B738B7 /* TreasuresTests.swift in Sources */,
 				48AA846D239CE12000A81C9F /* DBConstants.swift in Sources */,

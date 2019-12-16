@@ -11,7 +11,7 @@ import WCDBSwift
 class FirstCategoryTable: TableCodable {
     var identifier: Int? = nil
     var name: String? = ""
-    var created: Date? = Date()
+    var created: Date = Date()
 
     enum CodingKeys: String, CodingTableKey {
         
