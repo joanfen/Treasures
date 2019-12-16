@@ -14,17 +14,13 @@ class TreasuresTable: TableCodable {
     var firstCategoryId: Int = 0
     var secondCategoryId: Int = 0
     var description: String = ""
-    var urls: Array = [""]
-    var year: Int = 0
+    var year: String = ""
     var purchasedYear: Int = 0
     var purchasedPriceInCent: Int64 = 0
     var sellingPriceInCent: Int64 =  0
     var available: Bool = false
     var isSold: Bool = false
-    var length: Int64 = 0
-    var width: Int64 = 0
-    var height: Int64 = 0
-    var volume: CLong = 0
+    var size: String = ""
     var keywords: String = ""
     var note: String = ""
     var isCollected: Bool = false
@@ -42,17 +38,13 @@ class TreasuresTable: TableCodable {
         case firstCategoryId
         case secondCategoryId
         case description
-        case urls
         case year
         case purchasedYear
         case purchasedPriceInCent
         case sellingPriceInCent
         case available
         case isSold
-        case length
-        case width
-        case height
-        case volume
+        case size
         case keywords
         case note
         case isCollected

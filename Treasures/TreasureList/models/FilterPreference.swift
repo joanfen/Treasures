@@ -109,7 +109,7 @@ class FilterPreference: Queryable {
 
         }
         if let sizeOrder = sizeOrderRule.toOrderTerm() {
-            orderBy.append(TreasuresTable.Properties.volume.asOrder(by: sizeOrder))
+            orderBy.append(TreasuresTable.Properties.size.asOrder(by: sizeOrder))
         }
         if let priceOrder = priceOrderRule.toOrderTerm() {
             orderBy.append(TreasuresTable.Properties.sellingPriceInCent.asOrder(by: priceOrder))

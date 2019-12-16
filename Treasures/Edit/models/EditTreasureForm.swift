@@ -14,8 +14,8 @@ class EditTreasureForm {
     var images: [UIImage] = []
     var name: String = ""
     var category: Category?
-    var size: Size?
-    var year: Int?
+    var size: String?
+    var year: String?
     var descrpiton: String = ""
     var keywords: [String] = []
     var purchasedYear: Int?
@@ -39,7 +39,7 @@ class EditTreasureForm {
         self.identifier = treasure.identifier
         self.name = treasure.name
         self.table = treasure
-        self.size = Size.init(length: treasure.length, width: treasure.width, height: treasure.height)
+        self.size = treasure.size
         self.year = treasure.year
         self.descrpiton = treasure.description
         self.keywords = treasure.keywords.components(separatedBy: ",")
@@ -56,10 +56,7 @@ class EditTreasureForm {
     public func categoryString() -> String {
         category?.getName() ?? ""
     }
-    public func sizeString() -> String {
-        size?.getSizeString() ?? ""
-    }
-    
+   
     private func getTreasureTable() -> String? {
         table.identifier = identifier
         table.name = name
@@ -68,10 +65,7 @@ class EditTreasureForm {
         table.available = available
         table.isSold = isSold
         if let s = size {
-            table.width = s.width
-            table.length = s.length
-            table.height = s.height
-            table.volume = s.getVolume()
+            table.size = s
         } else {
             // TODO: Block Action
           

@@ -78,6 +78,7 @@ class ListFilterView: UIView {
           self.sizeItem.updateOrderRule(rule: OrderRule.none)
           self.priceItem.updateOrderRule(rule: OrderRule.none)
         }
+        self.filterBegin?(filterPreference)
     }
     
     private func updatePriceRule(rule: OrderRule) {
@@ -86,6 +87,7 @@ class ListFilterView: UIView {
            self.yearItem.updateOrderRule(rule: OrderRule.none)
            self.sizeItem.updateOrderRule(rule: OrderRule.none)
         }
+        self.filterBegin?(filterPreference)
     }
     
 
