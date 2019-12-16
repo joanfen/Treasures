@@ -12,6 +12,13 @@
 		3D2E490023A66B7500DE59A2 /* PersonalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D2E48FE23A66B7500DE59A2 /* PersonalCell.xib */; };
 		3D2E490323A6770900DE59A2 /* EditPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E490123A6770900DE59A2 /* EditPasswordVC.swift */; };
 		3D2E490423A6770900DE59A2 /* EditPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D2E490223A6770900DE59A2 /* EditPasswordVC.xib */; };
+		3D2E491023A7D8BE00DE59A2 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E490F23A7D8BE00DE59A2 /* Global.swift */; };
+		3D2E491323A7DB7900DE59A2 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E491223A7DB7900DE59A2 /* CategoryViewController.swift */; };
+		3D2E491723A7DE7900DE59A2 /* BigCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E491523A7DE7900DE59A2 /* BigCategoryCell.swift */; };
+		3D2E491823A7DE7900DE59A2 /* BigCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D2E491623A7DE7900DE59A2 /* BigCategoryCell.xib */; };
+		3D2E491A23A7E06C00DE59A2 /* UIColor+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E491923A7E06C00DE59A2 /* UIColor+Category.swift */; };
+		3D2E491D23A7E0EF00DE59A2 /* SmallCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E491B23A7E0EF00DE59A2 /* SmallCategoryCell.swift */; };
+		3D2E491E23A7E0EF00DE59A2 /* SmallCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D2E491C23A7E0EF00DE59A2 /* SmallCategoryCell.xib */; };
 		484CA16C23994ECF00207662 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484CA16A23994ECF00207662 /* SearchBarView.swift */; };
 		484CA16D23994ECF00207662 /* SearchBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484CA16B23994ECF00207662 /* SearchBarView.xib */; };
 		484CA16F23994F0800207662 /* ListFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484CA16E23994F0800207662 /* ListFilterView.xib */; };
@@ -109,6 +116,14 @@
 		3D2E48FE23A66B7500DE59A2 /* PersonalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalCell.xib; sourceTree = "<group>"; };
 		3D2E490123A6770900DE59A2 /* EditPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordVC.swift; sourceTree = "<group>"; };
 		3D2E490223A6770900DE59A2 /* EditPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPasswordVC.xib; sourceTree = "<group>"; };
+		3D2E490E23A7D4CD00DE59A2 /* Treasures-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Treasures-Bridging-Header.h"; sourceTree = "<group>"; };
+		3D2E490F23A7D8BE00DE59A2 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		3D2E491223A7DB7900DE59A2 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		3D2E491523A7DE7900DE59A2 /* BigCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigCategoryCell.swift; sourceTree = "<group>"; };
+		3D2E491623A7DE7900DE59A2 /* BigCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BigCategoryCell.xib; sourceTree = "<group>"; };
+		3D2E491923A7E06C00DE59A2 /* UIColor+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Category.swift"; sourceTree = "<group>"; };
+		3D2E491B23A7E0EF00DE59A2 /* SmallCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCategoryCell.swift; sourceTree = "<group>"; };
+		3D2E491C23A7E0EF00DE59A2 /* SmallCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmallCategoryCell.xib; sourceTree = "<group>"; };
 		4824F4F9ECDF53CC6D022612 /* Pods-Treasures.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Treasures.release.xcconfig"; path = "Target Support Files/Pods-Treasures/Pods-Treasures.release.xcconfig"; sourceTree = "<group>"; };
 		484CA16A23994ECF00207662 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		484CA16B23994ECF00207662 /* SearchBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchBarView.xib; sourceTree = "<group>"; };
@@ -222,6 +237,26 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		3D2E491123A7DB4E00DE59A2 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				3D2E491423A7DE5D00DE59A2 /* view */,
+				3D2E491223A7DB7900DE59A2 /* CategoryViewController.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		3D2E491423A7DE5D00DE59A2 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				3D2E491523A7DE7900DE59A2 /* BigCategoryCell.swift */,
+				3D2E491623A7DE7900DE59A2 /* BigCategoryCell.xib */,
+				3D2E491B23A7E0EF00DE59A2 /* SmallCategoryCell.swift */,
+				3D2E491C23A7E0EF00DE59A2 /* SmallCategoryCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		484CA16923994EBA00207662 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +334,7 @@
 		55B22B452397539500B738B7 /* Treasures */ = {
 			isa = PBXGroup;
 			children = (
+				3D2E491123A7DB4E00DE59A2 /* Category */,
 				3D2E48F923A6690900DE59A2 /* Personal */,
 				55B366BC23975AF9008F32D6 /* TreasureList */,
 				55B22B6E239755D800B738B7 /* Edit */,
@@ -314,6 +350,7 @@
 				55D9E99E23A220F600A622AE /* resources */,
 				55B366D3239CD2B1008F32D6 /* podfile */,
 				55B22B542397539800B738B7 /* Info.plist */,
+				3D2E490E23A7D4CD00DE59A2 /* Treasures-Bridging-Header.h */,
 			);
 			path = Treasures;
 			sourceTree = "<group>";
@@ -356,10 +393,12 @@
 		55B22B71239755D800B738B7 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				3D2E490F23A7D8BE00DE59A2 /* Global.swift */,
 				55B22B72239755D800B738B7 /* FontConstants.swift */,
 				487455CE23993FD6002AFBF7 /* UISizeConstants.swift */,
 				48DF59E0239C90C80086B352 /* ImageConstants.swift */,
 				48FB48D0239D2970005BF6B6 /* PathHandler.swift */,
+				3D2E491923A7E06C00DE59A2 /* UIColor+Category.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -491,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48DF59DB239BE4200086B352 /* PropertyItem.xib in Resources */,
+				3D2E491823A7DE7900DE59A2 /* BigCategoryCell.xib in Resources */,
 				55B22B532397539800B738B7 /* LaunchScreen.storyboard in Resources */,
 				48AA8461239CD71500A81C9F /* TreasureListCell.xib in Resources */,
 				484CA16D23994ECF00207662 /* SearchBarView.xib in Resources */,
@@ -502,6 +542,7 @@
 				48EF5C8223A2871D00A0E8B1 /* AddImagesSubview.xib in Resources */,
 				55B366D4239CD2B2008F32D6 /* podfile in Resources */,
 				552CC57A23A35E8600D14F21 /* firstCategory.json in Resources */,
+				3D2E491E23A7E0EF00DE59A2 /* SmallCategoryCell.xib in Resources */,
 				3D2E490023A66B7500DE59A2 /* PersonalCell.xib in Resources */,
 				484CA16F23994F0800207662 /* ListFilterView.xib in Resources */,
 				48DF59DF239C87680086B352 /* CategoryItem.xib in Resources */,
@@ -614,15 +655,20 @@
 				48DF59E6239CA07F0086B352 /* OrderRule.swift in Sources */,
 				48AA8473239CEB6E00A81C9F /* Queryable.swift in Sources */,
 				552CC58823A393F600D14F21 /* Size.swift in Sources */,
+				3D2E491D23A7E0EF00DE59A2 /* SmallCategoryCell.swift in Sources */,
 				3D2E48FB23A6694D00DE59A2 /* PersonalViewController.swift in Sources */,
 				55B366D223977858008F32D6 /* ViewController.swift in Sources */,
 				55B22B4B2397539500B738B7 /* LoginController.swift in Sources */,
 				552CC58523A393DF00D14F21 /* Category.swift in Sources */,
 				55B366C723976C64008F32D6 /* EditController.swift in Sources */,
+				3D2E491023A7D8BE00DE59A2 /* Global.swift in Sources */,
 				55B22B472397539500B738B7 /* AppDelegate.swift in Sources */,
 				48FB48D1239D2970005BF6B6 /* PathHandler.swift in Sources */,
 				48DF59E1239C90C80086B352 /* ImageConstants.swift in Sources */,
+				3D2E491723A7DE7900DE59A2 /* BigCategoryCell.swift in Sources */,
+				3D2E491323A7DB7900DE59A2 /* CategoryViewController.swift in Sources */,
 				484CA16C23994ECF00207662 /* SearchBarView.swift in Sources */,
+				3D2E491A23A7E06C00DE59A2 /* UIColor+Category.swift in Sources */,
 				55B366CB23976D9F008F32D6 /* RootTabController.swift in Sources */,
 				3D2E490323A6770900DE59A2 /* EditPasswordVC.swift in Sources */,
 				55B366BF23975B44008F32D6 /* TreasureListController.swift in Sources */,
@@ -835,6 +881,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.joanfen.Treasures;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Treasures/Treasures-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -854,6 +901,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.joanfen.Treasures;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Treasures/Treasures-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

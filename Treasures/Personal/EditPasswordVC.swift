@@ -10,13 +10,25 @@ import UIKit
 
 class EditPasswordVC: UIViewController {
 
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var pwTF: UITextField!
     @IBOutlet weak var confirmTF: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        var title = "添加密码"
+        if let pw = UserDefaults.standard.object(forKey: "password") as? String{
+            if !pw.isEmpty {
+                title = "修改密码"
+            }
+        }
+        self.titleLbl.text = title
+    }
+    
     func setUI() {
         var placeholder = NSMutableAttributedString.init(string: "密码", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         pwTF.attributedPlaceholder = placeholder
@@ -27,6 +39,29 @@ class EditPasswordVC: UIViewController {
     @IBAction func popClicked() {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func saveBtnClicked() {
+        if pwTF.text == confirmTF.text {
+            let hud = JGProgressHUD.init(style: .extraLight)
+            hud.textLabel.text = "保存成功"
+            hud.indicatorView = JGProgressHUDSuccessIndicatorView.init()
+            hud.show(in: self.view)
+            hud.dismiss(afterDelay: 1)
+            UserDefaults.standard.setValue(pwTF.text, forKey: "password")
+            UserDefaults.standard.synchronize()
+            delay(delay: 1) {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }else {
+            let hud = JGProgressHUD.init(style: .extraLight)
+            hud.textLabel.text = "两次密码不一致"
+            hud.indicatorView = JGProgressHUDErrorIndicatorView.init()
+            hud.show(in: self.view)
+            hud.dismiss(afterDelay: 1)
+        }
+    }
+    
+    
     
     /*
     // MARK: - Navigation
