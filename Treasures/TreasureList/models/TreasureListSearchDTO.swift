@@ -10,7 +10,6 @@ import Foundation
 class TreasureListSearchDTO {
     var identifier: Int?
     var name: String = ""
-    var imageUrl: String?
     var categoryName: String = ""
     var description: String
     var keywords: [String]
@@ -21,7 +20,6 @@ class TreasureListSearchDTO {
     init(with treasure: TreasuresTable, categoryName: String?) {
         self.identifier = treasure.identifier
         self.name = treasure.name
-        self.imageUrl = treasure.urls.first
         self.categoryName = categoryName ?? ""
         self.description = treasure.description
         self.keywords = treasure.keywords.components(separatedBy: ",")

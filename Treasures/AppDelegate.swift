@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UITabBar.appearance().tintColor = ColorConstants.globalMainColor
         DatabaseHandler.createTables()
-        DatabaseHandler.insertData()
+//        DatabaseHandler.insertData()
         if (!UserDefaults.init().bool(forKey: "notLaunched")) {
             DatabaseHandler.insertCategoriesData()
             UserDefaults.init().setValue(true, forKey: "notLaunched")
