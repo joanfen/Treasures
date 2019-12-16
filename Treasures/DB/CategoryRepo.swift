@@ -42,27 +42,29 @@ class CategoryRepo {
     /**
      * 启用类目
      */
-    public func enableCategory(secondCategoryId: Int) {
-       updateEnabled(categoryId: secondCategoryId, enable: true)
+    public func enableCategory(secondCategoryId: Int) -> Bool {
+       return updateEnabled(categoryId: secondCategoryId, enable: true)
     }
     
     /**
      * 禁用类目
      */
-    public func disableCategory(secondCategoryId: Int) {
-        updateEnabled(categoryId: secondCategoryId, enable: false)
+    public func disableCategory(secondCategoryId: Int) -> Bool {
+        return updateEnabled(categoryId: secondCategoryId, enable: false)
     }
     
     
-    private func updateEnabled(categoryId: Int, enable: Bool) {
+    private func updateEnabled(categoryId: Int, enable: Bool) -> Bool {
         let category = SecondCategoryTable()
         category.enable = enable
-   
         do {
            try DatabaseHandler.getMainDatabase().update(table: DBConstants.secondCategoryTable, on: SecondCategoryTable.Properties.enable, with: category)
-        } catch _ {
-           
+            return true
+        } catch let ex {
+            print("更新类目启用状态失败: ")
+            print(ex)
         }
+        return false
     }
     
     /**
