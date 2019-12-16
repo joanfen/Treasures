@@ -12,6 +12,7 @@ class SecondCategoryTable: TableCodable {
     var identifier: Int? = nil
     var parentCategoryId: Int? = 0
     var name: String? = ""
+    var enable: Bool? = false
     var created: Date? = Date()
 
     enum CodingKeys: String, CodingTableKey {
@@ -23,6 +24,7 @@ class SecondCategoryTable: TableCodable {
         case identifier = "id"
         case parentCategoryId
         case name
+        case enable
         case created
         
         static var columnConstraintBindings: [SecondCategoryTable.CodingKeys : ColumnConstraintBinding]? {
@@ -35,5 +37,9 @@ class SecondCategoryTable: TableCodable {
     init(raw: [String: Any]) {
         self.parentCategoryId = raw["parentCategoryId"] as? Int
         self.name = raw["name"] as? String
+    }
+    
+    init() {
+        
     }
 }

@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SmallCategoryCell" customModule="Treasures" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="SmallCategoryCell" customModule="Treasures" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -23,28 +23,38 @@
                         <color key="textColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6q-cP-shr">
+                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6q-cP-shr">
                         <rect key="frame" x="265" y="10" width="40" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="U8w-F7-rcS"/>
                             <constraint firstAttribute="height" constant="24" id="hGo-ln-WZQ"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title="添加">
-                            <color key="titleColor" red="0.79607843140000001" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
-                        <state key="selected" title="取消">
+                        <state key="normal">
                             <color key="titleColor" red="0.69803921570000005" green="0.69803921570000005" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <state key="selected">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <connections>
                             <action selector="editBtnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="F5I-tb-scZ"/>
                         </connections>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QLs-hI-r5z">
+                        <rect key="frame" x="12" y="43.5" width="294" height="0.5"/>
+                        <color key="backgroundColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="XSz-Sc-i5u"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="QLs-hI-r5z" secondAttribute="bottom" id="402-Fm-kiI"/>
                     <constraint firstAttribute="trailing" secondItem="a6q-cP-shr" secondAttribute="trailing" constant="15" id="XuV-d1-N3U"/>
                     <constraint firstItem="p2l-32-20q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="bIR-k8-FBC"/>
+                    <constraint firstItem="QLs-hI-r5z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="cdm-CD-Kfy"/>
                     <constraint firstItem="p2l-32-20q" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kYt-Hd-6I3"/>
+                    <constraint firstAttribute="trailing" secondItem="QLs-hI-r5z" secondAttribute="trailing" constant="14" id="qSp-tc-fdx"/>
                     <constraint firstItem="a6q-cP-shr" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="sMX-cB-syo"/>
                 </constraints>
             </tableViewCellContentView>

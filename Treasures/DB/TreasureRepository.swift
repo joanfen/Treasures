@@ -74,7 +74,6 @@ class TreasureRepository {
                 return dto
             }
             
-            
         } catch let ex {
             print(ex)
         }
@@ -98,7 +97,6 @@ class TreasureRepository {
     static public func getMaxID() -> Int? {
          do {
             let statement = StatementSelect()
-            
             statement.select(TreasuresTable.Properties.identifier.max())
             statement.from(DBConstants.treasuresTable)
             let coreStatement = try DatabaseHandler.getMainDatabase().prepare(statement)

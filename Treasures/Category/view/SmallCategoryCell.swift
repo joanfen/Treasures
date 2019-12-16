@@ -23,14 +23,19 @@ class SmallCategoryCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         if selected {
+            self.editBtn.setTitle("取消", for: .normal)
+            self.editBtn.setTitleColor(UIColor.colorWithHexString(hex: "B2B2B2"), for: .normal)
             self.editBtn.layer.borderColor = UIColor.colorWithHexString(hex: "B2B2B2").cgColor
         }else {
+            self.editBtn.setTitle("添加", for: .normal)
+            self.editBtn.setTitleColor(UIColor.colorWithHexString(hex: "CB2424"), for: .normal)
             self.editBtn.layer.borderColor = UIColor.colorWithHexString(hex: "CB2424").cgColor
         }
+//        self.editBtn.isSelected = !self.editBtn.isSelected
         // Configure the view for the selected state
     }
     
     @IBAction func editBtnClicked(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
+//        sender.isSelected = !sender.isSelected
     }
 }
