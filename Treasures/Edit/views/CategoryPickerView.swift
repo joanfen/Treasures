@@ -7,6 +7,64 @@
 //
 
 import UIKit
+
+typealias SelectedCategory = (_ category: Category) -> Void
+
+protocol CategoryPickerProtocol {
+    func show(in viewController: UIViewController)
+    func dismiss()
+    func selected(category: Category)
+}
+
+class CategoryPickerShowFromBottom: CategoryPickerProtocol{
+    private let bgView = UIView()
+    private let picker = CategoryPickerView.loadXib()
+    var placeHolderCategory: Category? = nil {
+        didSet {
+            if let category = placeHolderCategory {
+                picker.locateCategory(category: category)
+            }
+        }
+    }
+    var selectedAction: SelectedCategory
+    
+    init(with selected: @escaping SelectedCategory) {
+        self.selectedAction = selected
+        picker.pickerDelegate = self
+    }
+    func dismiss() {
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(0.5)
+        picker.setY(with: 10000)
+        UIView.commitAnimations()
+        self.bgView.removeFromSuperview()
+    }
+    
+    func selected(category: Category) {
+        self.selectedAction(category)
+    }
+    
+    func show(in viewController: UIViewController) {
+        bgView.backgroundColor = UIColor.clear
+
+        bgView.frame = viewController.view.bounds
+        viewController.view.addSubview(bgView)
+        
+        picker.frame = CGRect(x: 0, y: viewController.view.bottom, width: viewController.view.width, height: 304)
+        viewController.view.addSubview(picker)
+        
+        
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(0.3)
+        bgView.backgroundColor = UIColor(white: 0, alpha: 0.3)
+        picker.setY(with: viewController.view.height - 304)
+        UIView.commitAnimations()
+        
+    }
+}
+
+
+
 enum CategoryPickerComponent: Int{
     case first = 0
     case second = 1
@@ -20,8 +78,7 @@ class CategoryPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     var selectedFirst: Int = 0
     var selectedSecond: Int = 0
     var categories: [CategoryDTO] = []
-    typealias SelectedCategory = (_ category: Category) -> Void
-    var selectedCategory: SelectedCategory?
+    var pickerDelegate: CategoryPickerProtocol?
 
     class func loadXib() -> CategoryPickerView {
         return Bundle.main.loadNibNamed("CategoryPickerView", owner: self, options: nil)!.first as! CategoryPickerView
@@ -36,11 +93,31 @@ class CategoryPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     @IBAction func cancel(_ sender: Any) {
+        self.pickerDelegate?.dismiss()
         
     }
     
     @IBAction func done(_ sender: Any) {
+        self.pickerDelegate?.dismiss()
         selectedAction()
+    }
+    
+    func locateCategory(category: Category) {
+        for (index, value) in categories.enumerated() {
+            if (value.firstId == category.firstCategory.id) {
+                selectedFirst = index
+                for(index2, value2) in value.secondCategories.enumerated() {
+                    if (value2.secondId == category.secondCategory.id) {
+                        selectedSecond = index2
+                        return
+                    }
+                }
+            }
+        }
+    }
+    
+    func show(in viewController: UIViewController) {
+        self.pickerDelegate?.show(in: viewController)
     }
     
     private func selectedAction() {
@@ -48,7 +125,7 @@ class CategoryPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         let second = first.secondCategories[selectedSecond]
         let selected = Category.init(firstCategory: CategoryInfo(id: first.firstId, name: first.name),
                       secondCategory: CategoryInfo(id: second.secondId, name: second.name))
-        self.selectedCategory?(selected)
+        self.pickerDelegate?.selected(category: selected)
     }
 }
 
