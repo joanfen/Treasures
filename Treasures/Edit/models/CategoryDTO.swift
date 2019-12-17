@@ -13,7 +13,14 @@ class CategoryDTO {
     var name: String = ""
     var secondCategories = [SecondCategoryDTO]()
     
-//    init(first: Fir)
+    init(first: FirstCategoryTable?, second: [SecondCategoryTable]) {
+        self.firstId = first?.identifier ?? 0
+        self.name = first?.name ?? ""
+        self.secondCategories = second.map { (t) -> SecondCategoryDTO in
+            return SecondCategoryDTO.init(second: t)
+        }
+    }
+
 }
 
 class SecondCategoryDTO {
@@ -21,4 +28,11 @@ class SecondCategoryDTO {
     var parentId: Int = 0
     var name: String = ""
     var enable: Bool = false
+    
+    init(second: SecondCategoryTable) {
+        self.secondId = second.identifier ?? 0
+        self.parentId = second.parentCategoryId ?? 0
+        self.name = second.name ?? ""
+        self.enable = second.enable ?? false
+    }
 }

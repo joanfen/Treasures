@@ -58,7 +58,12 @@ class CategoryRepo {
         let category = SecondCategoryTable()
         category.enable = enable
         do {
-           try DatabaseHandler.getMainDatabase().update(table: DBConstants.secondCategoryTable, on: SecondCategoryTable.Properties.enable, with: category)
+            try DatabaseHandler.getMainDatabase()
+                .update(table: DBConstants.secondCategoryTable,
+                        on: SecondCategoryTable.Properties.enable,
+                        with: category,
+                        where: SecondCategoryTable.Properties.identifier == categoryId)
+            
             return true
         } catch let ex {
             print("更新类目启用状态失败: ")
@@ -70,28 +75,37 @@ class CategoryRepo {
     /**
      * 查询所有已启用的类目
      */
-    class public func queryMyCategories() {
+    class public func queryMyCategories() -> [CategoryDTO] {
         var properties = DBConstants.firstCategoryProperties
         properties.append(contentsOf: DBConstants.secondCategoryProperties)
         let first = DBConstants.firstCategoryTable
         let second = DBConstants.secondCategoryTable
+       
+        var categories = [CategoryDTO]()
+        
         do {
-            let multiSelect = try DatabaseHandler.getMainDatabase().prepareMultiSelect(
-                    on: properties,
-                    fromTables: [first, second])
-                .where(FirstCategoryTable.Properties.identifier.in(table: first) == SecondCategoryTable.Properties.parentCategoryId.in(table: second))
-                .order(by: [])
-            while let multiObject = try multiSelect.nextMultiObject() {
-                let firstCategory = multiObject[first] as? FirstCategoryTable
-                let secondCategory = multiObject[second] as? [SecondCategoryTable]
-                
+            let secondCategories: [SecondCategoryTable] = try DatabaseHandler.getMainDatabase().getObjects(on: SecondCategoryTable.Properties.all, fromTable: second, where: SecondCategoryTable.Properties.enable, orderBy: nil, limit: nil, offset: nil)
+            let parents = secondCategories.map { (secondTableObject) -> Int in
+                return (secondTableObject.parentCategoryId ?? 0)
             }
-           
+            let firstCategories: [FirstCategoryTable] = try DatabaseHandler.getMainDatabase().getObjects(on: FirstCategoryTable.Properties.all, fromTable: first, where: FirstCategoryTable.Properties.identifier.in(parents), orderBy: nil, limit: nil, offset: nil)
+
+            for firstObject in firstCategories {
+                let secondObjects = secondCategories.filter { (s) -> Bool in
+                    s.parentCategoryId == firstObject.identifier
+                }
+                categories.append(CategoryDTO.init(first: firstObject,
+                                                   second: secondObjects))
+            }
+            
+        } catch _ {
+            
         }
-        catch let exception {
-            print(exception)
-        }
+        
+        return categories
     }
+    
+    
     
 }
 

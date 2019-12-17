@@ -8,7 +8,6 @@
 
 import XCTest
 import WCDBSwift
-import Treasures
 class test: XCTestCase {
 
     override func setUp() {
@@ -85,14 +84,15 @@ class test: XCTestCase {
     }
     
     func testFirstCategory() {
-        CategoryRepo().queryFirstCategories()
+        CategoryRepo.queryFirstCategories()
         
     }
     func testSecondCategory() {
-        CategoryRepo().querySecondCategories(parentId: 1)
+        CategoryRepo.querySecondCategories(parentId: 1)
     }
     
     func testQuery () {
-        CategoryRepo().queryMyCategories()
+        CategoryRepo.enableCategory(secondCategoryId: 12)
+        CategoryRepo.queryMyCategories()
     }
 }
