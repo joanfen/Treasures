@@ -14,24 +14,42 @@ enum CategoryPickerComponent: Int{
 }
 
 class CategoryPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
-    private var pickerView: UIPickerView = UIPickerView()
+
+    @IBOutlet var pickerView: UIPickerView!
+    
     var selectedFirst: Int = 0
     var selectedSecond: Int = 0
     var categories: [CategoryDTO] = []
-    
+    typealias SelectedCategory = (_ category: Category) -> Void
+    var selectedCategory: SelectedCategory?
 
-    init(category: [CategoryDTO]) {
-        super.init(frame: CGRect.zero)
+    class func loadXib() -> CategoryPickerView {
+        return Bundle.main.loadNibNamed("CategoryPickerView", owner: self, options: nil)!.first as! CategoryPickerView
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
         self.categories = CategoryRepo.queryMyCategories()
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
-       
+        self.pickerView.reloadAllComponents()
     }
-   
-    required init?(coder: NSCoder) {
-       super.init(coder: coder)
+    
+    @IBAction func cancel(_ sender: Any) {
+        
     }
-
+    
+    @IBAction func done(_ sender: Any) {
+        selectedAction()
+    }
+    
+    private func selectedAction() {
+        let first = categories[selectedFirst]
+        let second = first.secondCategories[selectedSecond]
+        let selected = Category.init(firstCategory: CategoryInfo(id: first.firstId, name: first.name),
+                      secondCategory: CategoryInfo(id: second.secondId, name: second.name))
+        self.selectedCategory?(selected)
+    }
 }
 
 extension CategoryPickerView {
@@ -63,9 +81,11 @@ extension CategoryPickerView {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if component == CategoryPickerComponent.first.rawValue {
             selectedFirst = row
-            self.pickerView.reloadComponent(component)
+            pickerView.reloadComponent(CategoryPickerComponent.second.rawValue)
         } else {
             selectedSecond = row
         }
     }
+    
+    
 }
