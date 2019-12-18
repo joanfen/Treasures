@@ -10,6 +10,7 @@ import UIKit
 
 class SmallCategoryCell: UITableViewCell {
 
+    @IBOutlet weak var countLbl: UILabel!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var editBtn: UIButton!
     override func awakeFromNib() {
@@ -18,6 +19,8 @@ class SmallCategoryCell: UITableViewCell {
         self.editBtn.layer.masksToBounds = true
         self.editBtn.layer.borderWidth = 1
         self.editBtn.layer.cornerRadius = 4
+        self.countLbl.layer.masksToBounds = true
+        self.countLbl.layer.cornerRadius = 8
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

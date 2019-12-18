@@ -47,9 +47,22 @@
                             <constraint firstAttribute="height" constant="0.5" id="XSz-Sc-i5u"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgu-0f-QL6">
+                        <rect key="frame" x="50" y="14" width="16" height="16"/>
+                        <color key="backgroundColor" red="0.79607843140000001" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="565-ar-79b"/>
+                            <constraint firstAttribute="width" constant="16" id="P6h-Sw-tRc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="QLs-hI-r5z" secondAttribute="bottom" id="402-Fm-kiI"/>
+                    <constraint firstItem="lgu-0f-QL6" firstAttribute="leading" secondItem="p2l-32-20q" secondAttribute="trailing" constant="5" id="BQM-Qp-qF7"/>
+                    <constraint firstItem="lgu-0f-QL6" firstAttribute="centerY" secondItem="p2l-32-20q" secondAttribute="centerY" id="I1d-I1-JbA"/>
                     <constraint firstAttribute="trailing" secondItem="a6q-cP-shr" secondAttribute="trailing" constant="15" id="XuV-d1-N3U"/>
                     <constraint firstItem="p2l-32-20q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="bIR-k8-FBC"/>
                     <constraint firstItem="QLs-hI-r5z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="cdm-CD-Kfy"/>
@@ -60,6 +73,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="countLbl" destination="lgu-0f-QL6" id="YHh-b7-owZ"/>
                 <outlet property="editBtn" destination="a6q-cP-shr" id="hG7-pH-MEe"/>
                 <outlet property="titleLbl" destination="p2l-32-20q" id="hK6-3E-4Kn"/>
             </connections>

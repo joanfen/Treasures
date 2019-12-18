@@ -16,7 +16,7 @@ DEPENDENCIES:
   - WCDB.swift
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - JGProgressHUD
     - SQLiteRepairKit
@@ -34,4 +34,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 0cf358285aa6e29d18df2ee768c3e958d2ba4fd3
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.7.1

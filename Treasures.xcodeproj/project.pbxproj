@@ -19,6 +19,12 @@
 		3D2E491A23A7E06C00DE59A2 /* UIColor+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E491923A7E06C00DE59A2 /* UIColor+Category.swift */; };
 		3D2E491D23A7E0EF00DE59A2 /* SmallCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E491B23A7E0EF00DE59A2 /* SmallCategoryCell.swift */; };
 		3D2E491E23A7E0EF00DE59A2 /* SmallCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D2E491C23A7E0EF00DE59A2 /* SmallCategoryCell.xib */; };
+		3D6D585C23AA761F00AF718A /* CollectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D585A23AA761F00AF718A /* CollectedViewController.swift */; };
+		3D6D585D23AA761F00AF718A /* CollectedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6D585B23AA761F00AF718A /* CollectedViewController.xib */; };
+		3D6D586123AA79C300AF718A /* RecycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D585F23AA79C300AF718A /* RecycleViewController.swift */; };
+		3D6D586223AA79C300AF718A /* RecycleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6D586023AA79C300AF718A /* RecycleViewController.xib */; };
+		3D6D586623AA7DF700AF718A /* InvateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D586423AA7DF700AF718A /* InvateViewController.swift */; };
+		3D6D586723AA7DF700AF718A /* InvateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6D586523AA7DF700AF718A /* InvateViewController.xib */; };
 		484CA16C23994ECF00207662 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484CA16A23994ECF00207662 /* SearchBarView.swift */; };
 		484CA16D23994ECF00207662 /* SearchBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484CA16B23994ECF00207662 /* SearchBarView.xib */; };
 		484CA16F23994F0800207662 /* ListFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484CA16E23994F0800207662 /* ListFilterView.xib */; };
@@ -130,6 +136,12 @@
 		3D2E491923A7E06C00DE59A2 /* UIColor+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Category.swift"; sourceTree = "<group>"; };
 		3D2E491B23A7E0EF00DE59A2 /* SmallCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCategoryCell.swift; sourceTree = "<group>"; };
 		3D2E491C23A7E0EF00DE59A2 /* SmallCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmallCategoryCell.xib; sourceTree = "<group>"; };
+		3D6D585A23AA761F00AF718A /* CollectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectedViewController.swift; sourceTree = "<group>"; };
+		3D6D585B23AA761F00AF718A /* CollectedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectedViewController.xib; sourceTree = "<group>"; };
+		3D6D585F23AA79C300AF718A /* RecycleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleViewController.swift; sourceTree = "<group>"; };
+		3D6D586023AA79C300AF718A /* RecycleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecycleViewController.xib; sourceTree = "<group>"; };
+		3D6D586423AA7DF700AF718A /* InvateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvateViewController.swift; sourceTree = "<group>"; };
+		3D6D586523AA7DF700AF718A /* InvateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvateViewController.xib; sourceTree = "<group>"; };
 		4824F4F9ECDF53CC6D022612 /* Pods-Treasures.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Treasures.release.xcconfig"; path = "Target Support Files/Pods-Treasures/Pods-Treasures.release.xcconfig"; sourceTree = "<group>"; };
 		484CA16A23994ECF00207662 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		484CA16B23994ECF00207662 /* SearchBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchBarView.xib; sourceTree = "<group>"; };
@@ -268,6 +280,33 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		3D6D585923AA75F300AF718A /* Collected */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D585A23AA761F00AF718A /* CollectedViewController.swift */,
+				3D6D585B23AA761F00AF718A /* CollectedViewController.xib */,
+			);
+			path = Collected;
+			sourceTree = "<group>";
+		};
+		3D6D585E23AA79AD00AF718A /* Recycle */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D585F23AA79C300AF718A /* RecycleViewController.swift */,
+				3D6D586023AA79C300AF718A /* RecycleViewController.xib */,
+			);
+			path = Recycle;
+			sourceTree = "<group>";
+		};
+		3D6D586323AA7DDA00AF718A /* Invate */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D586423AA7DF700AF718A /* InvateViewController.swift */,
+				3D6D586523AA7DF700AF718A /* InvateViewController.xib */,
+			);
+			path = Invate;
+			sourceTree = "<group>";
+		};
 		484CA16923994EBA00207662 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +389,9 @@
 		55B22B452397539500B738B7 /* Treasures */ = {
 			isa = PBXGroup;
 			children = (
+				3D6D586323AA7DDA00AF718A /* Invate */,
+				3D6D585E23AA79AD00AF718A /* Recycle */,
+				3D6D585923AA75F300AF718A /* Collected */,
 				3D2E491123A7DB4E00DE59A2 /* Category */,
 				3D2E48F923A6690900DE59A2 /* Personal */,
 				55B366BC23975AF9008F32D6 /* TreasureList */,
@@ -555,6 +597,7 @@
 				55B22B502397539800B738B7 /* Assets.xcassets in Resources */,
 				3D2E490423A6770900DE59A2 /* EditPasswordVC.xib in Resources */,
 				552CC57C23A35E8E00D14F21 /* secondCategory.json in Resources */,
+				3D6D585D23AA761F00AF718A /* CollectedViewController.xib in Resources */,
 				55B22B4E2397539500B738B7 /* Main.storyboard in Resources */,
 				48DF59D6239BDF9D0086B352 /* SortPriceItem.xib in Resources */,
 				48EF5C8223A2871D00A0E8B1 /* AddImagesSubview.xib in Resources */,
@@ -563,6 +606,8 @@
 				3D2E491E23A7E0EF00DE59A2 /* SmallCategoryCell.xib in Resources */,
 				3D2E490023A66B7500DE59A2 /* PersonalCell.xib in Resources */,
 				484CA16F23994F0800207662 /* ListFilterView.xib in Resources */,
+				3D6D586723AA7DF700AF718A /* InvateViewController.xib in Resources */,
+				3D6D586223AA79C300AF718A /* RecycleViewController.xib in Resources */,
 				55AD672E23AA315500C0E5EB /* InputSubview.xib in Resources */,
 				48DF59DF239C87680086B352 /* CategoryItem.xib in Resources */,
 				55B366C823976C64008F32D6 /* EditController.xib in Resources */,
@@ -670,6 +715,7 @@
 				48AA8460239CD71500A81C9F /* TreasureListCell.swift in Sources */,
 				48EF5C7C23A284D300A0E8B1 /* ChooseCategorySubview.swift in Sources */,
 				3D2E48FF23A66B7500DE59A2 /* PersonalCell.swift in Sources */,
+				3D6D586123AA79C300AF718A /* RecycleViewController.swift in Sources */,
 				552CC58B23A3BD7D00D14F21 /* TreasureDetailDTO.swift in Sources */,
 				48DF59E6239CA07F0086B352 /* OrderRule.swift in Sources */,
 				48AA8473239CEB6E00A81C9F /* Queryable.swift in Sources */,
@@ -705,7 +751,9 @@
 				484CA17123994F2500207662 /* ListFilterView.swift in Sources */,
 				48DF59D2239B47EB0086B352 /* SortedItem.swift in Sources */,
 				552CC58223A392FB00D14F21 /* EditTreasureForm.swift in Sources */,
+				3D6D585C23AA761F00AF718A /* CollectedViewController.swift in Sources */,
 				48EF5C8023A286B200A0E8B1 /* InputSubview.swift in Sources */,
+				3D6D586623AA7DF700AF718A /* InvateViewController.swift in Sources */,
 				48AA8470239CE89C00A81C9F /* TreasureRepository.swift in Sources */,
 				55B22B7A239755D800B738B7 /* FontConstants.swift in Sources */,
 				48FA4FE423A7D640005DA01A /* CategoryDTO.swift in Sources */,

@@ -14,7 +14,7 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var smallTableView: UITableView!
     var bigCategoryArr:[FirstCategoryTable] = []
     var smallCategoryArr:[SecondCategoryTable] = []
-//    var myCategoryArr:[]
+    var myCategoryArr:[Int] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configNavigation()
@@ -31,6 +31,15 @@ class CategoryViewController: UIViewController {
         bigCategoryArr = CategoryRepo.queryFirstCategories()
         let firstId = bigCategoryArr[0].identifier ?? 0
         smallCategoryArr = CategoryRepo.querySecondCategories(parentId: firstId)
+        for dto in CategoryRepo.queryMyCategories() {
+            for category in dto.secondCategories {
+                if !myCategoryArr.contains(where: { (id) -> Bool in
+                    return category.secondId == id
+                }){
+                    myCategoryArr.append(category.secondId)
+                }
+            }
+        }
     }
     
     func setUI() {
@@ -67,6 +76,9 @@ extension CategoryViewController:UITableViewDelegate,UITableViewDataSource {
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "SmallCategoryCell") as! SmallCategoryCell
         cell.titleLbl.text = smallCategoryArr[indexPath.row].name
+        if myCategoryArr.contains(smallCategoryArr[indexPath.row].identifier ?? 0) {
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -77,6 +89,15 @@ extension CategoryViewController:UITableViewDelegate,UITableViewDataSource {
             let bigCategory = self.bigCategoryArr[indexPath.row]
             smallCategoryArr = CategoryRepo.querySecondCategories(parentId: bigCategory.identifier ?? 0)
             self.smallTableView.reloadData()
+        }else {
+            let smallCategory = self.smallCategoryArr[indexPath.row]
+            _ = CategoryRepo.enableCategory(secondCategoryId: smallCategory.identifier ?? 0)
+        }
+    }
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if tableView == smallTableView {
+            let smallCategory = self.smallCategoryArr[indexPath.row]
+            _ = CategoryRepo.disableCategory(secondCategoryId: smallCategory.identifier ?? 0)
         }
     }
 }
