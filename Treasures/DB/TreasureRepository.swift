@@ -13,19 +13,23 @@ class TreasureRepository {
     /*
      * 查询已收藏藏品
      */
-    class func findCollectedTreasures() -> [TreasureListSearchDTO] {
+    class func findCollectedTreasures() -> [TreasureCellVO] {
         let filter = FilterPreference()
         filter.filterCollected = true
-        return findTreasures(query: filter)
+        return findTreasures(query: filter).map { (treasure) -> TreasureCellVO in
+            return TreasureCellVO.init(with: treasure)
+        }
     }
     
     /**
      * 查询已删除藏品
      */
-    class func findDeletedTreasures() -> [TreasureListSearchDTO] {
+    class func findDeletedTreasures() -> [TreasureCellVO] {
         let filter = FilterPreference()
         filter.filterDeleted = true
-        return findTreasures(query: filter)
+        return findTreasures(query: filter).map { (treasure) -> TreasureCellVO in
+            return TreasureCellVO.init(with: treasure)
+        }
     }
     
     
