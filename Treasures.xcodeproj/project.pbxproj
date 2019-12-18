@@ -78,6 +78,7 @@
 		552CC58C23A3BD7D00D14F21 /* TreasureDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC58A23A3BD7D00D14F21 /* TreasureDetailDTO.swift */; };
 		55AD672A23A8CBB300C0E5EB /* CategoryPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55AD672923A8CBB300C0E5EB /* CategoryPickerView.xib */; };
 		55AD672C23A8E24000C0E5EB /* ChooseCategorySubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55AD672B23A8E24000C0E5EB /* ChooseCategorySubview.xib */; };
+		55AD672E23AA315500C0E5EB /* InputSubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55AD672D23AA315500C0E5EB /* InputSubview.xib */; };
 		55B22B472397539500B738B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B462397539500B738B7 /* AppDelegate.swift */; };
 		55B22B492397539500B738B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B482397539500B738B7 /* SceneDelegate.swift */; };
 		55B22B4B2397539500B738B7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B4A2397539500B738B7 /* LoginController.swift */; };
@@ -169,6 +170,7 @@
 		552CC58A23A3BD7D00D14F21 /* TreasureDetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureDetailDTO.swift; sourceTree = "<group>"; };
 		55AD672923A8CBB300C0E5EB /* CategoryPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryPickerView.xib; sourceTree = "<group>"; };
 		55AD672B23A8E24000C0E5EB /* ChooseCategorySubview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCategorySubview.xib; sourceTree = "<group>"; };
+		55AD672D23AA315500C0E5EB /* InputSubview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputSubview.xib; sourceTree = "<group>"; };
 		55B22B432397539500B738B7 /* Treasures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Treasures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B22B462397539500B738B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B22B482397539500B738B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				48EF5C7B23A284D300A0E8B1 /* ChooseCategorySubview.swift */,
 				55AD672B23A8E24000C0E5EB /* ChooseCategorySubview.xib */,
 				48EF5C7F23A286B200A0E8B1 /* InputSubview.swift */,
+				55AD672D23AA315500C0E5EB /* InputSubview.xib */,
 				48FA4FE623A7D912005DA01A /* CategoryPickerView.swift */,
 				55AD672923A8CBB300C0E5EB /* CategoryPickerView.xib */,
 			);
@@ -560,6 +563,7 @@
 				3D2E491E23A7E0EF00DE59A2 /* SmallCategoryCell.xib in Resources */,
 				3D2E490023A66B7500DE59A2 /* PersonalCell.xib in Resources */,
 				484CA16F23994F0800207662 /* ListFilterView.xib in Resources */,
+				55AD672E23AA315500C0E5EB /* InputSubview.xib in Resources */,
 				48DF59DF239C87680086B352 /* CategoryItem.xib in Resources */,
 				55B366C823976C64008F32D6 /* EditController.xib in Resources */,
 				484CA175239B3CA500207662 /* SortYearItem.xib in Resources */,

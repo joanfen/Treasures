@@ -39,11 +39,21 @@
                         <action selector="tap:" destination="qgK-pJ-NW5" eventType="touchUpInside" id="oO4-vL-TX5"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cxh-tt-IAW" userLabel="line">
+                    <rect key="frame" x="15" y="43" width="400" height="1"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="pg5-lb-3R7"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Cxh-tt-IAW" firstAttribute="leading" secondItem="qgK-pJ-NW5" secondAttribute="leading" constant="15" id="1eD-Qg-6dH"/>
+                <constraint firstAttribute="trailing" secondItem="Cxh-tt-IAW" secondAttribute="trailing" constant="-3" id="9VH-Yx-4Ef"/>
                 <constraint firstAttribute="trailing" secondItem="uMR-Wd-3sQ" secondAttribute="trailing" constant="14" id="DvH-0A-WvT"/>
                 <constraint firstItem="eag-zC-RzK" firstAttribute="centerY" secondItem="qgK-pJ-NW5" secondAttribute="centerY" id="SnW-2T-tgJ"/>
+                <constraint firstAttribute="bottom" secondItem="Cxh-tt-IAW" secondAttribute="bottom" id="WSK-6h-sa2"/>
                 <constraint firstItem="uMR-Wd-3sQ" firstAttribute="centerY" secondItem="qgK-pJ-NW5" secondAttribute="centerY" id="XAX-fz-HBm"/>
                 <constraint firstItem="evg-Ja-Kq0" firstAttribute="top" secondItem="qgK-pJ-NW5" secondAttribute="top" id="gZU-hn-qpP"/>
                 <constraint firstItem="eag-zC-RzK" firstAttribute="leading" secondItem="qgK-pJ-NW5" secondAttribute="leading" constant="15" id="mnz-Xy-RwH"/>

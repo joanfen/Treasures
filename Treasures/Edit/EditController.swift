@@ -8,12 +8,21 @@
 
 import UIKit
 
-class EditController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    private let imagesView = AddImagesSubview.loadXib()
-    private let contentView = UIScrollView()
-    private let categoryView = ChooseCategorySubview.loadXib()
+class EditController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, InputViewDelegate {
+    
     var treasureId: Int?
     var edit: EditTreasureForm = EditTreasureForm()
+    
+    // MARK: views
+    private let contentView = UIScrollView()
+
+    private let imagesView = AddImagesSubview.loadXib()
+    private let categoryView = ChooseCategorySubview.loadXib()
+    
+    private let nameInputView = InputSubview.loadXib()
+
+    
+    
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -41,8 +50,11 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     override func viewDidLayoutSubviews() {
         super .viewDidLayoutSubviews()
-        imagesView.frame = CGRect.init(x: 0, y: UISizeConstants.top, width: self.view.width, height: AddImagesSubviewConstants.height)
+        imagesView.frame = CGRect.init(x: 0, y: UISizeConstants.top, width: self.contentView.width, height: AddImagesSubviewConstants.height)
         categoryView.frame = CGRect(x: 0, y: imagesView.bottom + 10, width: self.contentView.width, height: 44)
+        nameInputView.frame = CGRect(x: 0, y: categoryView.bottom, width: self.contentView.width, height: 44)
+        
+        
     }
 
     override func viewDidLoad() {
@@ -51,6 +63,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.view.addSubview(contentView)
         addImagesView()
         addCategoryView()
+        addNameInputView()
         
     }
     
@@ -94,6 +107,13 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         shower.show(in: self.tabBarController ?? self)
     }
+    
+    private func addNameInputView() {
+        nameInputView.dataSetting(title: "名称", value: self.edit.name, textChanged: { (name) in
+            self.edit.name = name
+        }, delegate: self)
+        contentView.addSubview(nameInputView)
+    }
    
     // MARK: - data
     private func updateCategory(category: Category) {
@@ -102,6 +122,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @objc private func save() {
+        nameInputView.resignFirstResponder()
         self.edit.images = imagesView.getImages()
         self.edit.saveOrUpdate()
     }
@@ -111,6 +132,14 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
 
+}
+
+// MARK: - Input
+extension EditController {
+    func textFieldBeginEditing(at bottom: CGFloat) {
+        
+//        self.contentView.setContentOffset(CGPoint(x: 0, y: bottom + 20), animated: true)
+    }
 }
 
 // MARK: - ImagePicker

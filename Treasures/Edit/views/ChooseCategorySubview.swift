@@ -7,11 +7,12 @@
 //
 
 import UIKit
+typealias Tap = () -> Void
 
 class ChooseCategorySubview: UIView {
 
     @IBOutlet weak var textField: UITextField!
-    typealias Tap = () -> Void
+    
     var tapAction: Tap?
     
     var category: Category? {
