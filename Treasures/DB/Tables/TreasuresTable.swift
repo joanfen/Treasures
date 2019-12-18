@@ -24,6 +24,7 @@ class TreasuresTable: TableCodable {
     var keywords: String = ""
     var note: String = ""
     var isCollected: Bool = false
+    var deleted: Bool = false
     var created: Date = Date()
 
     
@@ -48,6 +49,7 @@ class TreasuresTable: TableCodable {
         case keywords
         case note
         case isCollected
+        case deleted
         case created
         
         

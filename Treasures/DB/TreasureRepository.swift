@@ -10,21 +10,32 @@ import Foundation
 import WCDBSwift
 
 class TreasureRepository {
-    func findTreasuresByCondition(condition: Condition, orderBy: [OrderBy]) -> [TreasuresTable] {
-        do {
-            let objects: [TreasuresTable] = try DatabaseHandler.getMainDatabase().prepareSelect(of: TreasuresTable.self, fromTable: DBConstants.treasuresTable).where(condition).order(by: orderBy).allObjects()
-            return objects
-        }
-        catch let exception {
-            print(exception)
-        }
-        return []
+    /*
+     * 查询已收藏藏品
+     */
+    class func findCollectedTreasures(page: Int) -> [TreasureListSearchDTO] {
+        let filter = FilterPreference()
+        filter.filterCollected = true
+        filter.currentPage = page
+        return findTreasures(query: filter)
     }
     
     /**
-     * 分页查询藏品数据--首页数据
+     * 查询已删除藏品
      */
-    func findTreasures(query: Queryable) -> [TreasureListSearchDTO] {
+    class func findDeletedTreasures(page: Int) -> [TreasureListSearchDTO] {
+        let filter = FilterPreference()
+        filter.filterDeleted = true
+        filter.currentPage = page
+        return findTreasures(query: filter)
+    }
+    
+    
+    /**
+     * 分页查询藏品数据
+     * @note base 查询
+     */
+    class func findTreasures(query: Queryable) -> [TreasureListSearchDTO] {
         var treasures = [TreasureListSearchDTO]()
         do {
             let multiSelect = try DatabaseHandler.getMainDatabase().prepareMultiSelect(
@@ -32,8 +43,6 @@ class TreasureRepository {
                     fromTables: [DBConstants.treasuresTable, DBConstants.secondCategoryTable])
                 .where(query.toQueryConditions())
                 .order(by: query.toOrderBy())
-                .limit(from: query.page()*query.size(),
-                       to: query.size())
             while let multiObject = try multiSelect.nextMultiObject() {
                 let treasure = multiObject[DBConstants.treasuresTable] as? TreasuresTable
                 let category = multiObject[DBConstants.secondCategoryTable] as? SecondCategoryTable
@@ -49,6 +58,27 @@ class TreasureRepository {
         return treasures
     }
     
+    // MARK: - 更新藏品状态
+    class func collectTreasureBy(id: Int) -> Bool {
+        updateCollected(id: id, collected: true)
+    }
+    
+    class func uncollectTreasureBy(id: Int) -> Bool {
+        updateCollected(id: id, collected: false)
+    }
+    
+    
+    // MARK: - 更新藏品删除状态
+    static func deleteTreasureBy(id: Int) -> Bool {
+        updateDeleted(id: id, deleted: true)
+    }
+    
+    static func revertDeleteTreasureBy(id: Int) -> Bool {
+        updateDeleted(id: id, deleted: false)
+    }
+    
+    
+    // MARK: - 查询藏品详情
     func findTreasureDetailWith(id: Int) -> TreasureDetailDTO {
         let dto = TreasureDetailDTO()
         do {
@@ -80,6 +110,9 @@ class TreasureRepository {
         return dto
     }
     
+    /**
+     * 新增or更新藏品
+     */
     static public func insertOrReplace(treasure: TreasuresTable) -> Int?  {
         do {
             try DatabaseHandler.getMainDatabase().insertOrReplace(objects: treasure, intoTable: DBConstants.treasuresTable)
@@ -109,6 +142,40 @@ class TreasureRepository {
             
         }
         return nil
+    }
+    
+    class internal func updateCollected(id: Int, collected: Bool) -> Bool {
+        let treasure = TreasuresTable()
+        treasure.isCollected = collected
+        do {
+            try DatabaseHandler.getMainDatabase().update(table: DBConstants.treasuresTable,
+                           on: TreasuresTable.Properties.isCollected,
+                           with: treasure,
+                           where: TreasuresTable.Properties.identifier == id)
+               
+            return true
+        } catch let ex {
+            print("更新收藏状态失败: ")
+            print(ex)
+        }
+        return false
+    }
+    
+    class internal func updateDeleted(id: Int, deleted: Bool) -> Bool {
+        let treasure = TreasuresTable()
+        treasure.deleted = deleted
+        do {
+             try DatabaseHandler.getMainDatabase().update(table: DBConstants.treasuresTable,
+                          on: TreasuresTable.Properties.deleted,
+                          with: treasure,
+                          where: TreasuresTable.Properties.identifier == id)
+              
+            return true
+        } catch let ex {
+            print("更新删除状态失败: ")
+            print(ex)
+        }
+        return false
     }
     
 }
