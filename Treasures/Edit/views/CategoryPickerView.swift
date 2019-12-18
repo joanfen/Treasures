@@ -116,10 +116,6 @@ class CategoryPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         }
     }
     
-    func show(in viewController: UIViewController) {
-        self.pickerDelegate?.show(in: viewController)
-    }
-    
     private func selectedAction() {
         let first = categories[selectedFirst]
         let second = first.secondCategories[selectedSecond]
@@ -139,7 +135,10 @@ extension CategoryPickerView {
        case CategoryPickerComponent.first.rawValue:
            return categories.count
        case CategoryPickerComponent.second.rawValue:
-           return categories[selectedFirst].secondCategories.count
+        if (categories.count > selectedFirst) {
+            return categories[selectedFirst].secondCategories.count
+        }
+        return 0
        default:
            return 0
        }

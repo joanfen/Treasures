@@ -92,7 +92,10 @@ class test: XCTestCase {
     }
     
     func testQuery () {
-        CategoryRepo.enableCategory(secondCategoryId: 12)
+        CategoryRepo.enableCategory(secondCategoryId: 1)
+        CategoryRepo.enableCategory(secondCategoryId: 3)
+        CategoryRepo.enableCategory(secondCategoryId: 20)
+
         CategoryRepo.queryMyCategories()
     }
 }

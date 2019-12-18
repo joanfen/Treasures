@@ -9,8 +9,9 @@
 import UIKit
 
 class EditController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    let imagesView = AddImagesSubview.loadXib()
-    
+    private let imagesView = AddImagesSubview.loadXib()
+    private let contentView = UIScrollView()
+    private let categoryView = ChooseCategorySubview.loadXib()
     var treasureId: Int?
     var edit: EditTreasureForm = EditTreasureForm()
 
@@ -31,11 +32,43 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.init(coder: coder)
     }
     
-    @IBAction func test(_ sender: Any) {
-    
+    // MARK: - Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configNavigation()
+       
     }
+
+    override func viewDidLayoutSubviews() {
+        super .viewDidLayoutSubviews()
+        imagesView.frame = CGRect.init(x: 0, y: UISizeConstants.top, width: self.view.width, height: AddImagesSubviewConstants.height)
+        categoryView.frame = CGRect(x: 0, y: imagesView.bottom + 10, width: self.contentView.width, height: 44)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentView.frame = self.view.bounds
+        self.view.addSubview(contentView)
+        addImagesView()
+        addCategoryView()
+        
+    }
+    
+    private func configNavigation() {
+        self.navigationController?.navigationBar.isHidden = false
+        if self.edit.identifier != nil {
+            self.title = "修改藏品"
+        } else {
+            self.title = "添加藏品"
+        }
+        self.navigationController?.navigationBar.tintColor = ColorConstants.titleColor
+           
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "share"), style: UIBarButtonItem.Style.done, target: self, action: #selector(save))
+       
+    }
+    
+    // MARK: - Subviews
+    private func addImagesView() {
         imagesView.images = self.edit.images
         imagesView.showAlbum = {(tag: Int) in
             self.showAlbum()
@@ -43,29 +76,29 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagesView.showAlert = {(alert: UIAlertController) in
             self.present(alert, animated: true, completion: nil)
         }
-        self.view.addSubview(imagesView)
+        self.contentView.addSubview(imagesView)
+    }
+
+    private func addCategoryView() {
+        
+        categoryView.category = edit.category
+        categoryView.tapAction = { () in
+            self.popPicker()
+        }
+        self.contentView.addSubview(categoryView)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        configNavigation()
-    }
-
-    override func viewDidLayoutSubviews() {
-        super .viewDidLayoutSubviews()
-        imagesView.frame = CGRect.init(x: 0, y: UISizeConstants.top, width: self.view.width, height: AddImagesSubviewConstants.height)
-    }
-
-    private func configNavigation() {
-        self.navigationController?.navigationBar.isHidden = false
-        if self.edit.identifier != nil {
-            self.title = "修改藏品"
-         } else {
-            self.title = "添加藏品"
+    private func popPicker() {
+        let shower = CategoryPickerShowFromBottom.init { (category) in
+            self.updateCategory(category: category)
         }
-        self.navigationController?.navigationBar.tintColor = ColorConstants.titleColor
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "share"), style: UIBarButtonItem.Style.done, target: self, action: #selector(save))
+        shower.show(in: self.tabBarController ?? self)
+    }
+   
+    // MARK: - data
+    private func updateCategory(category: Category) {
+        self.edit.category = category
+        self.categoryView.category = category
     }
     
     @objc private func save() {
@@ -73,10 +106,14 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.edit.saveOrUpdate()
     }
     
-   
+    @IBAction func testUI(_ sender: Any) {
+        
+    }
+    
 
 }
 
+// MARK: - ImagePicker
 extension EditController {
     private func showAlbum() {
            //判断设置是否支持图片库

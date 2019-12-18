@@ -10,12 +10,28 @@ import UIKit
 
 class ChooseCategorySubview: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var textField: UITextField!
+    typealias Tap = () -> Void
+    var tapAction: Tap?
+    
+    var category: Category? {
+        didSet {
+            if let c = category {
+                self.textField.text = c.secondCategory.name
+            }
+        }
     }
-    */
+    
+    class func loadXib() -> ChooseCategorySubview {
+          return Bundle.main.loadNibNamed("ChooseCategorySubview", owner: self, options: nil)!.first as! ChooseCategorySubview
+      }
 
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+    @IBAction private func tap(_ sender: Any) {
+        self.tapAction?()
+    }
 }
