@@ -15,7 +15,9 @@ class InvateViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    @IBAction func popClicked() {
+        self.navigationController?.popViewController(animated: true)
+    }
 
     /*
     // MARK: - Navigation

@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecycleViewController" customModule="Treasures" customModuleProvider="target">
             <connections>
+                <outlet property="emptyLbl" destination="Kq2-lh-1aN" id="Bmc-Pn-LEH"/>
+                <outlet property="tableView" destination="gqM-RP-QG7" id="W0G-2c-NfS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,6 +31,9 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <state key="normal" image="back"/>
+                            <connections>
+                                <action selector="popClicked" destination="-1" eventType="touchUpInside" id="UFm-oC-cZP"/>
+                            </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tmx-zs-3wu">
                             <rect key="frame" x="0.0" y="43" width="414" height="1"/>
@@ -59,12 +64,24 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gqM-RP-QG7">
                     <rect key="frame" x="0.0" y="96" width="414" height="766"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="AGS-Uc-hOO"/>
+                        <outlet property="delegate" destination="-1" id="gzW-zh-3LW"/>
+                    </connections>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kq2-lh-1aN">
+                    <rect key="frame" x="172.5" y="442.5" width="69.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hxL-B0-xxO" secondAttribute="trailing" id="14k-bm-Ipx"/>
                 <constraint firstItem="gqM-RP-QG7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7VT-sl-j2c"/>
+                <constraint firstItem="Kq2-lh-1aN" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="7nj-7P-o62"/>
+                <constraint firstItem="Kq2-lh-1aN" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Dbe-gN-11d"/>
                 <constraint firstItem="hxL-B0-xxO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DnD-yh-7uT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gqM-RP-QG7" secondAttribute="trailing" id="EQL-6o-gBL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gqM-RP-QG7" secondAttribute="bottom" id="Yzt-R2-Cma"/>

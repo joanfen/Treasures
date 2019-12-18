@@ -9,18 +9,23 @@
 import UIKit
 
 class CollectedViewController: UIViewController {
-    var dataSource = [TreasureListSearchDTO]()
+    var dataSource = [TreasureCellVO]()
+    
+    @IBOutlet weak var emptyLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUI()
-        
         // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.initData()
+    }
+
+    @IBAction func popClicked() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     func setUI() {
@@ -33,6 +38,7 @@ class CollectedViewController: UIViewController {
     
     func initData() {
         dataSource = TreasureRepository.findCollectedTreasures()
+        self.tableView.isHidden = dataSource.count == 0
         self.tableView.reloadData()
     }
 }
