@@ -9,8 +9,6 @@
 import Foundation
 import WCDBSwift
 
-
-
 class FilterPreference: Queryable {
     var searchText: String? {
         didSet{
@@ -50,6 +48,18 @@ class FilterPreference: Queryable {
     }
     var filterSold: Bool = false {
         didSet{
+            currentPage = 0
+        }
+    }
+    
+    var filterDeleted: Bool? {
+        didSet{
+            currentPage = 0
+        }
+    }
+    
+    var filterCollected: Bool? {
+        didSet {
             currentPage = 0
         }
     }
@@ -99,6 +109,15 @@ class FilterPreference: Queryable {
         if filterSold {
             condition = condition + TreasuresTable.Properties.isSold
         }
+        
+        if let collected = filterCollected {
+            condition = condition + TreasuresTable.Properties.isCollected == collected
+        }
+        
+        if let deleted = filterDeleted {
+            condition = condition + TreasuresTable.Properties.deleted == deleted
+        }
+        
         return condition
     }
     

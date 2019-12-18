@@ -13,20 +13,18 @@ class TreasureRepository {
     /*
      * 查询已收藏藏品
      */
-    class func findCollectedTreasures(page: Int) -> [TreasureListSearchDTO] {
+    class func findCollectedTreasures() -> [TreasureListSearchDTO] {
         let filter = FilterPreference()
         filter.filterCollected = true
-        filter.currentPage = page
         return findTreasures(query: filter)
     }
     
     /**
      * 查询已删除藏品
      */
-    class func findDeletedTreasures(page: Int) -> [TreasureListSearchDTO] {
+    class func findDeletedTreasures() -> [TreasureListSearchDTO] {
         let filter = FilterPreference()
         filter.filterDeleted = true
-        filter.currentPage = page
         return findTreasures(query: filter)
     }
     
