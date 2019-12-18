@@ -78,44 +78,43 @@ class FilterPreference: Queryable {
     func toProperties() -> [PropertyConvertible] {
         var list: [PropertyConvertible] = DBConstants.treasureProperties
     
-        list.append(SecondCategoryTable.Properties.name.in(table: DBConstants.secondCategoryTable))
+        list.append(contentsOf: DBConstants.secondCategoryProperties)
+
         return list;
     }
     
     func toQueryConditions() -> Condition {
        
-        let categoryId =  TreasuresTable.Properties.secondCategoryId.in(table: DBConstants.treasuresTable)
+        let categoryId = TreasuresTable.Properties.secondCategoryId.in(table: DBConstants.treasuresTable)
         let second = SecondCategoryTable.Properties.identifier.in(table: DBConstants.secondCategoryTable)
         var condition = categoryId == second
         
         if let c = category {
-            condition = condition + TreasuresTable.Properties.firstCategoryId == c.firstCategory.id
-            condition = condition + TreasuresTable.Properties.secondCategoryId == c.secondCategory.id
+            condition = condition && (TreasuresTable.Properties.secondCategoryId == c.secondCategory.id)
         }
 
         if let text = searchText?.trimmingCharacters(in: CharacterSet.whitespaces) {
             if (text.count > 0) {
-                condition = condition + (TreasuresTable.Properties.name.like(text)
-                || TreasuresTable.Properties.keywords.like(text)
+                condition = condition && (TreasuresTable.Properties.name.like(text)
                 || TreasuresTable.Properties.description.like(text))
             }
         }
         if filterAvaliable {
-            condition = condition + TreasuresTable.Properties.available
+            condition = condition && (TreasuresTable.Properties.available)
         }
         if filterUnavaliable {
-            condition = condition + TreasuresTable.Properties.available == false
+            condition = condition && (TreasuresTable.Properties.available == false)
         }
         if filterSold {
-            condition = condition + TreasuresTable.Properties.isSold
+            condition = condition && (TreasuresTable.Properties.isSold)
         }
         
         if let collected = filterCollected {
-            condition = condition + TreasuresTable.Properties.isCollected == collected
+            condition = condition && (TreasuresTable.Properties.isCollected == collected)
         }
         
         if let deleted = filterDeleted {
-            condition = condition + TreasuresTable.Properties.deleted == deleted
+            condition = condition && (TreasuresTable.Properties.deleted == deleted)
         }
         
         return condition

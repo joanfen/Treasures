@@ -14,8 +14,8 @@ class EditTreasureForm {
     var images: [UIImage] = []
     var name: String = ""
     var category: Category?
-    var size: String?
-    var year: String?
+    var size: String = ""
+    var year: String = ""
     var descrpiton: String = ""
     var keywords: [String] = []
     var purchasedYear: Int?
@@ -64,23 +64,15 @@ class EditTreasureForm {
         table.note = note
         table.available = available
         table.isSold = isSold
-        if let s = size {
-            table.size = s
-        } else {
-            // TODO: Block Action
-          
-        }
+        table.size = size
+        
         if let c = category {
             table.firstCategoryId = c.firstCategory.id
             table.secondCategoryId = c.secondCategory.id
         } else {
             // TODO: Block ACTION
         }
-        if let y = year {
-            table.year = y
-        } else {
-            // TODO: Block ACTION
-        }
+        table.year = year
         
         if let py = purchasedYear {
             table.purchasedYear = py
