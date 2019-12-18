@@ -25,13 +25,13 @@ struct DBConstants {
         list.append(TreasuresTable.Properties.identifier.in(table: DBConstants.treasuresTable))
         return list;
     }
-    static var firstCategoryProperties: [PropertyConvertible] {
+    static var secondCategoryProperties: [PropertyConvertible] {
         return [SecondCategoryTable.Properties.identifier.in(table: DBConstants.secondCategoryTable),
         SecondCategoryTable.Properties.parentCategoryId.in(table: DBConstants.secondCategoryTable),
         SecondCategoryTable.Properties.name.in(table: DBConstants.secondCategoryTable),
         SecondCategoryTable.Properties.created.in(table: DBConstants.secondCategoryTable)]
     }
-    static var secondCategoryProperties: [PropertyConvertible] {
+    static var firstCategoryProperties: [PropertyConvertible] {
         return [FirstCategoryTable.Properties.identifier.in(table: DBConstants.firstCategoryTable),
         FirstCategoryTable.Properties.name.in(table: DBConstants.firstCategoryTable),
         FirstCategoryTable.Properties.created.in(table: DBConstants.firstCategoryTable)]

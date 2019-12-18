@@ -58,24 +58,13 @@ class test: XCTestCase {
     
     
     
-    func testFind() {
-        do {
-            let objects: [TreasuresTable] = try DatabaseHandler.getMainDatabase().getObjects( fromTable: DBConstants.treasuresTable)
-            print(objects)
-        } catch let exception {
-            print(exception)
-        }
+    func testCollected() {
+        TreasureRepository.collectTreasureBy(id: 1)
+        let treasure = TreasureRepository.findCollectedTreasures()
+        print(treasure.count)
         
     }
     
-    func testConditionFind() {
-        let filterPreference = FilterPreference()
-        filterPreference.searchText = ""
-        let objects: [TreasuresTable] = TreasureRepository().findTreasuresByCondition(condition: filterPreference.toQueryConditions(), orderBy: filterPreference.toOrderBy())
-        print(objects)
-   
-    }
-
     func testPrepareData() {
         DatabaseHandler.insertCategoriesData()
     }
