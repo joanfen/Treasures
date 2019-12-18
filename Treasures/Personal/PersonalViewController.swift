@@ -28,6 +28,8 @@ class PersonalViewController: UIViewController {
         super.viewWillAppear(animated)
         nickName = (UserDefaults.standard.object(forKey: "nickname") as? String) ?? "nickname"
         self.nickNameLbl.text = nickName
+        let img = PathHandler.getThumbnail()
+        self.avatarImg.image = img
     }
     
     func setUI() {
@@ -182,7 +184,7 @@ extension PersonalViewController: UIImagePickerControllerDelegate, UINavigationC
         
         //显示设置的照片
         avatarImg.image = image
-        
+        PathHandler.saveThumbnail(image: image)
         self.dismiss(animated: true, completion: nil)
     }
     
