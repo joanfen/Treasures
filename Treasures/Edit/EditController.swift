@@ -20,8 +20,19 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     private let categoryView = ChooseCategorySubview.loadXib()
     
     private let nameInputView = InputSubview.loadXib()
-
+    private let sizeInputView = MultiInputView.loadXib()
+    private let yearInputView = MultiInputView.loadXib()
+    private let descriptionInputView = MultiInputView.loadXib()
+    private let keywordInputView = MultiInputView.loadXib()
     
+    private let purchasingTimeInputView = InputSubview.loadXib()
+    private let purchasingPriceInputView = InputSubview.loadXib()
+    private let sellingPriceInputView = InputSubview.loadXib()
+    
+    private let avaliableView = SwitchSubview.loadXib()
+    private let soldView = SwitchSubview.loadXib()
+    
+    private let noteView = MultiInputView.loadXib()
     
 
     init() {
@@ -50,20 +61,42 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     override func viewDidLayoutSubviews() {
         super .viewDidLayoutSubviews()
+        let singleHeight: CGFloat = 50;
         imagesView.frame = CGRect.init(x: 0, y: UISizeConstants.top, width: self.contentView.width, height: AddImagesSubviewConstants.height)
-        categoryView.frame = CGRect(x: 0, y: imagesView.bottom + 10, width: self.contentView.width, height: 44)
-        nameInputView.frame = CGRect(x: 0, y: categoryView.bottom, width: self.contentView.width, height: 44)
+        categoryView.frame = CGRect(x: 0, y: imagesView.bottom + 10, width: self.contentView.width, height: singleHeight)
+        nameInputView.frame = CGRect(x: 0, y: categoryView.bottom, width: self.contentView.width, height: singleHeight)
+        sizeInputView.frame = CGRect(x: 0, y: nameInputView.bottom, width: self.contentView.width, height: 100)
+        yearInputView.frame = CGRect(x: 0, y: sizeInputView.bottom, width: self.contentView.width, height: 100)
+        descriptionInputView.frame = CGRect(x: 0, y: yearInputView.bottom, width: self.contentView.width, height: 140)
+        keywordInputView.frame = CGRect(x: 0, y: descriptionInputView.bottom, width: self.contentView.width, height: 140)
+        purchasingTimeInputView.frame = CGRect(x: 0, y: keywordInputView.bottom + 10, width: self.contentView.width, height: singleHeight)
+        purchasingPriceInputView.frame = CGRect(x: 0, y: purchasingTimeInputView.bottom, width: self.contentView.width, height: singleHeight)
+        sellingPriceInputView.frame = CGRect(x: 0, y: purchasingPriceInputView.bottom, width: self.contentView.width, height: singleHeight)
+        avaliableView.frame = CGRect(x: 0, y: sellingPriceInputView.bottom, width: self.contentView.width, height: singleHeight)
+        soldView.frame = CGRect(x: 0, y: avaliableView.bottom, width: self.contentView.width, height: singleHeight)
         
+        noteView.frame = CGRect(x: 0, y: soldView.bottom + 10, width: self.contentView.width, height: singleHeight)
+        contentView.contentSize = CGSize(width: self.view.width, height: noteView.bottom)
         
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentView.frame = self.view.bounds
+        contentView.frame = CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height - 65)
+        
         self.view.addSubview(contentView)
         addImagesView()
         addCategoryView()
         addNameInputView()
+        addSizeInputView()
+        addYearInputView()
+        addDescriptionView()
+        addKeywordInputView()
+        addPurchasedTimeView()
+        addPurchasedPriceView()
+        addSoldPriceView()
+        addAvaliableView()
+        addSoldView()
         
     }
     
@@ -114,7 +147,81 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }, delegate: self)
         contentView.addSubview(nameInputView)
     }
+    
+    
+    private func addSizeInputView() {
+        sizeInputView.dataSetting(title: "尺寸", value: self.edit.size, textChanged: { (size) in
+            self.edit.size = size
+        })
+        contentView.addSubview(sizeInputView)
+    }
+    
+    private func addYearInputView() {
+        yearInputView.dataSetting(title: "年份", value: self.edit.year) { (year) in
+            self.edit.year = year
+        }
+        contentView.addSubview(yearInputView)
+    }
+    
+    private func addDescriptionView() {
+        descriptionInputView.dataSetting(title: "描述", value: self.edit.descrpiton) { (desc) in
+            self.edit.descrpiton = desc
+        }
+        contentView.addSubview(descriptionInputView)
+    }
+    
+    private func addKeywordInputView() {
+        keywordInputView.dataSetting(title: "关键字", value: self.edit.keywords.joined(separator: ",")) { (keywords) in
+            self.edit.keywords = keywords.components(separatedBy: ",")
+          }
+          contentView.addSubview(keywordInputView)
+    }
    
+    private func addPurchasedTimeView() {
+        var yearString = ""
+        if let year = self.edit.purchasedYear {
+            yearString = String(year)
+        }
+        purchasingTimeInputView.dataSetting(title: "购入时间", value: yearString, textChanged: { (text) in
+            self.edit.purchasedYear = Int(text)
+        }, delegate: self)
+        purchasingTimeInputView.showUnit(text: "年")
+        contentView.addSubview(purchasingTimeInputView)
+    }
+    
+    private func addPurchasedPriceView() {
+        purchasingPriceInputView.dataSetting(title: "购入价格", value: String((self.edit.purchasedPrice ?? 0)), textChanged: { (text) in
+            self.edit.purchasedPrice = Float(Int.init(text) ?? 0)
+        }, delegate: self)
+        purchasingPriceInputView.showUnit(text: "RMB")
+        contentView.addSubview(purchasingPriceInputView)
+    }
+    private func addSoldPriceView() {
+        sellingPriceInputView.dataSetting(title: "售出价格", value: String((self.edit.sellingPrice ?? 0)/100), textChanged: { (text) in
+            self.edit.sellingPrice = Float(Int.init(text) ?? 0)
+        }, delegate: self)
+        sellingPriceInputView.showUnit(text: "RMB")
+        contentView.addSubview(sellingPriceInputView)
+    }
+    
+    private func addAvaliableView() {
+        avaliableView.dataSetting(title: "是否可售", choosed: self.edit.available) { (chosed) in
+            self.edit.available = chosed
+        }
+        contentView.addSubview(avaliableView)
+    }
+    private func addSoldView() {
+        soldView.dataSetting(title: "是否已售", choosed: self.edit.isSold) { (chosed) in
+            self.edit.isSold = chosed
+        }
+        contentView.addSubview(soldView)
+    }
+       
+    private func addNoteView() {
+        
+    }
+    
+    
     // MARK: - data
     private func updateCategory(category: Category) {
         self.edit.category = category
@@ -130,8 +237,6 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func testUI(_ sender: Any) {
         
     }
-    
-
 }
 
 // MARK: - Input

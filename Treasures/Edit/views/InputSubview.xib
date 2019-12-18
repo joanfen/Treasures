@@ -23,8 +23,24 @@
                     <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ha3-c6-Cbl" userLabel="line">
+                    <rect key="frame" x="15" y="42.5" width="382" height="0.5"/>
+                    <color key="backgroundColor" red="0.69803921570000005" green="0.69803921570000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="xSk-2z-8qE"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfk-dm-LE9">
+                    <rect key="frame" x="397" y="13.5" width="0.0" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" id="SxN-GB-vN2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.57647058823529407" green="0.57647058823529407" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsF-pD-I3n">
-                    <rect key="frame" x="235" y="5" width="163" height="34"/>
+                    <rect key="frame" x="233" y="5" width="163" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="163" id="230-ad-chR"/>
                         <constraint firstAttribute="height" constant="34" id="4Rp-kb-6HO"/>
@@ -36,28 +52,25 @@
                         <outlet property="delegate" destination="HFo-bt-D8W" id="Amc-YV-qwx"/>
                     </connections>
                 </textField>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ha3-c6-Cbl" userLabel="line">
-                    <rect key="frame" x="15" y="43" width="400" height="1"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="1" id="xSk-2z-8qE"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="9Dz-Cz-8Cc" firstAttribute="leading" secondItem="HFo-bt-D8W" secondAttribute="leading" constant="15" id="1vX-gl-8Kk"/>
                 <constraint firstItem="wsF-pD-I3n" firstAttribute="centerY" secondItem="HFo-bt-D8W" secondAttribute="centerY" id="7xe-8J-hmj"/>
-                <constraint firstAttribute="bottom" secondItem="ha3-c6-Cbl" secondAttribute="bottom" id="B0Y-IH-R7m"/>
+                <constraint firstAttribute="bottom" secondItem="ha3-c6-Cbl" secondAttribute="bottom" constant="1" id="B0Y-IH-R7m"/>
                 <constraint firstItem="ha3-c6-Cbl" firstAttribute="leading" secondItem="HFo-bt-D8W" secondAttribute="leading" constant="15" id="C1j-mL-1ug"/>
                 <constraint firstItem="9Dz-Cz-8Cc" firstAttribute="centerY" secondItem="HFo-bt-D8W" secondAttribute="centerY" id="ELe-cr-Rgd"/>
-                <constraint firstAttribute="trailing" secondItem="wsF-pD-I3n" secondAttribute="trailing" constant="14" id="RPm-zC-KUA"/>
-                <constraint firstAttribute="trailing" secondItem="ha3-c6-Cbl" secondAttribute="trailing" constant="-3" id="hCk-p0-guX"/>
+                <constraint firstItem="pfk-dm-LE9" firstAttribute="leading" secondItem="wsF-pD-I3n" secondAttribute="trailing" constant="1" id="Hvy-E2-Ree"/>
+                <constraint firstAttribute="trailing" secondItem="pfk-dm-LE9" secondAttribute="trailing" constant="15" id="XO0-re-NKy"/>
+                <constraint firstItem="pfk-dm-LE9" firstAttribute="centerY" secondItem="HFo-bt-D8W" secondAttribute="centerY" id="e9u-nj-GGr"/>
+                <constraint firstAttribute="trailing" secondItem="ha3-c6-Cbl" secondAttribute="trailing" constant="15" id="hCk-p0-guX"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="textField" destination="wsF-pD-I3n" id="XAG-fh-0Qh"/>
                 <outlet property="titleLable" destination="9Dz-Cz-8Cc" id="Zbv-4T-5f8"/>
+                <outlet property="unitLabel" destination="pfk-dm-LE9" id="f89-hJ-6DW"/>
+                <outlet property="unitWidth" destination="SxN-GB-vN2" id="YwT-d5-Psh"/>
             </connections>
             <point key="canvasLocation" x="130.43478260869566" y="-139.95535714285714"/>
         </view>

@@ -87,4 +87,9 @@ class test: XCTestCase {
 
         CategoryRepo.queryMyCategories()
     }
+    
+    
+    func testThumbnailSave() {
+        PathHandler.saveThumbnail(image: UIImage())
+    }
 }

@@ -11,7 +11,10 @@ import UIKit
 class PropertyItem: UIView {
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
-    var isSelected: Bool = false
+    private var isSelected: Bool = false
+    
+    typealias SelectedAction = (_ selected: Bool) -> Void
+    var selectedAction: SelectedAction?
     
     open var title: String = "" {
         didSet {
@@ -22,14 +25,6 @@ class PropertyItem: UIView {
     class func loadXib() -> PropertyItem {
            return Bundle.main.loadNibNamed("PropertyItem", owner: self, options: nil)!.first as! PropertyItem
     }
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,6 +37,7 @@ class PropertyItem: UIView {
         isSelected = !isSelected
         changeTextColor()
         changeLayerApperance()
+        self.selectedAction?(isSelected)
     }
     
     func changeTextColor() {

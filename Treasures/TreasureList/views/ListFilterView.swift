@@ -89,6 +89,20 @@ class ListFilterView: UIView {
         }
         self.filterBegin?(filterPreference)
     }
+    private func updateFilterAvaliable(flag: Bool) {
+        self.filterPreference.filterAvaliable = flag
+        self.filterBegin?(filterPreference)
+    }
+    
+    private func updateFilterUnavaliable(flag: Bool) {
+        self.filterPreference.filterUnavaliable = flag
+        self.filterBegin?(filterPreference)
+    }
+    
+    private func updateFilterSold(flag: Bool) {
+        self.filterPreference.filterSold = flag
+        self.filterBegin?(filterPreference)
+    }
     
 
     // MARK: UI 控件 配置
@@ -110,6 +124,16 @@ class ListFilterView: UIView {
         priceItem.ruleUpdated = { (rule: OrderRule) in
             self.updatePriceRule(rule: rule)
         }
+        avaliableItem.selectedAction = { (selected: Bool) in
+            self.updateFilterAvaliable(flag: selected)
+        }
+        unavaliableItem.selectedAction = { (selected: Bool) in
+            self.updateFilterUnavaliable(flag: selected)
+        }
+        soldItem.selectedAction = { (selected: Bool) in
+            self.updateFilterSold(flag: selected)
+        }
+        
     }
 
     private func configItemApperance() {

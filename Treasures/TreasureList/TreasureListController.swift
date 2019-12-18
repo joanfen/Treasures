@@ -35,6 +35,7 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
         configNavigation()
         initialSearch()
     }
@@ -109,7 +110,7 @@ extension TreasureListController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(EditController.init(withId: self.treasureList[indexPath.row].id), animated: true)
     }
 }

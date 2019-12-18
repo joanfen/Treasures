@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AddImagesSubview" customModule="Treasures" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="164"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZeA-JS-jbP" userLabel="ContentView">
-                    <rect key="frame" x="0.0" y="44" width="414" height="120"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加图片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjo-A9-3g0">
                             <rect key="frame" x="15" y="13" width="384" height="21"/>
@@ -27,7 +26,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eI0-nH-fVt" customClass="AddImageButton" customModule="Treasures" customModuleProvider="target">
-                            <rect key="frame" x="15" y="45" width="60" height="60"/>
+                            <rect key="frame" x="15" y="49" width="60" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="60" id="kZN-ma-I6S"/>
                                 <constraint firstAttribute="height" constant="60" id="sR7-Om-gSc"/>
@@ -39,7 +38,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5q6-Ig-282" customClass="AddImageButton" customModule="Treasures" customModuleProvider="target">
-                            <rect key="frame" x="95" y="45" width="60" height="60"/>
+                            <rect key="frame" x="95" y="49" width="60" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="7wR-b0-loD"/>
                                 <constraint firstAttribute="width" constant="60" id="c5z-D5-plO"/>
@@ -51,7 +50,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hb-x0-rhS" customClass="AddImageButton" customModule="Treasures" customModuleProvider="target">
-                            <rect key="frame" x="175" y="45" width="60" height="60"/>
+                            <rect key="frame" x="175" y="49" width="60" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="60" id="Tbx-YO-7V0"/>
                                 <constraint firstAttribute="height" constant="60" id="fDF-kO-A99"/>
@@ -79,19 +78,18 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="ZeA-JS-jbP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Gu5-Ck-Rys"/>
-                <constraint firstItem="ZeA-JS-jbP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="MXN-WW-DuW"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ZeA-JS-jbP" secondAttribute="bottom" id="hcy-8m-Yer"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ZeA-JS-jbP" secondAttribute="trailing" id="tHj-vp-Vol"/>
+                <constraint firstItem="ZeA-JS-jbP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Gu5-Ck-Rys"/>
+                <constraint firstItem="ZeA-JS-jbP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MXN-WW-DuW"/>
+                <constraint firstAttribute="bottom" secondItem="ZeA-JS-jbP" secondAttribute="bottom" id="hcy-8m-Yer"/>
+                <constraint firstAttribute="trailing" secondItem="ZeA-JS-jbP" secondAttribute="trailing" id="tHj-vp-Vol"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="addBtn1" destination="eI0-nH-fVt" id="tKr-MT-3Hr"/>
                 <outlet property="addBtn2" destination="5q6-Ig-282" id="lfd-Eu-Fpw"/>
                 <outlet property="addBtn3" destination="6Hb-x0-rhS" id="ilS-bH-Apc"/>
             </connections>
-            <point key="canvasLocation" x="-363.768115942029" y="-220.3125"/>
+            <point key="canvasLocation" x="-363.768115942029" y="-207.58928571428569"/>
         </view>
     </objects>
     <resources>

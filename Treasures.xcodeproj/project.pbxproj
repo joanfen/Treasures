@@ -25,6 +25,11 @@
 		3D6D586223AA79C300AF718A /* RecycleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6D586023AA79C300AF718A /* RecycleViewController.xib */; };
 		3D6D586623AA7DF700AF718A /* InvateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D586423AA7DF700AF718A /* InvateViewController.swift */; };
 		3D6D586723AA7DF700AF718A /* InvateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6D586523AA7DF700AF718A /* InvateViewController.xib */; };
+		482ECB2F23AA583F00BFB839 /* MultiInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482ECB2E23AA583F00BFB839 /* MultiInputView.swift */; };
+		482ECB3123AA585400BFB839 /* MultiInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 482ECB3023AA585400BFB839 /* MultiInputView.xib */; };
+		482ECB3323AA66A500BFB839 /* SwitchSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482ECB3223AA66A500BFB839 /* SwitchSubview.swift */; };
+		482ECB3523AA66C700BFB839 /* SwitchSubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 482ECB3423AA66C700BFB839 /* SwitchSubview.xib */; };
+		482ECB3623AA96CB00BFB839 /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59E0239C90C80086B352 /* ImageConstants.swift */; };
 		484CA16C23994ECF00207662 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484CA16A23994ECF00207662 /* SearchBarView.swift */; };
 		484CA16D23994ECF00207662 /* SearchBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484CA16B23994ECF00207662 /* SearchBarView.xib */; };
 		484CA16F23994F0800207662 /* ListFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484CA16E23994F0800207662 /* ListFilterView.xib */; };
@@ -143,6 +148,10 @@
 		3D6D586423AA7DF700AF718A /* InvateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvateViewController.swift; sourceTree = "<group>"; };
 		3D6D586523AA7DF700AF718A /* InvateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvateViewController.xib; sourceTree = "<group>"; };
 		4824F4F9ECDF53CC6D022612 /* Pods-Treasures.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Treasures.release.xcconfig"; path = "Target Support Files/Pods-Treasures/Pods-Treasures.release.xcconfig"; sourceTree = "<group>"; };
+		482ECB2E23AA583F00BFB839 /* MultiInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiInputView.swift; sourceTree = "<group>"; };
+		482ECB3023AA585400BFB839 /* MultiInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiInputView.xib; sourceTree = "<group>"; };
+		482ECB3223AA66A500BFB839 /* SwitchSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchSubview.swift; sourceTree = "<group>"; };
+		482ECB3423AA66C700BFB839 /* SwitchSubview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchSubview.xib; sourceTree = "<group>"; };
 		484CA16A23994ECF00207662 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		484CA16B23994ECF00207662 /* SearchBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchBarView.xib; sourceTree = "<group>"; };
 		484CA16E23994F0800207662 /* ListFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListFilterView.xib; sourceTree = "<group>"; };
@@ -346,12 +355,16 @@
 			children = (
 				48EF5C7923A2846900A0E8B1 /* AddImagesSubview.swift */,
 				48EF5C8123A2871D00A0E8B1 /* AddImagesSubview.xib */,
+				48FA4FE623A7D912005DA01A /* CategoryPickerView.swift */,
+				55AD672923A8CBB300C0E5EB /* CategoryPickerView.xib */,
 				48EF5C7B23A284D300A0E8B1 /* ChooseCategorySubview.swift */,
 				55AD672B23A8E24000C0E5EB /* ChooseCategorySubview.xib */,
 				48EF5C7F23A286B200A0E8B1 /* InputSubview.swift */,
 				55AD672D23AA315500C0E5EB /* InputSubview.xib */,
-				48FA4FE623A7D912005DA01A /* CategoryPickerView.swift */,
-				55AD672923A8CBB300C0E5EB /* CategoryPickerView.xib */,
+				482ECB2E23AA583F00BFB839 /* MultiInputView.swift */,
+				482ECB3023AA585400BFB839 /* MultiInputView.xib */,
+				482ECB3223AA66A500BFB839 /* SwitchSubview.swift */,
+				482ECB3423AA66C700BFB839 /* SwitchSubview.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -596,6 +609,7 @@
 				484CA16D23994ECF00207662 /* SearchBarView.xib in Resources */,
 				55B22B502397539800B738B7 /* Assets.xcassets in Resources */,
 				3D2E490423A6770900DE59A2 /* EditPasswordVC.xib in Resources */,
+				482ECB3523AA66C700BFB839 /* SwitchSubview.xib in Resources */,
 				552CC57C23A35E8E00D14F21 /* secondCategory.json in Resources */,
 				3D6D585D23AA761F00AF718A /* CollectedViewController.xib in Resources */,
 				55B22B4E2397539500B738B7 /* Main.storyboard in Resources */,
@@ -605,6 +619,7 @@
 				552CC57A23A35E8600D14F21 /* firstCategory.json in Resources */,
 				3D2E491E23A7E0EF00DE59A2 /* SmallCategoryCell.xib in Resources */,
 				3D2E490023A66B7500DE59A2 /* PersonalCell.xib in Resources */,
+				482ECB3123AA585400BFB839 /* MultiInputView.xib in Resources */,
 				484CA16F23994F0800207662 /* ListFilterView.xib in Resources */,
 				3D6D586723AA7DF700AF718A /* InvateViewController.xib in Resources */,
 				3D6D586223AA79C300AF718A /* RecycleViewController.xib in Resources */,
@@ -718,6 +733,7 @@
 				3D6D586123AA79C300AF718A /* RecycleViewController.swift in Sources */,
 				552CC58B23A3BD7D00D14F21 /* TreasureDetailDTO.swift in Sources */,
 				48DF59E6239CA07F0086B352 /* OrderRule.swift in Sources */,
+				482ECB2F23AA583F00BFB839 /* MultiInputView.swift in Sources */,
 				48AA8473239CEB6E00A81C9F /* Queryable.swift in Sources */,
 				552CC58823A393F600D14F21 /* Size.swift in Sources */,
 				3D2E491D23A7E0EF00DE59A2 /* SmallCategoryCell.swift in Sources */,
@@ -734,6 +750,7 @@
 				3D2E491323A7DB7900DE59A2 /* CategoryViewController.swift in Sources */,
 				48FA4FE123A7BFF1005DA01A /* CategoryRepo.swift in Sources */,
 				484CA16C23994ECF00207662 /* SearchBarView.swift in Sources */,
+				482ECB3323AA66A500BFB839 /* SwitchSubview.swift in Sources */,
 				3D2E491A23A7E06C00DE59A2 /* UIColor+Category.swift in Sources */,
 				55B366CB23976D9F008F32D6 /* RootTabController.swift in Sources */,
 				3D2E490323A6770900DE59A2 /* EditPasswordVC.swift in Sources */,
@@ -784,6 +801,7 @@
 				48FB48CE239D1654005BF6B6 /* FilterPreference.swift in Sources */,
 				48FA4FE223A7BFFC005DA01A /* CategoryRepo.swift in Sources */,
 				552CC57F23A37FB400D14F21 /* TreasureListSearchDTO.swift in Sources */,
+				482ECB3623AA96CB00BFB839 /* ImageConstants.swift in Sources */,
 				48AA846B239CE12000A81C9F /* SecondCategoryTable.swift in Sources */,
 				48AA846E239CE12000A81C9F /* TreasuresTable.swift in Sources */,
 				48FA4FE523A7D640005DA01A /* CategoryDTO.swift in Sources */,

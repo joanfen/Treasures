@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MultiInputView" customModule="Treasures" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="On6-8J-XvG" userLabel="line">
+                    <rect key="frame" x="14" y="139.5" width="385" height="0.5"/>
+                    <color key="backgroundColor" red="0.69803921570000005" green="0.69803921570000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="xWA-oX-2Vr"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="尺寸" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olc-fX-8AI">
+                    <rect key="frame" x="15" y="10" width="384" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="gwE-dg-f8q"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Xk-E2-Clr">
+                    <rect key="frame" x="15" y="40" width="384" height="85"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="Vxp-QI-BcT"/>
+                    </connections>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="3Xk-E2-Clr" secondAttribute="trailing" constant="15" id="3GZ-mY-yOD"/>
+                <constraint firstItem="olc-fX-8AI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="6fG-km-e6F"/>
+                <constraint firstAttribute="trailing" secondItem="olc-fX-8AI" secondAttribute="trailing" constant="15" id="Fvg-xD-fuY"/>
+                <constraint firstAttribute="bottom" secondItem="3Xk-E2-Clr" secondAttribute="bottom" constant="15" id="H5V-2i-BqR"/>
+                <constraint firstAttribute="trailing" secondItem="On6-8J-XvG" secondAttribute="trailing" constant="15" id="Hjr-Hi-ZvW"/>
+                <constraint firstItem="3Xk-E2-Clr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="Kkd-IV-wuM"/>
+                <constraint firstItem="On6-8J-XvG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="NkL-OK-Rm4"/>
+                <constraint firstAttribute="bottom" secondItem="On6-8J-XvG" secondAttribute="bottom" id="Q3c-GM-fUv"/>
+                <constraint firstItem="3Xk-E2-Clr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="jY8-Cy-veN"/>
+                <constraint firstItem="olc-fX-8AI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="rsm-V8-ZDJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="line" destination="On6-8J-XvG" id="bhh-cc-QZa"/>
+                <outlet property="textView" destination="3Xk-E2-Clr" id="JUu-Pf-jrS"/>
+                <outlet property="titleLabel" destination="olc-fX-8AI" id="yQ5-cn-yTL"/>
+            </connections>
+            <point key="canvasLocation" x="-410" y="42"/>
+        </view>
+    </objects>
+</document>
