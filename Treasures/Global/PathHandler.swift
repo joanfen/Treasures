@@ -17,6 +17,7 @@ class PathHandler {
     static func documentPath() -> URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
+    
     static func imageDirectory() -> URL {
         let dir = PathHandler.documentPath().appendingPathComponent("images")
         do {
@@ -56,6 +57,29 @@ class PathHandler {
         deleteFiles(of: treasureId)
         
     }
+    
+    static func saveThumbnail(image: UIImage)  {
+        let path = documentPath()
+        do {
+            try FileManager.default.createDirectory(atPath: path.path,
+                       withIntermediateDirectories: true,
+                       attributes: nil)
+            let imageName = "thumbnail.jpg"
+            let url = path.appendingPathComponent(imageName)
+            try? image.jpegData(compressionQuality: 1.0)?.write(to: url)
+                
+        } catch {
+            
+        }
+    }
+
+    
+    static func getThumbnail() -> UIImage? {
+        let path = documentPath().appendingPathComponent("thumbnail.jpg")
+        let imageOpt = UIImage(contentsOfFile: path.path)
+        return imageOpt
+    }
+    
         
     static func treasurePath(with treasureId: Int?) -> URL {
         let path = imageDirectory()
