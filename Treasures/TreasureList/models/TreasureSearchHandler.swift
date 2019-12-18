@@ -40,10 +40,8 @@ class TreasureCellVO {
 
 class TreasureSearchHandler {
     
-    var treasureRepo = TreasureRepository()
-    
     func search(filter: FilterPreference) -> [TreasureCellVO] {
-        let objects = treasureRepo.findTreasures(query: filter)
+        let objects = TreasureRepository.findTreasures(query: filter)
         var list = [TreasureCellVO]()
         objects.forEach { treasureTable in
             list.append(TreasureCellVO.init(with: treasureTable))
