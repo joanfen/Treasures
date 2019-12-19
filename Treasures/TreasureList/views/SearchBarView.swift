@@ -23,7 +23,7 @@ class SearchBarView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         let frame = self.frame
-        self.frame = CGRect.init(x: 0, y: 0, width: UISizeConstants.screenWidth, height: frame.size.height)
+        
         self.fieldBgView.layer.cornerRadius = 4.0
     }
  

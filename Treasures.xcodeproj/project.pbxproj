@@ -105,7 +105,6 @@
 		55B22B75239755D800B738B7 /* FirstCategoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B6B239755D800B738B7 /* FirstCategoryTable.swift */; };
 		55B22B76239755D800B738B7 /* DBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B6C239755D800B738B7 /* DBConstants.swift */; };
 		55B22B77239755D800B738B7 /* TreasuresTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B6D239755D800B738B7 /* TreasuresTable.swift */; };
-		55B22B78239755D800B738B7 /* TreasureEditCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B6F239755D800B738B7 /* TreasureEditCellProtocol.swift */; };
 		55B22B7A239755D800B738B7 /* FontConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B72239755D800B738B7 /* FontConstants.swift */; };
 		55B366BF23975B44008F32D6 /* TreasureListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B366BD23975B44008F32D6 /* TreasureListController.swift */; };
 		55B366C723976C64008F32D6 /* EditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B366C523976C64008F32D6 /* EditController.swift */; };
@@ -214,7 +213,6 @@
 		55B22B6B239755D800B738B7 /* FirstCategoryTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstCategoryTable.swift; sourceTree = "<group>"; };
 		55B22B6C239755D800B738B7 /* DBConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBConstants.swift; sourceTree = "<group>"; };
 		55B22B6D239755D800B738B7 /* TreasuresTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasuresTable.swift; sourceTree = "<group>"; };
-		55B22B6F239755D800B738B7 /* TreasureEditCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureEditCellProtocol.swift; sourceTree = "<group>"; };
 		55B22B72239755D800B738B7 /* FontConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontConstants.swift; sourceTree = "<group>"; };
 		55B366BD23975B44008F32D6 /* TreasureListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureListController.swift; sourceTree = "<group>"; };
 		55B366C523976C64008F32D6 /* EditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditController.swift; sourceTree = "<group>"; };
@@ -449,8 +447,8 @@
 			children = (
 				55D9E9A523A325F400A622AE /* Tables */,
 				48AA8472239CEB6E00A81C9F /* Queryable.swift */,
-				55B22B69239755D800B738B7 /* DatabaseHandler.swift */,
 				55B22B6C239755D800B738B7 /* DBConstants.swift */,
+				55B22B69239755D800B738B7 /* DatabaseHandler.swift */,
 				48AA846F239CE89C00A81C9F /* TreasureRepository.swift */,
 				48FA4FDF23A7BE53005DA01A /* CategoryRepo.swift */,
 			);
@@ -462,7 +460,6 @@
 			children = (
 				552CC58023A38DC100D14F21 /* models */,
 				48EF5C7823A280A300A0E8B1 /* views */,
-				55B22B6F239755D800B738B7 /* TreasureEditCellProtocol.swift */,
 				55B366C523976C64008F32D6 /* EditController.swift */,
 				55B366C623976C64008F32D6 /* EditController.xib */,
 			);
@@ -790,7 +787,6 @@
 				55B22B73239755D800B738B7 /* DatabaseHandler.swift in Sources */,
 				48DF59D9239BE3060086B352 /* PropertyItem.swift in Sources */,
 				48FA4FE723A7D912005DA01A /* CategoryPickerView.swift in Sources */,
-				55B22B78239755D800B738B7 /* TreasureEditCellProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

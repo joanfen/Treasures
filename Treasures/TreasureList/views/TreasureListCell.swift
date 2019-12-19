@@ -32,6 +32,8 @@ class TreasureListCell: UITableViewCell {
     var source: TreasureCellVO = TreasureCellVO.init()
     
     typealias ActionBlock = (_ hud: JGProgressHUD, _ collected: Bool) -> Void
+    typealias LongPressAction = () -> Void
+    var longPressAction: LongPressAction?
     
     var actionBlock: ActionBlock?
 
@@ -45,14 +47,24 @@ class TreasureListCell: UITableViewCell {
         self.refreshCollectedStatus()
     }
     
-    func config(with source: TreasureCellVO, actionBlock: ActionBlock?) {
-        self.actionBlock = actionBlock
+    func config(with source: TreasureCellVO, actionBlock: ActionBlock?, longPressAction: LongPressAction?) {
         self.config(with: source)
+        self.actionBlock = actionBlock
+        self.longPressAction = longPressAction
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        let tap = UILongPressGestureRecognizer.init(target: self, action: #selector(showActionAlert))
+        tap.minimumPressDuration = 1
+        self.addGestureRecognizer(tap)
+    }
+    
+    @objc private func showActionAlert() {
+        self.longPressAction?()
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
