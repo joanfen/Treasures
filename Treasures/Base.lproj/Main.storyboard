@@ -126,6 +126,9 @@
                                 </constraints>
                                 <color key="tintColor" red="0.84682253949999997" green="0.34560133279999999" blue="0.26642714620000002" alpha="0.65687728099999998" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="new"/>
+                                <connections>
+                                    <action selector="addTreasure:" destination="ijm-oG-cPh" eventType="touchUpInside" id="ViU-BH-wrh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -26,6 +26,7 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
     var searchHandler: TreasureSearchHandler = TreasureSearchHandler()
     var filterPreference = FilterPreference()
     var refreshControl = UIRefreshControl()
+    var actionPopView: EditPopView = EditPopView.loadXib()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +92,19 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
     }
 
     @IBAction func addTreasure(_ sender: Any) {
-        self.navigationController?.pushViewController(EditController(), animated: true)
+//        self.navigationController?.pushViewController(EditController(), animated: true)
+        self.view.addSubview(actionPopView)
+        actionPopView.ActionBlock = {[weak self] (action:PopAction) in
+            guard let weakSelf = self else {return}
+            switch action {
+            case .edit:
+                print("edit")
+            case .delete:
+                print("delete")
+            default:
+                print("copy")
+            }
+        }
     }
 }
 

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EditPopView" customModule="Treasures" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYB-0F-Fec">
+                    <rect key="frame" x="37" y="363" width="340" height="180"/>
+                    <subviews>
+                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ese-cz-lW0">
+                            <rect key="frame" x="0.0" y="0.0" width="340" height="180"/>
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DdC-fj-3B3">
+                                <rect key="frame" x="0.0" y="0.0" width="340" height="180"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBB-rp-EUb">
+                                        <rect key="frame" x="18" y="25" width="74.5" height="74.5"/>
+                                        <state key="normal" image="modify"/>
+                                        <connections>
+                                            <action selector="btnClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="OaP-0m-F27"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iW2-6j-wXW">
+                                        <rect key="frame" x="247.5" y="25" width="74.5" height="74.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="iW2-6j-wXW" secondAttribute="height" id="uZZ-7Q-6Is"/>
+                                        </constraints>
+                                        <state key="normal" image="copy"/>
+                                        <connections>
+                                            <action selector="btnClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="aGn-lx-Drp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zk0-2K-FZD">
+                                        <rect key="frame" x="132.5" y="25" width="75" height="74.5"/>
+                                        <state key="normal" image="delete"/>
+                                        <connections>
+                                            <action selector="btnClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="UIW-xk-ZSh"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修改" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBc-jr-qDQ">
+                                        <rect key="frame" x="41" y="99.5" width="29" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="删除" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bY9-ri-bw0">
+                                        <rect key="frame" x="155.5" y="99.5" width="29" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="复制" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edb-we-Abc">
+                                        <rect key="frame" x="270" y="99.5" width="29" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uaQ-jR-r4m">
+                                        <rect key="frame" x="150" y="140" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="5J1-PG-fgQ"/>
+                                            <constraint firstAttribute="width" constant="40" id="6DN-pU-big"/>
+                                        </constraints>
+                                        <state key="normal" image="close"/>
+                                        <connections>
+                                            <action selector="closeBtnClicked" destination="iN0-l3-epB" eventType="touchUpInside" id="aKV-JP-ftB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zk0-2K-FZD" firstAttribute="centerX" secondItem="DdC-fj-3B3" secondAttribute="centerX" id="3nR-aR-lS8"/>
+                                    <constraint firstAttribute="trailing" secondItem="iW2-6j-wXW" secondAttribute="trailing" constant="18" id="52c-bJ-xzh"/>
+                                    <constraint firstItem="zk0-2K-FZD" firstAttribute="width" secondItem="iW2-6j-wXW" secondAttribute="width" id="BMW-Rv-jim"/>
+                                    <constraint firstItem="bY9-ri-bw0" firstAttribute="centerY" secondItem="WBc-jr-qDQ" secondAttribute="centerY" id="FFZ-M9-o0T"/>
+                                    <constraint firstItem="zk0-2K-FZD" firstAttribute="centerY" secondItem="XBB-rp-EUb" secondAttribute="centerY" id="FyL-j9-mdi"/>
+                                    <constraint firstItem="edb-we-Abc" firstAttribute="centerX" secondItem="iW2-6j-wXW" secondAttribute="centerX" id="KAw-Gx-ScL"/>
+                                    <constraint firstAttribute="bottom" secondItem="uaQ-jR-r4m" secondAttribute="bottom" id="Lhl-OA-KIK"/>
+                                    <constraint firstItem="iW2-6j-wXW" firstAttribute="leading" secondItem="zk0-2K-FZD" secondAttribute="trailing" constant="40" id="Mrx-fc-ASR"/>
+                                    <constraint firstItem="zk0-2K-FZD" firstAttribute="height" secondItem="XBB-rp-EUb" secondAttribute="height" id="Nce-wD-APt"/>
+                                    <constraint firstItem="XBB-rp-EUb" firstAttribute="width" secondItem="zk0-2K-FZD" secondAttribute="width" id="Q4D-20-l3m"/>
+                                    <constraint firstItem="iW2-6j-wXW" firstAttribute="centerY" secondItem="zk0-2K-FZD" secondAttribute="centerY" id="Qmn-k0-gTH"/>
+                                    <constraint firstItem="WBc-jr-qDQ" firstAttribute="centerX" secondItem="XBB-rp-EUb" secondAttribute="centerX" id="QsP-3t-H0y"/>
+                                    <constraint firstItem="iW2-6j-wXW" firstAttribute="top" secondItem="DdC-fj-3B3" secondAttribute="top" constant="25" id="Rha-eU-GGX"/>
+                                    <constraint firstItem="WBc-jr-qDQ" firstAttribute="top" secondItem="XBB-rp-EUb" secondAttribute="bottom" id="UOD-BO-dGh"/>
+                                    <constraint firstItem="XBB-rp-EUb" firstAttribute="leading" secondItem="DdC-fj-3B3" secondAttribute="leading" constant="18" id="Uuw-M5-dWw"/>
+                                    <constraint firstItem="zk0-2K-FZD" firstAttribute="leading" secondItem="XBB-rp-EUb" secondAttribute="trailing" constant="40" id="XoU-vl-boq"/>
+                                    <constraint firstItem="XBB-rp-EUb" firstAttribute="top" secondItem="DdC-fj-3B3" secondAttribute="top" constant="25" id="bcg-Cl-BkG"/>
+                                    <constraint firstItem="edb-we-Abc" firstAttribute="centerY" secondItem="bY9-ri-bw0" secondAttribute="centerY" id="fTP-ut-VbX"/>
+                                    <constraint firstItem="bY9-ri-bw0" firstAttribute="centerX" secondItem="zk0-2K-FZD" secondAttribute="centerX" id="u4F-xE-ANs"/>
+                                    <constraint firstItem="uaQ-jR-r4m" firstAttribute="centerX" secondItem="DdC-fj-3B3" secondAttribute="centerX" id="weG-UD-uMl"/>
+                                    <constraint firstItem="iW2-6j-wXW" firstAttribute="height" secondItem="zk0-2K-FZD" secondAttribute="height" id="ygd-vr-kgc"/>
+                                </constraints>
+                            </view>
+                            <blurEffect style="systemThinMaterial"/>
+                        </visualEffectView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ese-cz-lW0" secondAttribute="trailing" id="ANP-p8-1cm"/>
+                        <constraint firstAttribute="width" constant="340" id="DCK-Q3-CYx"/>
+                        <constraint firstAttribute="height" constant="180" id="EWy-77-qgo"/>
+                        <constraint firstAttribute="bottom" secondItem="ese-cz-lW0" secondAttribute="bottom" id="LDL-M6-UFG"/>
+                        <constraint firstItem="ese-cz-lW0" firstAttribute="leading" secondItem="fYB-0F-Fec" secondAttribute="leading" id="Pfn-6H-6c4"/>
+                        <constraint firstItem="ese-cz-lW0" firstAttribute="top" secondItem="fYB-0F-Fec" secondAttribute="top" id="nGy-2J-7vA"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fYB-0F-Fec" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="4PY-A9-TPw"/>
+                <constraint firstItem="fYB-0F-Fec" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="IEG-sZ-TQu"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="bgView" destination="fYB-0F-Fec" id="ZrK-NK-MXx"/>
+                <outlet property="copyBtn" destination="iW2-6j-wXW" id="Rcp-Sa-41l"/>
+                <outlet property="deleteBtn" destination="zk0-2K-FZD" id="dqO-qj-XAP"/>
+                <outlet property="editBtn" destination="XBB-rp-EUb" id="HMR-rj-02x"/>
+                <outlet property="effectView" destination="ese-cz-lW0" id="iSK-NG-iPN"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="84"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="close" width="18" height="18"/>
+        <image name="copy" width="70" height="70"/>
+        <image name="delete" width="70" height="70"/>
+        <image name="modify" width="70" height="70"/>
+    </resources>
+</document>
