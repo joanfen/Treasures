@@ -26,8 +26,11 @@ class EditPopView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        effectView.layer.masksToBounds = true
         effectView.layer.cornerRadius = 12
+        effectView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+        effectView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        effectView.layer.shadowOpacity = 1
+        effectView.layer.shadowRadius = 12
     }
     
     @IBAction func btnClicked(_ sender: UIButton) {
