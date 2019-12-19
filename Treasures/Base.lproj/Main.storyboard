@@ -130,10 +130,35 @@
                                     <action selector="addTreasure:" destination="ijm-oG-cPh" eventType="touchUpInside" id="ViU-BH-wrh"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMo-C9-zdA">
+                                <rect key="frame" x="57" y="300.5" width="300" height="300"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="EnK-yJ-rFq">
+                                        <rect key="frame" x="89.5" y="95" width="121" height="110"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pi3-Ta-JKN">
+                                        <rect key="frame" x="133.5" y="215" width="33" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.57647058823529407" green="0.57647058823529407" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="EnK-yJ-rFq" firstAttribute="centerY" secondItem="EMo-C9-zdA" secondAttribute="centerY" id="0r0-XT-RXD"/>
+                                    <constraint firstItem="Pi3-Ta-JKN" firstAttribute="top" secondItem="EnK-yJ-rFq" secondAttribute="bottom" constant="10" id="I8o-Mm-g5i"/>
+                                    <constraint firstItem="EnK-yJ-rFq" firstAttribute="centerX" secondItem="EMo-C9-zdA" secondAttribute="centerX" id="aCF-WF-5ro"/>
+                                    <constraint firstItem="Pi3-Ta-JKN" firstAttribute="centerX" secondItem="EnK-yJ-rFq" secondAttribute="centerX" id="dMt-tm-DqS"/>
+                                    <constraint firstAttribute="height" constant="300" id="i6f-5d-QAZ"/>
+                                    <constraint firstAttribute="width" constant="300" id="oGf-8s-B14"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="EMo-C9-zdA" firstAttribute="centerY" secondItem="oai-oy-Kyq" secondAttribute="centerY" id="Cb4-QB-2K8"/>
                             <constraint firstItem="oai-oy-Kyq" firstAttribute="trailing" secondItem="VuH-TP-iO5" secondAttribute="trailing" id="LYn-cA-zkb"/>
+                            <constraint firstItem="EMo-C9-zdA" firstAttribute="centerX" secondItem="oai-oy-Kyq" secondAttribute="centerX" id="hyz-t3-Qfk"/>
                             <constraint firstItem="oai-oy-Kyq" firstAttribute="bottom" secondItem="VuH-TP-iO5" secondAttribute="bottom" constant="15" id="neC-So-EHO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oai-oy-Kyq"/>
@@ -141,6 +166,8 @@
                     <navigationItem key="navigationItem" id="JI2-TA-Fgv"/>
                     <connections>
                         <outlet property="addButton" destination="VuH-TP-iO5" id="UHI-8B-Sgn"/>
+                        <outlet property="placeholderLbl" destination="Pi3-Ta-JKN" id="OFf-ne-Hr7"/>
+                        <outlet property="placeholderView" destination="EMo-C9-zdA" id="sEE-Xl-tfq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAf-WI-XM0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -394,6 +421,7 @@
     <resources>
         <image name="bg" width="375" height="667"/>
         <image name="classification1" width="27" height="27"/>
+        <image name="emptyPlaceholder" width="121" height="110"/>
         <image name="home1" width="27" height="27"/>
         <image name="logo" width="100" height="100"/>
         <image name="my1" width="27" height="27"/>

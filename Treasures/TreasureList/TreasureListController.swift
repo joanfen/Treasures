@@ -16,6 +16,8 @@ protocol TreasureListUpdateProtocol {
 class TreasureListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
 
+    @IBOutlet weak var placeholderView: UIView!
+    @IBOutlet weak var placeholderLbl: UILabel!
     @IBOutlet weak var addButton: UIButton!
 
     var searchBarView: SearchBarView = SearchBarView.loadXib()
@@ -39,6 +41,22 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
         self.tabBarController?.tabBar.isHidden = false
         configNavigation()
         initialSearch()
+        reloadPlaceHolder()
+    }
+    
+    private func reloadPlaceHolder() {
+        if self.treasureList.count != 0 {
+            self.placeholderView.isHidden = true
+            return
+        }
+        self.view.bringSubviewToFront(self.placeholderView)
+        self.placeholderView.isHidden = false
+        let categorys = CategoryRepo.queryMyCategories()
+        var tips = "暂无数据\n请在分类界面添加分类"
+        if categorys.count != 0 {
+            tips = "暂无数据\n请点击加号添加藏品"
+        }
+        self.placeholderLbl.text = tips
     }
     
     private func searchBegin() {
