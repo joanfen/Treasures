@@ -60,20 +60,6 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
         self.view.addSubview(tableView)
     }
     
-    private func refreshSetting() {
-        refreshControl.attributedTitle = NSAttributedString(string: "下拉刷新...")
-        refreshControl.addTarget(self, action: #selector(loadNextPage), for: .valueChanged)
-        tableView.addSubview(refreshControl)
-    }
-    
-    @objc private func loadNextPage(sender: Any) {
-        
-        filterPreference.currentPage += 1
-        searchBegin()
-        refreshControl.endRefreshing()
-        
-    }
-    
     private func initialSearch() {
         self.treasureList.removeAll()
         searchBegin()
@@ -104,7 +90,11 @@ extension TreasureListController {
        
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TreasureListCell = tableView.dequeueReusableCell(withIdentifier: TreasureListCellConstants.reuseId) as! TreasureListCell
-        cell.config(with: self.treasureList[indexPath.row])
+        cell.config(with: self.treasureList[indexPath.row], actionBlock: { (hud, collected) in
+            hud.show(in: self.view)
+            let source = self.treasureList[indexPath.row]
+            source.isCollected = collected
+        })
         return cell
     }
     

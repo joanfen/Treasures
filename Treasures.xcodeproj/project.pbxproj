@@ -30,6 +30,7 @@
 		482ECB3323AA66A500BFB839 /* SwitchSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482ECB3223AA66A500BFB839 /* SwitchSubview.swift */; };
 		482ECB3523AA66C700BFB839 /* SwitchSubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 482ECB3423AA66C700BFB839 /* SwitchSubview.xib */; };
 		482ECB3623AA96CB00BFB839 /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59E0239C90C80086B352 /* ImageConstants.swift */; };
+		482ECB3823ABD0F600BFB839 /* HUDHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482ECB3723ABD0F600BFB839 /* HUDHandler.swift */; };
 		484CA16C23994ECF00207662 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484CA16A23994ECF00207662 /* SearchBarView.swift */; };
 		484CA16D23994ECF00207662 /* SearchBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484CA16B23994ECF00207662 /* SearchBarView.xib */; };
 		484CA16F23994F0800207662 /* ListFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484CA16E23994F0800207662 /* ListFilterView.xib */; };
@@ -152,6 +153,7 @@
 		482ECB3023AA585400BFB839 /* MultiInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiInputView.xib; sourceTree = "<group>"; };
 		482ECB3223AA66A500BFB839 /* SwitchSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchSubview.swift; sourceTree = "<group>"; };
 		482ECB3423AA66C700BFB839 /* SwitchSubview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchSubview.xib; sourceTree = "<group>"; };
+		482ECB3723ABD0F600BFB839 /* HUDHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDHandler.swift; sourceTree = "<group>"; };
 		484CA16A23994ECF00207662 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		484CA16B23994ECF00207662 /* SearchBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchBarView.xib; sourceTree = "<group>"; };
 		484CA16E23994F0800207662 /* ListFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListFilterView.xib; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				48DF59E0239C90C80086B352 /* ImageConstants.swift */,
 				48FB48D0239D2970005BF6B6 /* PathHandler.swift */,
 				3D2E491923A7E06C00DE59A2 /* UIColor+Category.swift */,
+				482ECB3723ABD0F600BFB839 /* HUDHandler.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -750,6 +753,7 @@
 				3D2E491323A7DB7900DE59A2 /* CategoryViewController.swift in Sources */,
 				48FA4FE123A7BFF1005DA01A /* CategoryRepo.swift in Sources */,
 				484CA16C23994ECF00207662 /* SearchBarView.swift in Sources */,
+				482ECB3823ABD0F600BFB839 /* HUDHandler.swift in Sources */,
 				482ECB3323AA66A500BFB839 /* SwitchSubview.swift in Sources */,
 				3D2E491A23A7E06C00DE59A2 /* UIColor+Category.swift in Sources */,
 				55B366CB23976D9F008F32D6 /* RootTabController.swift in Sources */,

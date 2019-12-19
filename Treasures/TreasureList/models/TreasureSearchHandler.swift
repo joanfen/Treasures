@@ -16,10 +16,19 @@ class TreasureCellVO {
     var title: String = String()
     var description: String = String()
     var keywords: [String] = []
-    var isCollected: Bool = false
+    var isCollected: Bool = false {
+        didSet {
+            self.collectImage = UIImage(named: isCollected ? "Collection2" : "Collection1")
+        }
+    }
     var isAvaliable: Bool = false
     var secondCategoryName: String = ""
     var createdTimeStr: String = String()
+    var collectImage: UIImage? = UIImage(named: "Collection1")
+    
+    init() {
+        
+    }
     
     init(with treasure: TreasureListSearchDTO) {
         self.id = treasure.identifier ?? 0
@@ -28,6 +37,8 @@ class TreasureCellVO {
         self.description = treasure.description
         self.keywords = treasure.keywords
         self.secondCategoryName = treasure.categoryName
+        self.isCollected = treasure.isCollected
+        self.collectImage = UIImage(named: isCollected ? "Collection2" : "Collection1")
         self.createdTimeStr = toDateTimeString(by: treasure.created)
     }
     

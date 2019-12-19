@@ -27,26 +27,56 @@ class TreasureListCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var collectedBtn: UIButton!
+    var source: TreasureCellVO = TreasureCellVO.init()
+    
+    typealias ActionBlock = (_ hud: JGProgressHUD, _ collected: Bool) -> Void
+    
+    var actionBlock: ActionBlock?
 
+    
     func config(with source: TreasureCellVO) {
         self.imgView.image = source.image
         self.titleLabel.text = source.title
         self.descriptionLabel.text = source.description
         self.timeLabel.text = source.createdTimeStr
+        self.source = source
+        self.refreshCollectedStatus()
+    }
+    
+    func config(with source: TreasureCellVO, actionBlock: ActionBlock?) {
+        self.actionBlock = actionBlock
+        self.config(with: source)
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
+    private func refreshCollectedStatus() {
+        self.collectedBtn.setImage(source.collectImage, for: UIControl.State.normal)
+    }
+    
     @IBAction func collectAction(_ sender: Any) {
+       let collected = source.isCollected
+        source.isCollected = !collected
+        let result = TreasureRepository.updateCollected(id: source.id, collected: source.isCollected)
+        
+        let text = collected ? "取消收藏" : "收藏"
+        self.refreshCollectedStatus()
+        if result {
+            self.actionBlock?(HUDHandler.successHUD(with: text + "成功"), source.isCollected)
+        } else {
+            self.actionBlock?(HUDHandler.errorHUD(with: text + "失败"), source.isCollected)
+        }
         
     }
 }
