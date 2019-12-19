@@ -8,7 +8,7 @@
 
 import UIKit
 struct AddImagesSubviewConstants {
-    static let height: CGFloat = 174.0
+    static let height: CGFloat = 124
     static let nibName = "AddImagesSubview"
 }
 

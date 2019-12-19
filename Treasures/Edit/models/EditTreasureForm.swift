@@ -92,7 +92,6 @@ class EditTreasureForm {
             // TODO:
         }
         return nil
-        
     }
     
     // 存入数据库

@@ -36,6 +36,7 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
         configNavigation()
         initialSearch()
     }
@@ -58,20 +59,6 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         tableView.rowHeight = TreasureListCellConstants.height
         self.view.addSubview(tableView)
-    }
-    
-    private func refreshSetting() {
-        refreshControl.attributedTitle = NSAttributedString(string: "下拉刷新...")
-        refreshControl.addTarget(self, action: #selector(loadNextPage), for: .valueChanged)
-        tableView.addSubview(refreshControl)
-    }
-    
-    @objc private func loadNextPage(sender: Any) {
-        
-        filterPreference.currentPage += 1
-        searchBegin()
-        refreshControl.endRefreshing()
-        
     }
     
     private func initialSearch() {
@@ -116,13 +103,17 @@ extension TreasureListController {
        
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TreasureListCell = tableView.dequeueReusableCell(withIdentifier: TreasureListCellConstants.reuseId) as! TreasureListCell
-        cell.config(with: self.treasureList[indexPath.row])
+        cell.config(with: self.treasureList[indexPath.row], actionBlock: { (hud, collected) in
+            hud.show(in: self.view)
+            let source = self.treasureList[indexPath.row]
+            source.isCollected = collected
+        })
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(EditController.init(withId: self.treasureList[indexPath.row].id), animated: true)
     }
 }
