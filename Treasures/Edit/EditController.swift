@@ -39,7 +39,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.init(nibName: nil, bundle: nil)
     }
     
-    convenience init(withId id: Int) {
+    convenience init(withId id: Int?) {
         self.init()
         self.treasureId = id
         if let treasureId = self.treasureId {
@@ -47,6 +47,15 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.edit = EditTreasureForm.init(with: treasure)
         }
     }
+    
+    convenience init(withId id: Int?, copy: Bool) {
+        self.init(withId: id)
+        if copy {
+            self.treasureId = nil
+            self.edit.identifier = nil
+        }
+    }
+    
     
     convenience required init?(coder: NSCoder) {
         self.init(coder: coder)
@@ -62,7 +71,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLayoutSubviews() {
         super .viewDidLayoutSubviews()
         let singleHeight: CGFloat = 50;
-        imagesView.frame = CGRect.init(x: 0, y: UISizeConstants.top, width: self.contentView.width, height: AddImagesSubviewConstants.height)
+        imagesView.frame = CGRect.init(x: 0, y: 0, width: self.contentView.width, height: AddImagesSubviewConstants.height)
         categoryView.frame = CGRect(x: 0, y: imagesView.bottom + 10, width: self.contentView.width, height: singleHeight)
         nameInputView.frame = CGRect(x: 0, y: categoryView.bottom, width: self.contentView.width, height: singleHeight)
         sizeInputView.frame = CGRect(x: 0, y: nameInputView.bottom, width: self.contentView.width, height: 100)
@@ -82,7 +91,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentView.frame = CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height - 65)
+        contentView.frame = CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height)
         
         self.view.addSubview(contentView)
         addImagesView()

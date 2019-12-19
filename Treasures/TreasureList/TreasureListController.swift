@@ -84,6 +84,10 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
         searchBegin()
     }
    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.searchBarView.frame = CGRect.init(x: 0, y: 0, width: UISizeConstants.screenWidth, height: 82)
+    }
     
     private func addSubviews() {
         self.view.addSubview(searchBarView)
@@ -97,22 +101,50 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
     }
 
     @IBAction func addTreasure(_ sender: Any) {
-//        self.navigationController?.pushViewController(EditController(), animated: true)
+        newTreasure()
+    }
+    
+    
+    private func newTreasure() {
+        toEditView(treasureId: nil, copy: false)
+    }
+    
+    private func editTreasure(id: Int) {
+        toEditView(treasureId: id, copy: false)
+    }
+    
+    private func copyTreasure(id: Int) {
+        toEditView(treasureId: id, copy: true)
+    }
+    
+    private func toEditView(treasureId: Int?, copy: Bool) {
+        let edit = EditController.init(withId: treasureId, copy: copy)
+        edit.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(edit, animated: true)
+        edit.hidesBottomBarWhenPushed = false
+    }
+    
+    private func toDetailView(id: Int) {
+        // TODO: - 详情页跳转
+    }
+    
+    func showActionPopView(treasureId: Int) {
         self.view.addSubview(actionPopView)
         actionPopView.ActionBlock = {[weak self] (action:PopAction) in
             guard let weakSelf = self else {return}
             switch action {
             case .edit:
-                print("edit")
+                weakSelf.editTreasure(id: treasureId)
             case .delete:
                 print("delete")
             default:
-                print("copy")
+                weakSelf.copyTreasure(id: treasureId)
             }
         }
     }
+    
+   
 }
-
 
 extension TreasureListController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -121,17 +153,21 @@ extension TreasureListController {
        
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TreasureListCell = tableView.dequeueReusableCell(withIdentifier: TreasureListCellConstants.reuseId) as! TreasureListCell
-        cell.config(with: self.treasureList[indexPath.row], actionBlock: { (hud, collected) in
+        let source = self.treasureList[indexPath.row]
+        cell.config(with: source, actionBlock: { (hud, collected) in
             hud.show(in: self.view)
             let source = self.treasureList[indexPath.row]
             source.isCollected = collected
+        }, longPressAction: {() in
+            self.showActionPopView(treasureId: source.id)
         })
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(EditController.init(withId: self.treasureList[indexPath.row].id), animated: true)
+        toDetailView(id: self.treasureList[indexPath.row].id)
     }
+    
+    
 }
