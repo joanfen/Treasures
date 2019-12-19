@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchBarView: UIView {
+class SearchBarView: UIView, UITextFieldDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     
@@ -16,24 +16,22 @@ class SearchBarView: UIView {
     
     @IBOutlet weak var textField: UITextField!
     
+    typealias SearchBegin = (_ text: String?) -> Void
+    var searchBegin: SearchBegin?
+    
     class func loadXib() -> SearchBarView {
         return Bundle.main.loadNibNamed("SearchBarView", owner: self, options: nil)!.first as! SearchBarView
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        let frame = self.frame
-        
         self.fieldBgView.layer.cornerRadius = 4.0
     }
  
     
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        self.searchBegin?(textField.text)
+        return true
     }
-    */
-
 }

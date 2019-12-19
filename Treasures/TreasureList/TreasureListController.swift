@@ -15,7 +15,7 @@ protocol TreasureListUpdateProtocol {
 
 class TreasureListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
-
+    // MARK:  - View
     @IBOutlet weak var placeholderView: UIView!
     @IBOutlet weak var placeholderLbl: UILabel!
     @IBOutlet weak var addButton: UIButton!
@@ -23,13 +23,14 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
     var searchBarView: SearchBarView = SearchBarView.loadXib()
     var filterView: ListFilterView = ListFilterView.loadXib()
     var tableView: UITableView = UITableView()
-    
+    var actionPopView: EditPopView = EditPopView.loadXib()
+
+    // MARK: - Data
     var treasureList: [TreasureCellVO] = []
     var searchHandler: TreasureSearchHandler = TreasureSearchHandler()
     var filterPreference = FilterPreference()
-    var refreshControl = UIRefreshControl()
-    var actionPopView: EditPopView = EditPopView.loadXib()
-    
+
+    // MARK: - Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         filterView.filterPreference = filterPreference
@@ -59,13 +60,13 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
         self.placeholderLbl.text = tips
     }
     
-    private func searchBegin() {
-        self.treasureList.append(contentsOf: self.searchHandler.search(filter: filterPreference))
-        self.tableView.reloadData()
-    }
-    
     private func configNavigation() {
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.searchBarView.frame = CGRect.init(x: 0, y: 0, width: UISizeConstants.screenWidth, height: 82)
     }
     
     private func tableViewSetting() {
@@ -79,27 +80,34 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
         self.view.addSubview(tableView)
     }
     
-    private func initialSearch() {
-        self.treasureList.removeAll()
-        searchBegin()
-    }
-   
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        self.searchBarView.frame = CGRect.init(x: 0, y: 0, width: UISizeConstants.screenWidth, height: 82)
-    }
-    
     private func addSubviews() {
         self.view.addSubview(searchBarView)
+        searchBarView.searchBegin = { (text: String?) in
+            if let searchText = text {
+                self.filterPreference.searchText = searchText
+                self.initialSearch()
+            }
+        }
         filterView.filterBegin = { (filter: FilterPreference) in
-            
             self.initialSearch()
         }
         self.view.addSubview(filterView)
         
         self.view.bringSubviewToFront(self.addButton)
     }
-
+    
+    private func initialSearch() {
+        self.treasureList.removeAll()
+        searchBegin()
+    }
+    
+    private func searchBegin() {
+        self.treasureList.append(contentsOf: self.searchHandler.search(filter: filterPreference))
+        self.tableView.reloadData()
+    }
+    
+    
+    // MARK: - View 跳转
     @IBAction func addTreasure(_ sender: Any) {
         newTreasure()
     }
