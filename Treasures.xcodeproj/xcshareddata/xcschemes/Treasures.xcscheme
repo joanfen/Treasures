@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "55B22B422397539500B738B7"
-               BuildableName = "Treasures.app"
+               BuildableName = "&#x6536;&#x85cf;&#x7ba1;&#x5bb6;.app"
                BlueprintName = "Treasures"
                ReferencedContainer = "container:Treasures.xcodeproj">
             </BuildableReference>
@@ -55,7 +55,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "55B22B422397539500B738B7"
-            BuildableName = "Treasures.app"
+            BuildableName = "&#x6536;&#x85cf;&#x7ba1;&#x5bb6;.app"
             BlueprintName = "Treasures"
             ReferencedContainer = "container:Treasures.xcodeproj">
          </BuildableReference>
@@ -72,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "55B22B422397539500B738B7"
-            BuildableName = "Treasures.app"
+            BuildableName = "&#x6536;&#x85cf;&#x7ba1;&#x5bb6;.app"
             BlueprintName = "Treasures"
             ReferencedContainer = "container:Treasures.xcodeproj">
          </BuildableReference>

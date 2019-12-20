@@ -9,5 +9,5 @@
 #ifndef Treasures_Bridging_Header_h
 #define Treasures_Bridging_Header_h
 #import "JGProgressHUD.h"
-
+#import "JFBubbleHeader.h"
 #endif /* Treasures_Bridging_Header_h */

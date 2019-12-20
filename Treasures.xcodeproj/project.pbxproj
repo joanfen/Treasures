@@ -93,6 +93,16 @@
 		55AD672A23A8CBB300C0E5EB /* CategoryPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55AD672923A8CBB300C0E5EB /* CategoryPickerView.xib */; };
 		55AD672C23A8E24000C0E5EB /* ChooseCategorySubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55AD672B23A8E24000C0E5EB /* ChooseCategorySubview.xib */; };
 		55AD672E23AA315500C0E5EB /* InputSubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55AD672D23AA315500C0E5EB /* InputSubview.xib */; };
+		55AD676E23AC83C200C0E5EB /* NSAttributedString+calculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD675623AC83C200C0E5EB /* NSAttributedString+calculate.m */; };
+		55AD676F23AC83C200C0E5EB /* NSString+calculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD675923AC83C200C0E5EB /* NSString+calculate.m */; };
+		55AD677023AC83C200C0E5EB /* JFInputBubbleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD675B23AC83C200C0E5EB /* JFInputBubbleItem.m */; };
+		55AD677123AC83C200C0E5EB /* JFBubbleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD675E23AC83C200C0E5EB /* JFBubbleItem.m */; };
+		55AD677223AC83C200C0E5EB /* JFBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD676423AC83C200C0E5EB /* JFBubbleView.m */; };
+		55AD677323AC83C200C0E5EB /* JFSelectBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD676523AC83C200C0E5EB /* JFSelectBubbleView.m */; };
+		55AD677423AC83C200C0E5EB /* JFEditBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD676623AC83C200C0E5EB /* JFEditBubbleView.m */; };
+		55AD677523AC83C200C0E5EB /* DemoSelectBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD676A23AC83C200C0E5EB /* DemoSelectBubbleView.m */; };
+		55AD677623AC83C200C0E5EB /* JFBubbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD676B23AC83C200C0E5EB /* JFBubbleViewController.m */; };
+		55AD677723AC83C200C0E5EB /* DemoEditBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD676C23AC83C200C0E5EB /* DemoEditBubbleView.m */; };
 		55B22B472397539500B738B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B462397539500B738B7 /* AppDelegate.swift */; };
 		55B22B492397539500B738B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B482397539500B738B7 /* SceneDelegate.swift */; };
 		55B22B4B2397539500B738B7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B4A2397539500B738B7 /* LoginController.swift */; };
@@ -197,6 +207,27 @@
 		55AD672923A8CBB300C0E5EB /* CategoryPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryPickerView.xib; sourceTree = "<group>"; };
 		55AD672B23A8E24000C0E5EB /* ChooseCategorySubview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCategorySubview.xib; sourceTree = "<group>"; };
 		55AD672D23AA315500C0E5EB /* InputSubview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputSubview.xib; sourceTree = "<group>"; };
+		55AD675623AC83C200C0E5EB /* NSAttributedString+calculate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+calculate.m"; sourceTree = "<group>"; };
+		55AD675723AC83C200C0E5EB /* NSString+calculate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+calculate.h"; sourceTree = "<group>"; };
+		55AD675823AC83C200C0E5EB /* NSAttributedString+calculate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+calculate.h"; sourceTree = "<group>"; };
+		55AD675923AC83C200C0E5EB /* NSString+calculate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+calculate.m"; sourceTree = "<group>"; };
+		55AD675B23AC83C200C0E5EB /* JFInputBubbleItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFInputBubbleItem.m; sourceTree = "<group>"; };
+		55AD675C23AC83C200C0E5EB /* JFBubbleItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFBubbleItem.h; sourceTree = "<group>"; };
+		55AD675D23AC83C200C0E5EB /* JFInputBubbleItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFInputBubbleItem.h; sourceTree = "<group>"; };
+		55AD675E23AC83C200C0E5EB /* JFBubbleItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFBubbleItem.m; sourceTree = "<group>"; };
+		55AD675F23AC83C200C0E5EB /* JFBubbleHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFBubbleHeader.h; sourceTree = "<group>"; };
+		55AD676123AC83C200C0E5EB /* JFBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFBubbleView.h; sourceTree = "<group>"; };
+		55AD676223AC83C200C0E5EB /* JFEditBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFEditBubbleView.h; sourceTree = "<group>"; };
+		55AD676323AC83C200C0E5EB /* JFSelectBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFSelectBubbleView.h; sourceTree = "<group>"; };
+		55AD676423AC83C200C0E5EB /* JFBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFBubbleView.m; sourceTree = "<group>"; };
+		55AD676523AC83C200C0E5EB /* JFSelectBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFSelectBubbleView.m; sourceTree = "<group>"; };
+		55AD676623AC83C200C0E5EB /* JFEditBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFEditBubbleView.m; sourceTree = "<group>"; };
+		55AD676823AC83C200C0E5EB /* JFBubbleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFBubbleViewController.h; sourceTree = "<group>"; };
+		55AD676923AC83C200C0E5EB /* DemoEditBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoEditBubbleView.h; sourceTree = "<group>"; };
+		55AD676A23AC83C200C0E5EB /* DemoSelectBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoSelectBubbleView.m; sourceTree = "<group>"; };
+		55AD676B23AC83C200C0E5EB /* JFBubbleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFBubbleViewController.m; sourceTree = "<group>"; };
+		55AD676C23AC83C200C0E5EB /* DemoEditBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoEditBubbleView.m; sourceTree = "<group>"; };
+		55AD676D23AC83C200C0E5EB /* DemoSelectBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSelectBubbleView.h; sourceTree = "<group>"; };
 		55B22B432397539500B738B7 /* 收藏管家.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "收藏管家.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B22B462397539500B738B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B22B482397539500B738B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -385,6 +416,66 @@
 			path = models;
 			sourceTree = "<group>";
 		};
+		55AD675423AC83C200C0E5EB /* JFBubbleView */ = {
+			isa = PBXGroup;
+			children = (
+				55AD675523AC83C200C0E5EB /* NSString+calculate */,
+				55AD675A23AC83C200C0E5EB /* JFBubbleItem */,
+				55AD675F23AC83C200C0E5EB /* JFBubbleHeader.h */,
+				55AD676023AC83C200C0E5EB /* JFBubbleView */,
+			);
+			path = JFBubbleView;
+			sourceTree = "<group>";
+		};
+		55AD675523AC83C200C0E5EB /* NSString+calculate */ = {
+			isa = PBXGroup;
+			children = (
+				55AD675623AC83C200C0E5EB /* NSAttributedString+calculate.m */,
+				55AD675723AC83C200C0E5EB /* NSString+calculate.h */,
+				55AD675823AC83C200C0E5EB /* NSAttributedString+calculate.h */,
+				55AD675923AC83C200C0E5EB /* NSString+calculate.m */,
+			);
+			path = "NSString+calculate";
+			sourceTree = "<group>";
+		};
+		55AD675A23AC83C200C0E5EB /* JFBubbleItem */ = {
+			isa = PBXGroup;
+			children = (
+				55AD675B23AC83C200C0E5EB /* JFInputBubbleItem.m */,
+				55AD675C23AC83C200C0E5EB /* JFBubbleItem.h */,
+				55AD675D23AC83C200C0E5EB /* JFInputBubbleItem.h */,
+				55AD675E23AC83C200C0E5EB /* JFBubbleItem.m */,
+			);
+			path = JFBubbleItem;
+			sourceTree = "<group>";
+		};
+		55AD676023AC83C200C0E5EB /* JFBubbleView */ = {
+			isa = PBXGroup;
+			children = (
+				55AD676123AC83C200C0E5EB /* JFBubbleView.h */,
+				55AD676223AC83C200C0E5EB /* JFEditBubbleView.h */,
+				55AD676323AC83C200C0E5EB /* JFSelectBubbleView.h */,
+				55AD676423AC83C200C0E5EB /* JFBubbleView.m */,
+				55AD676523AC83C200C0E5EB /* JFSelectBubbleView.m */,
+				55AD676623AC83C200C0E5EB /* JFEditBubbleView.m */,
+				55AD676723AC83C200C0E5EB /* JFBubbleViewController */,
+			);
+			path = JFBubbleView;
+			sourceTree = "<group>";
+		};
+		55AD676723AC83C200C0E5EB /* JFBubbleViewController */ = {
+			isa = PBXGroup;
+			children = (
+				55AD676823AC83C200C0E5EB /* JFBubbleViewController.h */,
+				55AD676923AC83C200C0E5EB /* DemoEditBubbleView.h */,
+				55AD676A23AC83C200C0E5EB /* DemoSelectBubbleView.m */,
+				55AD676B23AC83C200C0E5EB /* JFBubbleViewController.m */,
+				55AD676C23AC83C200C0E5EB /* DemoEditBubbleView.m */,
+				55AD676D23AC83C200C0E5EB /* DemoSelectBubbleView.h */,
+			);
+			path = JFBubbleViewController;
+			sourceTree = "<group>";
+		};
 		55B22B3A2397539500B738B7 = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +560,7 @@
 		55B22B71239755D800B738B7 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				55AD675423AC83C200C0E5EB /* JFBubbleView */,
 				3D2E490F23A7D8BE00DE59A2 /* Global.swift */,
 				55B22B72239755D800B738B7 /* FontConstants.swift */,
 				487455CE23993FD6002AFBF7 /* UISizeConstants.swift */,
@@ -740,9 +832,11 @@
 				3D6D586123AA79C300AF718A /* RecycleViewController.swift in Sources */,
 				552CC58B23A3BD7D00D14F21 /* TreasureDetailDTO.swift in Sources */,
 				48DF59E6239CA07F0086B352 /* OrderRule.swift in Sources */,
+				55AD677123AC83C200C0E5EB /* JFBubbleItem.m in Sources */,
 				482ECB2F23AA583F00BFB839 /* MultiInputView.swift in Sources */,
 				48AA8473239CEB6E00A81C9F /* Queryable.swift in Sources */,
 				552CC58823A393F600D14F21 /* Size.swift in Sources */,
+				55AD677423AC83C200C0E5EB /* JFEditBubbleView.m in Sources */,
 				3D2E491D23A7E0EF00DE59A2 /* SmallCategoryCell.swift in Sources */,
 				3D2E48FB23A6694D00DE59A2 /* PersonalViewController.swift in Sources */,
 				55B366D223977858008F32D6 /* ViewController.swift in Sources */,
@@ -751,6 +845,7 @@
 				55B366C723976C64008F32D6 /* EditController.swift in Sources */,
 				3D2E491023A7D8BE00DE59A2 /* Global.swift in Sources */,
 				55B22B472397539500B738B7 /* AppDelegate.swift in Sources */,
+				55AD676F23AC83C200C0E5EB /* NSString+calculate.m in Sources */,
 				48FB48D1239D2970005BF6B6 /* PathHandler.swift in Sources */,
 				48DF59E1239C90C80086B352 /* ImageConstants.swift in Sources */,
 				3D2E491723A7DE7900DE59A2 /* BigCategoryCell.swift in Sources */,
@@ -758,16 +853,23 @@
 				48FA4FE123A7BFF1005DA01A /* CategoryRepo.swift in Sources */,
 				484CA16C23994ECF00207662 /* SearchBarView.swift in Sources */,
 				482ECB3823ABD0F600BFB839 /* HUDHandler.swift in Sources */,
+				55AD677223AC83C200C0E5EB /* JFBubbleView.m in Sources */,
+				55AD677523AC83C200C0E5EB /* DemoSelectBubbleView.m in Sources */,
+				55AD677023AC83C200C0E5EB /* JFInputBubbleItem.m in Sources */,
 				482ECB3323AA66A500BFB839 /* SwitchSubview.swift in Sources */,
 				3D2E491A23A7E06C00DE59A2 /* UIColor+Category.swift in Sources */,
 				55B366CB23976D9F008F32D6 /* RootTabController.swift in Sources */,
 				3D2E490323A6770900DE59A2 /* EditPasswordVC.swift in Sources */,
 				55B366BF23975B44008F32D6 /* TreasureListController.swift in Sources */,
+				55AD677323AC83C200C0E5EB /* JFSelectBubbleView.m in Sources */,
 				487455CF23993FD6002AFBF7 /* UISizeConstants.swift in Sources */,
 				552CC57E23A37FB400D14F21 /* TreasureListSearchDTO.swift in Sources */,
 				55B22B76239755D800B738B7 /* DBConstants.swift in Sources */,
+				55AD676E23AC83C200C0E5EB /* NSAttributedString+calculate.m in Sources */,
 				48AA8463239CDF7100A81C9F /* TreasureSearchHandler.swift in Sources */,
+				55AD677723AC83C200C0E5EB /* DemoEditBubbleView.m in Sources */,
 				55B22B74239755D800B738B7 /* SecondCategoryTable.swift in Sources */,
+				55AD677623AC83C200C0E5EB /* JFBubbleViewController.m in Sources */,
 				48DF59DD239C87420086B352 /* CategoryItem.swift in Sources */,
 				55B22B75239755D800B738B7 /* FirstCategoryTable.swift in Sources */,
 				55B22B77239755D800B738B7 /* TreasuresTable.swift in Sources */,
