@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view opaque="NO" contentMode="scaleToFill" id="iN0-l3-epB" customClass="SearchBarView" customModule="Treasures" customModuleProvider="target">
+        <view opaque="NO" contentMode="scaleToFill" id="iN0-l3-epB" customClass="SearchBarView" customModule="收藏管家" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="336" height="82"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -21,7 +21,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y7x-Ck-bHc">
                             <rect key="frame" x="101" y="45" width="225" height="28"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="搜索名称，关键词或描述" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Dhf-gI-GCj">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="搜索名称或描述" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Dhf-gI-GCj">
                                     <rect key="frame" x="18" y="0.0" width="207" height="28"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" returnKeyType="search"/>

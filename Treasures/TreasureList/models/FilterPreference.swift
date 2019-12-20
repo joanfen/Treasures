@@ -85,18 +85,21 @@ class FilterPreference: Queryable {
     
     func toQueryConditions() -> Condition {
        
-        let categoryId = TreasuresTable.Properties.secondCategoryId.in(table: DBConstants.treasuresTable)
-        let second = SecondCategoryTable.Properties.identifier.in(table: DBConstants.secondCategoryTable)
+        let treasureString = DBConstants.treasuresTable
+        let secondString = DBConstants.secondCategoryTable
+        let categoryId = TreasuresTable.Properties.secondCategoryId.in(table: treasureString)
+        let second = SecondCategoryTable.Properties.identifier.in(table: secondString)
         var condition = categoryId == second
         
         if let c = category {
             condition = condition && (TreasuresTable.Properties.secondCategoryId == c.secondCategory.id)
         }
 
-        if let text = searchText?.trimmingCharacters(in: CharacterSet.whitespaces) {
+        if let text = searchText?.trimmingCharacters(in: CharacterSet.whitespaces){
             if (text.count > 0) {
-                condition = condition && (TreasuresTable.Properties.name.like(text)
-                || TreasuresTable.Properties.description.like(text))
+                let search = "%" + text + "%"
+                condition = condition && (TreasuresTable.Properties.name.in(table: treasureString).like(search)
+                    || TreasuresTable.Properties.description.in(table: treasureString).like(search))
             }
         }
         if filterAvaliable {
@@ -123,14 +126,14 @@ class FilterPreference: Queryable {
     func toOrderBy() -> [OrderBy] {
         var orderBy = [OrderBy]()
         if let yearOrder = yearOrderRule.toOrderTerm() {
-            orderBy.append(TreasuresTable.Properties.year.asOrder(by: yearOrder))
+            orderBy.append(TreasuresTable.Properties.year.in(table: DBConstants.treasuresTable).asOrder(by: yearOrder))
 
         }
         if let sizeOrder = sizeOrderRule.toOrderTerm() {
-            orderBy.append(TreasuresTable.Properties.size.asOrder(by: sizeOrder))
+            orderBy.append(TreasuresTable.Properties.size.in(table: DBConstants.treasuresTable).asOrder(by: sizeOrder))
         }
         if let priceOrder = priceOrderRule.toOrderTerm() {
-            orderBy.append(TreasuresTable.Properties.sellingPriceInCent.asOrder(by: priceOrder))
+            orderBy.append(TreasuresTable.Properties.sellingPriceInCent.in(table: DBConstants.treasuresTable).asOrder(by: priceOrder))
         }
         return orderBy
         
