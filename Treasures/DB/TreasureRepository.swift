@@ -180,4 +180,67 @@ class TreasureRepository {
         return false
     }
     
+    /**
+     * 统计数量
+     */
+    class func getDataStatistic() -> CountVO {
+        let count = CountVO()
+        count.treasureCount = getTreasureCount()
+        count.purchasedTotalFee = getPurchasedTotalFee()
+        count.soldTotalFee = getSoldTotalFee()
+        return count
+    }
+    
+    /**
+     *  获取藏品总数
+     */
+    class internal func getTreasureCount() -> Int {
+        
+        do {
+            let statement = StatementSelect().select(TreasuresTable.Properties.identifier.count()).from(DBConstants.treasuresTable)
+            let coreStatement = try DatabaseHandler.getMainDatabase().prepare(statement)
+            while try coreStatement.step() {
+                return coreStatement.value(atIndex: 0) ?? 0
+            }
+        } catch let ex {
+            print(ex)
+        }
+        return 0
+    }
+    
+    /**
+     * 获取总进价
+     */
+    class internal func getPurchasedTotalFee() -> Float {
+        
+        do {
+            let statement = StatementSelect().select(TreasuresTable.Properties.purchasedPriceInCent.sum()).from(DBConstants.treasuresTable)
+            let coreStatement = try DatabaseHandler.getMainDatabase().prepare(statement)
+            while try coreStatement.step() {
+                let fee: Int = coreStatement.value(atIndex: 0) ?? 0
+                return Float(fee) / Float(100)
+            }
+        } catch let ex {
+            print(ex)
+        }
+        return Float(0)
+    }
+    
+    /**
+    * 获取总售价
+    */
+    class internal func getSoldTotalFee() -> Float {
+        
+        do {
+            let statement = StatementSelect().select(TreasuresTable.Properties.sellingPriceInCent.sum()).from(DBConstants.treasuresTable).where(TreasuresTable.Properties.sellStatus == SellStatus.sold.rawValue)
+            let coreStatement = try DatabaseHandler.getMainDatabase().prepare(statement)
+            while try coreStatement.step() {
+                let fee: Int = coreStatement.value(atIndex: 0) ?? 0
+                return Float(fee) / Float(100)
+            }
+        } catch let ex {
+            print(ex)
+        }
+        return 0
+    }
 }

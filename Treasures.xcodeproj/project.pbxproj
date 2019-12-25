@@ -107,6 +107,8 @@
 		55AD677723AC83C200C0E5EB /* DemoEditBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD676C23AC83C200C0E5EB /* DemoEditBubbleView.m */; };
 		55AD677923B302B800C0E5EB /* SecondCategoryVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD677823B302B800C0E5EB /* SecondCategoryVO.swift */; };
 		55AD677A23B302B800C0E5EB /* SecondCategoryVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD677823B302B800C0E5EB /* SecondCategoryVO.swift */; };
+		55AD677D23B3B41C00C0E5EB /* CountVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD677C23B3B41B00C0E5EB /* CountVO.swift */; };
+		55AD677E23B3B41C00C0E5EB /* CountVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD677C23B3B41B00C0E5EB /* CountVO.swift */; };
 		55B22B472397539500B738B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B462397539500B738B7 /* AppDelegate.swift */; };
 		55B22B492397539500B738B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B482397539500B738B7 /* SceneDelegate.swift */; };
 		55B22B4B2397539500B738B7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B22B4A2397539500B738B7 /* LoginController.swift */; };
@@ -235,6 +237,7 @@
 		55AD676C23AC83C200C0E5EB /* DemoEditBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoEditBubbleView.m; sourceTree = "<group>"; };
 		55AD676D23AC83C200C0E5EB /* DemoSelectBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSelectBubbleView.h; sourceTree = "<group>"; };
 		55AD677823B302B800C0E5EB /* SecondCategoryVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCategoryVO.swift; sourceTree = "<group>"; };
+		55AD677C23B3B41B00C0E5EB /* CountVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountVO.swift; sourceTree = "<group>"; };
 		55B22B432397539500B738B7 /* 收藏管家.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "收藏管家.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B22B462397539500B738B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55B22B482397539500B738B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -294,6 +297,7 @@
 		3D2E48F923A6690900DE59A2 /* Personal */ = {
 			isa = PBXGroup;
 			children = (
+				55AD677B23B3B40300C0E5EB /* Model */,
 				3D2E48FC23A66B5B00DE59A2 /* view */,
 				3D2E48FA23A6694D00DE59A2 /* PersonalViewController.swift */,
 				3D2E490123A6770900DE59A2 /* EditPasswordVC.swift */,
@@ -484,6 +488,14 @@
 				55AD676823AC83C200C0E5EB /* JFBubbleViewController.h */,
 			);
 			path = JFBubbleViewController;
+			sourceTree = "<group>";
+		};
+		55AD677B23B3B40300C0E5EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				55AD677C23B3B41B00C0E5EB /* CountVO.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		55B22B3A2397539500B738B7 = {
@@ -856,6 +868,7 @@
 				552CC58523A393DF00D14F21 /* Category.swift in Sources */,
 				55B366C723976C64008F32D6 /* EditController.swift in Sources */,
 				3D2E491023A7D8BE00DE59A2 /* Global.swift in Sources */,
+				55AD677D23B3B41C00C0E5EB /* CountVO.swift in Sources */,
 				55B22B472397539500B738B7 /* AppDelegate.swift in Sources */,
 				55AD676F23AC83C200C0E5EB /* NSString+calculate.m in Sources */,
 				48FB48D1239D2970005BF6B6 /* PathHandler.swift in Sources */,
@@ -931,6 +944,7 @@
 				48FA4FE523A7D640005DA01A /* CategoryDTO.swift in Sources */,
 				48AA8474239CEB6E00A81C9F /* Queryable.swift in Sources */,
 				55B22B5E2397539800B738B7 /* TreasuresTests.swift in Sources */,
+				55AD677E23B3B41C00C0E5EB /* CountVO.swift in Sources */,
 				48AA846D239CE12000A81C9F /* DBConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

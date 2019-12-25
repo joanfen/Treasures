@@ -47,7 +47,6 @@ class test: XCTestCase {
         treasure.sellingPriceInCent = 2000000
         
         treasure.keywords = "材质, 好"
-        treasure.available = true
         do {
             try DatabaseHandler.getMainDatabase().insert(objects: treasure, intoTable: DBConstants.treasuresTable)
         }
@@ -91,5 +90,10 @@ class test: XCTestCase {
     
     func testThumbnailSave() {
         PathHandler.saveThumbnail(image: UIImage())
+    }
+    
+    func testData() {
+        let count = TreasureRepository.getDataStatistic()
+        print(count)
     }
 }
