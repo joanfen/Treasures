@@ -51,6 +51,9 @@ class TreasureDetailVC: UIViewController {
     }
 
     @IBAction func shareBtnClicked() {
+        let shareView = ShareView.loadXib()
+        shareView.reloadView(treasure: treasure)
+        self.view.addSubview(shareView)
     }
     
     @IBAction func backBtnClicked(_ sender: Any) {
