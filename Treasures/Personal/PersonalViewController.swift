@@ -15,8 +15,8 @@ class PersonalViewController: UIViewController {
     @IBOutlet weak var avatarImg: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     var nickName = "nickname"
-    let titleArr = ["邀请码","添加密码","我的收藏","回收站"]
-    let imageArr = ["Invitation","password-1","My collection","bin"]
+    let titleArr = ["邀请码","添加密码","我的收藏","回收站","数据统计"]
+    let imageArr = ["Invitation","password-1","My collection","bin","statistics"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +68,12 @@ class PersonalViewController: UIViewController {
         editPW.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(editPW, animated: true)
     }
+    
+    func toStatisticsVC() {
+        let vc = StatisticsVC()
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 extension PersonalViewController:UITableViewDelegate,UITableViewDataSource {
     
@@ -94,8 +100,10 @@ extension PersonalViewController:UITableViewDelegate,UITableViewDataSource {
             self.toEditPW()
         case 2:
             self.toCollectedVC()
-        default:
+        case 3:
             self.toRecyleVC()
+        default:
+            self.toStatisticsVC()
         }
     }
     @objc func editNickName () {

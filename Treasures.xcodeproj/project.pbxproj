@@ -32,6 +32,8 @@
 		3DB2E19B23AFA60300684653 /* TreasureDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB2E19923AFA60300684653 /* TreasureDetailVC.xib */; };
 		3DC81A8B23B3BC360050FDD2 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC81A8A23B3BC360050FDD2 /* ShareView.swift */; };
 		3DC81A8D23B3BC460050FDD2 /* ShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DC81A8C23B3BC460050FDD2 /* ShareView.xib */; };
+		3DC81A9123B3BFB90050FDD2 /* StatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC81A8F23B3BFB90050FDD2 /* StatisticsVC.swift */; };
+		3DC81A9223B3BFB90050FDD2 /* StatisticsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DC81A9023B3BFB90050FDD2 /* StatisticsVC.xib */; };
 		482ECB2F23AA583F00BFB839 /* MultiInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482ECB2E23AA583F00BFB839 /* MultiInputView.swift */; };
 		482ECB3123AA585400BFB839 /* MultiInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 482ECB3023AA585400BFB839 /* MultiInputView.xib */; };
 		482ECB3323AA66A500BFB839 /* SwitchSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482ECB3223AA66A500BFB839 /* SwitchSubview.swift */; };
@@ -177,6 +179,8 @@
 		3DB2E19923AFA60300684653 /* TreasureDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreasureDetailVC.xib; sourceTree = "<group>"; };
 		3DC81A8A23B3BC360050FDD2 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		3DC81A8C23B3BC460050FDD2 /* ShareView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareView.xib; sourceTree = "<group>"; };
+		3DC81A8F23B3BFB90050FDD2 /* StatisticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsVC.swift; sourceTree = "<group>"; };
+		3DC81A9023B3BFB90050FDD2 /* StatisticsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticsVC.xib; sourceTree = "<group>"; };
 		4824F4F9ECDF53CC6D022612 /* Pods-Treasures.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Treasures.release.xcconfig"; path = "Target Support Files/Pods-Treasures/Pods-Treasures.release.xcconfig"; sourceTree = "<group>"; };
 		482ECB2E23AA583F00BFB839 /* MultiInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiInputView.swift; sourceTree = "<group>"; };
 		482ECB3023AA585400BFB839 /* MultiInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiInputView.xib; sourceTree = "<group>"; };
@@ -373,6 +377,15 @@
 			path = Invate;
 			sourceTree = "<group>";
 		};
+		3DC81A8E23B3BF9B0050FDD2 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				3DC81A8F23B3BFB90050FDD2 /* StatisticsVC.swift */,
+				3DC81A9023B3BFB90050FDD2 /* StatisticsVC.xib */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
 		484CA16923994EBA00207662 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +547,7 @@
 		55B22B452397539500B738B7 /* Treasures */ = {
 			isa = PBXGroup;
 			children = (
+				3DC81A8E23B3BF9B0050FDD2 /* Statistics */,
 				3D6D586323AA7DDA00AF718A /* Invate */,
 				3D6D585E23AA79AD00AF718A /* Recycle */,
 				3D6D585923AA75F300AF718A /* Collected */,
@@ -738,6 +752,7 @@
 				3D78FA0623ABD34100427FF7 /* EditPopView.xib in Resources */,
 				48DF59DB239BE4200086B352 /* PropertyItem.xib in Resources */,
 				55AD672A23A8CBB300C0E5EB /* CategoryPickerView.xib in Resources */,
+				3DC81A9223B3BFB90050FDD2 /* StatisticsVC.xib in Resources */,
 				4847D7AB23ADD6DD0068550D /* tags.plist in Resources */,
 				55AD672C23A8E24000C0E5EB /* ChooseCategorySubview.xib in Resources */,
 				3D2E491823A7DE7900DE59A2 /* BigCategoryCell.xib in Resources */,
@@ -887,6 +902,7 @@
 				3D2E491023A7D8BE00DE59A2 /* Global.swift in Sources */,
 				55AD677D23B3B41C00C0E5EB /* CountVO.swift in Sources */,
 				55B22B472397539500B738B7 /* AppDelegate.swift in Sources */,
+				3DC81A9123B3BFB90050FDD2 /* StatisticsVC.swift in Sources */,
 				55AD676F23AC83C200C0E5EB /* NSString+calculate.m in Sources */,
 				48FB48D1239D2970005BF6B6 /* PathHandler.swift in Sources */,
 				48DF59E1239C90C80086B352 /* ImageConstants.swift in Sources */,
