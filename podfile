@@ -9,6 +9,7 @@ target 'Treasures' do
    pod 'SwiftyJSON', '~> 4.0'
    pod 'WCDB.swift'
    pod 'JGProgressHUD'
+   pod 'FJPreImageView'
 end
 
 target 'TreasuresTests' do
@@ -16,4 +17,5 @@ target 'TreasuresTests' do
    pod 'SwiftyJSON', '~> 4.0'
    pod 'WCDB.swift'
    pod 'JGProgressHUD'
+   pod 'FJPreImageView'
 end

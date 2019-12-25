@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D0C53FA23B245100086D2EA /* KeywordsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0C53F923B245100086D2EA /* KeywordsScrollView.swift */; };
 		3D2E48FB23A6694D00DE59A2 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E48FA23A6694D00DE59A2 /* PersonalViewController.swift */; };
 		3D2E48FF23A66B7500DE59A2 /* PersonalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E48FD23A66B7500DE59A2 /* PersonalCell.swift */; };
 		3D2E490023A66B7500DE59A2 /* PersonalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D2E48FE23A66B7500DE59A2 /* PersonalCell.xib */; };
@@ -27,6 +28,10 @@
 		3D6D586723AA7DF700AF718A /* InvateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6D586523AA7DF700AF718A /* InvateViewController.xib */; };
 		3D78FA0423ABD33500427FF7 /* EditPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D78FA0323ABD33500427FF7 /* EditPopView.swift */; };
 		3D78FA0623ABD34100427FF7 /* EditPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D78FA0523ABD34100427FF7 /* EditPopView.xib */; };
+		3DB2E19A23AFA60300684653 /* TreasureDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB2E19823AFA60300684653 /* TreasureDetailVC.swift */; };
+		3DB2E19B23AFA60300684653 /* TreasureDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB2E19923AFA60300684653 /* TreasureDetailVC.xib */; };
+		3DC81A8B23B3BC360050FDD2 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC81A8A23B3BC360050FDD2 /* ShareView.swift */; };
+		3DC81A8D23B3BC460050FDD2 /* ShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DC81A8C23B3BC460050FDD2 /* ShareView.xib */; };
 		482ECB2F23AA583F00BFB839 /* MultiInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482ECB2E23AA583F00BFB839 /* MultiInputView.swift */; };
 		482ECB3123AA585400BFB839 /* MultiInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 482ECB3023AA585400BFB839 /* MultiInputView.xib */; };
 		482ECB3323AA66A500BFB839 /* SwitchSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482ECB3223AA66A500BFB839 /* SwitchSubview.swift */; };
@@ -140,6 +145,7 @@
 		060206CB9AA19A20FD163988 /* Pods-Treasures.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Treasures.debug.xcconfig"; path = "Target Support Files/Pods-Treasures/Pods-Treasures.debug.xcconfig"; sourceTree = "<group>"; };
 		108FC4269D72CCE6914D92A7 /* Pods-TreasuresTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasuresTests.release.xcconfig"; path = "Target Support Files/Pods-TreasuresTests/Pods-TreasuresTests.release.xcconfig"; sourceTree = "<group>"; };
 		21D04279D2E29DAD145417BC /* Pods_TreasuresTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TreasuresTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D0C53F923B245100086D2EA /* KeywordsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordsScrollView.swift; sourceTree = "<group>"; };
 		3D2E48FA23A6694D00DE59A2 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		3D2E48FD23A66B7500DE59A2 /* PersonalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCell.swift; sourceTree = "<group>"; };
 		3D2E48FE23A66B7500DE59A2 /* PersonalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalCell.xib; sourceTree = "<group>"; };
@@ -161,6 +167,10 @@
 		3D6D586523AA7DF700AF718A /* InvateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvateViewController.xib; sourceTree = "<group>"; };
 		3D78FA0323ABD33500427FF7 /* EditPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPopView.swift; sourceTree = "<group>"; };
 		3D78FA0523ABD34100427FF7 /* EditPopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPopView.xib; sourceTree = "<group>"; };
+		3DB2E19823AFA60300684653 /* TreasureDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureDetailVC.swift; sourceTree = "<group>"; };
+		3DB2E19923AFA60300684653 /* TreasureDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TreasureDetailVC.xib; sourceTree = "<group>"; };
+		3DC81A8A23B3BC360050FDD2 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		3DC81A8C23B3BC460050FDD2 /* ShareView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareView.xib; sourceTree = "<group>"; };
 		4824F4F9ECDF53CC6D022612 /* Pods-Treasures.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Treasures.release.xcconfig"; path = "Target Support Files/Pods-Treasures/Pods-Treasures.release.xcconfig"; sourceTree = "<group>"; };
 		482ECB2E23AA583F00BFB839 /* MultiInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiInputView.swift; sourceTree = "<group>"; };
 		482ECB3023AA585400BFB839 /* MultiInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiInputView.xib; sourceTree = "<group>"; };
@@ -370,6 +380,9 @@
 				48AA845F239CD71500A81C9F /* TreasureListCell.xib */,
 				3D78FA0323ABD33500427FF7 /* EditPopView.swift */,
 				3D78FA0523ABD34100427FF7 /* EditPopView.xib */,
+				3D0C53F923B245100086D2EA /* KeywordsScrollView.swift */,
+				3DC81A8A23B3BC360050FDD2 /* ShareView.swift */,
+				3DC81A8C23B3BC460050FDD2 /* ShareView.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -579,6 +592,8 @@
 				484CA16923994EBA00207662 /* views */,
 				55B366BD23975B44008F32D6 /* TreasureListController.swift */,
 				55B366D123977858008F32D6 /* ViewController.swift */,
+				3DB2E19823AFA60300684653 /* TreasureDetailVC.swift */,
+				3DB2E19923AFA60300684653 /* TreasureDetailVC.xib */,
 			);
 			path = TreasureList;
 			sourceTree = "<group>";
@@ -712,6 +727,7 @@
 				552CC57C23A35E8E00D14F21 /* secondCategory.json in Resources */,
 				3D6D585D23AA761F00AF718A /* CollectedViewController.xib in Resources */,
 				55B22B4E2397539500B738B7 /* Main.storyboard in Resources */,
+				3DB2E19B23AFA60300684653 /* TreasureDetailVC.xib in Resources */,
 				48DF59D6239BDF9D0086B352 /* SortPriceItem.xib in Resources */,
 				48EF5C8223A2871D00A0E8B1 /* AddImagesSubview.xib in Resources */,
 				55B366D4239CD2B2008F32D6 /* podfile in Resources */,
@@ -720,6 +736,7 @@
 				3D2E490023A66B7500DE59A2 /* PersonalCell.xib in Resources */,
 				482ECB3123AA585400BFB839 /* MultiInputView.xib in Resources */,
 				484CA16F23994F0800207662 /* ListFilterView.xib in Resources */,
+				3DC81A8D23B3BC460050FDD2 /* ShareView.xib in Resources */,
 				3D6D586723AA7DF700AF718A /* InvateViewController.xib in Resources */,
 				3D6D586223AA79C300AF718A /* RecycleViewController.xib in Resources */,
 				55AD672E23AA315500C0E5EB /* InputSubview.xib in Resources */,
@@ -850,6 +867,7 @@
 				48DF59E1239C90C80086B352 /* ImageConstants.swift in Sources */,
 				3D2E491723A7DE7900DE59A2 /* BigCategoryCell.swift in Sources */,
 				3D2E491323A7DB7900DE59A2 /* CategoryViewController.swift in Sources */,
+				3DC81A8B23B3BC360050FDD2 /* ShareView.swift in Sources */,
 				48FA4FE123A7BFF1005DA01A /* CategoryRepo.swift in Sources */,
 				484CA16C23994ECF00207662 /* SearchBarView.swift in Sources */,
 				482ECB3823ABD0F600BFB839 /* HUDHandler.swift in Sources */,
@@ -866,8 +884,10 @@
 				552CC57E23A37FB400D14F21 /* TreasureListSearchDTO.swift in Sources */,
 				55B22B76239755D800B738B7 /* DBConstants.swift in Sources */,
 				55AD676E23AC83C200C0E5EB /* NSAttributedString+calculate.m in Sources */,
+				3DB2E19A23AFA60300684653 /* TreasureDetailVC.swift in Sources */,
 				48AA8463239CDF7100A81C9F /* TreasureSearchHandler.swift in Sources */,
 				55AD677723AC83C200C0E5EB /* DemoEditBubbleView.m in Sources */,
+				3D0C53FA23B245100086D2EA /* KeywordsScrollView.swift in Sources */,
 				55B22B74239755D800B738B7 /* SecondCategoryTable.swift in Sources */,
 				55AD677623AC83C200C0E5EB /* JFBubbleViewController.m in Sources */,
 				48DF59DD239C87420086B352 /* CategoryItem.swift in Sources */,

@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UITabBar.appearance().tintColor = ColorConstants.globalMainColor
         DatabaseHandler.createTables()
+        testInsert()
 //        DatabaseHandler.insertData()
         if (!UserDefaults.init().bool(forKey: "notLaunched")) {
             DatabaseHandler.insertCategoriesData()
@@ -23,6 +24,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func testInsert() {
+        let treasure = TreasuresTable()
+        treasure.name = "瓷瓶"
+        treasure.year = "1445"
+        treasure.firstCategoryId = 11
+        treasure.secondCategoryId = 1
+        treasure.description = "描述描述描述"
+    
+        treasure.purchasedPriceInCent = 10000000
+        treasure.sellingPriceInCent = 2000000
+        
+        treasure.keywords = "材质, 好"
+        treasure.available = true
+        do {
+            try DatabaseHandler.getMainDatabase().insert(objects: treasure, intoTable: DBConstants.treasuresTable)
+        }
+        catch let exception {
+            print(exception)
+        }
+    }
     // MARK: UISceneSession Lifecycle
 
     @available(iOS 13.0, *)

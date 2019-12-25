@@ -132,10 +132,6 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
         edit.hidesBottomBarWhenPushed = false
     }
     
-    private func toDetailView(id: Int) {
-        // TODO: - 详情页跳转
-    }
-    
     func showActionPopView(treasureId: Int) {
         self.view.addSubview(actionPopView)
         actionPopView.ActionBlock = {[weak self] (action:PopAction) in
@@ -149,6 +145,13 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
                 weakSelf.copyTreasure(id: treasureId)
             }
         }
+    }
+    
+    private func pushToDetail(treasureId: Int) {
+        let detailVC = TreasureDetailVC()
+        detailVC.tId = treasureId
+        detailVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
    
@@ -174,7 +177,7 @@ extension TreasureListController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        toDetailView(id: self.treasureList[indexPath.row].id)
+        pushToDetail(treasureId: self.treasureList[indexPath.row].id)
     }
     
     
