@@ -12,7 +12,7 @@ import WCDBSwift
 
 class TreasureCellVO {
     var id: Int = 0
-    var image: UIImage = UIImage()
+    var image: UIImage?
     var title: String = String()
     var description: String = String()
     var keywords: [String] = []
@@ -32,7 +32,7 @@ class TreasureCellVO {
     
     init(with treasure: TreasureListSearchDTO) {
         self.id = treasure.identifier ?? 0
-        self.image = PathHandler.getImages(of: treasure.identifier).first ?? UIImage()
+        self.image = PathHandler.getImages(of: treasure.identifier).first
         self.title = treasure.name
         self.description = treasure.description
         self.keywords = treasure.keywords

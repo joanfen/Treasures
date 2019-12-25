@@ -36,6 +36,7 @@ class TreasureListCell: UITableViewCell {
     
     @IBOutlet weak var keysView: UIView!
     
+    @IBOutlet weak var placeHolderView: UIView!
     var source: TreasureCellVO = TreasureCellVO.init()
     
     typealias ActionBlock = (_ hud: JGProgressHUD, _ collected: Bool) -> Void
@@ -46,12 +47,20 @@ class TreasureListCell: UITableViewCell {
 
     
     func config(with source: TreasureCellVO) {
+        if source.image == nil {
+            self.placeHolderView.isHidden = false
+        }else {
+            self.placeHolderView.isHidden = true
+            self.imgView.image = source.image
+        }
         self.imgView.image = source.image
         self.titleLabel.text = source.title
         self.descriptionLabel.text = source.description
         self.timeLabel.text = source.createdTimeStr
         self.source = source
-        self.categoryLbl.text = " " + "\(source.secondCategoryName)" + ""
+        self.categoryLbl.text = " " + "\(source.secondCategoryName)" + " "
+        let status = source.sellStatus.getDescription()
+        self.statusLbl.text = " " + "\(status)" + " "
         for view in self.keysView.subviews {
             view.removeFromSuperview()
         }
@@ -76,8 +85,14 @@ class TreasureListCell: UITableViewCell {
         let tap = UILongPressGestureRecognizer.init(target: self, action: #selector(showActionAlert))
         tap.minimumPressDuration = 1
         self.addGestureRecognizer(tap)
+        self.statusLbl.layer.masksToBounds = true
+        self.categoryLbl.layer.masksToBounds = true
         self.statusLbl.layer.cornerRadius = 2
         self.categoryLbl.layer.cornerRadius = 2
+        self.imgView.layer.masksToBounds = true
+        self.imgView.layer.cornerRadius = 6
+        self.placeHolderView.layer.masksToBounds = true
+        self.placeHolderView.layer.cornerRadius = 6
     }
     
     @objc private func showActionAlert() {
