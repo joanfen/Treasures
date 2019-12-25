@@ -95,18 +95,17 @@ class EditTreasureForm {
     }
     
     // 存入数据库
-    public func saveOrUpdate() {
-        
-        self.descrpiton = "我更了一下描述你看见了吗"
+    public func saveOrUpdate() -> Bool {
         let _ = getTreasureTable()
         let id = TreasureRepository.insertOrReplace(treasure: self.table)
-        saveImages(with: id)
-    
+        if let treasureId = id {
+             return saveImages(with: treasureId)
+        } else {
+            return false
+        }
     }
     
-    public func saveImages(with treasureId: Int?) {
-        if let id = treasureId {
-            PathHandler.saveImage(of: id, imgs: self.images)
-        }
+    public func saveImages(with treasureId: Int) -> Bool {
+        return PathHandler.saveImage(of: treasureId, imgs: self.images)
     }
 }

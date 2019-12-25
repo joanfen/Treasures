@@ -30,7 +30,7 @@ class PathHandler {
         return dir
     }
     
-    static func saveImage(of treasureId: Int, imgs: [UIImage]) {
+    static func saveImage(of treasureId: Int, imgs: [UIImage]) -> Bool {
         let path = treasurePath(with: treasureId)
         let imagePath = path.appendingPathComponent("images")
         let temp = path.appendingPathComponent("temp")
@@ -51,10 +51,10 @@ class PathHandler {
                 try? image.jpegData(compressionQuality: 1.0)?.write(to: url)
             }
         } catch {
-            
+            return false
         }
         
-        deleteFiles(of: treasureId)
+        return deleteFiles(of: treasureId)
         
     }
     
@@ -98,7 +98,7 @@ class PathHandler {
         return path.appendingPathComponent("temp")
     }
     
-    static func deleteFiles(of treasureId: Int) {
+    static func deleteFiles(of treasureId: Int) -> Bool {
         let path = treasureImagesPath(of: treasureId)
         let temp = treasureTempPath(of: treasureId)
         do {
@@ -107,8 +107,9 @@ class PathHandler {
             try FileManager.default.removeItem(at: temp) // 删除 temp 文件夹中的图片
             
         } catch _ {
-            
+            return false
         }
+        return true
     }
     
     
@@ -119,7 +120,7 @@ class PathHandler {
         
         let path = treasureImagesPath(of: treasureId!)
             
-        let names = ["1.jpg", "2.jpg", "3.jpg"]
+        let names = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
         var images = [UIImage]()
         for name in names {
             let imageOpt = UIImage(contentsOfFile: path.appendingPathComponent(name).path)

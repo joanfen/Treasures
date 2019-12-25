@@ -23,6 +23,7 @@ static NSString *const kDemoSelectBubbleResourceName = @"tags";
     if (self) {
         self.resourcePath = [[NSBundle mainBundle] pathForResource:kDemoSelectBubbleResourceName ofType:@"plist"];
         [self readDataArray];
+        
     }
     return self;
 }

@@ -10,8 +10,6 @@ import Foundation
 import WCDBSwift
 
 protocol Queryable {
-    func page() -> Int
-    func size() -> Int
     func toQueryConditions() -> Condition
     func toOrderBy() -> [OrderBy]
     func toProperties() -> [PropertyConvertible]

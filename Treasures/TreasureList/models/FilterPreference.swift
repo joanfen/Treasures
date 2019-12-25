@@ -10,70 +10,20 @@ import Foundation
 import WCDBSwift
 
 class FilterPreference: Queryable {
-    var searchText: String? {
-        didSet{
-            currentPage = 0
-        }
-    }
-    var yearOrderRule: OrderRule = OrderRule.none {
-        didSet{
-            currentPage = 0
-        }
-    }
-    var sizeOrderRule: OrderRule = OrderRule.none {
-        didSet{
-            currentPage = 0
-        }
-    }
-    var priceOrderRule: OrderRule = OrderRule.none {
-        didSet{
-            currentPage = 0
-        }
-    }
+    var searchText: String?
+    var yearOrderRule: OrderRule = OrderRule.none
+    var priceOrderRule: OrderRule = OrderRule.none
    
-    var category: Category? {
-        didSet{
-            currentPage = 0
-        }
-    }
-    var filterAvaliable: Bool = false {
-        didSet{
-            currentPage = 0
-        }
-    }
-    var filterUnavaliable: Bool = false {
-        didSet{
-            currentPage = 0
-        }
-    }
-    var filterSold: Bool = false {
-        didSet{
-            currentPage = 0
-        }
-    }
+    var category: Category?
     
-    var filterDeleted: Bool? {
-        didSet{
-            currentPage = 0
-        }
-    }
+    var filterAvaliable: Bool = false
+    var filterUnavaliable: Bool = false
+    var filterSold: Bool = false
     
-    var filterCollected: Bool? {
-        didSet {
-            currentPage = 0
-        }
-    }
-
-    var currentPage: Int = 0
-    var limit: Int = 20
-   
-    func page() -> Int {
-        return currentPage
-    }
+    var keyword: String?
     
-    func size() -> Int {
-        return limit
-    }
+    var filterDeleted: Bool?
+    var filterCollected: Bool?
     
     func toProperties() -> [PropertyConvertible] {
         var list: [PropertyConvertible] = DBConstants.treasureProperties
@@ -102,6 +52,12 @@ class FilterPreference: Queryable {
                     || TreasuresTable.Properties.description.in(table: treasureString).like(search))
             }
         }
+        
+        if let s = keyword {
+            let search = "%" + s + "%"
+            condition = condition && (TreasuresTable.Properties.keywords.in(table: treasureString).like(search))
+        }
+        
         if filterAvaliable {
             condition = condition && (TreasuresTable.Properties.available)
         }
@@ -128,9 +84,6 @@ class FilterPreference: Queryable {
         if let yearOrder = yearOrderRule.toOrderTerm() {
             orderBy.append(TreasuresTable.Properties.year.in(table: DBConstants.treasuresTable).asOrder(by: yearOrder))
 
-        }
-        if let sizeOrder = sizeOrderRule.toOrderTerm() {
-            orderBy.append(TreasuresTable.Properties.size.in(table: DBConstants.treasuresTable).asOrder(by: sizeOrder))
         }
         if let priceOrder = priceOrderRule.toOrderTerm() {
             orderBy.append(TreasuresTable.Properties.sellingPriceInCent.in(table: DBConstants.treasuresTable).asOrder(by: priceOrder))

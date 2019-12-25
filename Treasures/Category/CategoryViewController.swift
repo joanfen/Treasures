@@ -13,7 +13,7 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var bigTableView: UITableView!
     @IBOutlet weak var smallTableView: UITableView!
     var bigCategoryArr:[FirstCategoryTable] = []
-    var smallCategoryArr:[SecondCategoryTable] = []
+    var smallCategoryArr:[SecondCategoryVO] = []
     var myCategoryArr:[Int] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +76,7 @@ extension CategoryViewController:UITableViewDelegate,UITableViewDataSource {
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "SmallCategoryCell") as! SmallCategoryCell
         cell.titleLbl.text = smallCategoryArr[indexPath.row].name
+        cell.countLbl.text = String(smallCategoryArr[indexPath.row].count)
         if myCategoryArr.contains(smallCategoryArr[indexPath.row].identifier ?? 0) {
             tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         }

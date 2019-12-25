@@ -77,7 +77,7 @@ class test: XCTestCase {
         
     }
     func testSecondCategory() {
-        CategoryRepo.querySecondCategories(parentId: 1)
+        CategoryRepo.querySecondCategories(parentId: 11)
     }
     
     func testQuery () {

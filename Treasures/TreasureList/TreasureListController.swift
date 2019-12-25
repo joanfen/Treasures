@@ -45,6 +45,11 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
         reloadPlaceHolder()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.searchBarView.frame = CGRect.init(x: 0, y: 0, width: UISizeConstants.screenWidth, height: 82)
+    }
+    
     private func reloadPlaceHolder() {
         if self.treasureList.count != 0 {
             self.placeholderView.isHidden = true
@@ -64,10 +69,7 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
         self.navigationController?.navigationBar.isHidden = true
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        self.searchBarView.frame = CGRect.init(x: 0, y: 0, width: UISizeConstants.screenWidth, height: 82)
-    }
+  
     
     private func tableViewSetting() {
         let y = filterView.bottom + 10

@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AddImagesSubview" customModule="Treasures" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AddImagesSubview" customModule="收藏管家" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -25,19 +25,22 @@
                             <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eI0-nH-fVt" customClass="AddImageButton" customModule="Treasures" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eI0-nH-fVt" customClass="AddImageButton" customModule="收藏管家" customModuleProvider="target">
                             <rect key="frame" x="15" y="49" width="60" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="60" id="kZN-ma-I6S"/>
                                 <constraint firstAttribute="height" constant="60" id="sR7-Om-gSc"/>
                             </constraints>
                             <color key="tintColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                            <state key="normal" image="plus" catalog="system"/>
+                            <state key="normal" image="plus" catalog="system">
+                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
                             <connections>
                                 <action selector="addImage:" destination="iN0-l3-epB" eventType="touchUpInside" id="16L-7d-Mnh"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5q6-Ig-282" customClass="AddImageButton" customModule="Treasures" customModuleProvider="target">
+                        <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5q6-Ig-282" customClass="AddImageButton" customModule="收藏管家" customModuleProvider="target">
                             <rect key="frame" x="95" y="49" width="60" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="7wR-b0-loD"/>
@@ -49,7 +52,7 @@
                                 <action selector="addImage:" destination="iN0-l3-epB" eventType="touchUpInside" id="l7l-6L-iNv"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hb-x0-rhS" customClass="AddImageButton" customModule="Treasures" customModuleProvider="target">
+                        <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hb-x0-rhS" customClass="AddImageButton" customModule="收藏管家" customModuleProvider="target">
                             <rect key="frame" x="175" y="49" width="60" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="60" id="Tbx-YO-7V0"/>
@@ -61,6 +64,18 @@
                                 <action selector="addImage:" destination="iN0-l3-epB" eventType="touchUpInside" id="vG7-5J-c2l"/>
                             </connections>
                         </button>
+                        <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpl-bu-NI5" customClass="AddImageButton" customModule="收藏管家" customModuleProvider="target">
+                            <rect key="frame" x="255" y="49" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="FMJ-Z5-jiC"/>
+                                <constraint firstAttribute="width" constant="60" id="ezO-BV-wEj"/>
+                            </constraints>
+                            <color key="tintColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <state key="normal" image="plus" catalog="system"/>
+                            <connections>
+                                <action selector="addImage:" destination="iN0-l3-epB" eventType="touchUpInside" id="doM-QM-fz1"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -68,9 +83,11 @@
                         <constraint firstItem="gjo-A9-3g0" firstAttribute="top" secondItem="ZeA-JS-jbP" secondAttribute="top" constant="13" id="0Th-n4-8Oz"/>
                         <constraint firstItem="eI0-nH-fVt" firstAttribute="leading" secondItem="ZeA-JS-jbP" secondAttribute="leading" constant="15" id="4l5-B1-bTs"/>
                         <constraint firstAttribute="bottom" secondItem="eI0-nH-fVt" secondAttribute="bottom" constant="15" id="7cf-dV-a5f"/>
+                        <constraint firstAttribute="bottom" secondItem="Hpl-bu-NI5" secondAttribute="bottom" constant="15" id="BSh-f0-Vxh"/>
                         <constraint firstAttribute="trailing" secondItem="gjo-A9-3g0" secondAttribute="trailing" constant="15" id="KF2-Jd-zEY"/>
                         <constraint firstAttribute="bottom" secondItem="5q6-Ig-282" secondAttribute="bottom" constant="15" id="Uaa-yq-DZV"/>
                         <constraint firstItem="6Hb-x0-rhS" firstAttribute="leading" secondItem="ZeA-JS-jbP" secondAttribute="leading" constant="175" id="daN-go-DHV"/>
+                        <constraint firstItem="Hpl-bu-NI5" firstAttribute="leading" secondItem="6Hb-x0-rhS" secondAttribute="trailing" constant="20" id="eDJ-JM-3t6"/>
                         <constraint firstItem="5q6-Ig-282" firstAttribute="leading" secondItem="ZeA-JS-jbP" secondAttribute="leadingMargin" constant="87" id="goE-a6-tmP"/>
                         <constraint firstAttribute="bottom" secondItem="6Hb-x0-rhS" secondAttribute="bottom" constant="15" id="goP-qB-gro"/>
                     </constraints>
@@ -88,6 +105,7 @@
                 <outlet property="addBtn1" destination="eI0-nH-fVt" id="tKr-MT-3Hr"/>
                 <outlet property="addBtn2" destination="5q6-Ig-282" id="lfd-Eu-Fpw"/>
                 <outlet property="addBtn3" destination="6Hb-x0-rhS" id="ilS-bH-Apc"/>
+                <outlet property="addBtn4" destination="Hpl-bu-NI5" id="GMA-1l-oEn"/>
             </connections>
             <point key="canvasLocation" x="-363.768115942029" y="-207.58928571428569"/>
         </view>
