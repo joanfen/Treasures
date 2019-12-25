@@ -15,10 +15,10 @@ class KeywordsScrollView: UIScrollView {
     }
 
     
-    func reloadWidth(keys:[String]) {
+    func reloadWidth(keys:[String],height:CGFloat = 24) {
         var maxX:CGFloat = 0
         let offset:CGFloat = 10
-        let y = (self.frame.height - 24)/2
+        let y = (self.frame.height - height)/2
         for i in 0..<keys.count {
             let key = keys[i]
             let lbl = UILabel()
@@ -26,10 +26,10 @@ class KeywordsScrollView: UIScrollView {
             lbl.text = key
             lbl.textAlignment = .center
             lbl.font = UIFont.systemFont(ofSize: 12)
-            lbl.frame = CGRect(x: maxX, y: y, width: width, height: 24)
+            lbl.frame = CGRect(x: maxX, y: y, width: width, height: height)
             lbl.textColor = .white
             lbl.backgroundColor = UIColor.colorWithHexString(hex: "B1B8BD")
-            lbl.layer.cornerRadius = 12
+            lbl.layer.cornerRadius = height/2
             lbl.layer.masksToBounds = true
             self.addSubview(lbl)
             maxX += (width + offset)

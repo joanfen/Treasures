@@ -20,6 +20,10 @@ struct TreasureListCellConstants {
 
 class TreasureListCell: UITableViewCell {
 
+    @IBOutlet weak var statusLbl: UILabel!
+    
+    @IBOutlet weak var categoryLbl: UILabel!
+    
     @IBOutlet weak var imgView: UIImageView!
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -29,6 +33,9 @@ class TreasureListCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     
     @IBOutlet weak var collectedBtn: UIButton!
+    
+    @IBOutlet weak var keysView: UIView!
+    
     var source: TreasureCellVO = TreasureCellVO.init()
     
     typealias ActionBlock = (_ hud: JGProgressHUD, _ collected: Bool) -> Void
@@ -44,13 +51,22 @@ class TreasureListCell: UITableViewCell {
         self.descriptionLabel.text = source.description
         self.timeLabel.text = source.createdTimeStr
         self.source = source
+        self.categoryLbl.text = " " + "\(source.secondCategoryName)" + ""
+        for view in self.keysView.subviews {
+            view.removeFromSuperview()
+        }
+        let keywordsView = KeywordsScrollView.init(frame: CGRect(x: 0, y: 0, width: self.keysView.width, height: self.keysView.height))
+        keywordsView.reloadWidth(keys: source.keywords,height:16)
+        self.keysView.addSubview(keywordsView)
         self.refreshCollectedStatus()
+        
     }
     
     func config(with source: TreasureCellVO, actionBlock: ActionBlock?, longPressAction: LongPressAction?) {
         self.config(with: source)
         self.actionBlock = actionBlock
         self.longPressAction = longPressAction
+        
     }
     
     override func awakeFromNib() {
@@ -60,6 +76,8 @@ class TreasureListCell: UITableViewCell {
         let tap = UILongPressGestureRecognizer.init(target: self, action: #selector(showActionAlert))
         tap.minimumPressDuration = 1
         self.addGestureRecognizer(tap)
+        self.statusLbl.layer.cornerRadius = 2
+        self.categoryLbl.layer.cornerRadius = 2
     }
     
     @objc private func showActionAlert() {
