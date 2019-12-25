@@ -27,13 +27,12 @@
 -(instancetype)initWithReuseIdentifier:(NSString *)identifier{
     self = [super initWithReuseIdentifier:identifier];
     if (self) {
-        CGFloat normalRGB = 51/255.0;
-        self.normalTextColor = [UIColor colorWithRed:normalRGB green:normalRGB blue:normalRGB alpha:1];
-        self.hightlightTextColor = [UIColor colorWithRed:33/255.0 green:152/255.0 blue:200/255.0 alpha:1];
-        self.normalBgColor = [UIColor clearColor];
-        self.highlightBgColor = [UIColor whiteColor];
+        self.normalTextColor = [UIColor whiteColor];
+        self.hightlightTextColor = [UIColor whiteColor];
+        self.normalBgColor = [UIColor colorWithRed:177.0/255.0 green:184.0/255.0 blue:189.0/255.0 alpha:1];
+        self.highlightBgColor = [UIColor colorWithRed:203.0/255.0 green:36.0/255.0 blue:36.0/255.0 alpha:1];
         self.textLabel.textColor = self.normalTextColor;
-        self.layer.borderColor = self.normalTextColor.CGColor;
+        self.layer.borderColor = [UIColor clearColor].CGColor;
         self.backgroundColor = self.normalBgColor;
     }
     return self;

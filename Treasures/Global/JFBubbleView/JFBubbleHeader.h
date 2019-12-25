@@ -15,5 +15,5 @@
 #import "JFBubbleView.h"
 #import "JFEditBubbleView.h"
 #import "JFSelectBubbleView.h"
-
+#import "JFBubbleViewController.h"
 #endif /* JFBubbleHeader_h */

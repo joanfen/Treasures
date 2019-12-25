@@ -13,7 +13,7 @@ class TreasureListSearchDTO {
     var categoryName: String = ""
     var description: String
     var keywords: [String]
-    var available: Bool = false
+    var sellStatus: SellStatus = .unavaliable
     var isCollected: Bool = false
     var created: Date
     
@@ -23,7 +23,7 @@ class TreasureListSearchDTO {
         self.categoryName = categoryName ?? ""
         self.description = treasure.description
         self.keywords = treasure.keywords.components(separatedBy: ",")
-        self.available = treasure.available
+        self.sellStatus = SellStatus(rawValue: treasure.sellStatus) ?? SellStatus.unavaliable
         self.isCollected = treasure.isCollected
         self.created = treasure.created
     }

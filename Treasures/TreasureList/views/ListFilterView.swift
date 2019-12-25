@@ -62,16 +62,6 @@ class ListFilterView: UIView {
         layoutItems()
     }
     
-    // MARK: - 设置排序规则
-    private func updateSizeRule(rule: OrderRule) {
-        self.filterPreference.sizeOrderRule = rule
-        if rule != OrderRule.none {
-           self.yearItem.updateOrderRule(rule: OrderRule.none)
-           self.priceItem.updateOrderRule(rule: OrderRule.none)
-        }
-        self.filterBegin?(filterPreference)
-    }
-    
     private func updateYearRule(rule: OrderRule) {
         self.filterPreference.yearOrderRule = rule
         if rule != OrderRule.none {
@@ -115,10 +105,6 @@ class ListFilterView: UIView {
     private func configItemActions() {
         yearItem.ruleUpdated = { (rule: OrderRule) in
             self.updateYearRule(rule: rule)
-        }
-        
-        sizeItem.ruleUpdated = { (rule: OrderRule) in
-            self.updateSizeRule(rule: rule)
         }
 
         priceItem.ruleUpdated = { (rule: OrderRule) in

@@ -19,7 +19,7 @@
 -(id)initWithReuseIdentifier:(NSString *)identifier{
     self = [super initWithReuseIdentifier:identifier];
     if (self) {
-        self.fillColor = [UIColor colorWithRed:33/255.0 green:152/255.0 blue:200/255.0 alpha:1];
+        self.fillColor = [UIColor colorWithRed:203.0/255.0 green:36.0/255.0 blue:36.0/255.0 alpha:1];
         self.blankColor = [UIColor whiteColor];
         self.layer.borderColor = self.fillColor.CGColor;
         self.textLabel.textColor = self.fillColor;

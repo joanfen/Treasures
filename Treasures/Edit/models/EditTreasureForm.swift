@@ -12,6 +12,7 @@ import UIKit
 class EditTreasureForm {
     var identifier: Int?
     var images: [UIImage] = []
+    var imageUrls: [String]  = []
     var name: String = ""
     var category: Category?
     var size: String = ""
@@ -21,8 +22,7 @@ class EditTreasureForm {
     var purchasedYear: Int?
     var purchasedPrice: Float?
     var sellingPrice: Float?
-    var available: Bool = false
-    var isSold: Bool = false
+    var sellStatus: SellStatus = .unavaliable
     var note: String = ""
         
     private var table = TreasuresTable()
@@ -46,11 +46,11 @@ class EditTreasureForm {
         self.purchasedYear = treasure.purchasedYear
         self.purchasedPrice = Float(treasure.purchasedPriceInCent) / 100.0
         self.sellingPrice = Float(treasure.sellingPriceInCent) / 100.0
-        self.available = treasure.available
-        self.isSold = treasure.isSold
+        self.sellStatus = SellStatus(rawValue: treasure.sellStatus) ?? SellStatus.unavaliable
         self.note = treasure.note
         
         self.images = PathHandler.getImages(of: self.identifier)
+        self.imageUrls = PathHandler.getImagePaths(of: self.identifier)
     }
     
     public func categoryString() -> String {
@@ -62,8 +62,7 @@ class EditTreasureForm {
         table.name = name
         table.description = descrpiton
         table.note = note
-        table.available = available
-        table.isSold = isSold
+        table.sellStatus = sellStatus.rawValue
         table.size = size
         
         if let c = category {
@@ -95,18 +94,17 @@ class EditTreasureForm {
     }
     
     // 存入数据库
-    public func saveOrUpdate() {
-        
-        self.descrpiton = "我更了一下描述你看见了吗"
+    public func saveOrUpdate() -> Bool {
         let _ = getTreasureTable()
         let id = TreasureRepository.insertOrReplace(treasure: self.table)
-        saveImages(with: id)
-    
+        if let treasureId = id {
+             return saveImages(with: treasureId)
+        } else {
+            return false
+        }
     }
     
-    public func saveImages(with treasureId: Int?) {
-        if let id = treasureId {
-            PathHandler.saveImage(of: id, imgs: self.images)
-        }
+    public func saveImages(with treasureId: Int) -> Bool {
+        return PathHandler.saveImage(of: treasureId, imgs: self.images)
     }
 }

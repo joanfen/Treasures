@@ -9,13 +9,20 @@
 import UIKit
 
 
+class InputBaseView: UIView {
+    var textChanged: TextChanged?
+    var delegate: InputViewDelegate?
+    
+}
+
 protocol InputViewDelegate {
-    func textFieldBeginEditing(at bottom: CGFloat) -> Void
+    func textFieldBeginEditing(at bottom: CGFloat, inputView: InputBaseView) -> Void
 }
 
 typealias TextChanged = (_ text: String) -> Void
 
-class InputSubview: UIView, UITextFieldDelegate {
+
+class InputSubview: InputBaseView, UITextFieldDelegate {
 
     @IBOutlet private var titleLable: UILabel!
     @IBOutlet private var textField: UITextField!
@@ -23,9 +30,12 @@ class InputSubview: UIView, UITextFieldDelegate {
     @IBOutlet weak var unitLabel: UILabel!
     
     @IBOutlet weak var unitWidth: NSLayoutConstraint!
-    var textChanged: TextChanged?
-    var delegate: InputViewDelegate?
-
+    
+    @IBOutlet var line: UIView!
+    
+    func hideSeperateLine() {
+        self.line.isHidden = true
+    }
     
     class func loadXib() -> InputSubview {
         Bundle.main.loadNibNamed("InputSubview", owner: self, options: nil)!.first as! InputSubview
@@ -58,7 +68,7 @@ class InputSubview: UIView, UITextFieldDelegate {
 
     
     internal func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.delegate?.textFieldBeginEditing(at: self.bottom)
+        self.delegate?.textFieldBeginEditing(at: self.bottom, inputView: self)
     }
     
     internal func textFieldDidEndEditing(_ textField: UITextField) {

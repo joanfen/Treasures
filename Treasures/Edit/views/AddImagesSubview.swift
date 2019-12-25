@@ -17,6 +17,7 @@ class AddImagesSubview: UIView {
     @IBOutlet weak var addBtn1: AddImageButton!
     @IBOutlet weak var addBtn2: AddImageButton!
     @IBOutlet weak var addBtn3: AddImageButton!
+    @IBOutlet weak var addBtn4: AddImageButton!
     
     typealias ShowAlbum = (_ tag: Int) -> Void
     typealias ShowAlert = (_ alert: UIAlertController) -> Void
@@ -66,6 +67,8 @@ class AddImagesSubview: UIView {
         setImage(with: 0, button: addBtn1)
         setImage(with: 1, button: addBtn2)
         setImage(with: 2, button: addBtn3)
+        setImage(with: 3, button: addBtn4)
+
     }
     private func setImage(with index: Int, button: AddImageButton) {
         if let image = getImage(at: index) {
@@ -123,5 +126,6 @@ class AddImageButton: UIButton {
         self.layer.cornerRadius = 4
         self.layer.borderColor = ColorConstants.titleColor.cgColor
         self.layer.borderWidth = 0.5
+        self.clipsToBounds = true
     }
 }

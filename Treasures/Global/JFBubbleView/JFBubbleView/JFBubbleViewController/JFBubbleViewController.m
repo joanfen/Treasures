@@ -26,6 +26,8 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self addEditBubbleView];
     [self addSelectBubbleView];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 -(void)addEditBubbleView{
@@ -40,7 +42,7 @@
     selectBubbleView.bubbleDelegate = self;
     selectBubbleView.delegate = self;
     UILabel *header = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 21)];
-    header.text = @"所有分组";
+    header.text = @"历史输入";
     header.font = [UIFont systemFontOfSize:14];
     selectBubbleView.bubbleHeaderView = header;
     
