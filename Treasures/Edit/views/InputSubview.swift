@@ -12,6 +12,7 @@ import UIKit
 class InputBaseView: UIView {
     var textChanged: TextChanged?
     var delegate: InputViewDelegate?
+    
 }
 
 protocol InputViewDelegate {
@@ -30,7 +31,11 @@ class InputSubview: InputBaseView, UITextFieldDelegate {
     
     @IBOutlet weak var unitWidth: NSLayoutConstraint!
     
-
+    @IBOutlet var line: UIView!
+    
+    func hideSeperateLine() {
+        self.line.isHidden = true
+    }
     
     class func loadXib() -> InputSubview {
         Bundle.main.loadNibNamed("InputSubview", owner: self, options: nil)!.first as! InputSubview

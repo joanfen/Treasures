@@ -8,6 +8,14 @@
 
 import Foundation
 import WCDBSwift
+
+enum SellStatus: Int {
+    case unavaliable = 0
+    case avaliable = 1
+    case sold = 2
+    
+}
+
 class TreasuresTable: TableCodable {
     var identifier: Int? = nil
     var name: String = ""
@@ -18,8 +26,7 @@ class TreasuresTable: TableCodable {
     var purchasedYear: Int = 0
     var purchasedPriceInCent: Int64 = 0
     var sellingPriceInCent: Int64 =  0
-    var available: Bool = false
-    var isSold: Bool = false
+    var sellStatus: Int = 0
     var size: String = ""
     var keywords: String = ""
     var note: String = ""
@@ -43,8 +50,7 @@ class TreasuresTable: TableCodable {
         case purchasedYear
         case purchasedPriceInCent
         case sellingPriceInCent
-        case available
-        case isSold
+        case sellStatus
         case size
         case keywords
         case note

@@ -71,22 +71,32 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLayoutSubviews() {
         super .viewDidLayoutSubviews()
         let singleHeight: CGFloat = 50;
+        // 图片
         imagesView.frame = CGRect.init(x: 0, y: 0, width: self.contentView.width, height: AddImagesSubviewConstants.height)
+        // 类目
         categoryView.frame = CGRect(x: 0, y: imagesView.bottom + 10, width: self.contentView.width, height: singleHeight)
+        // 名称
         nameInputView.frame = CGRect(x: 0, y: categoryView.bottom, width: self.contentView.width, height: 140)
+        // 关键字
         keywordInputView.frame = CGRect(x: 0, y: nameInputView.bottom, width: self.contentView.width, height: 140)
-        
+        // 尺寸
         sizeInputView.frame = CGRect(x: 0, y: keywordInputView.bottom, width: self.contentView.width, height: 100)
+        // 年份
         yearInputView.frame = CGRect(x: 0, y: sizeInputView.bottom, width: self.contentView.width, height: 100)
+        // 描述
         descriptionInputView.frame = CGRect(x: 0, y: yearInputView.bottom, width: self.contentView.width, height: 140)
+        // 购入时间
         purchasingTimeInputView.frame = CGRect(x: 0, y: descriptionInputView.bottom + 10, width: self.contentView.width, height: singleHeight)
+        // 购入价格
         purchasingPriceInputView.frame = CGRect(x: 0, y: purchasingTimeInputView.bottom, width: self.contentView.width, height: singleHeight)
-        sellingPriceInputView.frame = CGRect(x: 0, y: purchasingPriceInputView.bottom, width: self.contentView.width, height: singleHeight)
-        avaliableView.frame = CGRect(x: 0, y: sellingPriceInputView.bottom, width: self.contentView.width, height: singleHeight)
-        soldView.frame = CGRect(x: 0, y: avaliableView.bottom, width: self.contentView.width, height: singleHeight)
-        
-        noteView.frame = CGRect(x: 0, y: soldView.bottom + 10, width: self.contentView.width, height: singleHeight)
-        contentView.contentSize = CGSize(width: self.view.width, height: noteView.bottom)
+        // 出售状态
+        avaliableView.frame = CGRect(x: 0, y: purchasingPriceInputView.bottom, width: self.contentView.width, height: singleHeight)
+        // 出售价格
+        sellingPriceInputView.frame = CGRect(x: 0, y: avaliableView.bottom, width: self.contentView.width, height: singleHeight)
+        // 笔记
+        noteView.frame = CGRect(x: 0, y: sellingPriceInputView.bottom + 10, width: self.contentView.width, height: 140)
+        // TODO: 保存按钮
+        contentView.contentSize = CGSize(width: self.view.width, height: noteView.bottom + 10 )
         
     }
 
@@ -104,9 +114,9 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         addKeywordInputView()
         addPurchasedTimeView()
         addPurchasedPriceView()
-        addSoldPriceView()
         addAvaliableView()
-        addSoldView()
+        addSoldPriceView()
+        addNoteView()
         
     }
     
@@ -203,32 +213,29 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         purchasingPriceInputView.dataSetting(title: "购入价格", value: String((self.edit.purchasedPrice ?? 0)), textChanged: { (text) in
             self.edit.purchasedPrice = Float(Int.init(text) ?? 0)
         }, delegate: self)
-        purchasingPriceInputView.showUnit(text: "RMB")
         contentView.addSubview(purchasingPriceInputView)
     }
     private func addSoldPriceView() {
         sellingPriceInputView.dataSetting(title: "出售价格", value: String((self.edit.sellingPrice ?? 0)/100), textChanged: { (text) in
             self.edit.sellingPrice = Float(Int.init(text) ?? 0)
         }, delegate: self)
-        sellingPriceInputView.showUnit(text: "RMB")
+        sellingPriceInputView.hideSeperateLine()
         contentView.addSubview(sellingPriceInputView)
     }
     
     private func addAvaliableView() {
-        avaliableView.dataSetting(title: "是否可售", choosed: self.edit.available) { (chosed) in
-            self.edit.available = chosed
+        avaliableView.dataSetting(title: "出售状态", sellStatus: self.edit.sellStatus) { (sellStatus) in
+            self.edit.sellStatus = sellStatus
         }
         contentView.addSubview(avaliableView)
     }
-    private func addSoldView() {
-        soldView.dataSetting(title: "是否已售", choosed: self.edit.isSold) { (chosed) in
-            self.edit.isSold = chosed
-        }
-        contentView.addSubview(soldView)
-    }
        
     private func addNoteView() {
-        
+        noteView.dataSetting(title: "备注", value:  self.edit.note, textChanged: { (note) in
+            self.edit.note = note
+        }, delegate: self)
+        noteView.hideSeperateLine()
+        contentView.addSubview(noteView)
     }
     
     
@@ -239,7 +246,8 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @objc private func save() {
-        nameInputView.resignFirstResponder()
+        // TODO: - 所有 input 都应该 退出编辑
+//        nameInputView.resignFirstResponder()
         self.edit.images = imagesView.getImages()
         let result = self.edit.saveOrUpdate()
         if (result) {

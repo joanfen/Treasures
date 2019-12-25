@@ -81,7 +81,7 @@ class DatabaseHandler {
         
         treasure.keywords = "材质, 好"
         treasure.size = "200000"
-        treasure.available = true
+        treasure.sellStatus = SellStatus.unavaliable.rawValue
         do {
             
             let statement = StatementInsert()

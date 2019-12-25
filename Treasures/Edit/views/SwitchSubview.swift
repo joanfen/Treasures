@@ -12,33 +12,33 @@ class SwitchSubview: UIView {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var chooseBtn: UIButton!
+    @IBOutlet var statusSegment: UISegmentedControl!
     
-    typealias ChoosedAction = (_ choosed: Bool) -> Void
+    typealias ChoosedAction = (_ sellStatus: SellStatus) -> Void
     private var chooseAction: ChoosedAction?
     
-    private var choosed: Bool = false {
-        didSet {
-            self.chooseBtn.setImage(UIImage(named: choosed ? "chose2" : "chose1"), for: UIControl.State.normal)
-        }
-    }
+    private var sellStatus: SellStatus = .unavaliable
     
     class func loadXib() -> SwitchSubview {
          Bundle.main.loadNibNamed("SwitchSubview", owner: self, options: nil)!.first as! SwitchSubview
     }
 
-    func dataSetting(title: String, choosed: Bool, choosedAction: @escaping ChoosedAction) {
+    func dataSetting(title: String, sellStatus: SellStatus, choosedAction: @escaping ChoosedAction) {
         self.titleLabel.text = title
-        self.choosed = choosed
+        self.sellStatus = sellStatus
+        self.statusSegment.selectedSegmentIndex = sellStatus.rawValue
         self.chooseAction = choosedAction
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.statusSegment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white], for: UIControl.State.selected)
+        self.statusSegment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : ColorConstants.titleColor], for: UIControl.State.normal)
+        
     }
     
-    
-    @IBAction func chooseAction(_ sender: Any) {
-        self.choosed = !self.choosed
-        self.chooseAction?(choosed)
+    @IBAction func statusChanged(_ sender: Any) {
+        sellStatus = SellStatus(rawValue: self.statusSegment.selectedSegmentIndex) ?? SellStatus.unavaliable
+        self.chooseAction?(sellStatus)
     }
 }

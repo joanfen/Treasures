@@ -59,13 +59,13 @@ class FilterPreference: Queryable {
         }
         
         if filterAvaliable {
-            condition = condition && (TreasuresTable.Properties.available)
+            condition = condition && (TreasuresTable.Properties.sellStatus == SellStatus.avaliable.rawValue)
         }
         if filterUnavaliable {
-            condition = condition && (TreasuresTable.Properties.available == false)
+            condition = condition && (TreasuresTable.Properties.sellStatus == SellStatus.unavaliable.rawValue)
         }
         if filterSold {
-            condition = condition && (TreasuresTable.Properties.isSold)
+            condition = condition && (TreasuresTable.Properties.sellStatus == SellStatus.sold.rawValue)
         }
         
         if let collected = filterCollected {

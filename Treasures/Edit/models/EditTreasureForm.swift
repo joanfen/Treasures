@@ -21,8 +21,7 @@ class EditTreasureForm {
     var purchasedYear: Int?
     var purchasedPrice: Float?
     var sellingPrice: Float?
-    var available: Bool = false
-    var isSold: Bool = false
+    var sellStatus: SellStatus = .unavaliable
     var note: String = ""
         
     private var table = TreasuresTable()
@@ -46,8 +45,7 @@ class EditTreasureForm {
         self.purchasedYear = treasure.purchasedYear
         self.purchasedPrice = Float(treasure.purchasedPriceInCent) / 100.0
         self.sellingPrice = Float(treasure.sellingPriceInCent) / 100.0
-        self.available = treasure.available
-        self.isSold = treasure.isSold
+        self.sellStatus = SellStatus(rawValue: treasure.sellStatus) ?? SellStatus.unavaliable
         self.note = treasure.note
         
         self.images = PathHandler.getImages(of: self.identifier)
@@ -62,8 +60,7 @@ class EditTreasureForm {
         table.name = name
         table.description = descrpiton
         table.note = note
-        table.available = available
-        table.isSold = isSold
+        table.sellStatus = sellStatus.rawValue
         table.size = size
         
         if let c = category {
