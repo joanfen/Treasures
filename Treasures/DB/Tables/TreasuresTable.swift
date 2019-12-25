@@ -13,7 +13,18 @@ enum SellStatus: Int {
     case unavaliable = 0
     case avaliable = 1
     case sold = 2
-    
+    public func getDescription() -> String {
+        switch self {
+        case .unavaliable:
+            return "不可售"
+        case .avaliable:
+            return "可售"
+        case .sold:
+            return "已售"
+        default:
+            return  ""
+        }
+    }
 }
 
 class TreasuresTable: TableCodable {

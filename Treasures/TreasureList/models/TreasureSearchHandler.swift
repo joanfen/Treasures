@@ -21,7 +21,7 @@ class TreasureCellVO {
             self.collectImage = UIImage(named: isCollected ? "Collection2" : "Collection1")
         }
     }
-    var isAvaliable: Bool = false
+    var sellStatus: SellStatus = SellStatus.unavaliable
     var secondCategoryName: String = ""
     var createdTimeStr: String = String()
     var collectImage: UIImage? = UIImage(named: "Collection1")
@@ -37,6 +37,7 @@ class TreasureCellVO {
         self.description = treasure.description
         self.keywords = treasure.keywords
         self.secondCategoryName = treasure.categoryName
+        self.sellStatus = treasure.sellStatus
         self.isCollected = treasure.isCollected
         self.collectImage = UIImage(named: isCollected ? "Collection2" : "Collection1")
         self.createdTimeStr = toDateTimeString(by: treasure.created)
