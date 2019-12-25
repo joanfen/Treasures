@@ -12,6 +12,7 @@ import UIKit
 class EditTreasureForm {
     var identifier: Int?
     var images: [UIImage] = []
+    var imageUrls: [String]  = []
     var name: String = ""
     var category: Category?
     var size: String = ""
@@ -49,6 +50,7 @@ class EditTreasureForm {
         self.note = treasure.note
         
         self.images = PathHandler.getImages(of: self.identifier)
+        self.imageUrls = PathHandler.getImagePaths(of: self.identifier)
     }
     
     public func categoryString() -> String {

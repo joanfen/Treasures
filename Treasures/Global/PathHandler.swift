@@ -112,8 +112,7 @@ class PathHandler {
         return true
     }
     
-    
-    static func getImages(of treasureId: Int?) -> [UIImage] {
+    static func getImagePaths(of treasureId: Int?) -> [String] {
         if treasureId == nil {
             return []
         }
@@ -121,10 +120,21 @@ class PathHandler {
         let path = treasureImagesPath(of: treasureId!)
             
         let names = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
-        var images = [UIImage]()
+        var imagePaths = [String]()
         for name in names {
-            let imageOpt = UIImage(contentsOfFile: path.appendingPathComponent(name).path)
-            if let image = imageOpt {
+            let p = path.appendingPathComponent(name).path
+            if let _ = UIImage(contentsOfFile: p) {
+                imagePaths.append(p)
+            }
+        }
+        return imagePaths
+    }
+    static func getImages(of treasureId: Int?) -> [UIImage] {
+    
+        var images = [UIImage]()
+        
+        for name in getImagePaths(of: treasureId) {
+            if let image = UIImage(contentsOfFile: name) {
                 images.append(image)
             }
         }

@@ -47,7 +47,7 @@ class CategoryItem: UIView {
     }
     
     func changeBgView() {
-        self.bgBottomConstraint.constant = isSelected ? -16 : 10
+        self.bgBottomConstraint.constant = isSelected ? -10 : 10
         layoutIfNeeded()
 
     }
