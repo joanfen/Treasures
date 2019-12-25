@@ -95,7 +95,14 @@ class TreasureDetailVC: UIViewController {
         }else {
             self.salePriceLbl.text = "--"
         }
-        
+        switch treasure.sellStatus {
+        case .unavaliable:
+            self.saleStatusLbl.text = "不可售"
+        case .avaliable:
+            self.saleStatusLbl.text = "可售"
+        default:
+            self.saleStatusLbl.text = "已售"
+        }
 //        let keywordsView = KeywordsScrollView.init(frame: CGRect(x: 0, y: 0, width: UISizeConstants.screenWidth-40, height: 44))
 //        keywordsView.reloadWidth(keys: treasure.keywords)
 //        self.keywordView.addSubview(keywordsView)
@@ -106,7 +113,7 @@ class TreasureDetailVC: UIViewController {
     @objc func imageTap(ges:UITapGestureRecognizer) {
         let tag = ges.view?.tag ?? 0
         let imageVc = FJPreImageView.init()
-        imageVc.showPreView(self.view, urls: self.treasure.images, index: tag)
+        imageVc.showPreView(self.view, urls: self.treasure.imageUrls, index: tag)
         
     }
     
