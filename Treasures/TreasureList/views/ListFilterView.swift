@@ -39,7 +39,6 @@ class ListFilterView: UIView {
     typealias FilterBegin = (_ with: FilterPreference) -> Void
     open var filterBegin: FilterBegin?
     open var filterPreference: FilterPreference = FilterPreference()
-
     class func loadXib() -> ListFilterView {
         return Bundle.main.loadNibNamed("ListFilterView", owner: self, options: nil)!.first as! ListFilterView
     }
@@ -94,6 +93,10 @@ class ListFilterView: UIView {
         self.filterBegin?(filterPreference)
     }
     
+    private func updateFilterCategory(category: CategoryInfo?) {
+        self.filterPreference.category = category
+        self.filterBegin?(filterPreference)
+    }
 
     // MARK: UI 控件 配置
     private func configItems() {
@@ -103,6 +106,11 @@ class ListFilterView: UIView {
        
     // MARK: 配置点击代理事件
     private func configItemActions() {
+        
+        categoryItem.selectCategoryAction = { (category ) in
+            self.updateFilterCategory(category: category)
+        }
+        
         yearItem.ruleUpdated = { (rule: OrderRule) in
             self.updateYearRule(rule: rule)
         }

@@ -158,7 +158,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let shower = CategoryPickerShowFromBottom.init { (category) in
             self.updateCategory(category: category)
         }
-        shower.show(in: self.tabBarController ?? self)
+        shower.show(in: self.tabBarController?.view ?? self.view)
     }
     
     private func addNameInputView() {

@@ -63,6 +63,8 @@
 		48AA8471239CE89C00A81C9F /* TreasureRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA846F239CE89C00A81C9F /* TreasureRepository.swift */; };
 		48AA8473239CEB6E00A81C9F /* Queryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA8472239CEB6E00A81C9F /* Queryable.swift */; };
 		48AA8474239CEB6E00A81C9F /* Queryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA8472239CEB6E00A81C9F /* Queryable.swift */; };
+		48C4BA6A23B4FA74001CA6D4 /* CategoryFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4BA6923B4FA74001CA6D4 /* CategoryFilterView.swift */; };
+		48C4BA6C23B4FA80001CA6D4 /* CategoryFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C4BA6B23B4FA80001CA6D4 /* CategoryFilterView.xib */; };
 		48DF59D2239B47EB0086B352 /* SortedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59D1239B47EB0086B352 /* SortedItem.swift */; };
 		48DF59D4239B48130086B352 /* SortedItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48DF59D3239B48130086B352 /* SortedItem.xib */; };
 		48DF59D6239BDF9D0086B352 /* SortPriceItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48DF59D5239BDF9D0086B352 /* SortPriceItem.xib */; };
@@ -202,6 +204,8 @@
 		48AA8468239CE0C500A81C9F /* DBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTest.swift; sourceTree = "<group>"; };
 		48AA846F239CE89C00A81C9F /* TreasureRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureRepository.swift; sourceTree = "<group>"; };
 		48AA8472239CEB6E00A81C9F /* Queryable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queryable.swift; sourceTree = "<group>"; };
+		48C4BA6923B4FA74001CA6D4 /* CategoryFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilterView.swift; sourceTree = "<group>"; };
+		48C4BA6B23B4FA80001CA6D4 /* CategoryFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryFilterView.xib; sourceTree = "<group>"; };
 		48DF59D1239B47EB0086B352 /* SortedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedItem.swift; sourceTree = "<group>"; };
 		48DF59D3239B48130086B352 /* SortedItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortedItem.xib; sourceTree = "<group>"; };
 		48DF59D5239BDF9D0086B352 /* SortPriceItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortPriceItem.xib; sourceTree = "<group>"; };
@@ -409,6 +413,8 @@
 				3D0C53F923B245100086D2EA /* KeywordsScrollView.swift */,
 				3DC81A8A23B3BC360050FDD2 /* ShareView.swift */,
 				3DC81A8C23B3BC460050FDD2 /* ShareView.xib */,
+				48C4BA6923B4FA74001CA6D4 /* CategoryFilterView.swift */,
+				48C4BA6B23B4FA80001CA6D4 /* CategoryFilterView.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -778,6 +784,7 @@
 				484CA16F23994F0800207662 /* ListFilterView.xib in Resources */,
 				3DC81A8D23B3BC460050FDD2 /* ShareView.xib in Resources */,
 				4847D7AA23ADD6DD0068550D /* selectedTags.plist in Resources */,
+				48C4BA6C23B4FA80001CA6D4 /* CategoryFilterView.xib in Resources */,
 				3D6D586723AA7DF700AF718A /* InvateViewController.xib in Resources */,
 				3D6D586223AA79C300AF718A /* RecycleViewController.xib in Resources */,
 				55AD672E23AA315500C0E5EB /* InputSubview.xib in Resources */,
@@ -926,6 +933,7 @@
 				487455CF23993FD6002AFBF7 /* UISizeConstants.swift in Sources */,
 				552CC57E23A37FB400D14F21 /* TreasureListSearchDTO.swift in Sources */,
 				55B22B76239755D800B738B7 /* DBConstants.swift in Sources */,
+				48C4BA6A23B4FA74001CA6D4 /* CategoryFilterView.swift in Sources */,
 				55AD676E23AC83C200C0E5EB /* NSAttributedString+calculate.m in Sources */,
 				3DB2E19A23AFA60300684653 /* TreasureDetailVC.swift in Sources */,
 				48AA8463239CDF7100A81C9F /* TreasureSearchHandler.swift in Sources */,

@@ -7,13 +7,13 @@
 //
 
 import UIKit
-
+typealias SelectedAction = (_ selected: Bool) -> Void
 class PropertyItem: UIView {
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     private var isSelected: Bool = false
     
-    typealias SelectedAction = (_ selected: Bool) -> Void
+    
     var selectedAction: SelectedAction?
     
     open var title: String = "" {

@@ -14,7 +14,7 @@ class FilterPreference: Queryable {
     var yearOrderRule: OrderRule = OrderRule.none
     var priceOrderRule: OrderRule = OrderRule.none
    
-    var category: Category?
+    var category: CategoryInfo?
     
     var filterAvaliable: Bool = false
     var filterUnavaliable: Bool = false
@@ -42,7 +42,7 @@ class FilterPreference: Queryable {
         var condition = categoryId == second
         
         if let c = category {
-            condition = condition && (TreasuresTable.Properties.secondCategoryId == c.secondCategory.id)
+            condition = condition && (TreasuresTable.Properties.secondCategoryId == c.id)
         }
 
         if let text = searchText?.trimmingCharacters(in: CharacterSet.whitespaces){
