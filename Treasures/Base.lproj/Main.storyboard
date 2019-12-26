@@ -11,11 +11,14 @@
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="收藏管家" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginController" id="BYZ-38-t0r" customClass="LoginController" customModule="收藏管家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="Nqh-aY-hid">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="UFQ-eo-Oen">
                                 <rect key="frame" x="152" y="129.5" width="110" height="110"/>
                                 <constraints>
@@ -41,12 +44,11 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zjt-WX-kOh" userLabel="passwordField">
-                                        <rect key="frame" x="60" y="22" width="319" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="W8V-8l-i5Y"/>
-                                        </constraints>
+                                        <rect key="frame" x="60" y="30" width="319" height="32"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,6 +56,7 @@
                                     <constraint firstItem="zjt-WX-kOh" firstAttribute="leading" secondItem="kpv-a1-cOe" secondAttribute="leading" constant="60" id="BVN-2y-y8t"/>
                                     <constraint firstAttribute="bottom" secondItem="d1h-jf-4aL" secondAttribute="bottom" constant="28" id="Cww-cA-wBr"/>
                                     <constraint firstAttribute="trailing" secondItem="d1h-jf-4aL" secondAttribute="trailing" constant="35" id="Oo3-lm-dXk"/>
+                                    <constraint firstItem="zjt-WX-kOh" firstAttribute="centerY" secondItem="Tae-eo-q7l" secondAttribute="centerY" id="RJC-kY-oWq"/>
                                     <constraint firstItem="d1h-jf-4aL" firstAttribute="top" secondItem="zjt-WX-kOh" secondAttribute="bottom" constant="1" id="Su4-zP-w78"/>
                                     <constraint firstItem="d1h-jf-4aL" firstAttribute="top" secondItem="Tae-eo-q7l" secondAttribute="bottom" constant="8" id="ZEK-LN-7cZ"/>
                                     <constraint firstAttribute="trailing" secondItem="zjt-WX-kOh" secondAttribute="trailing" constant="35" id="aOf-XD-tgL"/>
@@ -77,25 +80,32 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.84682253954258369" green="0.34560133284383637" blue="0.26642714619236374" alpha="0.6568772810218978" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Nqh-aY-hid" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="6OU-kL-IXz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kpv-a1-cOe" secondAttribute="trailing" id="6SY-z1-kRx"/>
                             <constraint firstItem="kpv-a1-cOe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6XU-qj-l6U"/>
+                            <constraint firstItem="Nqh-aY-hid" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="8yX-bu-FQt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JKK-q4-wnX" secondAttribute="trailing" constant="35" id="CIE-te-tYo"/>
                             <constraint firstItem="JKK-q4-wnX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="EfM-1R-vE4"/>
                             <constraint firstItem="UFQ-eo-Oen" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="0.15" id="Sjd-Zq-f26"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nqh-aY-hid" secondAttribute="trailing" constant="-20" id="ZGg-vP-5fi"/>
                             <constraint firstItem="JKK-q4-wnX" firstAttribute="top" secondItem="kpv-a1-cOe" secondAttribute="bottom" constant="45" id="baf-hE-xhL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JKK-q4-wnX" secondAttribute="bottom" constant="385" id="h2t-5X-Cvc"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Nqh-aY-hid" secondAttribute="bottom" constant="-34" id="l5b-3M-jFt"/>
                             <constraint firstItem="UFQ-eo-Oen" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qn9-wm-Ncr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZDx-92-yaO"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="passwordTF" destination="zjt-WX-kOh" id="vv2-xx-RTD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-381.15942028985512" y="6.6964285714285712"/>
+            <point key="canvasLocation" x="71" y="-449"/>
         </scene>
         <!--Treasure List Controller-->
         <scene sceneID="YP6-OM-yRz">
@@ -164,7 +174,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="buB-pN-cXe">
             <objects>
-                <tabBarController id="rfP-r4-LtV" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarVC" id="rfP-r4-LtV" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dGi-cA-0YL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

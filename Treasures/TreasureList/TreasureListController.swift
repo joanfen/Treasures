@@ -43,6 +43,7 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
         configNavigation()
         initialSearch()
         reloadPlaceHolder()
+        showSplash()
     }
     
     override func viewDidLayoutSubviews() {
@@ -63,6 +64,21 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
             tips = "暂无数据\n请点击加号添加藏品"
         }
         self.placeholderLbl.text = tips
+    }
+    
+    private func showSplash() {
+        let showSplash = UserDefaults.standard.bool(forKey: "showSplash")
+        if showSplash {return}
+        guard let window = UIApplication.shared.keyWindow else {return}
+        let imageView = UIImageView()
+        imageView.frame = window.bounds
+        imageView.sd_setImage(with: URL(string: "http://www.scgj.de/start.jpg"), placeholderImage: UIImage.init(named: "bg"), options: .highPriority, context: nil)
+        window.addSubview(imageView)
+        UserDefaults.standard.set(true, forKey: "showSplash")
+        UserDefaults.standard.synchronize()
+        delay(delay: 2) {
+            imageView.removeFromSuperview()
+        }
     }
     
     private func configNavigation() {

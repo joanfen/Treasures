@@ -154,6 +154,7 @@
 		108FC4269D72CCE6914D92A7 /* Pods-TreasuresTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TreasuresTests.release.xcconfig"; path = "Target Support Files/Pods-TreasuresTests/Pods-TreasuresTests.release.xcconfig"; sourceTree = "<group>"; };
 		21D04279D2E29DAD145417BC /* Pods_TreasuresTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TreasuresTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0C53F923B245100086D2EA /* KeywordsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordsScrollView.swift; sourceTree = "<group>"; };
+		3D0D764A23B514A100CFFEA5 /* 收藏管家.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "收藏管家.entitlements"; sourceTree = "<group>"; };
 		3D2E48FA23A6694D00DE59A2 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		3D2E48FD23A66B7500DE59A2 /* PersonalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCell.swift; sourceTree = "<group>"; };
 		3D2E48FE23A66B7500DE59A2 /* PersonalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalCell.xib; sourceTree = "<group>"; };
@@ -547,6 +548,7 @@
 		55B22B452397539500B738B7 /* Treasures */ = {
 			isa = PBXGroup;
 			children = (
+				3D0D764A23B514A100CFFEA5 /* 收藏管家.entitlements */,
 				3DC81A8E23B3BF9B0050FDD2 /* Statistics */,
 				3D6D586323AA7DDA00AF718A /* Invate */,
 				3D6D585E23AA79AD00AF718A /* Recycle */,
@@ -1134,6 +1136,7 @@
 			baseConfigurationReference = 060206CB9AA19A20FD163988 /* Pods-Treasures.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Treasures/收藏管家.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H3XDZS8V3W;
 				INFOPLIST_FILE = Treasures/Info.plist;
@@ -1154,6 +1157,7 @@
 			baseConfigurationReference = 4824F4F9ECDF53CC6D022612 /* Pods-Treasures.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Treasures/收藏管家.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H3XDZS8V3W;
 				INFOPLIST_FILE = Treasures/Info.plist;
