@@ -11,6 +11,8 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var launchView:UIView!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UITabBar.appearance().tintColor = ColorConstants.globalMainColor
@@ -22,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
- 
+    
     // MARK: UISceneSession Lifecycle
 
     @available(iOS 13.0, *)
@@ -40,5 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    
 }
 

@@ -11,4 +11,5 @@
 #import "JGProgressHUD.h"
 #import "JFBubbleHeader.h"
 #import "FJPreImageView.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 #endif /* Treasures_Bridging_Header_h */

@@ -11,7 +11,7 @@
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="Treasures" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="收藏管家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,16 +23,6 @@
                                     <constraint firstAttribute="height" constant="110" id="cID-u2-Fgk"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLk-vB-1lJ">
-                                <rect key="frame" x="361" y="49" width="33" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="IBx-DY-njm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="注册">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpv-a1-cOe">
                                 <rect key="frame" x="0.0" y="290" width="414" height="92"/>
                                 <subviews>
@@ -91,15 +81,12 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kpv-a1-cOe" secondAttribute="trailing" id="6SY-z1-kRx"/>
                             <constraint firstItem="kpv-a1-cOe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6XU-qj-l6U"/>
-                            <constraint firstItem="uLk-vB-1lJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="CEl-jK-D5j"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JKK-q4-wnX" secondAttribute="trailing" constant="35" id="CIE-te-tYo"/>
                             <constraint firstItem="JKK-q4-wnX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="EfM-1R-vE4"/>
-                            <constraint firstItem="uLk-vB-1lJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="M7x-xh-kC1"/>
                             <constraint firstItem="UFQ-eo-Oen" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="0.15" id="Sjd-Zq-f26"/>
                             <constraint firstItem="JKK-q4-wnX" firstAttribute="top" secondItem="kpv-a1-cOe" secondAttribute="bottom" constant="45" id="baf-hE-xhL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JKK-q4-wnX" secondAttribute="bottom" constant="385" id="h2t-5X-Cvc"/>
                             <constraint firstItem="UFQ-eo-Oen" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qn9-wm-Ncr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uLk-vB-1lJ" secondAttribute="trailing" constant="20" id="vOW-CZ-C6v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -113,7 +100,7 @@
         <!--Treasure List Controller-->
         <scene sceneID="YP6-OM-yRz">
             <objects>
-                <viewController id="ijm-oG-cPh" customClass="TreasureListController" customModule="Treasures" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ijm-oG-cPh" customClass="TreasureListController" customModule="收藏管家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Reu-dr-eum">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -248,7 +235,7 @@
         <!--Category View Controller-->
         <scene sceneID="Dmy-Wp-SmS">
             <objects>
-                <viewController id="Rkv-3L-6hp" customClass="CategoryViewController" customModule="Treasures" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Rkv-3L-6hp" customClass="CategoryViewController" customModule="收藏管家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LCy-wg-dWz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -325,7 +312,7 @@
         <!--Personal View Controller-->
         <scene sceneID="Y2e-5a-d3c">
             <objects>
-                <viewController id="Os3-E1-2nM" customClass="PersonalViewController" customModule="Treasures" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Os3-E1-2nM" customClass="PersonalViewController" customModule="收藏管家" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kCu-Ws-6gu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
