@@ -18,19 +18,10 @@ static NSString *const kDemoSelectBubbleResourceName = @"tags";
 
 @implementation DemoSelectBubbleView
 
--(instancetype)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.resourcePath = [[NSBundle mainBundle] pathForResource:kDemoSelectBubbleResourceName ofType:@"plist"];
-        [self readDataArray];
-        
-    }
-    return self;
-}
 
--(void)readDataArray{
-    NSArray *array = [NSArray arrayWithContentsOfFile:self.resourcePath];
-    self.dataArray = [NSMutableArray arrayWithArray:array];
+-(void)setTagsArray:(NSArray<NSString *> *)tagsArray {
+    _tagsArray = tagsArray;
+    self.dataArray = tagsArray.mutableCopy;
 }
 
 -(void)addTags:(NSArray *)tags{

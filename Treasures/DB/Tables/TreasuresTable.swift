@@ -21,8 +21,6 @@ enum SellStatus: Int {
             return "可售"
         case .sold:
             return "已售"
-        default:
-            return  ""
         }
     }
 }

@@ -10,6 +10,8 @@
 
 @interface DemoSelectBubbleView : JFSelectBubbleView
 
+@property (nonatomic, copy) NSArray<NSString *> *tagsArray;
+
 -(void)addTags:(NSArray *)tags;
 
 -(BOOL)highlightItemWithText:(NSString *)text;

@@ -20,6 +20,7 @@ class DatabaseHandler {
             try database.create(table: DBConstants.treasuresTable, of: TreasuresTable.self)
             try database.create(table: DBConstants.firstCategoryTable, of: FirstCategoryTable.self)
             try database.create(table: DBConstants.secondCategoryTable, of: SecondCategoryTable.self)
+            try database.create(table: DBConstants.keywordsTable, of: KeywordsTable.self)
         }
         catch let exception {
             print(exception)
@@ -29,8 +30,7 @@ class DatabaseHandler {
     private static func path() -> String {
         let documentPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .allDomainsMask, true)
         let path =  (documentPaths.first ?? "") + DBConstants.dbSubPath
-        print("数据库目录：" + path)
-        print("\n")
+        print("数据库目录：\(path)\n")
         return path
     }
     

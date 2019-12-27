@@ -103,6 +103,10 @@
 		552CC58C23A3BD7D00D14F21 /* TreasureDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC58A23A3BD7D00D14F21 /* TreasureDetailDTO.swift */; };
 		5548C58523B5D14F00A3D10C /* InviteCodeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548C58423B5D14F00A3D10C /* InviteCodeUtils.swift */; };
 		5548C58723B5D2B900A3D10C /* InviteCodeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548C58423B5D14F00A3D10C /* InviteCodeUtils.swift */; };
+		5548C58923B5E47400A3D10C /* KeywordsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548C58823B5E47400A3D10C /* KeywordsTable.swift */; };
+		5548C58A23B5E47400A3D10C /* KeywordsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548C58823B5E47400A3D10C /* KeywordsTable.swift */; };
+		5548C58C23B5E52C00A3D10C /* KeywordsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548C58B23B5E52C00A3D10C /* KeywordsRepo.swift */; };
+		5548C58D23B5E52C00A3D10C /* KeywordsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548C58B23B5E52C00A3D10C /* KeywordsRepo.swift */; };
 		55AD672A23A8CBB300C0E5EB /* CategoryPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55AD672923A8CBB300C0E5EB /* CategoryPickerView.xib */; };
 		55AD672C23A8E24000C0E5EB /* ChooseCategorySubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55AD672B23A8E24000C0E5EB /* ChooseCategorySubview.xib */; };
 		55AD672E23AA315500C0E5EB /* InputSubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55AD672D23AA315500C0E5EB /* InputSubview.xib */; };
@@ -234,6 +238,8 @@
 		552CC58723A393F600D14F21 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		552CC58A23A3BD7D00D14F21 /* TreasureDetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureDetailDTO.swift; sourceTree = "<group>"; };
 		5548C58423B5D14F00A3D10C /* InviteCodeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteCodeUtils.swift; sourceTree = "<group>"; };
+		5548C58823B5E47400A3D10C /* KeywordsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordsTable.swift; sourceTree = "<group>"; };
+		5548C58B23B5E52C00A3D10C /* KeywordsRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordsRepo.swift; sourceTree = "<group>"; };
 		55AD672923A8CBB300C0E5EB /* CategoryPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryPickerView.xib; sourceTree = "<group>"; };
 		55AD672B23A8E24000C0E5EB /* ChooseCategorySubview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCategorySubview.xib; sourceTree = "<group>"; };
 		55AD672D23AA315500C0E5EB /* InputSubview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputSubview.xib; sourceTree = "<group>"; };
@@ -521,8 +527,8 @@
 				55AD676C23AC83C200C0E5EB /* DemoEditBubbleView.m */,
 				55AD676D23AC83C200C0E5EB /* DemoSelectBubbleView.h */,
 				55AD676A23AC83C200C0E5EB /* DemoSelectBubbleView.m */,
-				55AD676B23AC83C200C0E5EB /* JFBubbleViewController.m */,
 				55AD676823AC83C200C0E5EB /* JFBubbleViewController.h */,
+				55AD676B23AC83C200C0E5EB /* JFBubbleViewController.m */,
 			);
 			path = JFBubbleViewController;
 			sourceTree = "<group>";
@@ -603,6 +609,7 @@
 				55B22B69239755D800B738B7 /* DatabaseHandler.swift */,
 				48AA846F239CE89C00A81C9F /* TreasureRepository.swift */,
 				48FA4FDF23A7BE53005DA01A /* CategoryRepo.swift */,
+				5548C58B23B5E52C00A3D10C /* KeywordsRepo.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -661,6 +668,7 @@
 				55B22B6A239755D800B738B7 /* SecondCategoryTable.swift */,
 				55B22B6B239755D800B738B7 /* FirstCategoryTable.swift */,
 				55B22B6D239755D800B738B7 /* TreasuresTable.swift */,
+				5548C58823B5E47400A3D10C /* KeywordsTable.swift */,
 			);
 			path = Tables;
 			sourceTree = "<group>";
@@ -928,7 +936,9 @@
 				55AD677223AC83C200C0E5EB /* JFBubbleView.m in Sources */,
 				55AD677523AC83C200C0E5EB /* DemoSelectBubbleView.m in Sources */,
 				55AD677023AC83C200C0E5EB /* JFInputBubbleItem.m in Sources */,
+				5548C58923B5E47400A3D10C /* KeywordsTable.swift in Sources */,
 				482ECB3323AA66A500BFB839 /* SwitchSubview.swift in Sources */,
+				5548C58C23B5E52C00A3D10C /* KeywordsRepo.swift in Sources */,
 				3D2E491A23A7E06C00DE59A2 /* UIColor+Category.swift in Sources */,
 				55B366CB23976D9F008F32D6 /* RootTabController.swift in Sources */,
 				3D2E490323A6770900DE59A2 /* EditPasswordVC.swift in Sources */,
@@ -973,6 +983,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5548C58D23B5E52C00A3D10C /* KeywordsRepo.swift in Sources */,
 				48AA8464239CDF7700A81C9F /* TreasureSearchHandler.swift in Sources */,
 				48AA846C239CE12000A81C9F /* FirstCategoryTable.swift in Sources */,
 				487455D023993FD6002AFBF7 /* UISizeConstants.swift in Sources */,
@@ -988,6 +999,7 @@
 				552CC58323A392FB00D14F21 /* EditTreasureForm.swift in Sources */,
 				48FB48CE239D1654005BF6B6 /* FilterPreference.swift in Sources */,
 				48FA4FE223A7BFFC005DA01A /* CategoryRepo.swift in Sources */,
+				5548C58A23B5E47400A3D10C /* KeywordsTable.swift in Sources */,
 				55AD677A23B302B800C0E5EB /* SecondCategoryVO.swift in Sources */,
 				552CC57F23A37FB400D14F21 /* TreasureListSearchDTO.swift in Sources */,
 				482ECB3623AA96CB00BFB839 /* ImageConstants.swift in Sources */,

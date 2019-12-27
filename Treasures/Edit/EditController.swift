@@ -264,10 +264,18 @@ extension EditController {
     func textFieldBeginEditing(at bottom: CGFloat, inputView: InputBaseView) {
         if inputView == keywordInputView {
             let _ = keywordInputView.resignFirstResponder()
-            
-            self.present(JFBubbleViewController.init(), animated: true) {
-                
+            let view = JFBubbleViewController.init(tags: self.edit.keywords, allTags: KeywordsRepo.queryKeywords())
+        
+            view?.saveKeywords = { (keywords) in
+                self.edit.keywords = keywords ?? []
+                self.keywordInputView.updateContent(content: keywords?.joined(separator: ","))
+                let _ = self.keywordInputView.resignFirstResponder()
             }
+            if let vc = view {
+                self.present(vc, animated: true, completion: nil)
+            }
+            
+        
         }
 //        self.contentView.setContentOffset(CGPoint(x: 0, y: bottom + 20), animated: true)
     }

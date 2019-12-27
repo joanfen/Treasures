@@ -14,6 +14,7 @@ struct DBConstants {
     static let firstCategoryTable = "firstCategoryTable"
     static let secondCategoryTable = "secondCategoryTable"
     static let invitorsTable = "invitorsTable"
+    static let keywordsTable = "keywordsTable"
     
     static var treasureProperties: [PropertyConvertible] {
         var list: [PropertyConvertible] = TreasuresTable.Properties.all

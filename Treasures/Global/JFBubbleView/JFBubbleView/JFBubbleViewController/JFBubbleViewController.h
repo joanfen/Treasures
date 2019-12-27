@@ -10,4 +10,7 @@
 
 @interface JFBubbleViewController : UIViewController
 
+-(instancetype)initWithTags:(NSArray<NSString *> *)tags allTags:(NSArray<NSString *> *)tags;
+
+@property (nonatomic, strong) void(^saveKeywords)(NSArray<NSString *> *keywords);
 @end

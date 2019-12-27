@@ -42,6 +42,7 @@ class EditTreasureForm {
         self.size = treasure.size
         self.year = treasure.year
         self.descrpiton = treasure.description
+        
         self.keywords = treasure.keywords.components(separatedBy: ",")
         self.purchasedYear = treasure.purchasedYear
         self.purchasedPrice = Float(treasure.purchasedPriceInCent) / 100.0
@@ -64,7 +65,7 @@ class EditTreasureForm {
         table.note = note
         table.sellStatus = sellStatus.rawValue
         table.size = size
-        
+        table.keywords = self.keywords.joined(separator: ",")
         if let c = category {
             table.firstCategoryId = c.firstCategory.id
             table.secondCategoryId = c.secondCategory.id
@@ -98,7 +99,7 @@ class EditTreasureForm {
         let _ = getTreasureTable()
         let id = TreasureRepository.insertOrReplace(treasure: self.table)
         if let treasureId = id {
-             return saveImages(with: treasureId)
+             return saveImages(with: treasureId) && saveKeywords()
         } else {
             return false
         }
@@ -107,4 +108,10 @@ class EditTreasureForm {
     public func saveImages(with treasureId: Int) -> Bool {
         return PathHandler.saveImage(of: treasureId, imgs: self.images)
     }
+    
+    public func saveKeywords() -> Bool {
+        return KeywordsRepo.saveKeywords(keywords: self.keywords)
+    }
+    
+    
 }

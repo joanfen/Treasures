@@ -16,33 +16,61 @@
     DemoSelectBubbleView *selectBubbleView;
     NSMutableArray<NSString *> *tagsWillBeAdd;
     
+    NSArray<NSString *> *_tags;
+    NSArray<NSString *> *_allTags;
 }
 @end
 
 @implementation JFBubbleViewController
+
+-(instancetype)initWithTags:(NSArray<NSString *> *)tags allTags:(NSArray<NSString *> *)allTags {
+    self = [super init];
+    if (self) {
+        _tags = tags;
+        _allTags = allTags;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self addEditBubbleView];
     [self addSelectBubbleView];
-    
+    [self addSaveButton];
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
+-(void)addSaveButton {
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - 80, 20, 60, 30)];
+    button.backgroundColor = [UIColor colorWithRed:203/255.0 green: 36/255.0 blue:36/255.0 alpha:1];
+    button.layer.cornerRadius = 4;
+    [button setTitle:@"保存" forState:UIControlStateNormal];
+    button.titleLabel.textColor = [UIColor whiteColor];
+    [button addTarget:self action:@selector(saveCilcked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+    
+}
+
+-(void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+}
+
 -(void)addEditBubbleView{
-    editBubbleView = [[DemoEditBubbleView alloc] initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, 50)];
+    editBubbleView = [[DemoEditBubbleView alloc] initWithFrame:CGRectMake(0, 70, self.view.bounds.size.width, 50)];
+    editBubbleView.tags = _tags;
     editBubbleView.editBubbleViewDelegate = self;
     [self.view addSubview:editBubbleView];
-    [self resizeEditBubbleFrame];
+     [self resizeEditBubbleFrame];
 }
 
 -(void)addSelectBubbleView{
     selectBubbleView = [[DemoSelectBubbleView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(editBubbleView.frame), self.view.bounds.size.width, 300)];
     selectBubbleView.bubbleDelegate = self;
     selectBubbleView.delegate = self;
+    selectBubbleView.tagsArray = _allTags;
     UILabel *header = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 21)];
-    header.text = @"历史输入";
+    header.text = @"关键词";
     header.font = [UIFont systemFontOfSize:14];
     selectBubbleView.bubbleHeaderView = header;
     
@@ -56,8 +84,9 @@
 }
 - (IBAction)saveCilcked:(id)sender {
     [selectBubbleView addTags:tagsWillBeAdd];
-    [editBubbleView writeSelectedBubbles];
-    [self.navigationController popViewControllerAnimated:YES];
+   
+    self.saveKeywords(editBubbleView.dataArray);
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 #pragma mark - Edit Bubble Delegate

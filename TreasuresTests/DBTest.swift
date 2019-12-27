@@ -99,4 +99,12 @@ class test: XCTestCase {
     
     }
     
+    func testKeywordsInset() {
+        let result = KeywordsRepo.saveKeywords(keywords: ["奇珍"])
+        
+        print(result)
+        let keywords = KeywordsRepo.queryKeywords()
+        print(keywords)
+    }
+    
 }
