@@ -15,7 +15,6 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // MARK: views
     private let contentView = TPKeyboardAvoidingScrollView()
-
     private let imagesView = AddImagesSubview.loadXib()
     private let categoryView = ChooseCategorySubview.loadXib()
     
@@ -34,7 +33,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     private let noteView = MultiInputView.loadXib()
     
-
+    
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -65,9 +64,9 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configNavigation()
-       
+        
     }
-
+    
     override func viewDidLayoutSubviews() {
         super .viewDidLayoutSubviews()
         let singleHeight: CGFloat = 50;
@@ -98,7 +97,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         contentView.contentSize = CGSize(width: self.view.width, height: noteView.bottom + 10 )
         
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         contentView.frame = CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height)
@@ -127,19 +126,19 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.title = "添加藏品"
         }
         self.navigationController?.navigationBar.tintColor = ColorConstants.titleColor
-           
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title:"保存", style: UIBarButtonItem.Style.done, target: self, action: #selector(save))
         
         self.navigationItem.hidesBackButton = true
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "back"), style: UIBarButtonItem.Style.done, target: self, action: #selector(back))
-       
+        
     }
     
     @objc func back() {
         let alert = UIAlertController(title: "确定返回", message: nil, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
-
+        
         alert.addAction(UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default, handler: { (action) in
             self.navigationController?.popViewController(animated: true)
         }))
@@ -152,12 +151,15 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagesView.showAlbum = {(tag: Int) in
             self.showAlbum()
         }
+        imagesView.showCamera = {(tag: Int) in
+            self.showCamera()
+        }
         imagesView.showAlert = {(alert: UIAlertController) in
             self.present(alert, animated: true, completion: nil)
         }
         self.contentView.addSubview(imagesView)
     }
-
+    
     private func addCategoryView() {
         
         categoryView.category = edit.category
@@ -205,11 +207,11 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     private func addKeywordInputView() {
         keywordInputView.dataSetting(title: "关键字", value: self.edit.keywords.joined(separator: ","), textChanged: { (keywords) in
-          self.edit.keywords = keywords.components(separatedBy: ",")
+            self.edit.keywords = keywords.components(separatedBy: ",")
         }, delegate: self)
         contentView.addSubview(keywordInputView)
     }
-   
+    
     private func addPurchasedTimeView() {
         var yearString = ""
         if let year = self.edit.purchasedYear {
@@ -242,7 +244,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         contentView.addSubview(avaliableView)
     }
-       
+    
     private func addNoteView() {
         noteView.dataSetting(title: "备注", value:  self.edit.note, textChanged: { (note) in
             self.edit.note = note
@@ -260,7 +262,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @objc private func save() {
         // TODO: - 所有 input 都应该 退出编辑
-//        nameInputView.resignFirstResponder()
+        //        nameInputView.resignFirstResponder()
         self.edit.images = imagesView.getImages()
         let result = self.edit.saveOrUpdate()
         if let res = result {
@@ -284,7 +286,7 @@ extension EditController {
         if inputView == keywordInputView {
             let _ = keywordInputView.resignFirstResponder()
             let view = JFBubbleViewController.init(tags: self.edit.keywords, allTags: KeywordsRepo.queryKeywords())
-        
+            
             view?.saveKeywords = { (keywords) in
                 self.edit.keywords = keywords ?? []
                 self.keywordInputView.updateContent(content: keywords?.joined(separator: ","))
@@ -294,47 +296,62 @@ extension EditController {
                 self.present(vc, animated: true, completion: nil)
             }
         }
-//        self.contentView.setContentOffset(CGPoint(x: 0, y: bottom + 20), animated: true)
+        //        self.contentView.setContentOffset(CGPoint(x: 0, y: bottom + 20), animated: true)
     }
 }
 
 // MARK: - ImagePicker
 extension EditController {
     private func showAlbum() {
-           //判断设置是否支持图片库
-           if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
-               //初始化图片控制器
-               let picker = UIImagePickerController()
-               //设置代理
-               picker.delegate = self
-               //指定图片控制器类型
-               picker.sourceType = UIImagePickerController.SourceType.photoLibrary
-               //设置是否允许编辑
-               picker.allowsEditing = false
-               //弹出控制器，显示界面
-               self.present(picker, animated: true, completion: {
-                   () -> Void in
-               })
-           }else{
-               print("读取相册错误")
-           }
-       }
-   
+        //判断设置是否支持图片库
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            //初始化图片控制器
+            let picker = UIImagePickerController()
+            //设置代理
+            picker.delegate = self
+            //指定图片控制器类型
+            picker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            //设置是否允许编辑
+            picker.allowsEditing = false
+            //弹出控制器，显示界面
+            self.present(picker, animated: true, completion: {
+                () -> Void in
+            })
+        }else{
+            print("读取相册错误")
+        }
+    }
+    private func showCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            //初始化图片控制器
+            let picker = UIImagePickerController()
+            //设置代理
+            picker.delegate = self
+            //指定图片控制器类型
+            picker.sourceType = UIImagePickerController.SourceType.camera
+            //设置是否允许编辑
+            picker.allowsEditing = false
+            //弹出控制器，显示界面
+            self.present(picker, animated: true, completion: {
+                () -> Void in
+            })
+        }
+    }
     func imagePickerController(_ picker: UIImagePickerController,
-       didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-       //查看info对象
-       print(info)
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        //查看info对象
+        print(info)
         
-       //显示的图片
+        //显示的图片
         let imageOpt = info[.originalImage] as? UIImage
-
-       //图片控制器退出
-       picker.dismiss(animated: true, completion: {
-           () -> Void in
+        
+        //图片控制器退出
+        picker.dismiss(animated: true, completion: {
+            () -> Void in
             if let image = imageOpt {
                 self.imagesView.addImage(with: image)
             }
-       })
-   }
+        })
+    }
     
 }
