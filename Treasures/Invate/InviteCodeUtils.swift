@@ -13,7 +13,7 @@ class InviteCodeUtils {
     private static let BASE: [String] = ["H", "V", "E", "8", "S", "2", "D", "Z", "X", "9", "C", "7", "P",
     "5", "I", "K", "3", "M", "J", "U", "F", "R", "4", "W", "Y", "L", "T", "N", "6", "B", "G", "Q"]
     private static let SUFFIX_CHAR: String = "A"
-    private static let CODE_LEN = 6
+    private static let CODE_LEN = 8
     
     class func encode(by number: CLong) -> String  {
         var id = number

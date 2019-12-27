@@ -256,19 +256,15 @@
                                 <color key="textColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="a9P-3W-gfh">
-                                <rect key="frame" x="15" y="91" width="384" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CqZ-GJ-qyw">
-                                <rect key="frame" x="0.0" y="147" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="90" width="414" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.050000000000000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="u72-0b-uYZ"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Zb-Gv-6uM">
-                                <rect key="frame" x="0.0" y="148" width="80" height="665"/>
+                                <rect key="frame" x="0.0" y="91" width="80" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="8Cj-86-IxG"/>
@@ -279,7 +275,7 @@
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zmz-aw-hA4">
-                                <rect key="frame" x="80" y="147" width="334" height="666"/>
+                                <rect key="frame" x="80" y="91" width="334" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Rkv-3L-6hp" id="gvL-ku-qwn"/>
@@ -292,18 +288,15 @@
                             <constraint firstItem="XXl-pZ-Bkk" firstAttribute="bottom" secondItem="7Zb-Gv-6uM" secondAttribute="bottom" id="3BO-l7-z67"/>
                             <constraint firstItem="XXl-pZ-Bkk" firstAttribute="trailing" secondItem="Zmz-aw-hA4" secondAttribute="trailing" id="5U9-hu-LPn"/>
                             <constraint firstItem="7Zb-Gv-6uM" firstAttribute="top" secondItem="CqZ-GJ-qyw" secondAttribute="bottom" id="9ja-Ov-hmE"/>
-                            <constraint firstItem="CqZ-GJ-qyw" firstAttribute="top" secondItem="a9P-3W-gfh" secondAttribute="bottom" id="B8q-72-CiO"/>
                             <constraint firstItem="7Zb-Gv-6uM" firstAttribute="leading" secondItem="LCy-wg-dWz" secondAttribute="leading" id="EHa-RE-DMa"/>
+                            <constraint firstItem="CqZ-GJ-qyw" firstAttribute="top" secondItem="1Gt-ui-LGq" secondAttribute="bottom" constant="15" id="SHB-fz-Ma5"/>
                             <constraint firstItem="Zmz-aw-hA4" firstAttribute="leading" secondItem="7Zb-Gv-6uM" secondAttribute="trailing" id="TOR-2t-nu1"/>
                             <constraint firstItem="CqZ-GJ-qyw" firstAttribute="leading" secondItem="LCy-wg-dWz" secondAttribute="leading" id="eHC-dk-yQ3"/>
                             <constraint firstItem="XXl-pZ-Bkk" firstAttribute="bottom" secondItem="Zmz-aw-hA4" secondAttribute="bottom" id="eQn-xG-AAv"/>
-                            <constraint firstItem="Zmz-aw-hA4" firstAttribute="top" secondItem="a9P-3W-gfh" secondAttribute="bottom" id="gRn-eF-5UC"/>
-                            <constraint firstItem="a9P-3W-gfh" firstAttribute="leading" secondItem="LCy-wg-dWz" secondAttribute="leading" constant="15" id="j7l-gS-gbU"/>
+                            <constraint firstItem="Zmz-aw-hA4" firstAttribute="top" secondItem="CqZ-GJ-qyw" secondAttribute="bottom" id="fKu-uA-Zpa"/>
                             <constraint firstItem="1Gt-ui-LGq" firstAttribute="centerX" secondItem="XXl-pZ-Bkk" secondAttribute="centerX" id="jcH-UA-ZnQ"/>
                             <constraint firstItem="XXl-pZ-Bkk" firstAttribute="trailing" secondItem="CqZ-GJ-qyw" secondAttribute="trailing" id="kXv-at-cG8"/>
-                            <constraint firstAttribute="trailing" secondItem="a9P-3W-gfh" secondAttribute="trailing" constant="15" id="mCh-gb-EYx"/>
                             <constraint firstItem="1Gt-ui-LGq" firstAttribute="top" secondItem="LCy-wg-dWz" secondAttribute="topMargin" constant="54" id="nDt-ni-s0J"/>
-                            <constraint firstItem="a9P-3W-gfh" firstAttribute="top" secondItem="1Gt-ui-LGq" secondAttribute="bottom" constant="16" id="x0d-e4-Ilz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XXl-pZ-Bkk"/>
                     </view>

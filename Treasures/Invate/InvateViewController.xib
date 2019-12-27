@@ -8,8 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InvateViewController" customModule="Treasures" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InvateViewController" customModule="收藏管家" customModuleProvider="target">
             <connections>
+                <outlet property="copyBtn" destination="uYq-Ey-BYK" id="yrh-4V-Led"/>
+                <outlet property="inviteTF_1" destination="FNl-Uq-E38" id="X7Y-NX-tlZ"/>
+                <outlet property="inviteTF_2" destination="2E8-lm-ep9" id="rK2-ex-K5u"/>
+                <outlet property="inviteTF_3" destination="hbt-sz-67Q" id="uQo-aO-VTU"/>
+                <outlet property="myKeyLbl" destination="o19-XA-wh0" id="0m4-7W-OIf"/>
+                <outlet property="success_1" destination="7h5-s4-Xyw" id="ry9-0h-6UY"/>
+                <outlet property="success_2" destination="Ju6-3l-gJT" id="0KO-WM-uvK"/>
+                <outlet property="success_3" destination="FLs-e2-tva" id="Cg6-vI-8cF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -68,8 +76,22 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCGJ1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o19-XA-wh0">
-                            <rect key="frame" x="328.5" y="16.5" width="68.5" height="17"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYq-Ey-BYK">
+                            <rect key="frame" x="364" y="10" width="40" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="0Sd-IE-PAM"/>
+                                <constraint firstAttribute="height" constant="30" id="RXN-jH-X59"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="复制">
+                                <color key="titleColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="copyBtnClicked:" destination="-1" eventType="touchUpInside" id="C6n-16-ZcG"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCGJ1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o19-XA-wh0">
+                            <rect key="frame" x="288.5" y="16.5" width="68.5" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -78,10 +100,12 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstItem="icH-VU-tgm" firstAttribute="leading" secondItem="bsf-lT-UFi" secondAttribute="leading" constant="15" id="2ui-Sv-c9U"/>
+                        <constraint firstItem="uYq-Ey-BYK" firstAttribute="centerY" secondItem="bsf-lT-UFi" secondAttribute="centerY" id="71F-Je-zWV"/>
                         <constraint firstItem="o19-XA-wh0" firstAttribute="centerY" secondItem="bsf-lT-UFi" secondAttribute="centerY" id="ChT-fi-hJ4"/>
                         <constraint firstItem="icH-VU-tgm" firstAttribute="centerY" secondItem="bsf-lT-UFi" secondAttribute="centerY" id="IQD-D1-aQp"/>
-                        <constraint firstAttribute="trailing" secondItem="o19-XA-wh0" secondAttribute="trailing" constant="17" id="WPS-ig-3Jn"/>
                         <constraint firstAttribute="height" constant="50" id="bra-me-aWf"/>
+                        <constraint firstAttribute="trailing" secondItem="uYq-Ey-BYK" secondAttribute="trailing" constant="10" id="mI0-G5-2By"/>
+                        <constraint firstItem="uYq-Ey-BYK" firstAttribute="leading" secondItem="o19-XA-wh0" secondAttribute="trailing" constant="7" id="yS0-YN-R4Z"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="My9-Bn-coj">
@@ -98,9 +122,12 @@
                                     </constraints>
                                 </view>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FNl-Uq-E38">
-                                    <rect key="frame" x="64.5" y="16.5" width="332.5" height="17"/>
+                                    <rect key="frame" x="64.5" y="16.5" width="312.5" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="XCw-ft-TCA"/>
+                                    </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邀请码1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cR-pt-zFr">
                                     <rect key="frame" x="15" y="16.5" width="49.5" height="17"/>
@@ -108,6 +135,9 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chose2" translatesAutoresizingMaskIntoConstraints="NO" id="7h5-s4-Xyw">
+                                    <rect key="frame" x="384" y="15" width="20" height="20"/>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
@@ -116,8 +146,10 @@
                                 <constraint firstAttribute="height" constant="50" id="Aj3-nD-tSe"/>
                                 <constraint firstItem="0cR-pt-zFr" firstAttribute="centerY" secondItem="O7F-wt-8zc" secondAttribute="centerY" id="EQc-I3-6s2"/>
                                 <constraint firstItem="RPD-Tv-qn5" firstAttribute="leading" secondItem="O7F-wt-8zc" secondAttribute="leading" constant="15" id="Ibx-YO-zjq"/>
-                                <constraint firstAttribute="trailing" secondItem="FNl-Uq-E38" secondAttribute="trailing" constant="17" id="Lce-pi-ni0"/>
+                                <constraint firstItem="7h5-s4-Xyw" firstAttribute="centerY" secondItem="O7F-wt-8zc" secondAttribute="centerY" id="NrZ-vd-rjK"/>
                                 <constraint firstAttribute="trailing" secondItem="RPD-Tv-qn5" secondAttribute="trailing" constant="15" id="V5F-Iy-UZb"/>
+                                <constraint firstItem="7h5-s4-Xyw" firstAttribute="leading" secondItem="FNl-Uq-E38" secondAttribute="trailing" constant="7" id="aRj-uH-BfQ"/>
+                                <constraint firstAttribute="trailing" secondItem="7h5-s4-Xyw" secondAttribute="trailing" constant="10" id="eRu-rW-c2g"/>
                                 <constraint firstAttribute="bottom" secondItem="RPD-Tv-qn5" secondAttribute="bottom" id="gEs-Gw-i4I"/>
                                 <constraint firstItem="FNl-Uq-E38" firstAttribute="centerY" secondItem="O7F-wt-8zc" secondAttribute="centerY" id="mmi-th-UUH"/>
                             </constraints>
@@ -133,9 +165,12 @@
                                     </constraints>
                                 </view>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2E8-lm-ep9">
-                                    <rect key="frame" x="66.5" y="16.5" width="330.5" height="17"/>
+                                    <rect key="frame" x="66.5" y="16.5" width="310.5" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="HZw-a8-n3d"/>
+                                    </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邀请码2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29x-fP-0ZY">
                                     <rect key="frame" x="15" y="16.5" width="51.5" height="17"/>
@@ -143,17 +178,22 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chose2" translatesAutoresizingMaskIntoConstraints="NO" id="Ju6-3l-gJT">
+                                    <rect key="frame" x="384" y="15" width="20" height="20"/>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="2E8-lm-ep9" firstAttribute="centerY" secondItem="Rm1-HB-xHn" secondAttribute="centerY" id="4mB-Yy-xO2"/>
+                                <constraint firstAttribute="trailing" secondItem="Ju6-3l-gJT" secondAttribute="trailing" constant="10" id="JJB-uy-JKO"/>
                                 <constraint firstAttribute="bottom" secondItem="GgS-9Q-2Kg" secondAttribute="bottom" id="QwT-br-H2R"/>
                                 <constraint firstAttribute="trailing" secondItem="GgS-9Q-2Kg" secondAttribute="trailing" constant="15" id="SAz-rB-V7r"/>
                                 <constraint firstAttribute="height" constant="50" id="UAn-Bp-fHT"/>
+                                <constraint firstItem="Ju6-3l-gJT" firstAttribute="centerY" secondItem="2E8-lm-ep9" secondAttribute="centerY" id="XOY-up-GOW"/>
                                 <constraint firstItem="2E8-lm-ep9" firstAttribute="leading" secondItem="29x-fP-0ZY" secondAttribute="trailing" id="amR-ov-qJC"/>
                                 <constraint firstItem="GgS-9Q-2Kg" firstAttribute="leading" secondItem="Rm1-HB-xHn" secondAttribute="leading" constant="15" id="arB-rw-5pW"/>
-                                <constraint firstAttribute="trailing" secondItem="2E8-lm-ep9" secondAttribute="trailing" constant="17" id="nP3-8j-lLX"/>
                                 <constraint firstItem="29x-fP-0ZY" firstAttribute="leading" secondItem="Rm1-HB-xHn" secondAttribute="leading" constant="15" id="v04-ET-2nX"/>
+                                <constraint firstItem="Ju6-3l-gJT" firstAttribute="leading" secondItem="2E8-lm-ep9" secondAttribute="trailing" constant="7" id="vMr-Vw-9Jt"/>
                                 <constraint firstItem="29x-fP-0ZY" firstAttribute="centerY" secondItem="Rm1-HB-xHn" secondAttribute="centerY" id="zUE-kj-cFQ"/>
                             </constraints>
                         </view>
@@ -168,9 +208,12 @@
                                     </constraints>
                                 </view>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hbt-sz-67Q">
-                                    <rect key="frame" x="66.5" y="16.5" width="330.5" height="17"/>
+                                    <rect key="frame" x="66.5" y="16.5" width="310.5" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="l7f-CT-qvG"/>
+                                    </connections>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邀请码3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFR-N4-M2i">
                                     <rect key="frame" x="15" y="16.5" width="51.5" height="17"/>
@@ -178,17 +221,22 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chose2" translatesAutoresizingMaskIntoConstraints="NO" id="FLs-e2-tva">
+                                    <rect key="frame" x="384" y="15" width="20" height="20"/>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="gOy-Qt-hmS" secondAttribute="trailing" constant="15" id="AHn-Rw-zBY"/>
                                 <constraint firstItem="hbt-sz-67Q" firstAttribute="leading" secondItem="rFR-N4-M2i" secondAttribute="trailing" id="Iri-uE-EA1"/>
+                                <constraint firstItem="FLs-e2-tva" firstAttribute="centerY" secondItem="hbt-sz-67Q" secondAttribute="centerY" id="JJ6-GG-LDp"/>
                                 <constraint firstItem="gOy-Qt-hmS" firstAttribute="leading" secondItem="ucL-c0-nQV" secondAttribute="leading" constant="15" id="O8K-gG-LAt"/>
                                 <constraint firstItem="rFR-N4-M2i" firstAttribute="leading" secondItem="ucL-c0-nQV" secondAttribute="leading" constant="15" id="OBJ-RI-FMc"/>
+                                <constraint firstAttribute="trailing" secondItem="FLs-e2-tva" secondAttribute="trailing" constant="10" id="OkA-rB-eFD"/>
+                                <constraint firstItem="FLs-e2-tva" firstAttribute="leading" secondItem="hbt-sz-67Q" secondAttribute="trailing" constant="7" id="W13-vN-Vzg"/>
                                 <constraint firstItem="hbt-sz-67Q" firstAttribute="centerY" secondItem="ucL-c0-nQV" secondAttribute="centerY" id="XUg-XV-xIH"/>
                                 <constraint firstAttribute="height" constant="50" id="dfG-0W-xet"/>
                                 <constraint firstItem="rFR-N4-M2i" firstAttribute="centerY" secondItem="ucL-c0-nQV" secondAttribute="centerY" id="hVo-HX-0Kf"/>
-                                <constraint firstAttribute="trailing" secondItem="hbt-sz-67Q" secondAttribute="trailing" constant="17" id="qr7-CD-AIr"/>
                                 <constraint firstAttribute="bottom" secondItem="gOy-Qt-hmS" secondAttribute="bottom" id="t5n-2x-6Ta"/>
                             </constraints>
                         </view>
@@ -221,10 +269,11 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="My9-Bn-coj" secondAttribute="trailing" id="xPF-7l-08a"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="84"/>
+            <point key="canvasLocation" x="137.68115942028987" y="83.705357142857139"/>
         </view>
     </objects>
     <resources>
         <image name="back" width="11" height="20"/>
+        <image name="chose2" width="20" height="20"/>
     </resources>
 </document>

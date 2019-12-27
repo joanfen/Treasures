@@ -77,6 +77,7 @@ extension CategoryViewController:UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SmallCategoryCell") as! SmallCategoryCell
         cell.titleLbl.text = smallCategoryArr[indexPath.row].name
         cell.countLbl.text = String(smallCategoryArr[indexPath.row].count)
+        cell.countLbl.isHidden = smallCategoryArr[indexPath.row].count == 0
         if myCategoryArr.contains(smallCategoryArr[indexPath.row].identifier ?? 0) {
             tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         }
