@@ -139,6 +139,9 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagesView.showAlbum = {(tag: Int) in
             self.showAlbum()
         }
+        imagesView.showCamera = {(tag: Int) in
+            self.showCamera()
+        }
         imagesView.showAlert = {(alert: UIAlertController) in
             self.present(alert, animated: true, completion: nil)
         }
@@ -300,7 +303,22 @@ extension EditController {
                print("读取相册错误")
            }
        }
-   
+    private func showCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            //初始化图片控制器
+            let picker = UIImagePickerController()
+            //设置代理
+            picker.delegate = self
+            //指定图片控制器类型
+            picker.sourceType = UIImagePickerController.SourceType.camera
+            //设置是否允许编辑
+            picker.allowsEditing = false
+            //弹出控制器，显示界面
+            self.present(picker, animated: true, completion: {
+                () -> Void in
+            })
+        }
+    }
     func imagePickerController(_ picker: UIImagePickerController,
        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
        //查看info对象

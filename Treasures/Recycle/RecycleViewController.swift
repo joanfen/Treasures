@@ -27,6 +27,35 @@ class RecycleViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func deleteBtnClicked(_ sender: Any) {
+        if dataSource.count == 0 {
+            showSuccess()
+            return
+        }
+        let alert = UIAlertController.init(title: "提示", message: "请输入用户名", preferredStyle: .alert)
+        let ok = UIAlertAction.init(title: "确定", style: .default) { (alert) in
+            self.showSuccess()
+        }
+        let cancel = UIAlertAction.init(title: "取消", style: .cancel) { (action) in
+            
+        }
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    private func showSuccess() {
+        let hud = JGProgressHUD.init(style: .extraLight)
+        hud.textLabel.text = "已清空"
+        hud.indicatorView = JGProgressHUDSuccessIndicatorView.init()
+        hud.show(in: self.view)
+        hud.dismiss(afterDelay: 1)
+    }
+    
+    
     func setUI() {
         
         tableView.register(TreasureListCellConstants.nib(), forCellReuseIdentifier: TreasureListCellConstants.reuseId)

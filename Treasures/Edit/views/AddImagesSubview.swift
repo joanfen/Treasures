@@ -23,6 +23,7 @@ class AddImagesSubview: UIView {
     typealias ShowAlert = (_ alert: UIAlertController) -> Void
     var showAlbum: ShowAlbum?
     var showAlert: ShowAlert?
+    var showCamera:((_ tag: Int)->())?
     var selectedIndex: Int = 0
     
     var images: [UIImage] = [] {
@@ -98,7 +99,9 @@ class AddImagesSubview: UIView {
         alert.addAction(UIAlertAction.init(title: "相册", style: UIAlertAction.Style.default, handler: { (action) in
             self.showAlbum?(tag)
         }))
-        
+        alert.addAction(UIAlertAction.init(title: "相机", style: UIAlertAction.Style.default, handler: { (action) in
+            self.showCamera?(tag)
+        }))
         
         
         self.showAlert?(alert)

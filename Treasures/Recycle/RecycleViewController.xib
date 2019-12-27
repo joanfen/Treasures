@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecycleViewController" customModule="Treasures" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecycleViewController" customModule="收藏管家" customModuleProvider="target">
             <connections>
                 <outlet property="emptyLbl" destination="Kq2-lh-1aN" id="Bmc-Pn-LEH"/>
                 <outlet property="tableView" destination="gqM-RP-QG7" id="W0G-2c-NfS"/>
@@ -48,6 +48,19 @@
                             <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynM-EC-fgn">
+                            <rect key="frame" x="334" y="0.0" width="60" height="43"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="fd9-8G-Z6B"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="清空">
+                                <color key="titleColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="deleteBtnClicked:" destination="-1" eventType="touchUpInside" id="11C-WU-Grh"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
@@ -55,7 +68,10 @@
                         <constraint firstAttribute="bottom" secondItem="Tmx-zs-3wu" secondAttribute="bottom" id="6Cy-in-Igv"/>
                         <constraint firstItem="mrT-Ty-NtA" firstAttribute="centerY" secondItem="hxL-B0-xxO" secondAttribute="centerY" id="I3K-ZS-k1w"/>
                         <constraint firstItem="APX-bi-67h" firstAttribute="centerX" secondItem="hxL-B0-xxO" secondAttribute="centerX" id="Nox-wn-7bb"/>
+                        <constraint firstItem="ynM-EC-fgn" firstAttribute="top" secondItem="hxL-B0-xxO" secondAttribute="top" id="SBn-au-m3E"/>
+                        <constraint firstAttribute="trailing" secondItem="ynM-EC-fgn" secondAttribute="trailing" constant="20" symbolic="YES" id="SId-CS-wL7"/>
                         <constraint firstItem="Tmx-zs-3wu" firstAttribute="leading" secondItem="hxL-B0-xxO" secondAttribute="leading" id="YNe-lm-yLx"/>
+                        <constraint firstItem="Tmx-zs-3wu" firstAttribute="top" secondItem="ynM-EC-fgn" secondAttribute="bottom" id="ZXl-YK-3Wb"/>
                         <constraint firstItem="mrT-Ty-NtA" firstAttribute="leading" secondItem="hxL-B0-xxO" secondAttribute="leading" constant="16" id="cJq-LI-Wnl"/>
                         <constraint firstAttribute="trailing" secondItem="Tmx-zs-3wu" secondAttribute="trailing" id="gif-hP-Oza"/>
                         <constraint firstAttribute="height" constant="44" id="m8N-aj-Vga"/>
