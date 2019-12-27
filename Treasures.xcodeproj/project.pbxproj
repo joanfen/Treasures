@@ -10,6 +10,7 @@
 		3D0C53FA23B245100086D2EA /* KeywordsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0C53F923B245100086D2EA /* KeywordsScrollView.swift */; };
 		3D0D764C23B517EE00CFFEA5 /* InviteKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D764B23B517EE00CFFEA5 /* InviteKeyHandler.swift */; };
 		3D0D764E23B51A6500CFFEA5 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0D764D23B51A6500CFFEA5 /* ExternalAccessory.framework */; };
+		3D0D765023B6472F00CFFEA5 /* DateTimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D764F23B6472F00CFFEA5 /* DateTimeUtil.swift */; };
 		3D2E48FB23A6694D00DE59A2 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E48FA23A6694D00DE59A2 /* PersonalViewController.swift */; };
 		3D2E48FF23A66B7500DE59A2 /* PersonalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E48FD23A66B7500DE59A2 /* PersonalCell.swift */; };
 		3D2E490023A66B7500DE59A2 /* PersonalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D2E48FE23A66B7500DE59A2 /* PersonalCell.xib */; };
@@ -167,6 +168,7 @@
 		3D0D764A23B514A100CFFEA5 /* 收藏管家.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "收藏管家.entitlements"; sourceTree = "<group>"; };
 		3D0D764B23B517EE00CFFEA5 /* InviteKeyHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteKeyHandler.swift; sourceTree = "<group>"; };
 		3D0D764D23B51A6500CFFEA5 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		3D0D764F23B6472F00CFFEA5 /* DateTimeUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeUtil.swift; sourceTree = "<group>"; };
 		3D2E48FA23A6694D00DE59A2 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		3D2E48FD23A66B7500DE59A2 /* PersonalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCell.swift; sourceTree = "<group>"; };
 		3D2E48FE23A66B7500DE59A2 /* PersonalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalCell.xib; sourceTree = "<group>"; };
@@ -635,6 +637,7 @@
 			isa = PBXGroup;
 			children = (
 				55AD675423AC83C200C0E5EB /* JFBubbleView */,
+				3D0D764F23B6472F00CFFEA5 /* DateTimeUtil.swift */,
 				3D2E490F23A7D8BE00DE59A2 /* Global.swift */,
 				55B22B72239755D800B738B7 /* FontConstants.swift */,
 				487455CE23993FD6002AFBF7 /* UISizeConstants.swift */,
@@ -970,6 +973,7 @@
 				55AD677923B302B800C0E5EB /* SecondCategoryVO.swift in Sources */,
 				48EF5C7A23A2846900A0E8B1 /* AddImagesSubview.swift in Sources */,
 				484CA17123994F2500207662 /* ListFilterView.swift in Sources */,
+				3D0D765023B6472F00CFFEA5 /* DateTimeUtil.swift in Sources */,
 				3D78FA0423ABD33500427FF7 /* EditPopView.swift in Sources */,
 				48DF59D2239B47EB0086B352 /* SortedItem.swift in Sources */,
 				552CC58223A392FB00D14F21 /* EditTreasureForm.swift in Sources */,

@@ -34,7 +34,7 @@ class TreasuresTests: XCTestCase {
     func testEncode() {
         print("\n----- 测试加密解密 Start ------\n")
         
-        let origin = 201912211
+        let origin = 20191221211
         print("原始值: \(origin)")
         
         let result = InviteCodeUtils.encode(by: origin)
