@@ -99,8 +99,6 @@ class AddImagesSubview: UIView {
             self.showAlbum?(tag)
         }))
         
-        
-        
         self.showAlert?(alert)
         
     }
@@ -116,8 +114,6 @@ class AddImagesSubview: UIView {
         })
     }
 
-         
-       
 }
 
 class AddImageButton: UIButton {

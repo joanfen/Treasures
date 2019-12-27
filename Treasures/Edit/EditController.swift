@@ -138,7 +138,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @objc func back() {
-        let alert = UIAlertController(title: "确定返回", message: nil, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "确定返回", message: "您的修改尚未保存", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
 
         alert.addAction(UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default, handler: { (action) in
@@ -305,7 +305,7 @@ extension EditController {
                //指定图片控制器类型
                picker.sourceType = UIImagePickerController.SourceType.photoLibrary
                //设置是否允许编辑
-               picker.allowsEditing = true
+               picker.allowsEditing = false
                //弹出控制器，显示界面
                self.present(picker, animated: true, completion: {
                    () -> Void in
@@ -321,7 +321,7 @@ extension EditController {
        print(info)
         
        //显示的图片
-       let imageOpt = info[.editedImage] as? UIImage
+        let imageOpt = info[.originalImage] as? UIImage
 
        //图片控制器退出
        picker.dismiss(animated: true, completion: {
