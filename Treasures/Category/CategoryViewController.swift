@@ -15,6 +15,7 @@ class CategoryViewController: UIViewController {
     var bigCategoryArr:[FirstCategoryTable] = []
     var smallCategoryArr:[SecondCategoryVO] = []
     var myCategoryArr:[Int] = []
+    var selectedBigIndex = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configNavigation()
@@ -22,7 +23,12 @@ class CategoryViewController: UIViewController {
         self.setUI()
         // Do any additional setup after loading the view.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let bigCategory = self.bigCategoryArr[self.selectedBigIndex]
+        smallCategoryArr = CategoryRepo.querySecondCategories(parentId: bigCategory.identifier ?? 0)
+        self.smallTableView.reloadData()
+    }
     private func configNavigation() {
         self.navigationController?.navigationBar.isHidden = true
     }
@@ -88,6 +94,7 @@ extension CategoryViewController:UITableViewDelegate,UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == bigTableView {
+            self.selectedBigIndex = indexPath.row
             let bigCategory = self.bigCategoryArr[indexPath.row]
             smallCategoryArr = CategoryRepo.querySecondCategories(parentId: bigCategory.identifier ?? 0)
             self.smallTableView.reloadData()

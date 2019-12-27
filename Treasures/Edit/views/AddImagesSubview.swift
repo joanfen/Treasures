@@ -99,13 +99,10 @@ class AddImagesSubview: UIView {
         alert.addAction(UIAlertAction.init(title: "相册", style: UIAlertAction.Style.default, handler: { (action) in
             self.showAlbum?(tag)
         }))
-<<<<<<< HEAD
+        
         alert.addAction(UIAlertAction.init(title: "相机", style: UIAlertAction.Style.default, handler: { (action) in
             self.showCamera?(tag)
         }))
-        
-=======
->>>>>>> 4267722e262dd9bf7e9d23a91caa00d14b73112d
         
         self.showAlert?(alert)
         
