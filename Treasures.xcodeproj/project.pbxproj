@@ -70,6 +70,10 @@
 		48C4BA6C23B4FA80001CA6D4 /* CategoryFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C4BA6B23B4FA80001CA6D4 /* CategoryFilterView.xib */; };
 		48C4BA7023B64657001CA6D4 /* SortPriceItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C4BA6F23B64657001CA6D4 /* SortPriceItem.xib */; };
 		48C4BA7223B64988001CA6D4 /* KeywordFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C4BA7123B64988001CA6D4 /* KeywordFilterView.xib */; };
+		48C4BA8023B66475001CA6D4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C4BA7A23B66475001CA6D4 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		48C4BA8123B66475001CA6D4 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C4BA7B23B66475001CA6D4 /* TPKeyboardAvoidingTableView.m */; };
+		48C4BA8223B66475001CA6D4 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C4BA7C23B66475001CA6D4 /* TPKeyboardAvoidingScrollView.m */; };
+		48C4BA8323B66475001CA6D4 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C4BA7E23B66475001CA6D4 /* TPKeyboardAvoidingCollectionView.m */; };
 		48DF59D2239B47EB0086B352 /* SortedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59D1239B47EB0086B352 /* SortedItem.swift */; };
 		48DF59D6239BDF9D0086B352 /* KeywordItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48DF59D5239BDF9D0086B352 /* KeywordItem.xib */; };
 		48DF59D9239BE3060086B352 /* PropertyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59D8239BE3060086B352 /* PropertyItem.swift */; };
@@ -223,6 +227,14 @@
 		48C4BA6B23B4FA80001CA6D4 /* CategoryFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryFilterView.xib; sourceTree = "<group>"; };
 		48C4BA6F23B64657001CA6D4 /* SortPriceItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SortPriceItem.xib; sourceTree = "<group>"; };
 		48C4BA7123B64988001CA6D4 /* KeywordFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordFilterView.xib; sourceTree = "<group>"; };
+		48C4BA7823B66475001CA6D4 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		48C4BA7923B66475001CA6D4 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		48C4BA7A23B66475001CA6D4 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		48C4BA7B23B66475001CA6D4 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		48C4BA7C23B66475001CA6D4 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		48C4BA7D23B66475001CA6D4 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		48C4BA7E23B66475001CA6D4 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		48C4BA7F23B66475001CA6D4 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
 		48DF59D1239B47EB0086B352 /* SortedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedItem.swift; sourceTree = "<group>"; };
 		48DF59D5239BDF9D0086B352 /* KeywordItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordItem.xib; sourceTree = "<group>"; };
 		48DF59D8239BE3060086B352 /* PropertyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyItem.swift; sourceTree = "<group>"; };
@@ -446,6 +458,21 @@
 			path = views;
 			sourceTree = "<group>";
 		};
+		48C4BA7723B66475001CA6D4 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				48C4BA7923B66475001CA6D4 /* TPKeyboardAvoidingCollectionView.h */,
+				48C4BA7E23B66475001CA6D4 /* TPKeyboardAvoidingCollectionView.m */,
+				48C4BA7D23B66475001CA6D4 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				48C4BA7A23B66475001CA6D4 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				48C4BA7F23B66475001CA6D4 /* TPKeyboardAvoidingTableView.h */,
+				48C4BA7B23B66475001CA6D4 /* TPKeyboardAvoidingTableView.m */,
+				48C4BA7823B66475001CA6D4 /* TPKeyboardAvoidingScrollView.h */,
+				48C4BA7C23B66475001CA6D4 /* TPKeyboardAvoidingScrollView.m */,
+			);
+			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
 		48DF59E4239CA0690086B352 /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -645,6 +672,7 @@
 		55B22B71239755D800B738B7 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				48C4BA7723B66475001CA6D4 /* TPKeyboardAvoiding */,
 				55AD675423AC83C200C0E5EB /* JFBubbleView */,
 				3D0D764F23B6472F00CFFEA5 /* DateTimeUtil.swift */,
 				3D2E490F23A7D8BE00DE59A2 /* Global.swift */,
@@ -964,6 +992,7 @@
 				3D2E490323A6770900DE59A2 /* EditPasswordVC.swift in Sources */,
 				55B366BF23975B44008F32D6 /* TreasureListController.swift in Sources */,
 				55AD677323AC83C200C0E5EB /* JFSelectBubbleView.m in Sources */,
+				48C4BA8223B66475001CA6D4 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				3D0D764C23B517EE00CFFEA5 /* InviteKeyHandler.swift in Sources */,
 				487455CF23993FD6002AFBF7 /* UISizeConstants.swift in Sources */,
 				552CC57E23A37FB400D14F21 /* TreasureListSearchDTO.swift in Sources */,
@@ -978,6 +1007,7 @@
 				55B22B74239755D800B738B7 /* SecondCategoryTable.swift in Sources */,
 				55AD677623AC83C200C0E5EB /* JFBubbleViewController.m in Sources */,
 				48DF59DD239C87420086B352 /* CategoryItem.swift in Sources */,
+				48C4BA8023B66475001CA6D4 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				55B22B75239755D800B738B7 /* FirstCategoryTable.swift in Sources */,
 				55B22B77239755D800B738B7 /* TreasuresTable.swift in Sources */,
 				55B22B492397539500B738B7 /* SceneDelegate.swift in Sources */,
@@ -994,7 +1024,9 @@
 				48AA8470239CE89C00A81C9F /* TreasureRepository.swift in Sources */,
 				55B22B7A239755D800B738B7 /* FontConstants.swift in Sources */,
 				48FA4FE423A7D640005DA01A /* CategoryDTO.swift in Sources */,
+				48C4BA8323B66475001CA6D4 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				48DF59E3239C99F30086B352 /* FilterPreference.swift in Sources */,
+				48C4BA8123B66475001CA6D4 /* TPKeyboardAvoidingTableView.m in Sources */,
 				55B22B73239755D800B738B7 /* DatabaseHandler.swift in Sources */,
 				5548C58523B5D14F00A3D10C /* InviteCodeUtils.swift in Sources */,
 				553948CC23B6115700793921 /* KeywordItem.swift in Sources */,
