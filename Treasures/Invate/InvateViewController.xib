@@ -8,8 +8,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InvateViewController" customModule="Treasures" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InvateViewController" customModule="收藏管家" customModuleProvider="target">
             <connections>
+                <outlet property="inviteTF_1" destination="FNl-Uq-E38" id="X7Y-NX-tlZ"/>
+                <outlet property="inviteTF_2" destination="2E8-lm-ep9" id="rK2-ex-K5u"/>
+                <outlet property="inviteTF_3" destination="hbt-sz-67Q" id="uQo-aO-VTU"/>
+                <outlet property="myKeyLbl" destination="o19-XA-wh0" id="0m4-7W-OIf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

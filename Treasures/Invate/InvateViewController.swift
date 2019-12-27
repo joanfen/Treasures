@@ -10,6 +10,10 @@ import UIKit
 
 class InvateViewController: UIViewController {
 
+    @IBOutlet weak var myKeyLbl: UILabel!
+    @IBOutlet weak var inviteTF_1: UITextField!
+    @IBOutlet weak var inviteTF_2: UITextField!
+    @IBOutlet weak var inviteTF_3: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 

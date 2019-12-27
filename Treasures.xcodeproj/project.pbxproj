@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3D0C53FA23B245100086D2EA /* KeywordsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0C53F923B245100086D2EA /* KeywordsScrollView.swift */; };
+		3D0D764C23B517EE00CFFEA5 /* InviteKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0D764B23B517EE00CFFEA5 /* InviteKeyHandler.swift */; };
+		3D0D764E23B51A6500CFFEA5 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0D764D23B51A6500CFFEA5 /* ExternalAccessory.framework */; };
 		3D2E48FB23A6694D00DE59A2 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E48FA23A6694D00DE59A2 /* PersonalViewController.swift */; };
 		3D2E48FF23A66B7500DE59A2 /* PersonalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E48FD23A66B7500DE59A2 /* PersonalCell.swift */; };
 		3D2E490023A66B7500DE59A2 /* PersonalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D2E48FE23A66B7500DE59A2 /* PersonalCell.xib */; };
@@ -155,6 +157,8 @@
 		21D04279D2E29DAD145417BC /* Pods_TreasuresTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TreasuresTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0C53F923B245100086D2EA /* KeywordsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordsScrollView.swift; sourceTree = "<group>"; };
 		3D0D764A23B514A100CFFEA5 /* 收藏管家.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "收藏管家.entitlements"; sourceTree = "<group>"; };
+		3D0D764B23B517EE00CFFEA5 /* InviteKeyHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteKeyHandler.swift; sourceTree = "<group>"; };
+		3D0D764D23B51A6500CFFEA5 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		3D2E48FA23A6694D00DE59A2 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		3D2E48FD23A66B7500DE59A2 /* PersonalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCell.swift; sourceTree = "<group>"; };
 		3D2E48FE23A66B7500DE59A2 /* PersonalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalCell.xib; sourceTree = "<group>"; };
@@ -285,6 +289,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D0D764E23B51A6500CFFEA5 /* ExternalAccessory.framework in Frameworks */,
 				9F57E87D3C11AA9D71E13110 /* Pods_Treasures.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +308,7 @@
 		204570C67DA81379E36FED72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D0D764D23B51A6500CFFEA5 /* ExternalAccessory.framework */,
 				B15FD8E1B6571064B8BE8E2C /* Pods_Treasures.framework */,
 				21D04279D2E29DAD145417BC /* Pods_TreasuresTests.framework */,
 			);
@@ -619,6 +625,7 @@
 				48FB48D0239D2970005BF6B6 /* PathHandler.swift */,
 				3D2E491923A7E06C00DE59A2 /* UIColor+Category.swift */,
 				482ECB3723ABD0F600BFB839 /* HUDHandler.swift */,
+				3D0D764B23B517EE00CFFEA5 /* InviteKeyHandler.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -923,6 +930,7 @@
 				3D2E490323A6770900DE59A2 /* EditPasswordVC.swift in Sources */,
 				55B366BF23975B44008F32D6 /* TreasureListController.swift in Sources */,
 				55AD677323AC83C200C0E5EB /* JFSelectBubbleView.m in Sources */,
+				3D0D764C23B517EE00CFFEA5 /* InviteKeyHandler.swift in Sources */,
 				487455CF23993FD6002AFBF7 /* UISizeConstants.swift in Sources */,
 				552CC57E23A37FB400D14F21 /* TreasureListSearchDTO.swift in Sources */,
 				55B22B76239755D800B738B7 /* DBConstants.swift in Sources */,
