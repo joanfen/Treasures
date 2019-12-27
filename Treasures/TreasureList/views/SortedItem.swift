@@ -10,7 +10,6 @@ import UIKit
 
 struct SortedItemConstants {
     static let yearNib = "SortYearItem"
-    static let centerAlignNib = "SortedItem"
     static let rightAlignNib = "SortPriceItem"
 }
 
@@ -41,11 +40,7 @@ class SortedItem: UIView {
         
     }
     
-   
     // MARK: - load nib
-    class func loadXib() -> SortedItem {
-        return Bundle.main.loadNibNamed(SortedItemConstants.centerAlignNib, owner: self, options: nil)!.first as! SortedItem
-    }
     /**
      * 年份视图
      */

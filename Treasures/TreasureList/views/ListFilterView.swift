@@ -29,7 +29,7 @@ class ListFilterView: UIView {
     @IBOutlet weak var unavaliableContentView: UIView!
     @IBOutlet weak var soldContentView: UIView!
     private var yearItem: SortedItem = SortedItem.loadYearXib()
-    private var sizeItem: SortedItem = SortedItem.loadXib()
+    private var keywordItem: KeywordItem = KeywordItem.loadXib()
     private var priceItem: SortedItem = SortedItem.loadRightAlignNib()
     private var categoryItem: CategoryItem = CategoryItem.loadXib()
     private var avaliableItem: PropertyItem = PropertyItem.loadXib()
@@ -64,7 +64,6 @@ class ListFilterView: UIView {
     private func updateYearRule(rule: OrderRule) {
         self.filterPreference.yearOrderRule = rule
         if rule != OrderRule.none {
-          self.sizeItem.updateOrderRule(rule: OrderRule.none)
           self.priceItem.updateOrderRule(rule: OrderRule.none)
         }
         self.filterBegin?(filterPreference)
@@ -74,10 +73,10 @@ class ListFilterView: UIView {
         self.filterPreference.priceOrderRule = rule
         if rule != OrderRule.none {
            self.yearItem.updateOrderRule(rule: OrderRule.none)
-           self.sizeItem.updateOrderRule(rule: OrderRule.none)
         }
         self.filterBegin?(filterPreference)
     }
+    
     private func updateFilterAvaliable(flag: Bool) {
         self.filterPreference.filterAvaliable = flag
         self.filterBegin?(filterPreference)
@@ -97,6 +96,11 @@ class ListFilterView: UIView {
         self.filterPreference.category = category
         self.filterBegin?(filterPreference)
     }
+    
+    private func updateFilterKeyword(keyword: String?) {
+        filterPreference.keyword = keyword
+        filterBegin?(filterPreference)
+    }
 
     // MARK: UI 控件 配置
     private func configItems() {
@@ -106,7 +110,9 @@ class ListFilterView: UIView {
        
     // MARK: 配置点击代理事件
     private func configItemActions() {
-        
+        keywordItem.selectedAction = { (keyword) in
+            self.updateFilterKeyword(keyword: keyword)
+        }
         categoryItem.selectCategoryAction = { (category ) in
             self.updateFilterCategory(category: category)
         }
@@ -138,7 +144,7 @@ class ListFilterView: UIView {
     
     private func addSubviews() {
         yearContentView.addSubview(yearItem)
-        sizeContentView.addSubview(sizeItem)
+        sizeContentView.addSubview(keywordItem)
         priceContentView.addSubview(priceItem)
         categoryContentView.addSubview(categoryItem)
         avaliableContentView.addSubview(avaliableItem)
@@ -148,7 +154,7 @@ class ListFilterView: UIView {
     
     private func layoutItems() {
         yearItem.frame = yearContentView.bounds
-        sizeItem.frame = sizeContentView.bounds
+        keywordItem.frame = sizeContentView.bounds
         priceItem.frame = priceContentView.bounds
         categoryItem.frame = categoryContentView.bounds
         avaliableItem.frame = avaliableContentView.bounds
