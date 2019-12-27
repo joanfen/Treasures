@@ -47,4 +47,28 @@ class InviteCodeUtils {
         return result
     }
     
+    class func decode(by code: String) -> CLong {
+        let BIN_LEN = BASE.count
+        let charArray = code.map { String($0) }
+        
+        var result: CLong = 0;
+        for i in 0..<charArray.count {
+            var index = 0
+            for j in 0...BIN_LEN {
+                if charArray[i] == BASE[j] {
+                    index = j
+                    break
+                }
+            }
+            if charArray[i] == SUFFIX_CHAR {
+                break;
+            }
+            if i > 0 {
+                result = result * BIN_LEN + index
+            } else {
+                result = index;
+            }
+        }
+        return result;
+    }
 }

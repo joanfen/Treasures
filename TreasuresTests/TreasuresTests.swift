@@ -32,11 +32,18 @@ class TreasuresTests: XCTestCase {
     }
     
     func testEncode() {
+        print("\n----- 测试加密解密 Start ------\n")
         
-        let result = InviteCodeUtils.encode(by: 201912211)
-        print(result)
+        let origin = 201912211
+        print("原始值: \(origin)")
+        
+        let result = InviteCodeUtils.encode(by: origin)
+        print("加密后: \(result)")
+        
+        let code = InviteCodeUtils.decode(by: result)
+        print("解密后: \(code)")
+        
+        print("\n----- 测试加密解密 End ------\n")
+        
     }
-    
-        
-
 }
