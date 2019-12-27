@@ -54,7 +54,7 @@ class InviteCodeUtils {
         var result: CLong = 0;
         for i in 0..<charArray.count {
             var index = 0
-            for j in 0...BIN_LEN {
+            for j in 0..<BIN_LEN {
                 if charArray[i] == BASE[j] {
                     index = j
                     break
