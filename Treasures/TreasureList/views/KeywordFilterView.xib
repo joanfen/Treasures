@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="RaU-C3-hP6" customClass="KeywordFilterView" customModule="收藏管家" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="412" height="240"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bL-nv-vfb">
+                    <rect key="frame" x="-1" y="195" width="414" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXT-8k-7je">
+                            <rect key="frame" x="0.0" y="0.0" width="207" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="6nN-dn-g1Y"/>
+                            </constraints>
+                            <state key="normal" title="取消">
+                                <color key="titleColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="cancel" destination="RaU-C3-hP6" eventType="touchUpInside" id="ibs-VM-kLZ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGc-qO-yuD">
+                            <rect key="frame" x="208" y="0.0" width="207" height="50"/>
+                            <color key="backgroundColor" red="0.79607843140000001" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="z4E-O2-kDu"/>
+                            </constraints>
+                            <state key="normal" title="确定">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="done" destination="RaU-C3-hP6" eventType="touchUpInside" id="6mv-8d-PHh"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="AXT-8k-7je" firstAttribute="width" secondItem="1bL-nv-vfb" secondAttribute="width" multiplier="0.5" id="2uV-aH-4PN"/>
+                        <constraint firstAttribute="bottom" secondItem="vGc-qO-yuD" secondAttribute="bottom" id="66B-Am-qo3"/>
+                        <constraint firstAttribute="height" constant="50" id="Tu6-Le-MCA"/>
+                        <constraint firstAttribute="trailing" secondItem="vGc-qO-yuD" secondAttribute="trailing" constant="-1" id="adD-We-2ts"/>
+                        <constraint firstItem="AXT-8k-7je" firstAttribute="leading" secondItem="1bL-nv-vfb" secondAttribute="leading" id="c5W-7k-GLX"/>
+                        <constraint firstItem="vGc-qO-yuD" firstAttribute="width" secondItem="AXT-8k-7je" secondAttribute="width" id="c7z-KA-FEJ"/>
+                        <constraint firstAttribute="bottom" secondItem="AXT-8k-7je" secondAttribute="bottom" id="tEe-4X-2WL"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1bL-nv-vfb" firstAttribute="width" secondItem="RaU-C3-hP6" secondAttribute="width" multiplier="1.00485" id="5ef-ZE-vMI"/>
+                <constraint firstItem="1bL-nv-vfb" firstAttribute="centerX" secondItem="RaU-C3-hP6" secondAttribute="centerX" id="7Tk-o6-pcR"/>
+                <constraint firstAttribute="bottom" secondItem="1bL-nv-vfb" secondAttribute="bottom" constant="-5" id="Ea1-jN-FS7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="buttonsView" destination="1bL-nv-vfb" id="SUc-Sq-MDA"/>
+            </connections>
+            <point key="canvasLocation" x="130.43478260869566" y="-89.732142857142847"/>
+        </view>
+    </objects>
+</document>

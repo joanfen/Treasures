@@ -68,9 +68,10 @@
 		48AA8474239CEB6E00A81C9F /* Queryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA8472239CEB6E00A81C9F /* Queryable.swift */; };
 		48C4BA6A23B4FA74001CA6D4 /* CategoryFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4BA6923B4FA74001CA6D4 /* CategoryFilterView.swift */; };
 		48C4BA6C23B4FA80001CA6D4 /* CategoryFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C4BA6B23B4FA80001CA6D4 /* CategoryFilterView.xib */; };
+		48C4BA7023B64657001CA6D4 /* SortPriceItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C4BA6F23B64657001CA6D4 /* SortPriceItem.xib */; };
+		48C4BA7223B64988001CA6D4 /* KeywordFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C4BA7123B64988001CA6D4 /* KeywordFilterView.xib */; };
 		48DF59D2239B47EB0086B352 /* SortedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59D1239B47EB0086B352 /* SortedItem.swift */; };
-		48DF59D4239B48130086B352 /* SortedItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48DF59D3239B48130086B352 /* SortedItem.xib */; };
-		48DF59D6239BDF9D0086B352 /* SortPriceItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48DF59D5239BDF9D0086B352 /* SortPriceItem.xib */; };
+		48DF59D6239BDF9D0086B352 /* KeywordItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48DF59D5239BDF9D0086B352 /* KeywordItem.xib */; };
 		48DF59D9239BE3060086B352 /* PropertyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59D8239BE3060086B352 /* PropertyItem.swift */; };
 		48DF59DB239BE4200086B352 /* PropertyItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48DF59DA239BE4200086B352 /* PropertyItem.xib */; };
 		48DF59DD239C87420086B352 /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59DC239C87420086B352 /* CategoryItem.swift */; };
@@ -104,6 +105,8 @@
 		552CC58923A393F600D14F21 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC58723A393F600D14F21 /* Size.swift */; };
 		552CC58B23A3BD7D00D14F21 /* TreasureDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC58A23A3BD7D00D14F21 /* TreasureDetailDTO.swift */; };
 		552CC58C23A3BD7D00D14F21 /* TreasureDetailDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CC58A23A3BD7D00D14F21 /* TreasureDetailDTO.swift */; };
+		553948CA23B6113300793921 /* KeywordFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553948C923B6113300793921 /* KeywordFilterView.swift */; };
+		553948CC23B6115700793921 /* KeywordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553948CB23B6115700793921 /* KeywordItem.swift */; };
 		5548C58523B5D14F00A3D10C /* InviteCodeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548C58423B5D14F00A3D10C /* InviteCodeUtils.swift */; };
 		5548C58723B5D2B900A3D10C /* InviteCodeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548C58423B5D14F00A3D10C /* InviteCodeUtils.swift */; };
 		5548C58923B5E47400A3D10C /* KeywordsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5548C58823B5E47400A3D10C /* KeywordsTable.swift */; };
@@ -218,9 +221,10 @@
 		48AA8472239CEB6E00A81C9F /* Queryable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queryable.swift; sourceTree = "<group>"; };
 		48C4BA6923B4FA74001CA6D4 /* CategoryFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilterView.swift; sourceTree = "<group>"; };
 		48C4BA6B23B4FA80001CA6D4 /* CategoryFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryFilterView.xib; sourceTree = "<group>"; };
+		48C4BA6F23B64657001CA6D4 /* SortPriceItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SortPriceItem.xib; sourceTree = "<group>"; };
+		48C4BA7123B64988001CA6D4 /* KeywordFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordFilterView.xib; sourceTree = "<group>"; };
 		48DF59D1239B47EB0086B352 /* SortedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedItem.swift; sourceTree = "<group>"; };
-		48DF59D3239B48130086B352 /* SortedItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortedItem.xib; sourceTree = "<group>"; };
-		48DF59D5239BDF9D0086B352 /* SortPriceItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortPriceItem.xib; sourceTree = "<group>"; };
+		48DF59D5239BDF9D0086B352 /* KeywordItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordItem.xib; sourceTree = "<group>"; };
 		48DF59D8239BE3060086B352 /* PropertyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyItem.swift; sourceTree = "<group>"; };
 		48DF59DA239BE4200086B352 /* PropertyItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PropertyItem.xib; sourceTree = "<group>"; };
 		48DF59DC239C87420086B352 /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
@@ -243,6 +247,8 @@
 		552CC58423A393DF00D14F21 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		552CC58723A393F600D14F21 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		552CC58A23A3BD7D00D14F21 /* TreasureDetailDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureDetailDTO.swift; sourceTree = "<group>"; };
+		553948C923B6113300793921 /* KeywordFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordFilterView.swift; sourceTree = "<group>"; };
+		553948CB23B6115700793921 /* KeywordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordItem.swift; sourceTree = "<group>"; };
 		5548C58423B5D14F00A3D10C /* InviteCodeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteCodeUtils.swift; sourceTree = "<group>"; };
 		5548C58823B5E47400A3D10C /* KeywordsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordsTable.swift; sourceTree = "<group>"; };
 		5548C58B23B5E52C00A3D10C /* KeywordsRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordsRepo.swift; sourceTree = "<group>"; };
@@ -417,9 +423,12 @@
 				484CA17023994F2500207662 /* ListFilterView.swift */,
 				484CA16E23994F0800207662 /* ListFilterView.xib */,
 				48DF59D1239B47EB0086B352 /* SortedItem.swift */,
-				48DF59D3239B48130086B352 /* SortedItem.xib */,
 				484CA174239B3CA500207662 /* SortYearItem.xib */,
-				48DF59D5239BDF9D0086B352 /* SortPriceItem.xib */,
+				48C4BA6F23B64657001CA6D4 /* SortPriceItem.xib */,
+				553948C923B6113300793921 /* KeywordFilterView.swift */,
+				48C4BA7123B64988001CA6D4 /* KeywordFilterView.xib */,
+				553948CB23B6115700793921 /* KeywordItem.swift */,
+				48DF59D5239BDF9D0086B352 /* KeywordItem.xib */,
 				48DF59DC239C87420086B352 /* CategoryItem.swift */,
 				48DF59DE239C87680086B352 /* CategoryItem.xib */,
 				48DF59D8239BE3060086B352 /* PropertyItem.swift */,
@@ -796,16 +805,18 @@
 				3D6D585D23AA761F00AF718A /* CollectedViewController.xib in Resources */,
 				55B22B4E2397539500B738B7 /* Main.storyboard in Resources */,
 				3DB2E19B23AFA60300684653 /* TreasureDetailVC.xib in Resources */,
-				48DF59D6239BDF9D0086B352 /* SortPriceItem.xib in Resources */,
+				48DF59D6239BDF9D0086B352 /* KeywordItem.xib in Resources */,
 				48EF5C8223A2871D00A0E8B1 /* AddImagesSubview.xib in Resources */,
 				55B366D4239CD2B2008F32D6 /* podfile in Resources */,
 				552CC57A23A35E8600D14F21 /* firstCategory.json in Resources */,
 				3D2E491E23A7E0EF00DE59A2 /* SmallCategoryCell.xib in Resources */,
+				48C4BA7023B64657001CA6D4 /* SortPriceItem.xib in Resources */,
 				3D2E490023A66B7500DE59A2 /* PersonalCell.xib in Resources */,
 				482ECB3123AA585400BFB839 /* MultiInputView.xib in Resources */,
 				484CA16F23994F0800207662 /* ListFilterView.xib in Resources */,
 				3DC81A8D23B3BC460050FDD2 /* ShareView.xib in Resources */,
 				4847D7AA23ADD6DD0068550D /* selectedTags.plist in Resources */,
+				48C4BA7223B64988001CA6D4 /* KeywordFilterView.xib in Resources */,
 				48C4BA6C23B4FA80001CA6D4 /* CategoryFilterView.xib in Resources */,
 				3D6D586723AA7DF700AF718A /* InvateViewController.xib in Resources */,
 				3D6D586223AA79C300AF718A /* RecycleViewController.xib in Resources */,
@@ -813,7 +824,6 @@
 				48DF59DF239C87680086B352 /* CategoryItem.xib in Resources */,
 				55B366C823976C64008F32D6 /* EditController.xib in Resources */,
 				484CA175239B3CA500207662 /* SortYearItem.xib in Resources */,
-				48DF59D4239B48130086B352 /* SortedItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -960,6 +970,7 @@
 				55B22B76239755D800B738B7 /* DBConstants.swift in Sources */,
 				48C4BA6A23B4FA74001CA6D4 /* CategoryFilterView.swift in Sources */,
 				55AD676E23AC83C200C0E5EB /* NSAttributedString+calculate.m in Sources */,
+				553948CA23B6113300793921 /* KeywordFilterView.swift in Sources */,
 				3DB2E19A23AFA60300684653 /* TreasureDetailVC.swift in Sources */,
 				48AA8463239CDF7100A81C9F /* TreasureSearchHandler.swift in Sources */,
 				55AD677723AC83C200C0E5EB /* DemoEditBubbleView.m in Sources */,
@@ -986,6 +997,7 @@
 				48DF59E3239C99F30086B352 /* FilterPreference.swift in Sources */,
 				55B22B73239755D800B738B7 /* DatabaseHandler.swift in Sources */,
 				5548C58523B5D14F00A3D10C /* InviteCodeUtils.swift in Sources */,
+				553948CC23B6115700793921 /* KeywordItem.swift in Sources */,
 				48DF59D9239BE3060086B352 /* PropertyItem.swift in Sources */,
 				48FA4FE723A7D912005DA01A /* CategoryPickerView.swift in Sources */,
 			);

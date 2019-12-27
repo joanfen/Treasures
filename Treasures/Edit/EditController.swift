@@ -274,8 +274,6 @@ extension EditController {
             if let vc = view {
                 self.present(vc, animated: true, completion: nil)
             }
-            
-        
         }
 //        self.contentView.setContentOffset(CGPoint(x: 0, y: bottom + 20), animated: true)
     }

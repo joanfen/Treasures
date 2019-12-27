@@ -10,8 +10,6 @@ import UIKit
 
 class CategoryItem: UIView {
  
-    
-
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imgView: UIImageView!
@@ -74,10 +72,10 @@ class CategoryItem: UIView {
    
     func show () {
         if isSelected {
-                       self.picker?.show(in: self.superview?.superview ?? self)
-                   } else {
-                       self.picker?.dismiss()
-                   }
+            self.picker?.show(in: self.superview?.superview ?? self)
+        } else {
+            self.picker?.dismiss()
+        }
     }
     
     func deselect() {
