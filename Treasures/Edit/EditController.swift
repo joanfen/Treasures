@@ -129,8 +129,22 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         self.navigationController?.navigationBar.tintColor = ColorConstants.titleColor
            
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "share"), style: UIBarButtonItem.Style.done, target: self, action: #selector(save))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title:"保存", style: UIBarButtonItem.Style.done, target: self, action: #selector(save))
+        
+        self.navigationItem.hidesBackButton = true
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "back"), style: UIBarButtonItem.Style.done, target: self, action: #selector(back))
        
+    }
+    
+    @objc func back() {
+        let alert = UIAlertController(title: "确定返回", message: nil, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
+
+        alert.addAction(UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default, handler: { (action) in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Subviews
@@ -162,7 +176,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     private func addNameInputView() {
-        nameInputView.dataSetting(title: "名称", value: self.edit.name, textChanged: { (name) in
+        nameInputView.dataSetting(title: "名称 * 必填项", value: self.edit.name, textChanged: { (name) in
             self.edit.name = name
         }, delegate: self)
         contentView.addSubview(nameInputView)
@@ -250,10 +264,10 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
 //        nameInputView.resignFirstResponder()
         self.edit.images = imagesView.getImages()
         let result = self.edit.saveOrUpdate()
-        if (result) {
-            HUDHandler.showSuccess(with: "保存成功", in: self.view)
+        if let res = result {
+            HUDHandler.showError(with: res, in: self.view)
         } else {
-            HUDHandler.showError(with: "保存失败", in: self.view)
+            HUDHandler.showSuccess(with: "保存成功", in: self.view)
         }
     }
     

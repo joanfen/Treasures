@@ -59,6 +59,17 @@ class EditTreasureForm {
     }
    
     private func getTreasureTable() -> String? {
+        if let c = category {
+            table.firstCategoryId = c.firstCategory.id
+            table.secondCategoryId = c.secondCategory.id
+        } else {
+            // TODO: Block ACTION
+            return "请选择类目"
+        }
+        
+        if name.count == 0 {
+            return "请填写名称"
+        }
         table.identifier = identifier
         table.name = name
         table.description = descrpiton
@@ -66,43 +77,36 @@ class EditTreasureForm {
         table.sellStatus = sellStatus.rawValue
         table.size = size
         table.keywords = self.keywords.joined(separator: ",")
-        if let c = category {
-            table.firstCategoryId = c.firstCategory.id
-            table.secondCategoryId = c.secondCategory.id
-        } else {
-            // TODO: Block ACTION
-        }
+        
         table.year = year
         
         if let py = purchasedYear {
             table.purchasedYear = py
-        } else {
-            // TODO: BLOCK
         }
         
         if let pp = purchasedPrice {
             table.purchasedPriceInCent = Int64(pp) * 100
-        } else {
-            // TODO: BLOCK
         }
         
         if let sp = sellingPrice {
             table.sellingPriceInCent = Int64(sp) * 100
-        } else {
-            // TODO:
         }
         return nil
     }
     
     // 存入数据库
-    public func saveOrUpdate() -> Bool {
-        let _ = getTreasureTable()
+    public func saveOrUpdate() -> String? {
+        let string: String? = getTreasureTable()
+        if let str = string {
+            return str
+        }
         let id = TreasureRepository.insertOrReplace(treasure: self.table)
         if let treasureId = id {
-             return saveImages(with: treasureId) && saveKeywords()
-        } else {
-            return false
+            if (saveImages(with: treasureId) && saveKeywords()) {
+               return nil
+            }
         }
+        return "操作失败"
     }
     
     public func saveImages(with treasureId: Int) -> Bool {
