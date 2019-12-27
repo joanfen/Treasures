@@ -79,6 +79,16 @@ class TreasureRepository {
         updateDeleted(id: id, deleted: false)
     }
     
+    static func clearTrash() -> Bool {
+        do {
+            try DatabaseHandler.getMainDatabase().delete(fromTable: DBConstants.treasuresTable, where: TreasuresTable.Properties.deleted == true)
+        } catch let x {
+            print(x)
+            return false
+        }
+        return true
+    }
+    
     
     // MARK: - 查询藏品详情
     func findTreasureDetailWith(id: Int) -> TreasureDetailDTO {
