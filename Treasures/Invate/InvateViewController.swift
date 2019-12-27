@@ -16,6 +16,7 @@ class InvateViewController: UIViewController {
     @IBOutlet weak var inviteTF_3: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }

@@ -11,7 +11,7 @@ import UIKit
 typealias SelectedCategory = (_ category: Category) -> Void
 
 protocol CategoryPickerProtocol {
-    func show(in viewController: UIViewController)
+    func show(in view: UIView)
     func dismiss()
     func selected(category: Category)
 }
@@ -44,24 +44,25 @@ class CategoryPickerShowFromBottom: CategoryPickerProtocol{
         self.selectedAction(category)
     }
     
-    func show(in viewController: UIViewController) {
+    func show(in view: UIView) {
         bgView.backgroundColor = UIColor.clear
 
-        bgView.frame = viewController.view.bounds
-        viewController.view.addSubview(bgView)
+        bgView.frame = view.bounds
+        view.addSubview(bgView)
         
-        picker.frame = CGRect(x: 0, y: viewController.view.bottom, width: viewController.view.width, height: 304)
-        viewController.view.addSubview(picker)
-        
+        picker.frame = CGRect(x: 0, y: view.bottom, width: view.width, height: 304)
+        view.addSubview(picker)
         
         UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationDuration(0.3)
         bgView.backgroundColor = UIColor(white: 0, alpha: 0.3)
-        picker.setY(with: viewController.view.height - 304)
+        picker.setY(with: view.height - 304)
+        
         UIView.commitAnimations()
         
     }
 }
+
 
 
 
@@ -101,6 +102,8 @@ class CategoryPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         self.pickerDelegate?.dismiss()
         selectedAction()
     }
+    
+    
     
     func locateCategory(category: Category) {
         for (index, value) in categories.enumerated() {

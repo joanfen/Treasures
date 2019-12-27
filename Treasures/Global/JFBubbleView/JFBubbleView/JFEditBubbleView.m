@@ -63,6 +63,7 @@
     return self;
 }
 
+
 -(BOOL)resignFirstResponder{
     JFInputBubbleItem *item = [self itemAtIndex:self.dataArray.count];
     [item.inputLabelField resignFirstResponder];

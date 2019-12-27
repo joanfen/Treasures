@@ -85,6 +85,7 @@ class test: XCTestCase {
         CategoryRepo.enableCategory(secondCategoryId: 20)
 
         CategoryRepo.queryMyCategories()
+        
     }
     
     
@@ -95,5 +96,15 @@ class test: XCTestCase {
     func testData() {
         let count = TreasureRepository.getDataStatistic()
         print(count)
+    
     }
+    
+    func testKeywordsInset() {
+        let result = KeywordsRepo.saveKeywords(keywords: ["奇珍"])
+        
+        print(result)
+        let keywords = KeywordsRepo.queryKeywords()
+        print(keywords)
+    }
+    
 }

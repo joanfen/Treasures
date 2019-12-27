@@ -68,5 +68,8 @@ extension UIView {
         self.frame = CGRect.init(origin: rect.origin, size: CGSize.init(width: width, height: rect.size.height))
     }
     
-    
+    func setHeight(with height: CGFloat) {
+        let rect = self.frame
+        self.frame = CGRect.init(origin: rect.origin, size: CGSize.init(width: width, height: height))
+    }
 }

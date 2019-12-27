@@ -16,4 +16,6 @@
  */
 -(void)writeSelectedBubbles;
 
+@property (nonatomic, copy) NSArray<NSString *> *tags;
+
 @end

@@ -9,7 +9,6 @@
 import XCTest
 import SwiftyJSON
 
-
 class TreasuresTests: XCTestCase {
 
     override func setUp() {
@@ -32,7 +31,19 @@ class TreasuresTests: XCTestCase {
         }
     }
     
-    func testDecodeJson() {
+    func testEncode() {
+        print("\n----- 测试加密解密 Start ------\n")
+        
+        let origin = 201912211
+        print("原始值: \(origin)")
+        
+        let result = InviteCodeUtils.encode(by: origin)
+        print("加密后: \(result)")
+        
+        let code = InviteCodeUtils.decode(by: result)
+        print("解密后: \(code)")
+        
+        print("\n----- 测试加密解密 End ------\n")
+        
     }
-
 }

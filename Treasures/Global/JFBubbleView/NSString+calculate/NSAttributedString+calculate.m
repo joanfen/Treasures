@@ -44,11 +44,12 @@
 
 
 -(CGSize)sizeByAutoSize:(CGSize)autoSize{
-    
+    if (autoSize.width == 0 || autoSize.height == 0) {
+        return CGSizeZero;
+    }
     CGRect rect = [self boundingRectWithSize:autoSize
                                      options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
                                      context:nil];
-    
     
     return rect.size;
 }

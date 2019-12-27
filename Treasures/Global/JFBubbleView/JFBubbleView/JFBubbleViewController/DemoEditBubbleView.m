@@ -19,18 +19,10 @@ static NSString *kDemoEditBubbleResourceName = @"selectedTags";
 
 @implementation DemoEditBubbleView
 
--(instancetype)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.resourcePath = [[NSBundle mainBundle] pathForResource:kDemoEditBubbleResourceName ofType:@"plist"];
-        [self readDataArray];
-    }
-    return self;
-}
 
--(void)readDataArray{
-    NSArray *array = [NSArray arrayWithContentsOfFile:self.resourcePath];
-    self.dataArray = [NSMutableArray arrayWithArray:array];
+-(void)setTags:(NSArray<NSString *> *)tags{
+    _tags = tags;
+    self.dataArray = tags.mutableCopy;
 }
 
 -(void)addBubbleItem:(JFBubbleItem *)item{
