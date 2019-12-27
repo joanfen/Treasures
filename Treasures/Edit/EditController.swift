@@ -8,13 +8,13 @@
 
 import UIKit
 
-class EditController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, InputViewDelegate {
+class EditController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, InputViewDelegate, UIScrollViewDelegate {
     
     var treasureId: Int?
     var edit: EditTreasureForm = EditTreasureForm()
     
     // MARK: views
-    private let contentView = UIScrollView()
+    private let contentView = TPKeyboardAvoidingScrollView()
 
     private let imagesView = AddImagesSubview.loadXib()
     private let categoryView = ChooseCategorySubview.loadXib()
@@ -95,7 +95,6 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         sellingPriceInputView.frame = CGRect(x: 0, y: avaliableView.bottom, width: self.contentView.width, height: singleHeight)
         // 笔记
         noteView.frame = CGRect(x: 0, y: sellingPriceInputView.bottom + 10, width: self.contentView.width, height: 140)
-        // TODO: 保存按钮
         contentView.contentSize = CGSize(width: self.view.width, height: noteView.bottom + 10 )
         
     }
@@ -138,7 +137,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @objc func back() {
-        let alert = UIAlertController(title: "确定返回", message: "您的修改尚未保存", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "确定返回", message: nil, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil))
 
         alert.addAction(UIAlertAction.init(title: "确定", style: UIAlertAction.Style.default, handler: { (action) in
@@ -271,6 +270,12 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+}
+
+extension EditController {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+    }
 }
 
 // MARK: - Input
