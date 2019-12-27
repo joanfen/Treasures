@@ -9,7 +9,6 @@
 import XCTest
 import SwiftyJSON
 
-
 class TreasuresTests: XCTestCase {
 
     override func setUp() {
@@ -32,7 +31,12 @@ class TreasuresTests: XCTestCase {
         }
     }
     
-    func testDecodeJson() {
+    func testEncode() {
+        
+        let result = InviteCodeUtils.encode(by: 201912211)
+        print(result)
     }
+    
+        
 
 }
