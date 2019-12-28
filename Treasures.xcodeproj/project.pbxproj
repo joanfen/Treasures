@@ -74,6 +74,8 @@
 		48C4BA8123B66475001CA6D4 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C4BA7B23B66475001CA6D4 /* TPKeyboardAvoidingTableView.m */; };
 		48C4BA8223B66475001CA6D4 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C4BA7C23B66475001CA6D4 /* TPKeyboardAvoidingScrollView.m */; };
 		48C4BA8323B66475001CA6D4 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C4BA7E23B66475001CA6D4 /* TPKeyboardAvoidingCollectionView.m */; };
+		48C4BA8523B6EF63001CA6D4 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4BA8423B6EF63001CA6D4 /* StringUtils.swift */; };
+		48C4BA8623B6EF63001CA6D4 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4BA8423B6EF63001CA6D4 /* StringUtils.swift */; };
 		48DF59D2239B47EB0086B352 /* SortedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59D1239B47EB0086B352 /* SortedItem.swift */; };
 		48DF59D6239BDF9D0086B352 /* KeywordItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48DF59D5239BDF9D0086B352 /* KeywordItem.xib */; };
 		48DF59D9239BE3060086B352 /* PropertyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DF59D8239BE3060086B352 /* PropertyItem.swift */; };
@@ -235,6 +237,7 @@
 		48C4BA7D23B66475001CA6D4 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		48C4BA7E23B66475001CA6D4 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
 		48C4BA7F23B66475001CA6D4 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		48C4BA8423B6EF63001CA6D4 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		48DF59D1239B47EB0086B352 /* SortedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedItem.swift; sourceTree = "<group>"; };
 		48DF59D5239BDF9D0086B352 /* KeywordItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordItem.xib; sourceTree = "<group>"; };
 		48DF59D8239BE3060086B352 /* PropertyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyItem.swift; sourceTree = "<group>"; };
@@ -676,6 +679,7 @@
 				55AD675423AC83C200C0E5EB /* JFBubbleView */,
 				3D0D764F23B6472F00CFFEA5 /* DateTimeUtil.swift */,
 				3D2E490F23A7D8BE00DE59A2 /* Global.swift */,
+				48C4BA8423B6EF63001CA6D4 /* StringUtils.swift */,
 				55B22B72239755D800B738B7 /* FontConstants.swift */,
 				487455CE23993FD6002AFBF7 /* UISizeConstants.swift */,
 				48DF59E0239C90C80086B352 /* ImageConstants.swift */,
@@ -1011,6 +1015,7 @@
 				55B22B75239755D800B738B7 /* FirstCategoryTable.swift in Sources */,
 				55B22B77239755D800B738B7 /* TreasuresTable.swift in Sources */,
 				55B22B492397539500B738B7 /* SceneDelegate.swift in Sources */,
+				48C4BA8523B6EF63001CA6D4 /* StringUtils.swift in Sources */,
 				55AD677923B302B800C0E5EB /* SecondCategoryVO.swift in Sources */,
 				48EF5C7A23A2846900A0E8B1 /* AddImagesSubview.swift in Sources */,
 				484CA17123994F2500207662 /* ListFilterView.swift in Sources */,
@@ -1059,6 +1064,7 @@
 				55AD677A23B302B800C0E5EB /* SecondCategoryVO.swift in Sources */,
 				552CC57F23A37FB400D14F21 /* TreasureListSearchDTO.swift in Sources */,
 				482ECB3623AA96CB00BFB839 /* ImageConstants.swift in Sources */,
+				48C4BA8623B6EF63001CA6D4 /* StringUtils.swift in Sources */,
 				48AA846B239CE12000A81C9F /* SecondCategoryTable.swift in Sources */,
 				48AA846E239CE12000A81C9F /* TreasuresTable.swift in Sources */,
 				48FA4FE523A7D640005DA01A /* CategoryDTO.swift in Sources */,

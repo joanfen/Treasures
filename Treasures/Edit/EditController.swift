@@ -207,7 +207,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     private func addKeywordInputView() {
         keywordInputView.dataSetting(title: "关键字", value: self.edit.keywords.joined(separator: ","), textChanged: { (keywords) in
-            self.edit.keywords = keywords.components(separatedBy: ",")
+            self.edit.keywords = keywords.componentsExcludeWhiteSpace(by: ",")
         }, delegate: self)
         contentView.addSubview(keywordInputView)
     }
@@ -262,13 +262,13 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @objc private func save() {
         // TODO: - 所有 input 都应该 退出编辑
-        //        nameInputView.resignFirstResponder()
         self.edit.images = imagesView.getImages()
         let result = self.edit.saveOrUpdate()
         if let res = result {
             HUDHandler.showError(with: res, in: self.view)
         } else {
             HUDHandler.showSuccess(with: "保存成功", in: self.view)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -285,6 +285,7 @@ extension EditController {
     func textFieldBeginEditing(at bottom: CGFloat, inputView: InputBaseView) {
         if inputView == keywordInputView {
             let _ = keywordInputView.resignFirstResponder()
+            
             let view = JFBubbleViewController.init(tags: self.edit.keywords, allTags: KeywordsRepo.queryKeywords())
             
             view?.saveKeywords = { (keywords) in

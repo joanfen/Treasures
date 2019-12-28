@@ -42,8 +42,7 @@ class EditTreasureForm {
         self.size = treasure.size
         self.year = treasure.year
         self.descrpiton = treasure.description
-        
-        self.keywords = treasure.keywords.components(separatedBy: ",")
+        self.keywords = treasure.keywords.componentsExcludeWhiteSpace(by: ",")
         self.purchasedYear = treasure.purchasedYear
         self.purchasedPrice = Float(treasure.purchasedPriceInCent) / 100.0
         self.sellingPrice = Float(treasure.sellingPriceInCent) / 100.0
