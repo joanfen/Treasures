@@ -42,7 +42,7 @@
 }
 
 -(void)addSaveButton {
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - 80, 20, 60, 30)];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - 80, 40, 60, 30)];
     button.backgroundColor = [UIColor colorWithRed:203/255.0 green: 36/255.0 blue:36/255.0 alpha:1];
     button.layer.cornerRadius = 4;
     [button setTitle:@"保存" forState:UIControlStateNormal];
@@ -83,6 +83,7 @@
     }
 }
 - (IBAction)saveCilcked:(id)sender {
+    [editBubbleView resign];
     [selectBubbleView addTags:tagsWillBeAdd];
    
     self.saveKeywords(editBubbleView.dataArray);

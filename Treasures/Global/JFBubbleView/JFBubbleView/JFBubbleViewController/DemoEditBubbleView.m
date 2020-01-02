@@ -43,4 +43,8 @@ static NSString *kDemoEditBubbleResourceName = @"selectedTags";
     [self.dataArray writeToFile:self.resourcePath atomically:YES];
 }
 
+-(void)resign {
+    [super resignFirstResponder];
+}
+
 @end

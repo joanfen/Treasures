@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 struct UISizeConstants {
+            
+    @available(iOS 11.0, *)
     static let top = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 34.0
     static let screenSize = UIScreen.main.bounds.size
     static let screenWidth = UISizeConstants.screenSize.width

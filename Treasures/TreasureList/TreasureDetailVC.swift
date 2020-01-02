@@ -73,6 +73,8 @@ class TreasureDetailVC: UIViewController {
                 img.frame = CGRect(x: UISizeConstants.screenWidth*CGFloat(i), y: 0, width: UISizeConstants.screenWidth, height: self.imageScrollView.height)
                 img.tag = i
                 img.isUserInteractionEnabled = true
+                img.contentMode = .scaleAspectFit
+                img.backgroundColor = UIColor.black
                 let tapGes = UITapGestureRecognizer.init(target: self, action: #selector(self.imageTap(ges:)))
                 img.addGestureRecognizer(tapGes)
                 self.imageScrollView.addSubview(img)

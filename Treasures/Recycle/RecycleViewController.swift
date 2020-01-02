@@ -32,9 +32,12 @@ class RecycleViewController: UIViewController {
             showSuccess()
             return
         }
-        let alert = UIAlertController.init(title: "提示", message: "请输入用户名", preferredStyle: .alert)
-        let ok = UIAlertAction.init(title: "确定", style: .default) { (alert) in
-            self.showSuccess()
+        let alert = UIAlertController.init(title: "提示", message: "是否确认清空", preferredStyle: .alert)
+        let ok = UIAlertAction.init(title: "确定", style: .default) { (alert) in            
+            if TreasureRepository.clearTrash() {
+                self.showSuccess()
+                self.initData()
+            }
         }
         let cancel = UIAlertAction.init(title: "取消", style: .cancel) { (action) in
             
@@ -55,6 +58,12 @@ class RecycleViewController: UIViewController {
         hud.dismiss(afterDelay: 1)
     }
     
+    private func pushToDetail(treasureId: Int) {
+        let detailVC = TreasureDetailVC()
+        detailVC.tId = treasureId
+        detailVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
     
     func setUI() {
         
@@ -80,5 +89,11 @@ extension RecycleViewController:UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: TreasureListCellConstants.reuseId) as! TreasureListCell
         cell.config(with: self.dataSource[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let treasure = self.dataSource[indexPath.row]
+        self.pushToDetail(treasureId: treasure.id)
     }
 }

@@ -36,6 +36,13 @@ class CollectedViewController: UIViewController {
         self.view.addSubview(tableView)
     }
     
+    private func pushToDetail(treasureId: Int) {
+        let detailVC = TreasureDetailVC()
+        detailVC.tId = treasureId
+        detailVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
     func initData() {
         dataSource = TreasureRepository.findCollectedTreasures()
         self.tableView.isHidden = dataSource.count == 0
@@ -52,5 +59,11 @@ extension CollectedViewController:UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: TreasureListCellConstants.reuseId) as! TreasureListCell
         cell.config(with: self.dataSource[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let treasure = self.dataSource[indexPath.row]
+        self.pushToDetail(treasureId: treasure.id)
     }
 }

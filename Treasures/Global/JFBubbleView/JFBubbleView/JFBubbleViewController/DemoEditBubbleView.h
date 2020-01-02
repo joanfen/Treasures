@@ -15,7 +15,7 @@
  * @brief 将选中的 tags 文本存储在 plist 中
  */
 -(void)writeSelectedBubbles;
-
+-(void)resign;
 @property (nonatomic, copy) NSArray<NSString *> *tags;
 
 @end

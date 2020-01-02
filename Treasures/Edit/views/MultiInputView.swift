@@ -39,6 +39,10 @@ class MultiInputView: InputBaseView, UITextViewDelegate {
      
     }
     
+    func resign() {
+        textView.resignFirstResponder()
+    }
+    
     func updateContent(content: String?) {
         self.textView.text = content
     }

@@ -124,11 +124,25 @@ static NSInteger const kJFMinInputBubbleWidth = 50;
         return YES;
     }
     textField.text = @"";
-    
+
     if (self.bubbleItemDelegate && [self.bubbleItemDelegate respondsToSelector:@selector(appendText:)]) {
         [self.bubbleItemDelegate appendText:validText];
     }
     return YES;
+}
+
+-(BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    // 去掉前后的空格
+       NSString *validText = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+       if (validText.length == 0) {
+           return YES;
+       }
+       textField.text = @"";
+       
+       if (self.bubbleItemDelegate && [self.bubbleItemDelegate respondsToSelector:@selector(appendText:)]) {
+           [self.bubbleItemDelegate appendText:validText];
+       }
+       return YES;
 }
 
 -(void)textFieldDidDelete{

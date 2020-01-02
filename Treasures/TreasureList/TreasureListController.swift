@@ -34,6 +34,7 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         filterView.filterPreference = filterPreference
+        filterView.filterPreference.filterDeleted = false
         tableViewSetting()
         addSubviews()
     }
@@ -143,6 +144,11 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
         toEditView(treasureId: id, copy: true)
     }
     
+    private func deleteTreasure(id: Int) {
+        _ = TreasureRepository.deleteTreasureBy(id: id)
+        initialSearch()
+    }
+    
     private func toEditView(treasureId: Int?, copy: Bool) {
         let edit = EditController.init(withId: treasureId, copy: copy)
         edit.hidesBottomBarWhenPushed = true
@@ -158,7 +164,7 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
             case .edit:
                 weakSelf.editTreasure(id: treasureId)
             case .delete:
-                print("delete")
+                weakSelf.deleteTreasure(id: treasureId)
             default:
                 weakSelf.copyTreasure(id: treasureId)
             }

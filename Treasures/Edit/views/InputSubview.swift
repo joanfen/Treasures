@@ -45,6 +45,10 @@ class InputSubview: InputBaseView, UITextFieldDelegate {
         super.awakeFromNib()
     }
 
+    func resign() {
+        self.textField.resignFirstResponder()
+    }
+    
     func showUnit(text: String) {
         unitWidth.constant = 34
         unitLabel.text = text

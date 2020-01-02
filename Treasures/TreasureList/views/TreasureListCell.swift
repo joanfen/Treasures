@@ -64,9 +64,11 @@ class TreasureListCell: UITableViewCell {
         for view in self.keysView.subviews {
             view.removeFromSuperview()
         }
-        let keywordsView = KeywordsScrollView.init(frame: CGRect(x: 0, y: 0, width: self.keysView.width, height: self.keysView.height))
-        keywordsView.reloadWidth(keys: source.keywords,height:16)
-        self.keysView.addSubview(keywordsView)
+        if source.keywords.count >= 1 && !source.keywords[0].isEmpty {
+            let keywordsView = KeywordsScrollView.init(frame: CGRect(x: 0, y: 0, width: self.keysView.width, height: self.keysView.height))
+            keywordsView.reloadWidth(keys: source.keywords,height:16)
+            self.keysView.addSubview(keywordsView)
+        }
         self.refreshCollectedStatus()
         
     }

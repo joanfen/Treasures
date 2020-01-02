@@ -262,6 +262,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @objc private func save() {
         // TODO: - 所有 input 都应该 退出编辑
+        resignAll()
         self.edit.images = imagesView.getImages()
         let result = self.edit.saveOrUpdate()
         if let res = result {
@@ -269,6 +270,17 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
         } else {
             HUDHandler.showSuccess(with: "保存成功", in: self.view)
             self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    private func resignAll() {
+        for view in self.contentView.subviews {
+            if view.isKind(of: InputSubview.classForCoder()) {
+                (view as! InputSubview).resign()
+            }
+            if view.isKind(of: MultiInputView.classForCoder()) {
+                (view as! MultiInputView).resign()
+            }
         }
     }
     
