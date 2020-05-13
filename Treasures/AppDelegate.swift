@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.init().setValue(true, forKey: "notLaunched")
         }
         UserDefaults.standard.set(false, forKey: "showSplash")
+        UserDefaults.standard.synchronize()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         let pw = UserDefaults.standard.object(forKey: "password") as? String

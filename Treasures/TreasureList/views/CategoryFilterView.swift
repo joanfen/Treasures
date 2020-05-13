@@ -33,7 +33,7 @@ class CategoryPickerForFilter: CategoryPickerProtocol {
         bgView.frame = CGRect(x: 0, y: self.top + 240, width: view.width, height: UISizeConstants.screenHeight - self.top)
         
         UIApplication.shared.keyWindow?.addSubview(bgView)
-
+        picker.initData()
         picker.frame = CGRect(x: 0, y: top, width: view.width, height: 0)
         picker.alpha = 0
         UIApplication.shared.keyWindow?.addSubview(picker)
@@ -112,11 +112,23 @@ class CategoryFilterView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         
     }
     
+    func initData() {
+        categories = CategoryRepo.queryMyCategories().flatMap { (dto) -> [SecondCategoryDTO] in
+        return dto.secondCategories
+        }
+        self.picker.reloadAllComponents()
+        self.picker.selectRow(selectedIndex, inComponent: 0, animated: false)
+    }
+    
     @IBAction func cancel(_ sender: Any) {
         pickerDelegate?.dismiss()
     }
     
     @IBAction func done(_ sender: Any) {
+        if (self.selectedIndex >= categories.count) {
+            pickerDelegate?.dismiss()
+            return
+        }
         let c = categories[self.selectedIndex]
         let selected = CategoryInfo(id: c.secondId, name: c.name)
         selectCategory = selected

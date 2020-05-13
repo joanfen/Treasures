@@ -32,7 +32,7 @@
                                 <constraint firstAttribute="height" constant="60" id="sR7-Om-gSc"/>
                             </constraints>
                             <color key="tintColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                            <state key="normal" image="plus" catalog="system">
+                            <state key="normal" image="addImg">
                                 <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -47,7 +47,7 @@
                                 <constraint firstAttribute="width" constant="60" id="c5z-D5-plO"/>
                             </constraints>
                             <color key="tintColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                            <state key="normal" image="plus" catalog="system"/>
+                            <state key="normal" image="addImg"/>
                             <connections>
                                 <action selector="addImage:" destination="iN0-l3-epB" eventType="touchUpInside" id="l7l-6L-iNv"/>
                             </connections>
@@ -59,7 +59,7 @@
                                 <constraint firstAttribute="height" constant="60" id="fDF-kO-A99"/>
                             </constraints>
                             <color key="tintColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                            <state key="normal" image="plus" catalog="system"/>
+                            <state key="normal" image="addImg"/>
                             <connections>
                                 <action selector="addImage:" destination="iN0-l3-epB" eventType="touchUpInside" id="vG7-5J-c2l"/>
                             </connections>
@@ -71,7 +71,7 @@
                                 <constraint firstAttribute="width" constant="60" id="ezO-BV-wEj"/>
                             </constraints>
                             <color key="tintColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                            <state key="normal" image="plus" catalog="system"/>
+                            <state key="normal" image="addImg"/>
                             <connections>
                                 <action selector="addImage:" destination="iN0-l3-epB" eventType="touchUpInside" id="doM-QM-fz1"/>
                             </connections>
@@ -111,6 +111,6 @@
         </view>
     </objects>
     <resources>
-        <image name="plus" catalog="system" width="64" height="56"/>
+        <image name="addImg" width="60" height="60"/>
     </resources>
 </document>

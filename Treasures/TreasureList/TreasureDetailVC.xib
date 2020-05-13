@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +18,9 @@
                 <outlet property="imageScrollView" destination="ZPZ-nd-oFr" id="0J3-Ua-bzQ"/>
                 <outlet property="mainScorllView" destination="vWx-lj-HZh" id="caG-37-wt1"/>
                 <outlet property="pageControll" destination="Kkh-Zz-GKt" id="1wq-XT-hkT"/>
+                <outlet property="recycle" destination="yAa-EN-bxs" id="ysM-44-R6F"/>
                 <outlet property="remarkLbl" destination="uYq-pj-y8k" id="war-PT-995"/>
+                <outlet property="remarkView" destination="Bi0-PS-LFM" id="bcN-AJ-NCq"/>
                 <outlet property="salePriceLbl" destination="UkS-aF-Y1g" id="vkj-iW-arf"/>
                 <outlet property="saleStatusLbl" destination="zz2-ED-AZh" id="E5v-dd-QZM"/>
                 <outlet property="sizeLbl" destination="CBD-EY-FEg" id="2w1-dB-ovD"/>
@@ -60,26 +62,28 @@
                             <color key="textColor" red="0.1960784314" green="0.1960784314" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAa-EN-bxs">
-                            <rect key="frame" x="364" y="0.0" width="50" height="35"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAa-EN-bxs">
+                            <rect key="frame" x="354" y="9" width="50" height="26"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="NfW-VZ-pfk"/>
                             </constraints>
-                            <state key="normal" image="share"/>
+                            <state key="normal" title="回收">
+                                <color key="titleColor" red="0.1960526407" green="0.19609326120000001" blue="0.1960500479" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
                             <connections>
-                                <action selector="shareBtnClicked" destination="-1" eventType="touchUpInside" id="YiO-XD-EsL"/>
+                                <action selector="recycleBtnClicked" destination="-1" eventType="touchUpInside" id="ky6-Lf-NF4"/>
                             </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstItem="n3F-LT-xet" firstAttribute="centerX" secondItem="pki-mB-K3l" secondAttribute="centerX" id="6SE-7s-giG"/>
-                        <constraint firstItem="LFe-UB-h3u" firstAttribute="trailing" secondItem="yAa-EN-bxs" secondAttribute="trailing" id="OAv-4l-7jA"/>
+                        <constraint firstItem="yAa-EN-bxs" firstAttribute="trailing" secondItem="LFe-UB-h3u" secondAttribute="trailing" constant="-10" id="BSw-ZG-RLh"/>
+                        <constraint firstItem="yAa-EN-bxs" firstAttribute="centerY" secondItem="n3F-LT-xet" secondAttribute="centerY" id="K4h-lF-SMg"/>
                         <constraint firstAttribute="height" constant="44" id="PRq-mF-trk"/>
                         <constraint firstItem="n3d-B5-GeZ" firstAttribute="leading" secondItem="pki-mB-K3l" secondAttribute="leading" constant="16" id="YDc-AN-7Ge"/>
                         <constraint firstItem="SfV-9X-wDk" firstAttribute="leading" secondItem="pki-mB-K3l" secondAttribute="leading" id="bLZ-9s-NZQ"/>
                         <constraint firstAttribute="trailing" secondItem="SfV-9X-wDk" secondAttribute="trailing" id="hIq-kr-hdJ"/>
-                        <constraint firstItem="yAa-EN-bxs" firstAttribute="top" secondItem="LFe-UB-h3u" secondAttribute="top" id="lba-RX-8Ko"/>
                         <constraint firstItem="SfV-9X-wDk" firstAttribute="top" secondItem="yAa-EN-bxs" secondAttribute="bottom" constant="8" symbolic="YES" id="nbl-Gm-FoU"/>
                         <constraint firstItem="n3F-LT-xet" firstAttribute="centerY" secondItem="pki-mB-K3l" secondAttribute="centerY" id="rZN-MT-QcM"/>
                         <constraint firstItem="n3d-B5-GeZ" firstAttribute="centerY" secondItem="pki-mB-K3l" secondAttribute="centerY" id="svH-R7-Se2"/>
@@ -379,6 +383,5 @@
     </objects>
     <resources>
         <image name="back" width="11" height="20"/>
-        <image name="share" width="20" height="20"/>
     </resources>
 </document>

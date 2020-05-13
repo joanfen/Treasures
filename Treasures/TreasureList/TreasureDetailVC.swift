@@ -10,6 +10,7 @@ import UIKit
 
 class TreasureDetailVC: UIViewController {
 
+    @IBOutlet weak var recycle: UIButton!
     @IBOutlet weak var mainScorllView: UIScrollView!
     @IBOutlet weak var imageScrollView: UIScrollView!
     @IBOutlet weak var pageControll: UIPageControl!
@@ -23,6 +24,7 @@ class TreasureDetailVC: UIViewController {
     @IBOutlet weak var saleStatusLbl: UILabel!
     @IBOutlet weak var remarkLbl: UILabel!
     @IBOutlet weak var keywordView: UIView!
+    @IBOutlet weak var remarkView: UIView!
     @IBOutlet weak var imageHeight: NSLayoutConstraint!
     @IBOutlet weak var imageContentView: UIView!
     var treasure = EditTreasureForm()
@@ -43,7 +45,10 @@ class TreasureDetailVC: UIViewController {
             self.treasure = EditTreasureForm.init(with: treasure)
         }
     }
-    
+    override func viewDidLayoutSubviews() {
+        super .viewDidLayoutSubviews()
+        self.mainScorllView.contentSize = CGSize(width: self.view.width, height: self.remarkView.frame.maxY)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -58,6 +63,15 @@ class TreasureDetailVC: UIViewController {
     
     @IBAction func backBtnClicked(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func recycleBtnClicked() {
+        if (TreasureRepository.revertDeleteTreasureBy(id: treasure.identifier ?? 0)) {
+            let hud = JGProgressHUD.init(style: .extraLight)
+            hud.textLabel.text = "已回收"
+            hud.indicatorView = JGProgressHUDSuccessIndicatorView.init()
+            hud.show(in: self.view)
+            hud.dismiss(afterDelay: 1)
+        }
     }
     
     func reloadView() {
@@ -81,6 +95,7 @@ class TreasureDetailVC: UIViewController {
                 self.pageControll.numberOfPages = images.count
             }
         }
+        self.recycle.isHidden = !treasure.deleted
         self.titleLbl.text = treasure.name
         self.desLbl.text = treasure.descrpiton
         self.sizeLbl.text = treasure.size.isEmpty ? "--" : treasure.size
@@ -118,6 +133,20 @@ class TreasureDetailVC: UIViewController {
     @objc func imageTap(ges:UITapGestureRecognizer) {
         let tag = ges.view?.tag ?? 0
         let imageVc = FJPreImageView.init()
+        imageVc.longTapPressBlock = {[weak self](img) in
+            guard let weakSelf = self else {return}
+            
+            let alert = UIAlertController.init(title: "提示", message: "保存图片到相册", preferredStyle: .alert)
+            let ok = UIAlertAction.init(title: "确定", style: .default) { (alert) in
+                weakSelf.saveImageToAlbum(image: img)
+            }
+            let cancel = UIAlertAction.init(title: "取消", style: .cancel) { (action) in
+                
+            }
+            alert.addAction(ok)
+            alert.addAction(cancel)
+            weakSelf.present(alert, animated:true, completion:nil)
+        }
         imageVc.showPreView(self.view, urls: self.treasure.imageUrls, index: tag)
         
     }
@@ -128,16 +157,18 @@ class TreasureDetailVC: UIViewController {
         self.imageScrollView.contentOffset = point
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func saveImageToAlbum(image:UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveImage(image:didFinishSavingWithError:contextInfo:)), nil)
     }
-    */
 
+    @objc private func saveImage(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: AnyObject) {
+           var showMessage = ""
+           if error != nil{
+            HUDHandler.showError(with: "保存失败", in: self.view)
+           }else{
+            HUDHandler.showSuccess(with: "保存成功", in: self.view)
+           }
+       }
 }
 extension TreasureDetailVC:UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

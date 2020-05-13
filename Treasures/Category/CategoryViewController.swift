@@ -27,6 +27,7 @@ class CategoryViewController: UIViewController {
         super.viewWillAppear(animated)
         let bigCategory = self.bigCategoryArr[self.selectedBigIndex]
         smallCategoryArr = CategoryRepo.querySecondCategories(parentId: bigCategory.identifier ?? 0)
+        self.initMyCat()
         self.smallTableView.reloadData()
     }
     private func configNavigation() {
@@ -37,6 +38,19 @@ class CategoryViewController: UIViewController {
         bigCategoryArr = CategoryRepo.queryFirstCategories()
         let firstId = bigCategoryArr[0].identifier ?? 0
         smallCategoryArr = CategoryRepo.querySecondCategories(parentId: firstId)
+        for dto in CategoryRepo.queryMyCategories() {
+            for category in dto.secondCategories {
+                if !myCategoryArr.contains(where: { (id) -> Bool in
+                    return category.secondId == id
+                }){
+                    myCategoryArr.append(category.secondId)
+                }
+            }
+        }
+    }
+    
+    func initMyCat() {
+        myCategoryArr = []
         for dto in CategoryRepo.queryMyCategories() {
             for category in dto.secondCategories {
                 if !myCategoryArr.contains(where: { (id) -> Bool in
@@ -97,6 +111,7 @@ extension CategoryViewController:UITableViewDelegate,UITableViewDataSource {
             self.selectedBigIndex = indexPath.row
             let bigCategory = self.bigCategoryArr[indexPath.row]
             smallCategoryArr = CategoryRepo.querySecondCategories(parentId: bigCategory.identifier ?? 0)
+            self.initMyCat()
             self.smallTableView.reloadData()
         }else {
             let smallCategory = self.smallCategoryArr[indexPath.row]

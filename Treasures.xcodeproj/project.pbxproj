@@ -1234,7 +1234,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Treasures/收藏管家.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = SS3GRV8S4L;
 				INFOPLIST_FILE = Treasures/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1260,7 +1260,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Treasures/收藏管家.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = SS3GRV8S4L;
 				INFOPLIST_FILE = Treasures/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

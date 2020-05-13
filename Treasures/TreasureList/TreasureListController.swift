@@ -16,10 +16,14 @@ protocol TreasureListUpdateProtocol {
 class TreasureListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     // MARK:  - View
+    @IBOutlet weak var arrowLine: UIImageView!
     @IBOutlet weak var placeholderView: UIView!
     @IBOutlet weak var placeholderLbl: UILabel!
     @IBOutlet weak var addButton: UIButton!
-
+    @IBOutlet weak var placeholderImg: UIImageView!
+    
+        
+    
     var searchBarView: SearchBarView = SearchBarView.loadXib()
     var filterView: ListFilterView = ListFilterView.loadXib()
     var tableView: UITableView = UITableView()
@@ -45,24 +49,38 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
         initialSearch()
         reloadPlaceHolder()
         showSplash()
+        self.view.bringSubviewToFront(self.addButton)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.searchBarView.frame = CGRect.init(x: 0, y: 0, width: UISizeConstants.screenWidth, height: 82)
-    }
+    }        
     
     private func reloadPlaceHolder() {
         if self.treasureList.count != 0 {
+            if self.treasureList.count == 1 {
+                let tips = "长按藏品\n可修改、复制、删除藏品"
+                self.placeholderLbl.text = tips
+                self.placeholderImg.isHidden = true
+                self.placeholderView.isHidden = false
+                self.arrowLine.isHidden = true
+                self.view.bringSubviewToFront(self.placeholderView)
+                self.view.bringSubviewToFront(self.tableView)
+                self.view.bringSubviewToFront(self.arrowLine)
+                return
+            }
             self.placeholderView.isHidden = true
             return
         }
         self.view.bringSubviewToFront(self.placeholderView)
         self.placeholderView.isHidden = false
+        self.arrowLine.isHidden = false
         let categorys = CategoryRepo.queryMyCategories()
-        var tips = "暂无数据\n请在分类界面添加分类"
-        if categorys.count != 0 {
-            tips = "暂无数据\n请点击加号添加藏品"
+        let tips = "暂无数据\n请点击加号添加藏品"
+        if categorys.count == 0 {
+            _ = CategoryRepo.enableCategory(secondCategoryId: 1)
+//            tips = "暂无数据\n请点击加号添加藏品"
         }
         self.placeholderLbl.text = tips
     }
@@ -93,6 +111,7 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
         tableView.register(TreasureListCellConstants.nib(), forCellReuseIdentifier: TreasureListCellConstants.reuseId)
         tableView.tableFooterView = UIView()
         tableView.frame = CGRect.init(x: 0, y: y, width: self.view.width, height: self.view.bottom - y)
+        tableView.backgroundColor = .clear
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = TreasureListCellConstants.height
@@ -157,6 +176,7 @@ class TreasureListController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func showActionPopView(treasureId: Int) {
+        actionPopView.frame = self.view.bounds
         self.view.addSubview(actionPopView)
         actionPopView.ActionBlock = {[weak self] (action:PopAction) in
             guard let weakSelf = self else {return}

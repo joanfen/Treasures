@@ -28,9 +28,11 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>需要访问您的相机</string>
+	<string>需要访问您的相机(用于拍摄藏品的图片)</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>需要访问您的相册(方便为您保存图片，用于选取照片设置头像，以及为藏品设置图片)</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>需要访问您的相册</string>
+	<string>需要访问您的相册(方便为您保存图片，用于选取照片设置头像，以及为藏品设置图片)</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

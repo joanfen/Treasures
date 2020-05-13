@@ -75,13 +75,7 @@ class AddImagesSubview: UIView {
         if let image = getImage(at: index) {
             button.setImage(image, for: UIControl.State.normal)
         } else {
-            if #available(iOS 13.0, *) {
-                button.setImage(UIImage.init(systemName: "plus"), for: UIControl.State.normal)
-            } else {
-                // Fallback on earlier versions
-                button.setImage(nil, for: UIControl.State.normal)
-                
-            }
+            button.setImage(UIImage.init(named: "addImg"), for: UIControl.State.normal)
         }
     }
     
@@ -91,6 +85,8 @@ class AddImagesSubview: UIView {
         let tag = btn.tag
         
         let alert = UIAlertController.init(title: "请选择操作", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+        alert.popoverPresentationController?.sourceView = self
+        alert.popoverPresentationController?.sourceRect = btn.frame
         alert.addAction(cancelAction())
         if (tag < images.count) {
             alert.addAction(albumAction(tag))

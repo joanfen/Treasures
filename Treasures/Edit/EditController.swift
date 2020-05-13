@@ -100,7 +100,7 @@ class EditController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentView.frame = CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height)
+        contentView.frame = CGRect(x: 0, y: 0, width: UISizeConstants.screenWidth, height: UISizeConstants.screenHeight)
         
         self.view.addSubview(contentView)
         addImagesView()
@@ -305,7 +305,9 @@ extension EditController {
                 self.keywordInputView.updateContent(content: keywords?.joined(separator: ","))
                 let _ = self.keywordInputView.resignFirstResponder()
             }
+            
             if let vc = view {
+                vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true, completion: nil)
             }
         }

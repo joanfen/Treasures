@@ -120,11 +120,13 @@ class CategoryPickerView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     private func selectedAction() {
-        let first = categories[selectedFirst]
-        let second = first.secondCategories[selectedSecond]
-        let selected = Category.init(firstCategory: CategoryInfo(id: first.firstId, name: first.name),
-                      secondCategory: CategoryInfo(id: second.secondId, name: second.name))
-        self.pickerDelegate?.selected(category: selected)
+        if selectedFirst < categories.count {
+            let first = categories[selectedFirst]
+                   let second = first.secondCategories[selectedSecond]
+                   let selected = Category.init(firstCategory: CategoryInfo(id: first.firstId, name: first.name),
+                                 secondCategory: CategoryInfo(id: second.secondId, name: second.name))
+                   self.pickerDelegate?.selected(category: selected)
+        }
     }
 }
 

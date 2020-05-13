@@ -24,7 +24,8 @@ class EditTreasureForm {
     var sellingPrice: Float?
     var sellStatus: SellStatus = .unavaliable
     var note: String = ""
-        
+    var deleted: Bool = false
+    
     private var table = TreasuresTable()
     
     init() {
@@ -48,7 +49,7 @@ class EditTreasureForm {
         self.sellingPrice = Float(treasure.sellingPriceInCent) / 100.0
         self.sellStatus = SellStatus(rawValue: treasure.sellStatus) ?? SellStatus.unavaliable
         self.note = treasure.note
-        
+        self.deleted = treasure.deleted
         self.images = PathHandler.getImages(of: self.identifier)
         self.imageUrls = PathHandler.getImagePaths(of: self.identifier)
     }

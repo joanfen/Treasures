@@ -29,7 +29,8 @@ class PersonalCell: UITableViewCell {
     func reload(image:UIImage?,_ title:String, _ showRightLbl:Bool=false) {
         self.iconImg.image = image
         self.titleLbl.text = title
-        self.rightLbl.isHidden = !showRightLbl
+//        self.rightLbl.isHidden = !showRightLbl
+        self.rightLbl.isHidden = true
     }
     
 }

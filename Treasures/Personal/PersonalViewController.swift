@@ -14,9 +14,9 @@ class PersonalViewController: UIViewController {
     @IBOutlet weak var avatarBgView: UIView!
     @IBOutlet weak var avatarImg: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    var nickName = "nickname"
-    let titleArr = ["邀请码","添加密码","我的收藏","回收站","数据统计"]
-    let imageArr = ["Invitation","password-1","My collection","bin","statistics"]
+    var nickName = "用户名"
+    let titleArr = ["添加密码","我的收藏","回收站","数据统计"]
+    let imageArr = ["password-1","My collection","bin","statistics"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class PersonalViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        nickName = (UserDefaults.standard.object(forKey: "nickname") as? String) ?? "nickname"
+        nickName = (UserDefaults.standard.object(forKey: "nickname") as? String) ?? "用户名"
         self.nickNameLbl.text = nickName
         let img = PathHandler.getThumbnail()
         self.avatarImg.image = img
@@ -94,13 +94,13 @@ extension PersonalViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)        
         switch indexPath.row {
+//        case 0:
+//            self.toInvateVC()
         case 0:
-            self.toInvateVC()
-        case 1:
             self.toEditPW()
-        case 2:
+        case 1:
             self.toCollectedVC()
-        case 3:
+        case 2:
             self.toRecyleVC()
         default:
             self.toStatisticsVC()
@@ -134,6 +134,8 @@ extension PersonalViewController: UIImagePickerControllerDelegate, UINavigationC
     
     @objc func setPhoto() {
         let alertController=UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertController.popoverPresentationController?.sourceView = self.view
+        alertController.popoverPresentationController?.sourceRect = self.avatarImg.frame
         
         let cancel=UIAlertAction(title:"取消", style: .cancel, handler: nil)
         let takingPictures=UIAlertAction(title:"拍照", style: .default)
